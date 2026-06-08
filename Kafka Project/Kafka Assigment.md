@@ -233,7 +233,7 @@ Cleanup
 In here we write a ***Kafka consumer called avro_data_consumer*** Python file (extension .py) with the characteristics asked
 above in Step 3 and 4 detailed explanation.
 
-🎯 Goal of the Script
+🎯 ***Goal of the Script***
 
 This script:
 1. Connects to a Confluent Cloud Kafka cluster
@@ -243,6 +243,95 @@ This script:
    - category → lowercase
    - discount price if category = "category a"
 5. Writes each consumed JSON record into a local file consumer1.json
+
+<img width="487" height="414" alt="image" src="https://github.com/user-attachments/assets/ae5df808-7c9e-4dd6-9858-aadab23c4b2f" />
+
+Kafka Configuration
+Defines 
+- Kafka broker URL
+- Security & SASL authentication
+- Consumer Group id (group31)
+- auto.offset.reset='latest' -> start from newest messages
+
+<img width="767" height="92" alt="image" src="https://github.com/user-attachments/assets/4f578a0f-335b-4b65-9053-792c4b6e8772" />
+<img width="793" height="179" alt="image" src="https://github.com/user-attachments/assets/5b225a51-d447-4dc6-a694-3e3c867df383" />
+
+- Connects to Confluent Schema Registry
+- Loads Avro schema for values so consumer knows how to decode bytes -> dict
+
+<img width="747" height="313" alt="image" src="https://github.com/user-attachments/assets/691278ad-44cf-40cc-83ee-13492a46af39" />
+
+Deserialize the Avro data back into a Python object.
+- Keys -> UTF-8 strings
+- Values -> Avro serialized -> Python dict
+
+<img width="423" height="142" alt="image" src="https://github.com/user-attachments/assets/606c9dc4-57c3-4f50-b6e2-ba3af6849924" />
+<img width="620" height="413" alt="image" src="https://github.com/user-attachments/assets/23c344ac-75a4-4a21-af79-8ffe2470db55" />
+
+Create Consumer
+This consumer automatically:
+- Reads bystes from Kafka
+- Converts them to Pythn objects (dict)
+- Handles key/value deserialization internally
+
+<img width="385" height="162" alt="image" src="https://github.com/user-attachments/assets/9272659d-93f0-45fe-b514-602006d26c02" />
+
+JSON doesnt support datetime
+So this convers datetime -> YYYY-MM-DDTHH:MM:SS
+
+<img width="374" height="110" alt="image" src="https://github.com/user-attachments/assets/82b8e5fa-2ca2-4458-b944-4f0b9c4ea9cb" />
+<img width="321" height="63" alt="image" src="https://github.com/user-attachments/assets/9b57295b-c104-435f-8315-6f0ee17fd3ab" />
+<img width="440" height="138" alt="image" src="https://github.com/user-attachments/assets/46abe0d1-bba0-4fc7-a944-8112bc5edc20" />
+
+Output File Setup
+Every consumed message will be appended here.
+
+<img width="389" height="269" alt="image" src="https://github.com/user-attachments/assets/79448722-a6c0-480c-af93-2815efa9b35c" />
+
+Subscribe to Topic
+
+<img width="309" height="107" alt="image" src="https://github.com/user-attachments/assets/69bf957d-1eb4-4651-90a7-28a8942a3d9a" />
+
+Infinite Consume Loop
+- Polls every second
+- msg is None -> no data yet
+- msg.error() -> print Kafka error and skip
+
+<img width="409" height="56" alt="image" src="https://github.com/user-attachments/assets/0aff48c4-d481-4da0-b868-92f6afa034f9" />
+
+Change the category column to uppercase
+
+<img width="549" height="318" alt="image" src="https://github.com/user-attachments/assets/26f405bf-cf40-4aa2-8101-ec5aefbcfb90" />
+
+Apply 50% discount to products in category A
+(simulate real-time event enrichment)
+
+Now lets do ***Step 4***
+<img width="463" height="138" alt="image" src="https://github.com/user-attachments/assets/ac8c357e-4d0a-4156-b0dd-d425530a763a" />
+Converts processed dict -> JSON string
+<img width="476" height="291" alt="image" src="https://github.com/user-attachments/assets/164cb27e-e470-4dd9-9c27-81179620616a" />
+
+
+<img width="338" height="132" alt="image" src="https://github.com/user-attachments/assets/ca8fdd47-7ee9-49ed-adca-6b2c016d12c1" />
+<img width="238" height="100" alt="image" src="https://github.com/user-attachments/assets/70ed3f2b-d6e8-4e2f-a3a8-3799fa07e6cc" />
+
+- Ctrl + C stops loop
+-consumer.close() commits offsets and closes connection cleanly
+
+<img width="306" height="237" alt="image" src="https://github.com/user-attachments/assets/3cfef494-0d9b-4ba0-9e92-de172c00ff30" />
+
+Now we did the above code for consumer1.json. Now do the same code for consumer2.json, consumer3.json, consumer4.json, consumer5.json.
+The code stays the same the only part you need to change is this one:
+<img width="454" height="257" alt="image" src="https://github.com/user-attachments/assets/12cb0d22-cb8f-4753-aaae-db5ac25010ba" />
+
+In our project folder we have them here:
+<img width="679" height="106" alt="image" src="https://github.com/user-attachments/assets/566fb70b-01aa-42d5-be3e-5ff59c9dedea" />
+
+
+
+
+
+
 
 
 
