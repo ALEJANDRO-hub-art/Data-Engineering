@@ -304,6 +304,15 @@ Typically (based on your streaming setup), the script:
 - ✅ Converts Python dicts → Avro or JSON
 - ✅ Publishes messages to a Kafka topic
 
+Specifically:
+- Define a delivery_report(err, msg).
+- Kafka and Schema Registry configuration
+- Fetch the latest schema dynamically
+- Producers
+- Valid McDonald's menu items
+- Mock data generation (Generate matching order and payment data, Produce order, Produce payment)
+- Generate and publish mock data
+
 Run the mock_data_producer.py file locally in your computer.
 
 📋 Requirements:
@@ -337,7 +346,7 @@ In the ksql_db_commands.sql file we do the following:
 <img width="559" height="306" alt="image" src="https://github.com/user-attachments/assets/dd4b65cd-9815-44c5-a933-5f0a394c4a72" />
 <img width="536" height="391" alt="image" src="https://github.com/user-attachments/assets/00e5e7d2-8a00-4733-b5ca-bfe7d7cc45cf" />
 
-Now let’s see if in the mock_data_producer.py it references the connection to this KSQL_DB_commands…
+
 
 
 
