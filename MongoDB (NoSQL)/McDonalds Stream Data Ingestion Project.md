@@ -89,7 +89,8 @@ All arriving at different moments!
 
 ---------------------------------------------------------------------------------------------------------
 
-<img width="630" height="436" alt="image" src="https://github.com/user-attachments/assets/bc2e264e-07f1-42bc-b085-60f49f41b18e" />
+<img width="681" height="219" alt="image" src="https://github.com/user-attachments/assets/a9885807-7b42-45e9-8329-40187c933ec6" />
+
 
 Install MongoDB Atlas Database Multi Cloud Database Service.
 
