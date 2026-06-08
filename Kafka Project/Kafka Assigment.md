@@ -29,11 +29,11 @@ real-time analytics and business intelligence.
 
 ### 🔄 Step 1: MySQL Table Setup  
 ** Create a table named 'product' in MySQL database with the following columns:**
-➔ id - INT (Primary Key)
-➔ name - VARCHAR
-➔ category - VARCHAR
-➔ price - FLOAT
-➔ last_updated - TIMESTAMP
+- ➔ id - INT (Primary Key)
+- ➔ name - VARCHAR
+- ➔ category - VARCHAR
+- ➔ price - FLOAT
+- ➔ last_updated - TIMESTAMP
 
 ### 🔄 Step 2: Kafka Producer
 - Write a Kafka producer in Python that uses a MySQL connector to
