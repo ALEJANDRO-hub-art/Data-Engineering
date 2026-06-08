@@ -347,7 +347,7 @@ In ksqlDB (This lives in the Confluent Cloud):
   - Streams & Tables
   - Query results
 
-This is where you paste/run: ksql_db_commands.sql
+This is where you paste/run: **ksql_db_commands.sql**
 
 In the ksql_db_commands.sql file we do the following:
 
