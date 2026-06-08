@@ -336,6 +336,22 @@ In ksqlDB (This lives in the Confluent Cloud):
 
 <img width="299" height="69" alt="image" src="https://github.com/user-attachments/assets/6b2caa07-7505-4a2c-bf79-03af364b84a7" />
 
+🎯 So where do you find/use ksqlDB?
+
+✅ 1. In Confluent Cloud UI
+- 1 Log in to Confluent Cloud
+- 2 Click your Kafka Cluster
+- 3 In the left sidebar select ksqlDB
+- 4 You'll see:
+  - Editor tab (to run SQL)
+  - Streams & Tables
+  - Query results
+
+This is where you paste/run:
+
+```pgsql
+ksql_db_commands.sql
+
 In the ksql_db_commands.sql file we do the following:
 
 - Orders Stream
