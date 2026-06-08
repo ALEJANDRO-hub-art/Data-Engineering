@@ -298,11 +298,11 @@ or whatever mock data your class defined.
 
 Typically (based on your streaming setup), the script:
 
-✅ Connects to Kafka Cluster
-✅ Connects to Schema Registry (if using Avro)
-✅ Creates sample messages
-✅ Converts Python dicts → Avro or JSON
-✅ Publishes messages to a Kafka topic
+- ✅ Connects to Kafka Cluster
+- ✅ Connects to Schema Registry (if using Avro)
+- ✅ Creates sample messages
+- ✅ Converts Python dicts → Avro or JSON
+- ✅ Publishes messages to a Kafka topic
 
 Run the mock_data_producer.py file locally in your computer.
 
