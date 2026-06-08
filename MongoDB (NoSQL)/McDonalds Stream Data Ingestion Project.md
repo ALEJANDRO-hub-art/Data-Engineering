@@ -87,6 +87,17 @@ BEFORE, AFTER, BETWEEN
 - Refunds
 All arriving at different moments!
 
+---------------------------------------------------------------------------------------------------------
+
+<img width="630" height="436" alt="image" src="https://github.com/user-attachments/assets/bc2e264e-07f1-42bc-b085-60f49f41b18e" />
+
+Install MongoDB Atlas Database Multi Cloud Database Service.
+
+That “MongoDB_Setup / MongoDB Atlas Database Multi Cloud Database Service” material is showing you how to create a cloud MongoDB database in Atlas and prepare it so your Kafka / KqlDB pipelines can write into it. 
+
+The steps are basically: create an Atlas cluster → open network access → create DB user → get connection string → use it from your tools / code.
+
+Let’s go through it step by step: what, how, and why.
 
 
 
