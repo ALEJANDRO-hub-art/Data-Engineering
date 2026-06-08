@@ -110,7 +110,7 @@ last_updated timestamp.
 
 ## 🔄 Step 2
 In here we write a ***Kafka producer called avro_data_producer*** Python file (extension .py) with the characteristics asked
-above in the Step 2 detailed explanation.
+above in Step 2 detailed explanation.
 
 <img width="538" height="526" alt="image" src="https://github.com/user-attachments/assets/7d5ac960-4fd0-44dd-b3cc-306df671a18c" />
 
@@ -229,7 +229,20 @@ Cleanup
 <img width="484" height="292" alt="image" src="https://github.com/user-attachments/assets/8f82c0b2-bbc9-473a-b3dc-55d8bc48ee96" />
 
 
+## 🔄 Step 3 and Step 4 combined.
+In here we write a ***Kafka consumer called avro_data_consumer*** Python file (extension .py) with the characteristics asked
+above in Step 3 and 4 detailed explanation.
 
+🎯 Goal of the Script
+
+This script:
+1. Connects to a Confluent Cloud Kafka cluster
+2. Reads messages from topic: product_updates
+3. Uses Schema Registry + Avro to deserialize records
+4. Applies business logic transformations
+   - category → lowercase
+   - discount price if category = "category a"
+5. Writes each consumed JSON record into a local file consumer1.json
 
 
 
