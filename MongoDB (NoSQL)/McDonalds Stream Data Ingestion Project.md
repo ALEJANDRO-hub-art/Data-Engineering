@@ -323,7 +323,7 @@ While producer runs:
 
 👉 You should see messages arriving
 
-In ksqlDB:
+In ksqlDB (This lives in the Confluent Cloud):
 
 <img width="299" height="69" alt="image" src="https://github.com/user-attachments/assets/6b2caa07-7505-4a2c-bf79-03af364b84a7" />
 
@@ -336,6 +336,8 @@ In the ksql_db_commands.sql file we do the following:
 <img width="651" height="358" alt="image" src="https://github.com/user-attachments/assets/18470524-9e30-4db2-a43b-e92a4298206a" />
 <img width="559" height="306" alt="image" src="https://github.com/user-attachments/assets/dd4b65cd-9815-44c5-a933-5f0a394c4a72" />
 <img width="536" height="391" alt="image" src="https://github.com/user-attachments/assets/00e5e7d2-8a00-4733-b5ca-bfe7d7cc45cf" />
+
+Now let’s see if in the mock_data_producer.py it references the connection to this KSQL_DB_commands…
 
 
 
