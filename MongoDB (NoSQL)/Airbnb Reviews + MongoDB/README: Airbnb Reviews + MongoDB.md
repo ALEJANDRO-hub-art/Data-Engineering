@@ -26,6 +26,40 @@ It does analytics like:
 - Group by country + suburb
 - Compute average price
 
+🧩 Here's how to load **airbnb_reviews.json**
+
+Create a NEW script in the same folder: **load_reviews.py**
+
+Paste this code 👇
+
+<img width="614" height="437" alt="image" src="https://github.com/user-attachments/assets/303475a2-0829-46a1-8e2c-39c3913f1f64" />
+
+<img width="668" height="122" alt="image" src="https://github.com/user-attachments/assets/be1c942f-ed00-452d-97eb-105ea3ebc7e8" />
+
+💡 Why it's separated
+
+Your course likely split the tasks:
+
+| File | Purpose |
+|------|---------|
+| **airbnb_reviews.json** | Data snapshot of Airbnb listings |
+| **load_reviews.py** (missing from folder) | Insert JSON into MongoDB |
+| **mongo_connect.py** | Query & aggregate data AFTER it's imported |
+
+🔥 What to do now
+
+✅ Step 1 — Load JSON
+
+Create **load_reviews.py** with the code above → **run it**
+
+Verify MongoDB Compass shows hundreds/thousands of documents
+
+
+✅ Step 2 — Run mongo_connect.py
+
+<img width="213" height="67" alt="image" src="https://github.com/user-attachments/assets/d47c6c56-653d-40f6-9cba-1d9a9514ec2e" />
+
+Now the aggregation queries will return results 🎉
 
 
 
