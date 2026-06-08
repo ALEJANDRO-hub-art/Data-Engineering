@@ -184,16 +184,15 @@ This is the Confluent producer that:
 <img width="467" height="490" alt="image" src="https://github.com/user-attachments/assets/a4cd8eb5-f101-4775-81ce-81282f128e6e" />
 
 Load Last Timestamp from File
-with open('config.json')... this file stores the last record processed.
-Example:
-{"last_read_timestamp": "2024-11-30 14:21:10"}
+- with open('config.json')... this file stores the last record processed.
+- Example: {"last_read_timestamp": "2024-11-30 14:21:10"}
 
 <img width="480" height="218" alt="image" src="https://github.com/user-attachments/assets/8e8ce606-d9ba-4a0f-be33-16f9d96f0602" />
 
 Fetch Only New MySQL Rows
-query = "SELECT * FROM product WHERE last_updated > '{}'"
-cursor.execute(query)
-rows = cursor.fetchall()
+- query = "SELECT * FROM product WHERE last_updated > '{}'"
+- cursor.execute(query)
+- rows = cursor.fetchall()
 
 <img width="497" height="367" alt="image" src="https://github.com/user-attachments/assets/e5a76817-686a-4d7a-a466-e6df026dce78" />
 <img width="460" height="142" alt="image" src="https://github.com/user-attachments/assets/0e633cd2-89ff-4eda-a803-3f3ab7e74988" />
