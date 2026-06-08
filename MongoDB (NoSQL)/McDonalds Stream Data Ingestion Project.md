@@ -101,25 +101,23 @@ Let’s go through it step by step: what, how, and why.
 
 **1. Create a MongoDB Atlas account & project**
 
-What: Sign up or log in to MongoDB Atlas and create a project.
+💡 What: Sign up or log in to MongoDB Atlas and create a project.
 
-How
+⚙️ How:
 
 - Go to the Atlas website and sign in
 - Click New Project → give it a name (e.g. Kafka_McDonalds)
 
-Why
+💭 Why:
 
 - A project is the logical container where your clusters (databases), users and network settings live. You need this before you can create any MongoDB database.
 
 
 **2. Create a free/shared cluster (the actual database server)**
 
-What
+💡 What: Create a multi-cloud hosted MongoDB cluster (the “Database Multi Cloud Service” mentioned in your notes).
 
-Create a multi-cloud hosted MongoDB cluster (the “Database Multi Cloud Service” mentioned in your notes).
-
-How
+⚙️ How:
 
 - Inside the project click Build a Database
 - Choose Free / Shared (M0) or a small paid tier
@@ -127,11 +125,26 @@ How
 - Cluster name, 'mongo-db-cluster'
 - Click Create
 
-Why
+💭 Why:
 
 This cluster is where your collections will live, and eventually where Kafka Connect MongoDB Sink will write the joined stream (like JoinedDB from your McDonald’s diagram) into a collection for dashboards.
 
+**3. Create a database user (credentials)**
 
+💡 What: Define a username + password that your apps (Compass, Python, Kafka Connect) will use to connect.
+
+⚙️ How:
+
+• In Atlas, go to Database Access → Add New Database User
+• Set username (e.g. kafka_user) and a strong password
+• Choose permissions → usually “Read and write to any database” for labs
+• Save
+
+💭 Why:
+
+Atlas does not allow anonymous access.
+
+Every connection string must include a db user; Kafka Connect / your Python scripts will fail without it.
 
 
 
