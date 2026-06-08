@@ -265,9 +265,9 @@ Go to Confluent Kafka and create the following producer, create the sql commands
 
 Go to Confluent Kafka and do the following with the orders_avro_schema.json and payments_avro_schema.json
 
-🛠️ HOW TO USE THESE FILES
+**🛠️ HOW TO USE THESE FILES**
 
-☑️ OPTION 1 — Upload manually in Confluent UI
+**☑️ OPTION 1 — Upload manually in Confluent UI**
 - 1 Go to Confluent Cloud
 - 2 Click Schema Registry
 - 3 Click Subjects → Create Schema
@@ -280,5 +280,40 @@ Go to Confluent Kafka and do the following with the orders_avro_schema.json and 
   - Subject name: 'payments-value'
 
 📍 Every topic being serialized in Avro needs its schema registered.
+
+<img width="576" height="525" alt="image" src="https://github.com/user-attachments/assets/9675e859-68fe-4e93-b073-cc26ce337e85" />
+
+📌 What is mock_data_producer.py?
+
+It is a Python script that creates fake (mock) data and sends it into Kafka topics in Confluent Cloud.
+
+It simulates real-world streaming events such as:
+
+- 🍔 Customer orders
+- 💳 Payments
+
+or whatever mock data your class defined.
+
+⚙️ What does the script actually do?
+
+Typically (based on your streaming setup), the script:
+
+✅ Connects to Kafka Cluster
+✅ Connects to Schema Registry (if using Avro)
+✅ Creates sample messages
+✅ Converts Python dicts → Avro or JSON
+✅ Publishes messages to a Kafka topic
+
+Run the mock_data_producer.py file locally in your computer.
+
+📋 Requirements:
+- Python 3 (python --version)
+- Kafka libraries installed (pip install confluent-kafka avro-python3)
+
+▶️ Execution:
+- Open Command prompt in Windows.
+- Type: cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\6 MongoDB (NoSQL)\Module 4 - MongoDB Class 2\1 Class Content\Mcdonalds_Kafka_Stream_Processing"
+- Run: python mock_data_producer.py
+
 
 
