@@ -1,0 +1,24 @@
+# 📊 McDonalds Stream Data Ingestion Project
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
