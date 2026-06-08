@@ -328,3 +328,18 @@ In ksqlDB:
 ```sql
 SELECT * FROM orders_stream EMIT CHANGES;
 
+In the ksql_db_commands.sql file we do the following:
+
+- Orders Stream
+- Payments stream
+- Join stream
+
+<img width="651" height="358" alt="image" src="https://github.com/user-attachments/assets/18470524-9e30-4db2-a43b-e92a4298206a" />
+<img width="559" height="306" alt="image" src="https://github.com/user-attachments/assets/dd4b65cd-9815-44c5-a933-5f0a394c4a72" />
+<img width="536" height="391" alt="image" src="https://github.com/user-attachments/assets/00e5e7d2-8a00-4733-b5ca-bfe7d7cc45cf" />
+
+
+
+
+
+
