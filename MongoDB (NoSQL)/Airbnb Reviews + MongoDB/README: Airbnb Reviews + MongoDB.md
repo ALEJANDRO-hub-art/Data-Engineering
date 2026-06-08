@@ -98,11 +98,16 @@ Keep this file in the same project folder:
 
 <img width="596" height="147" alt="image" src="https://github.com/user-attachments/assets/5870a6a4-e2d2-48cc-b307-fb45b9bacaf8" />
 
+The following is an explanation of Step 5
+
 Open Command Prompt.
+
 Type: cd "C:\Users\Alejandro\Documents\6 MongoDB (NoSQL)\Module 4 - MongoDB Class 2\1 Class Content\Code_Files"
 
 Verify you're in the correct folder
+
 Run: dir
+
 You should see:
 - airbnb_reviews.json
 - mongo_connect.py
