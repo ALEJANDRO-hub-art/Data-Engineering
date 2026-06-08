@@ -193,7 +193,7 @@ It tells the client where the cluster is and how to authenticate.
 
 - Install MongoDB Compass locally
 - Open it, paste the Atlas URI, click Connect
-- Create a database like mcd_db and a collection like orders_joined
+- Create a database like **mcd_db** and a collection like **orders_joined**
 - Insert a sample document to confirm everything works
 
 💭 Why:
