@@ -102,11 +102,11 @@ The following is an explanation of Step 5
 
 Open Command Prompt.
 
-Type: cd "C:\Users\Alejandro\Documents\6 MongoDB (NoSQL)\Module 4 - MongoDB Class 2\1 Class Content\Code_Files"
+Type: **cd "C:\Users\Alejandro\Documents\6 MongoDB (NoSQL)\Module 4 - MongoDB Class 2\1 Class Content\Code_Files"**
 
 Verify you're in the correct folder
 
-Run: dir
+Run: **dir**
 
 You should see:
 - airbnb_reviews.json
