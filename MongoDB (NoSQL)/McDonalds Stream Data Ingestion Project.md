@@ -347,6 +347,11 @@ In the ksql_db_commands.sql file we do the following:
 <img width="536" height="391" alt="image" src="https://github.com/user-attachments/assets/00e5e7d2-8a00-4733-b5ca-bfe7d7cc45cf" />
 
 
+So:
+
+<img width="660" height="215" alt="image" src="https://github.com/user-attachments/assets/57b3099d-c0f0-42a4-aff4-05dc95bb9c93" />
+
+<img width="499" height="70" alt="image" src="https://github.com/user-attachments/assets/5c4f4006-1fd3-4436-918d-76b76be28c99" />
 
 
 
