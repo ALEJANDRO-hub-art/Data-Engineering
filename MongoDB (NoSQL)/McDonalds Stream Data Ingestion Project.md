@@ -135,10 +135,10 @@ This cluster is where your collections will live, and eventually where Kafka Con
 
 ⚙️ How:
 
-• In Atlas, go to Database Access → Add New Database User
-• Set username (e.g. kafka_user) and a strong password
-• Choose permissions → usually “Read and write to any database” for labs
-• Save
+- In Atlas, go to Database Access → Add New Database User
+- Set username (e.g. kafka_user) and a strong password
+- Choose permissions → usually “Read and write to any database” for labs
+- Save
 
 💭 Why:
 
@@ -146,10 +146,72 @@ Atlas does not allow anonymous access.
 
 Every connection string must include a db user; Kafka Connect / your Python scripts will fail without it.
 
+**4. Allow your IP/network (Network Access)**
+
+💡 What: Tell Atlas which IPs are allowed to connect to the cluster.
+
+⚙️ How:
+
+- Go to Network Access → Add IP Address
+- For quick testing, you might use “Allow access from anywhere (0.0.0.0/0)”
+- Or add just your public IP (Go to www.whatsmyip.com, here you can find your Public IP address IPv4)
+
+💭 Why:
+
+Atlas clusters are firewalled by default.
+
+If your local machine or Kafka Connect worker isn’t on the allowed list, connections will time-out.
+
+**5. Get the connection string (URI)**
+
+💡 What: Copy the MongoDB URI that includes cluster address, user and options.
+
+⚙️ How:
+
+- Go to Databases → Connect on your cluster
+- Choose “Connect your application”
+- Copy the URI, something like:
+
+mongodb+srv://kafka_user:<password>@mcd-streaming-cluster.xxxx.mongodb.net/?retryWrites=true&w=majority
+
+💭 Why:
+
+This URI is what you will paste into:
+
+- MongoDB Compass
+- Your Python scripts (if you use PyMongo)
+- Kafka Connect MongoDB Sink connector config
+
+It tells the client where the cluster is and how to authenticate.
 
 
+**6. Use the Atlas cluster as the sink for Kafka (how it ties back to your class notes)**
 
+In your earlier diagrams you had:
 
+- Kafka topics (Orders, Payments, JoinedDB)
+- ksqlDB doing a stream JOIN → JoinedDB topic
+- Kafka Connect MongoDB Sink writing to MongoDB collection
+- Dashboard reading from MongoDB
+
+The Atlas setup is done so you can now:
+
+⚙️ How (conceptually)
+
+- Configure a Kafka Connect MongoDB Sink connector with:
+  - topics: JoinedDB
+  - connection.uri: the Atlas URI
+  - database: mcd_db
+  - collection: orders_joined
+
+💭 Why:
+
+This completes the pipeline:
+
+- Kafka streams → ksqlDB join → JoinedDB topic →
+- Kafka Connect MongoDB Sink → Atlas collection → Dashboard.
+
+MongoDB Atlas becomes the persistent, queryable store for your real-time analytics.
 
 
 
