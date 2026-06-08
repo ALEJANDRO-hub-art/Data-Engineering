@@ -59,6 +59,7 @@ We solve this using a Time Window Join "Within 5 minutes"
 <img width="451" height="273" alt="image" src="https://github.com/user-attachments/assets/51f0ddf1-6de3-4d13-8ab5-57f0bcf03b5d" />
 
 📦At 10:06, events arrives in **orders_stream**. Payment not here yet -> JOIN cannot happen, temporary miss
+
 📦At 10:07, event arrives in **payments_stream**
 
 Now ksqlDD checks its 5-minute window:
