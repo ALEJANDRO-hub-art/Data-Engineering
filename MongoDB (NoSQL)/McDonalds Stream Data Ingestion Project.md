@@ -235,11 +235,11 @@ This completes the pipeline:
 MongoDB Atlas becomes the persistent, queryable store for your real-time analytics.
 
 
-9. What is being done?
+**9. What is being done?**
 
 You are setting up a MongoDB Atlas cloud database that will act as the sink / target for your Kafka + ksqlDB streaming pipeline.
 
-How?
+⚙️ How?
 
 1. Create Atlas project & cluster
 2. Create DB user
@@ -248,7 +248,7 @@ How?
 5. Test with Compass
 6. Use the URI from Kafka Connect or your code
 
-Why?
+💭 Why?
 
 Because you need a scalable, managed database:
 
