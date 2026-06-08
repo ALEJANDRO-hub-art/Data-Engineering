@@ -325,8 +325,7 @@ While producer runs:
 
 In ksqlDB:
 
-```sql
-SELECT * FROM orders_stream EMIT CHANGES;
+<img width="299" height="69" alt="image" src="https://github.com/user-attachments/assets/6b2caa07-7505-4a2c-bf79-03af364b84a7" />
 
 In the ksql_db_commands.sql file we do the following:
 
