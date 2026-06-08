@@ -11,11 +11,11 @@ Inside ksqlDB you turn raw Kafka topics into STREAMS
 
 3️⃣Joining the Streams
 ksqlDBperforms a real-time JOIN on a shared key:
-✅Typically order_id
+- ✅Typically order_id
 
 4️⃣Write the Joined Output Back to Kafka
 The joined stream is written into a new Kafka topic:
-👉JoinedDB
+- 👉JoinedDB
 This is your **enriched, analytics-ready stream**
 
 5️⃣Kafka Connect Syncs Output into MongoDB
