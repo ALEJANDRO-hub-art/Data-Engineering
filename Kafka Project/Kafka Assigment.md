@@ -198,18 +198,6 @@ Fetch Only New MySQL Rows
 <img width="460" height="142" alt="image" src="https://github.com/user-attachments/assets/0e633cd2-89ff-4eda-a803-3f3ab7e74988" />
 
 Produce Each Row to Kafka
-- for row in rows:
-    columns = [column[0] for column in cursor.description]
-    value = dict(zip(columns, row))
-    
-    producer.produce(
-        topic='product_updates',
-        key=str(value['ID']),
-        value=value,
-        on_delivery=delivery_callback
-    )
-
-producer.flush() 
 
 Step-by-step:
 1. Convert row tuple {"id":...,"name":...}
