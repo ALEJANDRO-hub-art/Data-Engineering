@@ -306,7 +306,7 @@ Change the category column to uppercase
 Apply 50% discount to products in category A
 (simulate real-time event enrichment)
 
-Now lets do ***Step 4***
+## Now lets do ***Step 4***
 
 <img width="463" height="138" alt="image" src="https://github.com/user-attachments/assets/ac8c357e-4d0a-4156-b0dd-d425530a763a" />
 
