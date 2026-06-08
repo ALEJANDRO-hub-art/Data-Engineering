@@ -315,5 +315,16 @@ Run the mock_data_producer.py file locally in your computer.
 - Type: cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\6 MongoDB (NoSQL)\Module 4 - MongoDB Class 2\1 Class Content\Mcdonalds_Kafka_Stream_Processing"
 - Run: python mock_data_producer.py
 
+**🧐 HOW TO CONFIRM IT WORKS**
 
+While producer runs:
+
+***Go to Confluent Cloud → Topics → orders (or whatever topic name)***
+
+👉 You should see messages arriving
+
+In ksqlDB:
+
+```sql
+SELECT * FROM orders_stream EMIT CHANGES;
 
