@@ -265,8 +265,20 @@ Go to Confluent Kafka and create the following producer, create the sql commands
 
 Go to Confluent Kafka and do the following with the orders_avro_schema.json and payments_avro_schema.json
 
+🛠️ HOW TO USE THESE FILES
 
+☑️ OPTION 1 — Upload manually in Confluent UI
+- 1. Go to Confluent Cloud
+- 2. Click Schema Registry
+- 3. Click Subjects → Create Schema
+- 4. Choose format Avro
+- 5. For orders_avro_schema.json:
+  - Subject name: 'orders-value'
+  - Paste JSON content
+  - Save
+- 6. Repeat for payments_avro_schema.json
+  - Subject name: 'payments-value'
 
-
+📍 Every topic being serialized in Avro needs its schema registered.
 
 
