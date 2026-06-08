@@ -222,8 +222,8 @@ The Atlas setup is done so you can now:
 - Configure a Kafka Connect MongoDB Sink connector with:
   - topics: JoinedDB
   - connection.uri: the Atlas URI
-  - database: mcd_db
-  - collection: orders_joined
+  - database: **mcd_db**
+  - collection: **orders_joined**
 
 💭 Why:
 
@@ -234,6 +234,27 @@ This completes the pipeline:
 
 MongoDB Atlas becomes the persistent, queryable store for your real-time analytics.
 
+
+9. What is being done?
+
+You are setting up a MongoDB Atlas cloud database that will act as the sink / target for your Kafka + ksqlDB streaming pipeline.
+
+How?
+
+1. Create Atlas project & cluster
+2. Create DB user
+3. Allow your IP/network
+4. Get connection URI
+5. Test with Compass
+6. Use the URI from Kafka Connect or your code
+
+Why?
+
+Because you need a scalable, managed database:
+
+- to store joined or transformed streaming data (e.g. orders + payments)
+- to allow dashboards and queries over that real-time data
+- without managing servers yourself.
 
 
 
