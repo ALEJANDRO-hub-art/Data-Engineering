@@ -99,7 +99,37 @@ The steps are basically: create an Atlas cluster → open network access → cre
 
 Let’s go through it step by step: what, how, and why.
 
+1. **Create a MongoDB Atlas account & project**
 
+What: Sign up or log in to MongoDB Atlas and create a project.
+
+How
+
+- Go to the Atlas website and sign in
+- Click New Project → give it a name (e.g. Kafka_McDonalds)
+
+Why
+
+- A project is the logical container where your clusters (databases), users and network settings live. You need this before you can create any MongoDB database.
+
+
+2. **Create a free/shared cluster (the actual database server)**
+
+What
+
+Create a multi-cloud hosted MongoDB cluster (the “Database Multi Cloud Service” mentioned in your notes).
+
+How
+
+- Inside the project click Build a Database
+- Choose Free / Shared (M0) or a small paid tier
+- Pick a cloud provider + region (AWS/GCP/Azure, usually same region as your Kafka cluster)
+- Cluster name, 'mongo-db-cluster'
+- Click Create
+
+Why
+
+This cluster is where your collections will live, and eventually where Kafka Connect MongoDB Sink will write the joined stream (like JoinedDB from your McDonald’s diagram) into a collection for dashboards.
 
 
 
