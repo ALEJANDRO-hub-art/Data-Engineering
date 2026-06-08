@@ -78,7 +78,7 @@ WITHIN 5 MINUTES
 WITHIN 1 HOUR
 BEFORE, AFTER, BETWEEN
 
-✅The JOIN result appears only when both streams have matching keys inside the window
+- ✅The JOIN result appears only when both streams have matching keys inside the window
 
 ⭐ This is exactly how Uber eats, McDonalds, Doordash, Amazon, etc, correlate:
 - Orders
