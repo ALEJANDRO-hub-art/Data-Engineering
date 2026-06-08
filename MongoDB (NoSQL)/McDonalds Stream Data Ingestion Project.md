@@ -257,7 +257,14 @@ Because you need a scalable, managed database:
 - to allow dashboards and queries over that real-time data
 - without managing servers yourself.
 
+-------------------------------------------------------------------------------------------------------------
+
 Go to Confluent Kafka and create the following producer, create the sql commands and upload the 2 schemas for orders and payments.
+
+<img width="676" height="216" alt="image" src="https://github.com/user-attachments/assets/c8feb3a2-987f-4ca7-8ec7-6ce2f705961b" />
+
+Go to Confluent Kafka and do the following with the orders_avro_schema.json and payments_avro_schema.json
+
 
 
 
