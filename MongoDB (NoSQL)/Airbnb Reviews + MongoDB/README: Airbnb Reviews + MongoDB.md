@@ -74,16 +74,16 @@ Now the aggregation queries will return results 🎉
 - Go to:
   - MongoDB Atlas → Database → Browse Collections
 - Create or select:
-  -Database: airbnb
-  -Collection: reviews
+  - Database: airbnb
+  - Collection: reviews
 
 **Step 2 — Import the JSON file**
 Open MongoDB Compass.
 - Click:
-  -New Connection
-  -Paste your MongoDB Atlas connection string.
+  - New Connection
+  - Paste your MongoDB Atlas connection string.
 - Then go to:
-  -airbnb → reviews → Add Data → Import JSON or CSV file
+  - airbnb → reviews → Add Data → Import JSON or CSV file
 - Select: airbnb_reviews.json
 - Choose: File Type: JSON
 - Click: Import
