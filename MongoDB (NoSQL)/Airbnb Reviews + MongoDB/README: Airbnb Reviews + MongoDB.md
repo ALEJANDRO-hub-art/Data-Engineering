@@ -61,6 +61,32 @@ Verify MongoDB Compass shows hundreds/thousands of documents
 
 Now the aggregation queries will return results 🎉
 
+<img width="668" height="540" alt="image" src="https://github.com/user-attachments/assets/256c0b2d-dfdd-48c1-88f3-571e81da340c" />
+
+<img width="867" height="215" alt="image" src="https://github.com/user-attachments/assets/e5a73a69-c90f-4dfe-98cf-593c5d41d956" />
+
+------------------------------------------------------------------------------------------------------
+
+<img width="626" height="445" alt="image" src="https://github.com/user-attachments/assets/346073e3-be9d-4ff3-a356-f7ccedd24f5c" />
+
+## Step-by-step GUI execution
+**Step 1 — Open MongoDB Atlas**
+- Go to:
+  - MongoDB Atlas → Database → Browse Collections
+- Create or select:
+  -Database: airbnb
+  -Collection: reviews
+
+**Step 2 — Import the JSON file**
+Open MongoDB Compass.
+- Click:
+  -New Connection
+  -Paste your MongoDB Atlas connection string.
+- Then go to:
+  -airbnb → reviews → Add Data → Import JSON or CSV file
+- Select: airbnb_reviews.json
+- Choose: File Type: JSON
+- Click: Import
 
 
 
