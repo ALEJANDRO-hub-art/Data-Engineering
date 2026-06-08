@@ -185,7 +185,28 @@ This URI is what you will paste into:
 It tells the client where the cluster is and how to authenticate.
 
 
-**6. Use the Atlas cluster as the sink for Kafka (how it ties back to your class notes)**
+**6. (Optional) Test with MongoDB Compass**
+
+💡 What: Use MongoDB Compass GUI to verify you can connect and create a DB/collection.
+
+⚙️ How:
+
+- Install MongoDB Compass locally
+- Open it, paste the Atlas URI, click Connect
+- Create a database like mcd_db and a collection like orders_joined
+- Insert a sample document to confirm everything works
+
+💭 Why:
+
+Before wiring Kafka or any code, you verify:
+
+- network access is correct
+- user credentials work
+- cluster is healthy
+
+If Compass can’t connect, your code/Kafka won’t either.
+
+**7. Use the Atlas cluster as the sink for Kafka (how it ties back to your class notes)**
 
 In your earlier diagrams you had:
 
