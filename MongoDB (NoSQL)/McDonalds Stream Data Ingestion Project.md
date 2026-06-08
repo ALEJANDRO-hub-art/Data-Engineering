@@ -99,7 +99,7 @@ The steps are basically: create an Atlas cluster → open network access → cre
 
 Let’s go through it step by step: what, how, and why.
 
-1. **Create a MongoDB Atlas account & project**
+**1. Create a MongoDB Atlas account & project**
 
 What: Sign up or log in to MongoDB Atlas and create a project.
 
@@ -113,7 +113,7 @@ Why
 - A project is the logical container where your clusters (databases), users and network settings live. You need this before you can create any MongoDB database.
 
 
-2. **Create a free/shared cluster (the actual database server)**
+**2. Create a free/shared cluster (the actual database server)**
 
 What
 
