@@ -46,6 +46,10 @@ Develop a Python-based application that integrates Kafka and MongoDB to process 
 - Implement endpoints for filtering specific JSON documents and for aggregating data.
 - More assumptions & use-cases can be considered for API creation, make sure to list down your assumptions & use-cases in the submission document.
 
+--------------------------------------------------------------------------------------------------------------------
+
+
+
 **8. Deliverables**
 - Python scripts for Kafka producer and consumer.
 - Sample logistics data CSV file.
