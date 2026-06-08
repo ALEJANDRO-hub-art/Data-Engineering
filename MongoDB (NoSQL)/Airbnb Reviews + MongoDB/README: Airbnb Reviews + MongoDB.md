@@ -113,6 +113,9 @@ You should see:
 - mongo_connect.py
 - ksql_db_commands.sql
 
+<img width="629" height="228" alt="image" src="https://github.com/user-attachments/assets/c5dba729-809f-42fd-8df9-c7cdb6728001" />
+
+
 
 
 
