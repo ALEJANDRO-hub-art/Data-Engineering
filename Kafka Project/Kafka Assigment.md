@@ -105,8 +105,44 @@ testing the producer, so that it can fetch incremental data based on the
 last_updated timestamp.
 
 ------------------------------------------------------------------------------------------------
-
+## 🔄 Step 1
 <img width="941" height="484" alt="image" src="https://github.com/user-attachments/assets/191ec40f-69a0-488c-b1f5-77393525535c" />
+
+## 🔄 Step 2
+In here we write a Kafka producer Python file (extension .py) with the characteristics asked
+above in the Step 2 detailed explanation.
+
+At beginning of the scrypt you import:
+- Utilities.
+- confluent_kafka clien libraries.
+- mysql.connector for DB connection.
+- json for config file.
+- AvroSerializer to serialize data to Avro format.
+
+def delivery_report (err, msg):
+This function runs after kafka sends a message.
+It prints:
+- success - which topic/partition/offset.
+- failure - error message.
+
+kafka_config = { ... }
+Here we define how to reach kafka:
+- bootstrap server (Confluent Cloud broker).
+- SASL username/password
+- SSL authentication
+
+schema_registry_client = SchemaRegistryClient ({...})
+Connects to Confluent Schema Registry:
+- stores and manages Avro schemas
+- validates messages before publishing
+- ensures schema evolution compatibility
+
+Our python scrypt needs to use MySQL connector to fetch data from the MySQL table.
+- connection = mysql.connector.connect(...)
+	host, user, password, database
+- cursor = connection.cursor()
+
+
 
 
 
