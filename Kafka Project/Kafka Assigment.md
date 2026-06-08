@@ -10,11 +10,11 @@ files.
 
 ## 🛠 Tech Stack
 Tools Required:
-● Python 3.7 or later
-● Confluent Kafka Python client
-● MySQL Database
-● Apache Avro
-● A suitable IDE for coding (e.g., PyCharm, Visual Studio Code)
+- Python 3.7 or later
+- Confluent Kafka Python client
+- MySQL Database
+- Apache Avro
+- A suitable IDE for coding (e.g., PyCharm, Visual Studio Code)
 
 ## 📖 Background:
 You are working in a fictitious e-commerce company called "BuyOnline"
@@ -36,67 +36,67 @@ real-time analytics and business intelligence.
 ➔ last_updated - TIMESTAMP
 
 ### 🔄 Step 2: Kafka Producer
-● Write a Kafka producer in Python that uses a MySQL connector to
+- Write a Kafka producer in Python that uses a MySQL connector to
 fetch data from the MySQL table.
-● In your producer code, maintain a record of the last read
+- In your producer code, maintain a record of the last read
 timestamp. Each time you fetch data, use a SQL query to get
 records where the last_updated timestamp is greater than the last
 read timestamp.
-● Serialize the data into Avro format and publish the data to a Kafka
+- Serialize the data into Avro format and publish the data to a Kafka
 topic named "product_updates". This topic should be configured
 with 10 partitions.
-● Use the product ID as the key when producing messages. This will
+- Use the product ID as the key when producing messages. This will
 ensure that all updates for the same product end up in the same
 partition.
-● Update the last read timestamp after each successful fetch.
+- Update the last read timestamp after each successful fetch.
 
 ## 🔄 Step 3: Kafka Consumer Group and Data Transformation
-● Write a Kafka consumer in Python and set it up as a consumer
+- Write a Kafka consumer in Python and set it up as a consumer
 group of 5 consumers.
-● Each consumer should read data from the "product_updates"
+- Each consumer should read data from the "product_updates"
 topic.
-● Deserialize the Avro data back into a Python object.
-● Implement data transformation logic. For example:
-● Change the category column to uppercase.
-● Apply some business logic to update the price column, such as
+- Deserialize the Avro data back into a Python object.
+- Implement data transformation logic. For example:
+- Change the category column to uppercase.
+- Apply some business logic to update the price column, such as
 applying a discount if a particular product falls under a specific
 category.
 
 ## 🔄 Step 4: Writing Transformed Data to JSON Files
-● Each consumer should convert the transformed Python object into
+- Each consumer should convert the transformed Python object into
 a JSON string and append the JSON string to a separate JSON
 file. Make sure to open the file in append mode.
-● Also, ensure each new record is written in a new line for ease of
+- Also, ensure each new record is written in a new line for ease of
 reading.
-● Close the file after writing to make sure all data is saved properly.
+- Close the file after writing to make sure all data is saved properly.
 
 ## 📦 Deliverables:
-● The source code for the Kafka producer and consumer group in
+- The source code for the Kafka producer and consumer group in
 Python.
-● SQL queries used for incremental data fetch from MySQL.
-● Avro schema used for data serialization.
-● Data transformation logic.
-● The resulting JSON files with appended records.
-● Documentation explaining how to run and test the system.
-● Screenshots demonstrating the successful running of your
+- SQL queries used for incremental data fetch from MySQL.
+- Avro schema used for data serialization.
+- Data transformation logic.
+- The resulting JSON files with appended records.
+- Documentation explaining how to run and test the system.
+- Screenshots demonstrating the successful running of your
 application.
 
 ## ✅ Evaluation Criteria:
 Your assignment will be evaluated based on the following:
-● Correctness of the Python code.
-● Use of Avro for data serialization.
-● Successful incremental fetching of data from the MySQL table.
-● Successful writing of data to the Kafka topic with proper
+- Correctness of the Python code.
+- Use of Avro for data serialization.
+- Successful incremental fetching of data from the MySQL table.
+- Successful writing of data to the Kafka topic with proper
 partitioning.
-● Successful setup of a Kafka consumer group.
-● Correct transformation and writing of data to separate JSON files.
-● Quality of your documentation.
+- Successful setup of a Kafka consumer group.
+- Correct transformation and writing of data to separate JSON files.
+- Quality of your documentation.
 
 ## 🏆 Bonus Points:
 For bonus points, you can also provide:
-● A Dockerfile to run your application.
-● Unit tests for your Python code.
-● Any advanced data processing, like filtering or transforming the
+- A Dockerfile to run your application.
+- Unit tests for your Python code.
+- Any advanced data processing, like filtering or transforming the
 data before sending it to the downstream system.
 
 ## 📝 Additional Instructions:
