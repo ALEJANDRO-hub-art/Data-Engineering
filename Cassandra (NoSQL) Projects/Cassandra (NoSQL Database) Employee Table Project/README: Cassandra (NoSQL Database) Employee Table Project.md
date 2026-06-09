@@ -10,7 +10,7 @@ Based on the uploaded files:
 
 What the Project Demonstrates
 
-- **1.** Connect to Cassandra cluster
+**1.** Connect to Cassandra cluster
 - **2.** Use a keyspace (employee_keyspace)
 - **3.** Create an employee table
 - **4.** Alter table (add/drop columns)
