@@ -81,8 +81,15 @@ The assignment specifically asks you to load olist_orders_dataset.csv, publish r
 
 <img width="637" height="562" alt="image" src="https://github.com/user-attachments/assets/d86a3f71-ff3d-433d-8a99-c5f0a8ad67e1" />
 
+<img width="658" height="455" alt="image" src="https://github.com/user-attachments/assets/0de453ea-d895-4486-8793-27f4fa533b79" />
 
+Inside the **consumer.py** we have it here:
 
+<img width="616" height="381" alt="image" src="https://github.com/user-attachments/assets/89b7174b-46aa-4caa-861d-adf8f6f1bbef" />
+
+Inside the **cassandra_table_create.py** we have it here:
+
+<img width="667" height="445" alt="image" src="https://github.com/user-attachments/assets/34286496-e92e-4f63-86f9-719d4bd67bbf" />
 
 
 
