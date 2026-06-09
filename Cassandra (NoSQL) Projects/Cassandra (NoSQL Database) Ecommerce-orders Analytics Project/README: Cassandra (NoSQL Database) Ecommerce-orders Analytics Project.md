@@ -69,6 +69,8 @@ Test your data pipeline end-to-end. Run your Kafka producer to ingest the data, 
 Submit your Python scripts for the Kafka producer and consumer, the CQL commands used to create the keyspace and table in Cassandra, and a detailed report explaining the pipeline, any challenges faced, and how they were addressed.
 
 
+--------------------------------------------------------------------------------------------------------------------------
+
 
 
 
