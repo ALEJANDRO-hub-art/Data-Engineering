@@ -60,5 +60,16 @@ The following are the Project files.
 
 <img width="839" height="289" alt="image" src="https://github.com/user-attachments/assets/09727bc0-b8bb-4209-bb2a-7e96bc62b7b1" />
 
+The website GUI for this project is mainly:
+
+- Confluent Cloud: Kafka topic + Schema Registry
+- MongoDB Atlas: MongoDB database/collection
+- Docker Desktop: run the consumer container
+- Your browser/Postman: test the API endpoints
+
+Important: your files contain hardcoded passwords/API keys. Rotate them before publishing to GitHub.
+
+
+
 
 
