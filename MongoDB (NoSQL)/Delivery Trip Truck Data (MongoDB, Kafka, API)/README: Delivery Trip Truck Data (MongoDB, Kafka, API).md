@@ -110,6 +110,7 @@ Steps:
 1. Sign in to MongoDB Atlas.
 2. Create a Project.
 3. Create a free cluster.
+
    Click:
    
 <img width="109" height="35" alt="image" src="https://github.com/user-attachments/assets/844b041e-bc8e-43cb-8083-312b02096a42" />
