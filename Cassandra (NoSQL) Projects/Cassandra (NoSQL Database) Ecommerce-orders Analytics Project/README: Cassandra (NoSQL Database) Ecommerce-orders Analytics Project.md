@@ -38,19 +38,19 @@ Design a table, named **'orders'**, within the **'ecommerce'** keyspace. This ta
 
 The data model should have **'customer_id'** as the partition key and **'order_id'** and **'order_purchase_timestamp'** as clustering keys.
 
-CREATE TABLE ecommerce.orders (
-    order_id uuid,
-    customer_id uuid,
-    order_status text,
-    order_purchase_timestamp timestamp,
-    order_approved_at timestamp,
-    order_delivered_carrier_date timestamp,
-    order_delivered_customer_date timestamp,
-    order_estimated_delivery_date timestamp,
-    OrderHour int,
-    OrderDayOfWeek text,
-    PRIMARY KEY ((**customer_id**), **order_id**, **order_purchase_timestamp)**
-);
+- CREATE TABLE ecommerce.orders (
+    - order_id uuid,
+    - customer_id uuid,
+    - order_status text,
+    - order_purchase_timestamp timestamp,
+    - order_approved_at timestamp,
+    - order_delivered_carrier_date timestamp,
+    - order_delivered_customer_date timestamp,
+    - order_estimated_delivery_date timestamp,
+    - OrderHour int,
+    - OrderDayOfWeek text,
+    - PRIMARY KEY ((**customer_id**), **order_id**, **order_purchase_timestamp)**
+- );
 
 **6. Kafka Consumer and Data Transformation**
 
