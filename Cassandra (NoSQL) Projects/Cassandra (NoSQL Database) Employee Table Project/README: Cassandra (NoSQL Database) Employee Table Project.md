@@ -11,7 +11,7 @@ Based on the uploaded files:
 <img width="597" height="160" alt="image" src="https://github.com/user-attachments/assets/4722c223-e179-42b9-a339-5be7a94c1044" />
 
 <img width="614" height="335" alt="image" src="https://github.com/user-attachments/assets/29d54f3b-7cd4-4f02-8bbb-f177021c930e" />
-
+ 
 
 GUI steps
 
