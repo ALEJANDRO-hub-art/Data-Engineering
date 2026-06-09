@@ -84,14 +84,31 @@ USE employee_keyspace;
 Create table:
 
 CREATE TABLE employee (
+
   emp_id int,
+  
   emp_name varchar,
+  
   emp_salary int,
+  
   emp_dept varchar,
+  
   emp_email varchar,
+  
   emp_phone varchar,
+  
   PRIMARY KEY (emp_id, emp_dept)
+  
 );
+
+
+
+
+
+
+
+
+
 
 
 
