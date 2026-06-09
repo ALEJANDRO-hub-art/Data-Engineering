@@ -28,7 +28,7 @@ The data is received in CSV format and needs to be processed in real-time to ext
 
 **4. Apache Cassandra Setup**
 
-Install and set up Apache Cassandra. Create a keyspace, named 'ecommerce', for storing the e-commerce data.
+Install and set up Apache Cassandra. Create a **keyspace**, named **'ecommerce'**, for storing the e-commerce data.
 
 **5. Cassandra Data Model**
 
