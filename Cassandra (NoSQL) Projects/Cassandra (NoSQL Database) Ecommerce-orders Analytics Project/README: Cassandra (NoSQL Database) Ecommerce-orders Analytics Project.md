@@ -1,4 +1,4 @@
-I have the following project Cassandra (NoSQL Database) Ecommerce-orders Analytics Project.
+I have the following project **Cassandra (NoSQL Database) Ecommerce-orders Analytics Project.**
 
 <img width="718" height="309" alt="image" src="https://github.com/user-attachments/assets/dbc58f0c-6b4a-4e5b-a350-2e74851c374a" />
 
@@ -71,6 +71,15 @@ Submit your Python scripts for the Kafka producer and consumer, the CQL commands
 
 --------------------------------------------------------------------------------------------------------------------------
 
+### Project goal
+
+This project is a real-time e-commerce orders pipeline:
+
+**CSV file → Kafka Producer → Kafka topic ecommerce-orders → Kafka Consumer → Cassandra table ecommerce.orders**
+
+The assignment specifically asks you to load olist_orders_dataset.csv, publish records to Kafka, consume them, transform timestamps into hour/day fields, and insert them into Cassandra with quorum consistency.
+
+<img width="637" height="562" alt="image" src="https://github.com/user-attachments/assets/d86a3f71-ff3d-433d-8a99-c5f0a8ad67e1" />
 
 
 
