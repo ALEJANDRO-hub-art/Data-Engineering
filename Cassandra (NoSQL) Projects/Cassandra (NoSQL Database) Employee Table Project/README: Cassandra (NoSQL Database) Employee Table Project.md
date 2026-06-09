@@ -11,15 +11,15 @@ Based on the uploaded files:
 What the Project Demonstrates
 
 **1.** Connect to Cassandra cluster
-- **2.** Use a keyspace (employee_keyspace)
-- **3.** Create an employee table
-- **4.** Alter table (add/drop columns)
-- **5.** Insert employee records
-- **6.** Query records
-- **7.** Aggregate functions (COUNT, MAX)
-- **8.** Filtering with WHERE
-- **9.** GROUP BY examples
-- **10.** Drop table operations
+**2.** Use a keyspace (employee_keyspace)
+**3.** Create an employee table
+**4.** Alter table (add/drop columns)
+**5.** Insert employee records
+**6.** Query records
+**7.** Aggregate functions (COUNT, MAX)
+**8.** Filtering with WHERE
+**9.** GROUP BY examples
+**10.** Drop table operations
 
 
 
