@@ -109,7 +109,7 @@ Insert records:
 
 <img width="593" height="284" alt="image" src="https://github.com/user-attachments/assets/437de73a-97cb-43ef-bb36-6b1e5b541720" />
 
-
+So all of this is using Docker
 
 
 
