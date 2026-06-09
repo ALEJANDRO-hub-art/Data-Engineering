@@ -14,7 +14,9 @@ GUI steps
 
 **1. Open Docker Desktop**
 
-Open Docker Desktop. Make sure it says Docker Engine running. Leave Docker Desktop open
+- Open Docker Desktop. 
+- Make sure it says Docker Engine running.
+- Leave Docker Desktop open
 
 **2. Open the project folder**
 
