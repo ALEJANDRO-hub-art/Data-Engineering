@@ -187,13 +187,13 @@ Open terminal in the folder and run:
 
 Do:
 
-cd "C:\Users\Usuario\Desktop\Cassandra_Demo_Project"
+- cd "C:\Users\Usuario\Desktop\Cassandra_Demo_Project"
 
 
-<img width="253" height="59" alt="image" src="https://github.com/user-attachments/assets/5edfe5fd-dad5-484c-8fee-984cf2e82f0c" />
+- <img width="253" height="59" alt="image" src="https://github.com/user-attachments/assets/5edfe5fd-dad5-484c-8fee-984cf2e82f0c" />
 
 
-<img width="618" height="336" alt="image" src="https://github.com/user-attachments/assets/385c762e-1504-4b54-b2f8-d4e050e225af" />
+- <img width="618" height="336" alt="image" src="https://github.com/user-attachments/assets/385c762e-1504-4b54-b2f8-d4e050e225af" />
 
 
 
