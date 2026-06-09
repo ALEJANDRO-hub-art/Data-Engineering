@@ -488,35 +488,35 @@ Open CMD or PowerShell inside your project folder:
 
 cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\6 MongoDB (NoSQL)\Module 4 - MongoDB Class 2\2 Class Assignment and Solutions\MongoDB Assignment  1 Solution"
 
-Install packages:
+*Install packages:*
 
 pip install pandas pymongo flask confluent-kafka fastavro requests
 
-Run producer:
+*Run producer:*
 
 python logistics_data_producer.py
 
 Expected result: records are published to Kafka topic logistics_data.
 
-Run consumer:
+*Run consumer:*
 
 python logistics_data_consumer.py
 
 Expected result: records are consumed from Kafka and inserted into MongoDB.
 
-Run API 1:
+*Run API 1:*
 
 python logistics_data_api1.py
 
-Test in browser:
+*Test in browser:*
 
 http://localhost:5000/api/filter?vehicle_no=KA590408
 
-Run API 2 in another terminal:
+*Run API 2 in another terminal:*
 
 python logistics_data_api2.py
 
-Test in browser:
+*Test in browser:*
 
 http://localhost:5001/api/count
 
@@ -536,10 +536,10 @@ This runs the Kafka consumer inside Docker.
 
 This section starts after you have already completed:
 
-✅ MongoDB Atlas setup
-✅ Confluent Cloud setup
-✅ Downloaded all project files
-✅ Installed Docker Desktop
+- ✅ MongoDB Atlas setup
+- ✅ Confluent Cloud setup
+- ✅ Downloaded all project files
+- ✅ Installed Docker Desktop
 
 Your Docker container will run the Kafka Consumer that reads from the logistics_data topic and writes into MongoDB Atlas.
 
@@ -613,10 +613,11 @@ Inside Command Prompt:
 **docker build -t consumer_image**
 
 Explanation:
-docker build     = create image
--t               = image tag
-consumer_image   = image name
-.                = current folder
+
+- docker build     = create image
+- -t               = image tag
+- consumer_image   = image name
+- .                = current folder
 
 Expected:
 Successfully built xxxxx
