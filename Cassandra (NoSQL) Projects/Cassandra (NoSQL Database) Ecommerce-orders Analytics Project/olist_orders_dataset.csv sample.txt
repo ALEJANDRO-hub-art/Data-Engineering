@@ -1,0 +1,10 @@
+The columns name of the olist_orders_dataset.csv file are:
+
+order_id, customer_id, order_status, order_purchase_timestamp, order_approved_at, order_delivered_carrier_date, 
+order_delivered_customer_date, order_estimated_delivery_date
+
+The following are 3 rows as sample"
+e481f51cbdc54678b7cc49136f2d6af7	9ef432eb6251297304e76186b10a928d	delivered	10/2/2017 10:56	10/2/2017 11:07	10/4/2017 19:55	10/10/2017 21:25	10/18/2017 0:00
+53cdb2fc8bc7dce0b6741e2150273451	b0830fb4747a6c6d20dea0b8c802d7ef	delivered	7/24/2018 20:41	7/26/2018 3:24	7/26/2018 14:31	8/7/2018 15:27	8/13/2018 0:00
+47770eb9100c2d0c44946d9cf07ec65d	41ce2a54c0b03bf3443c3d931a367089	delivered	8/8/2018 8:38	8/8/2018 8:55	8/8/2018 13:50	8/17/2018 18:06	9/4/2018 0:00
+
