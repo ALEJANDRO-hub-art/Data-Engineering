@@ -18,12 +18,19 @@ Make sure it says Docker Engine running
 Leave Docker Desktop open
 
 **2. Open the project folder**
+
 Open File Explorer
+
 Go to your **Cassandra_Demo_Project** folder. In our case is **C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\7 Cassandra (NoSQL)\Module 4 - Cassandra Class 2\Step 1\Cassandra_Code main**
+
 Right-click inside the folder
+
 Click Open in Terminal
+
 or
+
 Open cmd prompt and do:
+
 cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\7 Cassandra (NoSQL)\Module 4 - Cassandra Class 2\Step 1\Cassandra_Code main"
 
 **3. Start Cassandra**
