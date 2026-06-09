@@ -69,6 +69,61 @@ The website GUI for this project is mainly:
 
 Important: your files contain hardcoded passwords/API keys. Rotate them before publishing to GitHub.
 
+**1. What each uploaded file does**
+
+**logistics_data_producer.py**
+Reads delivery_trip_truck_data.csv, serializes rows with Avro, and publishes them to the Kafka topic logistics_data.
+
+**logistics_data_consumer.py**
+Consumes Avro messages from Kafka topic logistics_data, validates bookingID, and inserts valid records into MongoDB collection gds_db.logistics_data.
+
+**logistics_data_api1.py**
+Flask API on port 5000. Endpoint:
+/api/filter?vehicle_no=KA590408
+Filters MongoDB records by vehicle number.
+
+**logistics_data_api2.py**
+Flask API on port 5001. Endpoint:
+/api/count
+Counts vehicles grouped by GpsProvider.
+
+**Delivery_trip_truck_data Sample.txt**
+Shows the expected CSV columns and sample logistics data rows.
+
+**Dockerfile**
+Builds a Python container for the Kafka consumer.
+
+**docker-compose.yml**
+Runs the consumer container with Kafka environment variables.
+
+**3. GUI setup steps**
+A. MongoDB Atlas GUI
+
+Website:
+
+<img width="200" height="42" alt="image" src="https://github.com/user-attachments/assets/564d877b-75be-4ee5-8294-14668b003b00" />
+
+
+Steps:
+
+1. Sign in to MongoDB Atlas.
+2. Create a free cluster.
+3. Go to **Database Access.**
+4. Create a database user.
+5. Go to **Network Access.**
+6. Add your IP address, or temporarily use:
+
+<img width="134" height="41" alt="image" src="https://github.com/user-attachments/assets/3a42d1f3-cace-4691-ab5b-cb194e046992" />
+
+7. Go to **Database → Connect → Drivers.**
+8. Copy your MongoDB connection string.
+9. Database name used by your code:
+
+<img width="180" height="38" alt="image" src="https://github.com/user-attachments/assets/d59febce-683f-443e-bc29-02c156e298e7" />
+
+10. Collection name used by your code:
+
+<img width="157" height="36" alt="image" src="https://github.com/user-attachments/assets/0e69e433-c4b8-444c-bb25-64d6f44fdf9a" />
 
 
 
