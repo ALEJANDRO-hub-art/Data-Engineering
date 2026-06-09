@@ -97,7 +97,7 @@ Builds a Python container for the Kafka consumer.
 Runs the consumer container with Kafka environment variables.
 
 **2. GUI setup steps**
-A. MongoDB Atlas GUI
+MongoDB Atlas GUI
 
 Website:
 
