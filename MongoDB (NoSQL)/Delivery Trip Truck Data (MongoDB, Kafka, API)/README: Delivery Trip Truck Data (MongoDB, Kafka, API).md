@@ -599,16 +599,19 @@ OK
 **Navigate to Project Folder**
 
 Example:
+
 cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\6 MongoDB (NoSQL)\Module 4 - MongoDB Class 2\2 Class Assignment and Solutions\MongoDB Assignment  1 Solution"
 
 Verify:
+
 dir
 
 You should see:
-Dockerfile
-docker-compose.yml
-logistics_data_consumer.py
-...
+
+- Dockerfile
+- docker-compose.yml
+- logistics_data_consumer.py
+- ...
 
 **Build Docker Image**
 
@@ -641,22 +644,27 @@ latest
 **Verify Image from CLI**
 
 Run:
-docker images
+
+- docker images
 
 Expected:
-REPOSITORY        TAG
-consumer_image    latest
+
+- REPOSITORY        TAG
+- consumer_image    latest
 
 **Start Docker Compose**
 
 In the same Command Prompt:
 
-docker compose up
-or
-docker-compose up
+- docker compose up
+
+- or
+
+- docker-compose up
 
 Docker Compose reads:
-docker-compose.yml
+
+- docker-compose.yml
 
 and starts the services.
 
@@ -732,37 +740,37 @@ docker compose up
 
 Instead of:
 
-docker compose up
+- docker compose up
 
 Use:
 
-docker compose up -d
+- docker compose up -d
 
 Meaning:
 
--d = detached mode
+- -d = detached mode
 
 **Container continues running after closing the terminal.**
 
 **Verify Running Containers**
 
 Run:
-docker ps
+- docker ps
 
 Expected:
-CONTAINER ID
-IMAGE
-consumer_image
-STATUS Up
+- CONTAINER ID
+- IMAGE
+- consumer_image
+- STATUS Up
 
 **Stop Containers**
 
 To stop:
-docker compose down
+- docker compose down
 
 Expected:
-Stopping containers...
-Removing containers...
+- Stopping containers...
+- Removing containers...
 
 <img width="590" height="207" alt="image" src="https://github.com/user-attachments/assets/6a8981d1-40cc-41af-9cae-a74a0fd1a273" />
 
