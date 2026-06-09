@@ -10,6 +10,9 @@ Based on the uploaded files:
 
 <img width="597" height="160" alt="image" src="https://github.com/user-attachments/assets/4722c223-e179-42b9-a339-5be7a94c1044" />
 
+<img width="614" height="335" alt="image" src="https://github.com/user-attachments/assets/29d54f3b-7cd4-4f02-8bbb-f177021c930e" />
+
+
 GUI steps
 
 **1. Open Docker Desktop**
@@ -48,6 +51,17 @@ You should see a Cassandra container running on port:
 
 - 9042
 
+**4. Enter Cassandra shell**
+
+Run:
+
+- docker exec -it cassandra-demo-project-cassandra-1 cqlsh
+
+If the container name is different, first run:
+
+- docker ps
+
+Copy the Cassandra container name.
 
 
 
