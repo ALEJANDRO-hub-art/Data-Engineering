@@ -19,9 +19,9 @@ This is a PySpark + HDFS + Hive project for marketing campaign analytics.
 
 The project needs these 3 JSON files:
 
-ad_campaigns_data.json
-user_profile_data.json
-store_data.json
+- ad_campaigns_data.json
+- user_profile_data.json
+- store_data.json
 
 They are the input data files described in the PDF assignment.
 
