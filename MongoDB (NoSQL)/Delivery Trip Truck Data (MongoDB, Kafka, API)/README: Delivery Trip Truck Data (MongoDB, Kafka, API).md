@@ -96,7 +96,7 @@ Builds a Python container for the Kafka consumer.
 **docker-compose.yml**
 Runs the consumer container with Kafka environment variables.
 
-**3. GUI setup steps**
+**2. GUI setup steps**
 A. MongoDB Atlas GUI
 
 Website:
