@@ -108,23 +108,123 @@ Website:
 Steps:
 
 1. Sign in to MongoDB Atlas.
-2. Create a free cluster.
-3. Go to **Database Access.**
-4. Create a database user.
-5. Go to **Network Access.**
-6. Add your IP address, or temporarily use:
+2. Create a Project.
+3. Create a free cluster.
+   Click:
+   
+<img width="109" height="35" alt="image" src="https://github.com/user-attachments/assets/844b041e-bc8e-43cb-8083-312b02096a42" />
+
+Select:
+
+<img width="130" height="35" alt="image" src="https://github.com/user-attachments/assets/d381ec8a-4dd9-45ae-ac27-fa86a842c043" />
+
+Provider:
+
+<img width="91" height="28" alt="image" src="https://github.com/user-attachments/assets/d6de06a5-ab83-4db9-a9d5-813d0ac1c819" />
+
+Region:
+
+<img width="109" height="38" alt="image" src="https://github.com/user-attachments/assets/ccf0c3a0-3749-40e7-a149-6c74ba2ceda3" />
+
+Cluster Name:
+
+<img width="134" height="37" alt="image" src="https://github.com/user-attachments/assets/2583563c-29a5-414a-bf41-1e16ac16f5f7" />
+
+Click:
+
+<img width="121" height="32" alt="image" src="https://github.com/user-attachments/assets/de46c4b6-4719-420b-88c9-243fb535eebb" />
+
+4. Go to **Database Access.**
+5. Create a database user.
+
+After cluster creation Atlas shows:
+
+<img width="132" height="29" alt="image" src="https://github.com/user-attachments/assets/d7179820-1db1-4e2c-9cbb-d8933f680c85" />
+
+Click:
+
+<img width="97" height="32" alt="image" src="https://github.com/user-attachments/assets/ce74c45e-56ca-4edb-800b-919616c74955" />
+
+Example:
+
+<img width="88" height="34" alt="image" src="https://github.com/user-attachments/assets/131d4c9b-5964-4914-8e21-6c7741474144" />
+
+Password:
+
+<img width="115" height="33" alt="image" src="https://github.com/user-attachments/assets/0d013418-9cc2-4b41-9953-2492fcfe604f" />
+
+(or your own)
+
+Click:
+
+<img width="107" height="34" alt="image" src="https://github.com/user-attachments/assets/b45c0bd2-da08-4205-9069-8b61a737f23f" />
+
+
+6. Go to **Network Access.**
+
+Atlas asks:
+
+<img width="214" height="35" alt="image" src="https://github.com/user-attachments/assets/4bf63b78-f891-4a13-a425-cd3780f98204" />
+
+Select:
+
+<img width="140" height="26" alt="image" src="https://github.com/user-attachments/assets/a2ced1eb-291b-4630-860f-3e58d52463e9" />
+
+Click:
+
+<img width="139" height="29" alt="image" src="https://github.com/user-attachments/assets/4c730fce-13f0-47d0-9fb2-87732d6ed994" />
+
+For testing you may use:
+
+<img width="94" height="31" alt="image" src="https://github.com/user-attachments/assets/6393cba6-aee1-443c-8295-52a1ce985584" />
+
+Click:
+
+<img width="125" height="31" alt="image" src="https://github.com/user-attachments/assets/9fbf0ad6-5391-4982-80d7-7e1d547f7a19" />
+
+7. Add your IP address, or temporarily use:
 
 <img width="134" height="41" alt="image" src="https://github.com/user-attachments/assets/3a42d1f3-cace-4691-ab5b-cb194e046992" />
 
-7. Go to **Database → Connect → Drivers.**
-8. Copy your MongoDB connection string.
-9. Database name used by your code:
+8. Go to **Database → Connect → Drivers.**
+9. Copy your MongoDB connection string.
+
+Left Menu:
+
+<img width="90" height="36" alt="image" src="https://github.com/user-attachments/assets/bcf549bd-0ead-4f60-b7c0-7fd8b2dc0954" />
+
+Click your cluster.
+
+Click:
+
+<img width="81" height="21" alt="image" src="https://github.com/user-attachments/assets/bef66d64-4be3-4776-9eed-a97ee6276e94" />
+
+Select:
+
+<img width="94" height="27" alt="image" src="https://github.com/user-attachments/assets/2772cfbd-c758-472c-ba2d-91a6d4bac6ed" />
+
+Select:
+
+<img width="100" height="25" alt="image" src="https://github.com/user-attachments/assets/a6ff03be-43b8-4bc5-b190-cacbd2ed3277" />
+
+Copy:
+
+mongodb+srv://username:password@cluster.mongodb.net/
+
+Your uploaded files already contain a connection string here:
+
+<img width="351" height="83" alt="image" src="https://github.com/user-attachments/assets/eeacec9d-4e5e-4518-ad93-2ffe030c1e56" />
+
+
+10. Database name used by your code:
 
 <img width="180" height="38" alt="image" src="https://github.com/user-attachments/assets/d59febce-683f-443e-bc29-02c156e298e7" />
 
-10. Collection name used by your code:
+11. Collection name used by your code:
 
 <img width="157" height="36" alt="image" src="https://github.com/user-attachments/assets/0e69e433-c4b8-444c-bb25-64d6f44fdf9a" />
+
+
 
 
 
