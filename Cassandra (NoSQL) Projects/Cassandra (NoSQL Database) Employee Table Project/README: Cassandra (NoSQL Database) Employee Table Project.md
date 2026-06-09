@@ -13,7 +13,7 @@ Based on the uploaded files:
 <img width="614" height="335" alt="image" src="https://github.com/user-attachments/assets/29d54f3b-7cd4-4f02-8bbb-f177021c930e" />
  
 
-GUI steps
+**GUI steps**
 
 **1. Open Docker Desktop**
 
@@ -109,7 +109,90 @@ Insert records:
 
 <img width="593" height="284" alt="image" src="https://github.com/user-attachments/assets/437de73a-97cb-43ef-bb36-6b1e5b541720" />
 
-So all of this is using Docker
+So all of this is using Docker, **lets use another option.**
+
+**Option B — Run with DataStax Astra GUI**
+
+Use this option if you want to execute the uploaded Python file mostly as-is.
+
+<img width="599" height="138" alt="image" src="https://github.com/user-attachments/assets/6fba8226-cf65-4c86-905c-ea340dd52e81" />
+
+**The file secure-connect-cassandra-demo.zip must be downloaded from Astra and placed in the same folder as the Python file.**
+
+I looked at your uploaded **Cassandra_Demo.py file**. The code is written to connect to DataStax Astra DB, not a local Docker Cassandra instance. Specifically, it expects:
+
+<img width="400" height="84" alt="image" src="https://github.com/user-attachments/assets/f0924a49-9215-4908-a201-ade1912406cc" />
+
+and uses Astra credentials.
+
+So the screenshot assumes an Astra database already exists.
+
+Step 0: **Create the Astra Database**
+
+Go to: DataStax Astra DB Console
+
+Sign in.
+
+Click: Databases
+
+Click: Create Database
+
+Fill in:
+
+- Database Name: cassandra-demo
+
+- Keyspace Name: employee_keyspace
+
+- Provider: Google Cloud (or AWS)
+
+Region: 
+
+- Choose nearest region
+
+Click: Create Database
+
+Wait until the status changes from: Pending to Active
+
+This usually takes 2–5 minutes.
+
+**Astra GUI steps**
+
+Go to DataStax Astra
+
+Open your database
+
+Click Connect
+
+Choose **Python**
+
+Download the Secure Connect Bundle
+
+Save it as:
+
+secure-connect-cassandra-demo.zip
+
+Put it in the same folder as:
+
+Cassandra_Demo.py
+
+In Astra, go to **CQL Console**
+
+Create the keyspace if it does not exist:
+
+<img width="416" height="68" alt="image" src="https://github.com/user-attachments/assets/7dbd632f-43c9-409f-befb-4da7c3aed2f9" />
+
+**Run Python file**
+
+Open terminal in the folder and run:
+
+Do:
+
+cd "C:\Users\Usuario\Desktop\Cassandra_Demo_Project"
+
+<img width="253" height="59" alt="image" src="https://github.com/user-attachments/assets/5edfe5fd-dad5-484c-8fee-984cf2e82f0c" />
+
+<img width="618" height="336" alt="image" src="https://github.com/user-attachments/assets/385c762e-1504-4b54-b2f8-d4e050e225af" />
+
 
 
 
