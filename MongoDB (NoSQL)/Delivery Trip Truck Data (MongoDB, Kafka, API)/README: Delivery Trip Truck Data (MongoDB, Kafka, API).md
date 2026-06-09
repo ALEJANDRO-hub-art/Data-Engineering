@@ -130,6 +130,7 @@ Click:
 Create Deployment
 
 **4. Go to **Database Access.****
+
 **5. Create a database user.**
 After cluster creation Atlas shows:
 Security Quickstart
