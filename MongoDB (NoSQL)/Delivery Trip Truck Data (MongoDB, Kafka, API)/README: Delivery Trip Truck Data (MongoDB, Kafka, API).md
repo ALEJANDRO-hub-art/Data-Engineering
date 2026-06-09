@@ -107,146 +107,659 @@ Website:
 
 Steps:
 
-1. Sign in to MongoDB Atlas.
-2. Create a Project.
-3. Create a free cluster.
+**1. Sign in to MongoDB Atlas.**
+**2. Create a Project.**
+**3. Create a free cluster.**
 
-   Click:
-   
-<img width="109" height="35" alt="image" src="https://github.com/user-attachments/assets/844b041e-bc8e-43cb-8083-312b02096a42" />
+Click:
+Build a Database
 
 Select:
-
-<img width="130" height="35" alt="image" src="https://github.com/user-attachments/assets/d381ec8a-4dd9-45ae-ac27-fa86a842c043" />
+M0 Sandbox (FREE)
 
 Provider:
-
-<img width="91" height="28" alt="image" src="https://github.com/user-attachments/assets/d6de06a5-ab83-4db9-a9d5-813d0ac1c819" />
+AWS
 
 Region:
-
-<img width="109" height="38" alt="image" src="https://github.com/user-attachments/assets/ccf0c3a0-3749-40e7-a149-6c74ba2ceda3" />
+Closest to you
 
 Cluster Name:
-
-<img width="134" height="37" alt="image" src="https://github.com/user-attachments/assets/2583563c-29a5-414a-bf41-1e16ac16f5f7" />
+logistics-cluster
 
 Click:
+Create Deployment
 
-<img width="121" height="32" alt="image" src="https://github.com/user-attachments/assets/de46c4b6-4719-420b-88c9-243fb535eebb" />
-
-4. Go to **Database Access.**
-5. Create a database user.
-
+**4. Go to **Database Access.****
+**5. Create a database user.**
 After cluster creation Atlas shows:
-
-<img width="132" height="29" alt="image" src="https://github.com/user-attachments/assets/d7179820-1db1-4e2c-9cbb-d8933f680c85" />
+Security Quickstart
 
 Click:
-
-<img width="97" height="32" alt="image" src="https://github.com/user-attachments/assets/ce74c45e-56ca-4edb-800b-919616c74955" />
-
+Username
 Example:
-
-<img width="88" height="34" alt="image" src="https://github.com/user-attachments/assets/131d4c9b-5964-4914-8e21-6c7741474144" />
+admin
 
 Password:
-
-<img width="115" height="33" alt="image" src="https://github.com/user-attachments/assets/0d013418-9cc2-4b41-9953-2492fcfe604f" />
-
+Password123!
 (or your own)
 
 Click:
+Create User
 
-<img width="107" height="34" alt="image" src="https://github.com/user-attachments/assets/b45c0bd2-da08-4205-9069-8b61a737f23f" />
-
-
-6. Go to **Network Access.**
+**6. Go to **Network Access.****
 
 Atlas asks:
-
-<img width="214" height="35" alt="image" src="https://github.com/user-attachments/assets/4bf63b78-f891-4a13-a425-cd3780f98204" />
+Where would you like to connect from?
 
 Select:
-
-<img width="140" height="26" alt="image" src="https://github.com/user-attachments/assets/a2ced1eb-291b-4630-860f-3e58d52463e9" />
+My Local Environment
 
 Click:
-
-<img width="139" height="29" alt="image" src="https://github.com/user-attachments/assets/4c730fce-13f0-47d0-9fb2-87732d6ed994" />
+Add Current IP Address
 
 For testing you may use:
-
-<img width="94" height="31" alt="image" src="https://github.com/user-attachments/assets/6393cba6-aee1-443c-8295-52a1ce985584" />
+0.0.0.0/0
 
 Click:
+Finish and Close
 
-<img width="125" height="31" alt="image" src="https://github.com/user-attachments/assets/9fbf0ad6-5391-4982-80d7-7e1d547f7a19" />
-
-7. Add your IP address, or temporarily use:
-
-<img width="134" height="41" alt="image" src="https://github.com/user-attachments/assets/3a42d1f3-cace-4691-ab5b-cb194e046992" />
-
-8. Go to **Database → Connect → Drivers.**
-9. Copy your MongoDB connection string.
+**7. Add your IP address, or temporarily use:**
+**8. Go to **Database → Connect → Drivers.****
+**9. Copy your MongoDB connection string.**
 
 Left Menu:
-
-<img width="90" height="36" alt="image" src="https://github.com/user-attachments/assets/bcf549bd-0ead-4f60-b7c0-7fd8b2dc0954" />
+Database
 
 Click your cluster.
 
 Click:
-
-<img width="81" height="21" alt="image" src="https://github.com/user-attachments/assets/bef66d64-4be3-4776-9eed-a97ee6276e94" />
-
-Select:
-
-<img width="94" height="27" alt="image" src="https://github.com/user-attachments/assets/2772cfbd-c758-472c-ba2d-91a6d4bac6ed" />
+Connect
 
 Select:
+Drivers
 
-<img width="100" height="25" alt="image" src="https://github.com/user-attachments/assets/a6ff03be-43b8-4bc5-b190-cacbd2ed3277" />
+Select:
+Python
 
 Copy:
 
-mongodb+srv://username:password@cluster.mongodb.net/
+<img width="296" height="32" alt="image" src="https://github.com/user-attachments/assets/f159a6c6-d1de-42f0-86d0-4dc44fc3acf7" />
 
 Your uploaded files already contain a connection string here:
 
-<img width="351" height="83" alt="image" src="https://github.com/user-attachments/assets/eeacec9d-4e5e-4518-ad93-2ffe030c1e56" />
+<img width="426" height="84" alt="image" src="https://github.com/user-attachments/assets/a73c5ecc-f3f7-4136-b62c-e3c99b64c86f" />
 
 
-10. Database name used by your code:
+**10. Database name used by your code:**
 
-<img width="180" height="38" alt="image" src="https://github.com/user-attachments/assets/d59febce-683f-443e-bc29-02c156e298e7" />
+gds_db
 
-11. Collection name used by your code:
+**11. Collection name used by your code:**
 
-<img width="157" height="36" alt="image" src="https://github.com/user-attachments/assets/0e69e433-c4b8-444c-bb25-64d6f44fdf9a" />
+logistics_data
 
 Open:
+Database
 
-<img width="78" height="25" alt="image" src="https://github.com/user-attachments/assets/aad27d2e-fda3-442f-8d8b-01beeb538f4c" />
+Click:
+Browse Collections
 
-CLick:
-
-<img width="121" height="33" alt="image" src="https://github.com/user-attachments/assets/3f8531f4-29b7-4251-bae9-21aa937ce9ab" />
+Click:
+Add My Own Data
 
 Database Name:
-
-<img width="79" height="25" alt="image" src="https://github.com/user-attachments/assets/d17550fa-5c85-4e1d-9275-6be341dbffde" />
+gds_db
 
 Collection Name:
-
-<img width="90" height="23" alt="image" src="https://github.com/user-attachments/assets/8fc34a1f-f82e-4717-979c-8c684af0d926" />
+logistics_data
 
 These names come directly from your code.
 
 Click:
+Create
 
-<img width="82" height="23" alt="image" src="https://github.com/user-attachments/assets/8a4cb5ac-4d61-4572-957f-93b11db6971e" />
+Verify Database. You should now see:
 
+gds_db
+   └── logistics_data
+
+Currently:
+
+0 Documents
+
+This is normal.
+
+**3. Confluent Cloud GUI**
+
+Website:
+
+https://confluent.cloud
+
+Steps:
+
+**1. Sign in to Confluent Cloud.**
+**2. Create an environment.**
+After login:
+Left Menu:
+Environments
+
+Click:
++ Add Environment
+
+Fill:
+Environment Name:
+Logistics-Project
+
+Click:
+Create
+
+**3. Create a Kafka cluster.**
+
+Inside your environment:
+
+Click:
+Create Cluster
+
+Select:
+Basic Cluster
+
+Provider:
+AWS
+
+Region:
+us-east-2
+(Your code points to AWS Ohio endpoints.)
+
+Cluster Name:
+logistics-cluster
+
+Click:
+Launch Cluster
+
+Wait 2–5 minutes.
+
+4. Create a topic named:
+logistics_data
+
+Left Menu:
+Cluster Overview
+
+Click your cluster.
+
+Left Menu:
+Topics
+
+Click:
+Create Topic
+
+Topic Name:
+logistics_data
+
+Partitions:
+6
+
+Cleanup Policy:
+Delete
+
+Retention:
+Default
+
+Click:
+Create Topic
+
+Your producer sends to this topic.
+
+Your consumer subscribes to this topic.
+
+**5. Go to **API Keys.****
+**6. Create Kafka API key and secret.**
+
+Left Menu:
+API Keys
+
+Click:
+Create Key
+
+Select:
+Global Access
+or
+Kafka Cluster Access
+
+Choose:
+logistics-cluster
+
+Click:
+Next
+Create API Key
+
+You will receive:
+API Key
+API Secret
+
+Example:
+ABC123XYZ
+and
+SecretValue
+
+Save your Credentials
+
+Click:
+Download and Continue
+
+Save the file.
+
+You will later replace:
+**sasl.username**
+**sasl.password**
+
+inside:
+logistics_data_producer.py
+
+and
+logistics_data_consumer.py
+
+Open Cluster Settings
+
+Left Menu:
+Cluster Overview
+
+Click:
+Cluster Settings
+
+Locate:
+Bootstrap Server
+Example:
+pkc-xxxxx.us-east-2.aws.confluent.cloud:9092
+
+Copy it.
+
+Replace:
+bootstrap.servers
+
+inside producer and consumer if needed.
+
+**7. Go to **Schema Registry.****
+
+Left Menu:
+Schema Registry
+
+If Schema Registry is not enabled:
+
+Click:
+Enable Schema Registry
+
+Choose:
+AWS
+
+Same region as cluster.
+
+Click:
+Continue
+
+Wait until deployment finishes.
+
+**8. Create Schema Registry API key and secret.**
+
+**Create Schema Registry API Key**
+
+Inside:
+Schema Registry
+
+Click:
+API Keys
+
+Click:
+Create API Key
+
+Select:
+Global Access
+
+Click:
+Create
+
+You receive:
+Schema Registry Key
+Schema Registry Secret
+
+Save them.
+
+**Create Schema**
+
+Left Menu:
+Schema Registry
+
+Click:
+Schemas
+
+Click:
+Add Schema
+
+**9. Register an Avro schema with subject:**
+
+logistics_data-value
+
+The producer and consumer both expect that schema subject.
+
+**Select Subject**
+
+Subject:
+logistics_data-value
+
+This must exactly match your producer and consumer code.
+
+**Select Format**
+
+Format:
+Avro
+
+Click:
+Continue
+
+**Paste Avro Schema**
+
+Paste your Avro schema JSON.
+
+Example:
+
+<img width="474" height="312" alt="image" src="https://github.com/user-attachments/assets/98bdb4ce-d837-4847-a358-b1692a393651" />
+
+For your project you should include all CSV fields from the logistics dataset.
+
+Click:
+Validate
+
+Then:
+Register
+
+**Verify Schema**
+
+You should now see:
+
+Schemas
+ └── logistics_data-value
+       └── Version 1
+
+**Execution steps**
+
+Open CMD or PowerShell inside your project folder:
+
+cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\6 MongoDB (NoSQL)\Module 4 - MongoDB Class 2\2 Class Assignment and Solutions\MongoDB Assignment  1 Solution"
+
+Install packages:
+
+pip install pandas pymongo flask confluent-kafka fastavro requests
+
+Run producer:
+
+python logistics_data_producer.py
+
+Expected result: records are published to Kafka topic logistics_data.
+
+Run consumer:
+
+python logistics_data_consumer.py
+
+Expected result: records are consumed from Kafka and inserted into MongoDB.
+
+Run API 1:
+
+python logistics_data_api1.py
+
+Test in browser:
+
+http://localhost:5000/api/filter?vehicle_no=KA590408
+
+Run API 2 in another terminal:
+
+python logistics_data_api2.py
+
+Test in browser:
+
+http://localhost:5001/api/count
+
+**Docker execution**
+
+Build image:
+
+docker build -t consumer_image .
+
+Run with Docker Compose:
+
+docker compose up
+
+This runs the Kafka consumer inside Docker.
+
+**Docker Execution — Exact GUI Steps (Windows + Docker Desktop)**
+
+This section starts after you have already completed:
+
+✅ MongoDB Atlas setup
+✅ Confluent Cloud setup
+✅ Downloaded all project files
+✅ Installed Docker Desktop
+
+Your Docker container will run the Kafka Consumer that reads from the logistics_data topic and writes into MongoDB Atlas.
+
+**Step 1 — Verify Docker Desktop is Running**
+
+Open:
+Start Menu
+→ Docker Desktop
+
+Wait until Docker starts.
+
+You should see:
+Docker Desktop
+Status: Engine running
+
+Green indicator:
+Running
+
+
+**Step 2 — Open Project Folder**
+
+Create a folder:
+
+C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\6 MongoDB (NoSQL)\Module 4 - MongoDB Class 2\2 Class Assignment and Solutions\MongoDB Assignment  1 Solution
+
+Copy these files into it:
+
+Dockerfile
+docker-compose.yml
+
+logistics_data_consumer.py
+logistics_data_producer.py
+
+logistics_data_api.py
+logistics_data_api2.py
+
+delivery_trip_truck_data.csv
+
+Your consumer is the main process Docker will run.
+
+<img width="794" height="331" alt="image" src="https://github.com/user-attachments/assets/78978451-6c92-451f-9cc2-7d3a27aa2030" />
+
+**Open Command Prompt**
+
+Press:
+Windows Key + R
+
+Type:
+cmd
+
+Click:
+OK
+
+**Navigate to Project Folder**
+
+Example:
+cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\6 MongoDB (NoSQL)\Module 4 - MongoDB Class 2\2 Class Assignment and Solutions\MongoDB Assignment  1 Solution"
+
+Verify:
+dir
+
+You should see:
+Dockerfile
+docker-compose.yml
+logistics_data_consumer.py
+...
+
+**Build Docker Image**
+
+Inside Command Prompt:
+**docker build -t consumer_image**
+
+Explanation:
+docker build     = create image
+-t               = image tag
+consumer_image   = image name
+.                = current folder
+
+Expected:
+Successfully built xxxxx
+Successfully tagged consumer_image:latest
+
+**Verify Image in Docker Desktop GUI**
+
+Open:
+Docker Desktop
+
+Left Menu:
+Images
+
+You should see:
+consumer_image
+latest
+
+**Verify Image from CLI**
+
+Run:
+docker images
+
+Expected:
+REPOSITORY        TAG
+consumer_image    latest
+
+**Start Docker Compose**
+
+In the same Command Prompt:
+
+docker compose up
+or
+docker-compose up
+
+Docker Compose reads:
+docker-compose.yml
+
+and starts the services.
+
+**Verify Containers in Docker Desktop GUI**
+
+Open:
+Docker Desktop
+
+Left Menu:
+Containers
+
+You should now see something similar:
+logistics-consumer
+
+Status:
+Running
+
+Green icon:
+● Running
+
+**View Container Logs in GUI**
+
+Click:
+Containers
+→ logistics-consumer
+
+Click:
+Logs
+
+You should see:
+Received message ...
+Inserted message into MongoDB ...
+
+These messages come from your Kafka Consumer.
+
+**Verify Kafka Messages Arrive**
+
+Open:
+Confluent Cloud
+
+Navigate:
+
+Environment
+- Cluster
+- Topics
+- logistics_data
+- Messages
+
+You should see records arriving from the producer.
+
+**Verify MongoDB Documents**
+
+Open:
+MongoDB Atlas
+
+Navigate:
+Database
+- Browse Collections
+- gds_db
+- logistics_data
+
+You should now see documents inserted by the consumer.
+
+**Keep Docker Running**
+
+Leave this window open:
+
+docker compose up
+
+*If you close it, the container stops.*
+
+**Run in Background (Optional)**
+
+Instead of:
+
+docker compose up
+
+Use:
+
+docker compose up -d
+
+Meaning:
+
+-d = detached mode
+
+**Container continues running after closing the terminal.**
+
+**Verify Running Containers**
+
+Run:
+docker ps
+
+Expected:
+CONTAINER ID
+IMAGE
+consumer_image
+STATUS Up
+
+**Stop Containers**
+
+To stop:
+docker compose down
+
+Expected:
+Stopping containers...
+Removing containers...
+
+<img width="590" height="207" alt="image" src="https://github.com/user-attachments/assets/6a8981d1-40cc-41af-9cae-a74a0fd1a273" />
+
+<img width="596" height="417" alt="image" src="https://github.com/user-attachments/assets/818f0d12-f1c2-4d37-986c-08f1145ce993" />
 
 
 
