@@ -27,14 +27,7 @@ They are the input data files described in the PDF assignment.
 
 Download/create them inside your local project folder:
 
-Spark_Assignment_1_Solution/
-│
-├── ad_campaigns_data.json
-├── user_profile_data.json
-├── store_data.json
-├── Spark_Marketingdata.py
-├── Spark_Marketingdata.ipynb
-├── HQL_DataStore.txt
+<img width="607" height="145" alt="image" src="https://github.com/user-attachments/assets/e72ae9a1-dced-430b-a5bb-96cbc55f6c93" />
 
 
 Here are the JSON files inside the Project Folder.
