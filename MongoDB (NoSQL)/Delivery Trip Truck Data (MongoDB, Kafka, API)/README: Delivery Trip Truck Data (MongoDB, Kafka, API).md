@@ -732,7 +732,7 @@ You should now see documents inserted by the consumer.
 
 Leave this window open:
 
-docker compose up
+- docker compose up
 
 *If you close it, the container stops.*
 
