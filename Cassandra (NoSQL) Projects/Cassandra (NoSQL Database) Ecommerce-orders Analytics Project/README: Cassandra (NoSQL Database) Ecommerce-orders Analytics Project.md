@@ -95,17 +95,165 @@ Inside the **cassandra_table_create.py** we have it here:
 
 <img width="643" height="506" alt="image" src="https://github.com/user-attachments/assets/32d75727-2342-4d95-a8c6-2f866fa975d8" />
 
-Inside the DataStax Astra CQL Console, there is no cd command.
+Inside the **DataStax Astra CQL Console**, there is no cd command.
 
 The CQL Console is not a Windows/Linux terminal. It is a database query editor that only accepts CQL (Cassandra Query Language) commands.
 
+**4. Kafka / Confluent Cloud GUI steps**
 
+Go to Confluent Cloud
 
+Sign in
 
+Create or open your Kafka cluster:
 
+If You Do NOT Have a Kafka Cluster Yet
 
+Step 1: Create Environment
 
+Sign in to Confluent Cloud.
 
+Click Environments (left menu).
+
+Click Create Environment.
+
+Enter:
+
+- Environment Name:Kafka-Cassandra-Demo
+
+Click Create.
+
+Step 2: Create Kafka Cluster
+
+Inside the environment click:
+
+Create Cluster
+
+Select: Basic Cluster
+
+(Free tier is usually sufficient for this assignment.)
+
+Choose:
+
+- Cloud Provider: AWS
+
+Choose a region closest to you, for example: us-east-1
+
+Click: Continue
+
+Review settings.
+
+Click: Launch Cluster
+
+Wait 2–5 minutes.
+
+Status changes:
+
+- Provisioning
+- ↓
+- Ready
+- 
+Step 3: Open the Cluster
+
+When status shows Ready:
+
+- Click the cluster name.
+- The Kafka Cluster Dashboard opens.
+- You are now inside the cluster.
+
+You should see:
+
+- Overview
+- Topics
+- Clients
+- Schema Registry
+- Connectors
+- Metrics
+
+DONE with 'Create or open your Kafka cluster:'
+
+Go to Topics
+
+Click Create topic
+
+Topic name:ecommerce-orders
+
+Partitions: 1 is okay for testing
+
+Click Create with defaults
+
+**Schema Registry**
+
+Your producer and consumer use Avro Schema Registry. They fetch this subject:
+
+**ecommerce-orders-value**
+
+So in Confluent Cloud:
+
+Go to **Schema Registry**
+
+Make sure Schema Registry is enabled
+
+Go to topic **ecommerce-orders**
+
+Add/register a value schema matching the CSV fields:
+
+<img width="596" height="270" alt="image" src="https://github.com/user-attachments/assets/8a6773af-4f72-450e-b695-b8d5765ac570" />
+
+**5. Run the project from Windows terminal**
+
+Open Command Prompt or Anaconda Prompt.
+
+*Go to your project folder:*
+
+- cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\7 Cassandra (NoSQL)\Module 4 - Cassandra Class 2\Step 2\Cassandra_Assignment_Solution"
+
+*Install packages:*
+
+- pip install pandas confluent-kafka cassandra-driver
+
+Run Cassandra table creation:
+
+- python "cassandra_table_create.py"
+
+Run the consumer first:
+
+- python "consumer.py"
+
+Leave that window open.
+
+Open a second terminal, go to the same folder:
+
+- cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\7 Cassandra (NoSQL)\Module 4 - Cassandra Class 2\Step 2\Cassandra_Assignment_Solution"
+
+Run the producer:
+
+- python "producer.py"
+
+The producer sends records to Kafka. The consumer receives them and inserts them into Cassandra.
+
+**6. Verify in Cassandra GUI**
+
+In Astra:
+
+Open your database
+
+Click: CQL Console
+
+Run:
+
+- USE ecommerce;
+
+Check rows:
+
+- SELECT * FROM ecommerce.orders LIMIT 10;
+
+Expected result: rows from the CSV with extra transformed columns:
+
+- order_hour
+- Oorder_day_of_week
+
+<img width="637" height="501" alt="image" src="https://github.com/user-attachments/assets/3ad6744e-027e-49b0-95d1-6ab70a8a3fb6" />
 
 
 
