@@ -524,11 +524,11 @@ http://localhost:5001/api/count
 
 Build image:
 
-docker build -t consumer_image .
+- docker build -t consumer_image .
 
 Run with Docker Compose:
 
-docker compose up
+- docker compose up
 
 This runs the Kafka consumer inside Docker.
 
