@@ -25,7 +25,7 @@ GUI steps
 
 Open File Explorer
 
-Go to your **Cassandra_Demo_Project** folder. In our case is **C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\7 Cassandra (NoSQL)\Module 4 - Cassandra Class 2\Step 1\Cassandra_Code main**
+Go to your **Cassandra_Demo_Project** folder.
 
 Right-click inside the folder
 
