@@ -568,12 +568,15 @@ C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Bas
 Copy these files into it:
 
 Dockerfile
+
 docker-compose.yml
 
 logistics_data_consumer.py
+
 logistics_data_producer.py
 
 logistics_data_api.py
+
 logistics_data_api2.py
 
 delivery_trip_truck_data.csv
