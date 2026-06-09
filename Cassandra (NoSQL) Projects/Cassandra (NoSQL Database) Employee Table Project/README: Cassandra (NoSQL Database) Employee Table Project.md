@@ -35,7 +35,7 @@ or
 
 Open cmd prompt and do:
 
-cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\7 Cassandra (NoSQL)\Module 4 - Cassandra Class 2\Step 1\Cassandra_Code main"
+cd "C:\Users\Usuario\Desktop\Cassandra_Demo_Project"
 
 **3. Start Cassandra**
 
