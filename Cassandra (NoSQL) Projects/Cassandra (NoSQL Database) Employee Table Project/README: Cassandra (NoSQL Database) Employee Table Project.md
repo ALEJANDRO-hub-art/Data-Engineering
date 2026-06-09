@@ -192,9 +192,12 @@ Do:
 
 - <img width="253" height="59" alt="image" src="https://github.com/user-attachments/assets/5edfe5fd-dad5-484c-8fee-984cf2e82f0c" />
 
+Inside your Cassandra_Demo.py we have that line of code:
+
+- <img width="612" height="170" alt="image" src="https://github.com/user-attachments/assets/78fc37ad-df33-449c-a385-a2a86549566a" />
+
 
 - <img width="636" height="281" alt="image" src="https://github.com/user-attachments/assets/d6f01e17-98cc-4045-8b58-152a5fa16510" />
-
 
 
 - <img width="618" height="336" alt="image" src="https://github.com/user-attachments/assets/385c762e-1504-4b54-b2f8-d4e050e225af" />
