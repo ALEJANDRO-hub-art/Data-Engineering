@@ -354,12 +354,14 @@ You will later replace:
 **sasl.password**
 
 inside:
+
 logistics_data_producer.py
 
 and
+
 logistics_data_consumer.py
 
-Open Cluster Settings
+**Open Cluster Settings**
 
 Left Menu:
 Cluster Overview
