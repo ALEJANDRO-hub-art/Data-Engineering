@@ -224,6 +224,28 @@ Your uploaded files already contain a connection string here:
 
 <img width="157" height="36" alt="image" src="https://github.com/user-attachments/assets/0e69e433-c4b8-444c-bb25-64d6f44fdf9a" />
 
+Open:
+
+<img width="78" height="25" alt="image" src="https://github.com/user-attachments/assets/aad27d2e-fda3-442f-8d8b-01beeb538f4c" />
+
+CLick:
+
+<img width="121" height="33" alt="image" src="https://github.com/user-attachments/assets/3f8531f4-29b7-4251-bae9-21aa937ce9ab" />
+
+Database Name:
+
+<img width="79" height="25" alt="image" src="https://github.com/user-attachments/assets/d17550fa-5c85-4e1d-9275-6be341dbffde" />
+
+Collection Name:
+
+<img width="90" height="23" alt="image" src="https://github.com/user-attachments/assets/8fc34a1f-f82e-4717-979c-8c684af0d926" />
+
+These names come directly from your code.
+
+Click:
+
+<img width="82" height="23" alt="image" src="https://github.com/user-attachments/assets/8a4cb5ac-4d61-4572-957f-93b11db6971e" />
+
 
 
 
