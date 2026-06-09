@@ -604,7 +604,7 @@ cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS -
 
 Verify:
 
-dir
+- dir
 
 You should see:
 
