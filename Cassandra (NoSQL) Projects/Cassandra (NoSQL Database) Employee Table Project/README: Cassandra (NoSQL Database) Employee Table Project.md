@@ -79,7 +79,7 @@ USE employee_keyspace;
 **cqlsh** stands for **Cassandra Query Language Shell**. It is a Python-based command-line interface shipped with every ⁠Apache Cassandra package that allows you to execute Cassandra Query Language (CQL) commands directly against your database.
 
 
-**6. Run project commands manually in Cassandra GUI/terminal**
+**6. Run project commands manually in Cassandra GUI / terminal - Cassandra terminal (cqlsh)**
 
 Create table:
 
