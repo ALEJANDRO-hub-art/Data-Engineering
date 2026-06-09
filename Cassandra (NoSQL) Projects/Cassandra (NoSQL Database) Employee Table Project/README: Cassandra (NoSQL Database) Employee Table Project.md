@@ -53,6 +53,8 @@ You should see a Cassandra container running on port:
 
 **4. Enter Cassandra shell**
 
+Where is this **Cassandra shell**. Docker Container: If running Cassandra via Docker, open an interactive bash session in your container and execute cqlsh directly, or run:**docker exec -it <container_name> cqlsh** this code we use it in the following command.
+
 Run:
 
 - docker exec -it cassandra-demo-project-cassandra-1 cqlsh
@@ -63,12 +65,33 @@ If the container name is different, first run:
 
 Copy the Cassandra container name.
 
+**5. Create keyspace manually**
+
+Inside **cqlsh**, run:
+
+CREATE KEYSPACE employee_keyspace
+WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+
+Then:
+
+USE employee_keyspace;
+
+**cqlsh** stands for **Cassandra Query Language Shell**. It is a Python-based command-line interface shipped with every ⁠Apache Cassandra package that allows you to execute Cassandra Query Language (CQL) commands directly against your database.
 
 
+**6. Run project commands manually in Cassandra GUI/terminal**
 
+Create table:
 
-
-
+CREATE TABLE employee (
+  emp_id int,
+  emp_name varchar,
+  emp_salary int,
+  emp_dept varchar,
+  emp_email varchar,
+  emp_phone varchar,
+  PRIMARY KEY (emp_id, emp_dept)
+);
 
 
 
