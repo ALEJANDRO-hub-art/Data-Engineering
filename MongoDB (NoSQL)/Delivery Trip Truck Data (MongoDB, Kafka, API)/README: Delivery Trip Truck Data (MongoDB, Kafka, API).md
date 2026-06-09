@@ -638,8 +638,8 @@ Left Menu:
 Images
 
 You should see:
-consumer_image
-latest
+- consumer_image
+- latest
 
 **Verify Image from CLI**
 
