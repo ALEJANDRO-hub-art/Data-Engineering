@@ -8,30 +8,46 @@ Based on the uploaded files:
 
 **docker-compose.yml** is typically used to start Cassandra and related services in Docker containers.
 
+<img width="597" height="160" alt="image" src="https://github.com/user-attachments/assets/4722c223-e179-42b9-a339-5be7a94c1044" />
+
+GUI steps
+
+**1. Open Docker Desktop**
+Open Docker Desktop
+Make sure it says Docker Engine running
+Leave Docker Desktop open
+
+**2. Open the project folder**
+Open File Explorer
+Go to your **Cassandra_Demo_Project** folder. In our case is **C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\7 Cassandra (NoSQL)\Module 4 - Cassandra Class 2\Step 1\Cassandra_Code main**
+Right-click inside the folder
+Click Open in Terminal
+or
+Open cmd prompt and do:
+cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\7 Cassandra (NoSQL)\Module 4 - Cassandra Class 2\Step 1\Cassandra_Code main"
+
+**3. Start Cassandra**
+
+Run:
+
+- docker compose up -d
+
+Then check:
+
+- docker ps
+
+You should see a Cassandra container running on port:
+
+- 9042
 
 
-What the Project Demonstrates
 
 
-**1.** Connect to Cassandra cluster
 
-**2.** Use a keyspace (employee_keyspace)
 
-**3.** Create an employee table
 
-**4.** Alter table (add/drop columns)
 
-**5.** Insert employee records
 
-**6.** Query records
-
-**7.** Aggregate functions (COUNT, MAX)
-
-**8.** Filtering with WHERE
-
-**9.** GROUP BY examples
-
-**10.** Drop table operations
 
 
 
