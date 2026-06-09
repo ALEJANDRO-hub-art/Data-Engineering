@@ -55,4 +55,9 @@ Develop a Python-based application that integrates Kafka and MongoDB to process 
 
 --------------------------------------------------------------------------------------------------------------------
 
+### Solution
+
+<img width="839" height="289" alt="image" src="https://github.com/user-attachments/assets/09727bc0-b8bb-4209-bb2a-7e96bc62b7b1" />
+
+
 
