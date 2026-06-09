@@ -279,7 +279,7 @@ Launch Cluster
 
 Wait 2–5 minutes.
 
-4. Create a topic named:
+**4. Create a topic named:**
 logistics_data
 
 Left Menu:
