@@ -101,6 +101,15 @@ CREATE TABLE employee (
   
 );
 
+Insert records:
+
+<img width="489" height="198" alt="image" src="https://github.com/user-attachments/assets/37b28301-5e57-4f65-9ca0-0086db144343" />
+
+<img width="590" height="356" alt="image" src="https://github.com/user-attachments/assets/d5dc7d40-1529-414e-b4a4-bf97e77596fe" />
+
+<img width="593" height="284" alt="image" src="https://github.com/user-attachments/assets/437de73a-97cb-43ef-bb36-6b1e5b541720" />
+
+
 
 
 
