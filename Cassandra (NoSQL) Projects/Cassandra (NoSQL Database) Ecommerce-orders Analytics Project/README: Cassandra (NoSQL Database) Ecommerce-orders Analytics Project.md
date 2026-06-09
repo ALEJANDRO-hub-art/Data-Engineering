@@ -91,9 +91,13 @@ Inside the **cassandra_table_create.py** we have it here:
 
 <img width="667" height="445" alt="image" src="https://github.com/user-attachments/assets/34286496-e92e-4f63-86f9-719d4bd67bbf" />
 
+<img width="645" height="519" alt="image" src="https://github.com/user-attachments/assets/428b0df2-c716-40f4-9636-2d851b22b9a0" />
 
+<img width="643" height="506" alt="image" src="https://github.com/user-attachments/assets/32d75727-2342-4d95-a8c6-2f866fa975d8" />
 
+Inside the DataStax Astra CQL Console, there is no cd command.
 
+The CQL Console is not a Windows/Linux terminal. It is a database query editor that only accepts CQL (Cassandra Query Language) commands.
 
 
 
