@@ -154,12 +154,8 @@ Your uploaded script (stage_healthcare_analysis.py) requires 3 authentication fi
  
 These come from two different systems:
 
-Astra DB
-├── secure_connect_healthcare_db.zip
-└── healthcare_db_token.json
+<img width="695" height="138" alt="image" src="https://github.com/user-attachments/assets/856a771e-c370-482f-8dda-60bdf68271bb" />
 
-Google Cloud
-└── service-account.json
 
 
 
