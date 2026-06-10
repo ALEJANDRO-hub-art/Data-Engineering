@@ -160,7 +160,7 @@ These come from two different systems:
 
 Step 1: Open Astra DB
 
-Go to:DataStax Astra DB
+Go to: DataStax Astra DB
 
 Sign in.
 
