@@ -230,8 +230,7 @@ Click: Connect
 
 Choose:
 
-- Python
-- or
+- Python or
 - Apache Spark
 
 You will see:
