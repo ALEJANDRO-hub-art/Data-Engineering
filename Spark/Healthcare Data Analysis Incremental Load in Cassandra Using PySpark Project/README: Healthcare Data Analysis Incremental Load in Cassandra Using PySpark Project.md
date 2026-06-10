@@ -156,24 +156,140 @@ These come from two different systems:
 
 <img width="695" height="138" alt="image" src="https://github.com/user-attachments/assets/856a771e-c370-482f-8dda-60bdf68271bb" />
 
+## **Generate Astra Secure Connect Bundle (.zip)**
+
+Step 1: Open Astra DB
+
+Go to:DataStax Astra DB
+
+Sign in.
+
+**Create a Database**
+
+On the Astra dashboard:
+
+Click: Create Database
+
+Database Settings, Fill in:
+
+- Database Name: healthcare_db
+- Keyspace Name: healthcare
+
+This matches the keyspace used in your uploaded PySpark script:
+
+- keyspace = "healthcare"
+
+Cloud Provider, Choose:
+
+- Google Cloud (GCP)
+
+- or
+
+- AWS
+
+Either is fine.
+
+Region, Choose the region closest to you, for example:
+
+- us-east1
+
+- or
+
+- us-east-2
+
+Plan, Choose:
+
+- Free Plan
+
+**Create Database**
+
+Click: Create Database
+
+Astra will start provisioning.
+
+This typically takes: 3–10 minutes
+
+Wait for Status, you will see:
+
+- Initializing
+
+When finished it changes to: Active
+
+**Open your database**
+
+Click: Databases
+
+Open: healthcare_db
+
+(or whatever database name you created)
 
 
+**Download Secure Connect Bundle**
 
+Left menu: Database Details
 
+Find: Connect
 
+Click: Connect
 
+Choose:
 
+- Python
+- or
+- Apache Spark
 
+You will see:
 
+- Download Secure Connect Bundle
 
+Click: Download Bundle
 
+Downloads:
 
+- secure-connect-healthcare-db.zip
 
+Rename if desired:
 
+- secure_connect_healthcare_db.zip
 
+## **Generate Astra Token JSON**
 
+Step 1: Open Token Management
 
+Inside Astra:
 
+Organization Settings
+→ Token Management
+
+Click: Generate Token
+
+Create Token
+
+Token name: healthcare_db_token
+
+Role: Database Administrator
+
+Click: Generate Token
+
+**Download Token**
+
+Astra shows:
+
+<img width="567" height="128" alt="image" src="https://github.com/user-attachments/assets/37234c58-2cbd-4e90-8a4b-07bdf6db0479" />
+
+Click: Download Token
+
+Downloads:
+
+- healthcare_db_token.json
+
+Your script reads:
+
+<img width="539" height="61" alt="image" src="https://github.com/user-attachments/assets/eeddc1f5-2939-4911-b30c-5ca611288d94" />
+
+so you may rename the downloaded file accordingly.
+
+## **Generate GCP Service Account JSON**
 
 
 
