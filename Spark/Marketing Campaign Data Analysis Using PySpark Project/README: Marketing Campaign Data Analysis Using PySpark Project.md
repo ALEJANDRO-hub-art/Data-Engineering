@@ -233,12 +233,110 @@ When finished, run:
 
 Your Python script expects the JSON files in HDFS under /tmp/marketing_data/, and it writes output folders like /tmp/marketing_data/output/, /tmp/marketing_data/output2/, and /tmp/marketing_data/output3/
 
+Once we create the enviroment in Docker Desktop we proceed with the following:
 
+Open Windows command Prompt (cmd).
 
+Do
 
+- cd "C:\Users\YOUR_USERNAME\Documents\Module 5 - Spark Class 3\Spark_Assignment_Solution\Spark_Assignment_1_Solution"
 
+Verify:
 
+- dir
 
+You should see:
+
+- ad_campaigns_data.json
+- user_profile_data.json
+- store_data.json
+- docker-compose.yml
+- Spark_Marketingdata.py
+
+However, the HDFS commands cannot be run directly from Windows. They must be executed inside the Hadoop/Spark **container** after entering it with:
+
+- docker-compose up -d
+- docker exec -it spark-master bash
+
+**Create HDFS folder**
+
+Run:
+
+- hdfs dfs -mkdir -p /tmp/marketing_data
+
+Upload JSON input files to HDFS
+
+Run from the folder where the JSON files are located: C:\Users\YOUR_USERNAME\Documents\Module 5 - Spark Class 3\Spark_Assignment_Solution\Spark_Assignment_1_Solution
+
+- hdfs dfs -put -f ad_campaigns_data.json /tmp/marketing_data/
+- hdfs dfs -put -f user_profile_data.json /tmp/marketing_data/
+- hdfs dfs -put -f store_data.json /tmp/marketing_data
+
+Check:
+
+- hdfs dfs -ls /tmp/marketing_data
+
+**Run the PySpark script**
+
+Run:
+
+- spark-submit Spark_Marketingdata.py
+
+This script reads:
+
+- /tmp/marketing_data/ad_campaigns_data.json
+- /tmp/marketing_data/user_profile_data.json
+- /tmp/marketing_data/store_data.json
+
+Then it creates output folders:
+
+- /tmp/marketing_data/output/q1_output
+- /tmp/marketing_data/output2/q2_output
+- /tmp/marketing_data/output3/q3_output
+
+**Check output in HDFS**
+
+Run:
+
+- hdfs dfs -ls /tmp/marketing_data/output/q1_output
+- hdfs dfs -ls /tmp/marketing_data/output2/q2_output
+- hdfs dfs -ls /tmp/marketing_data/output3/q3_output
+
+View sample output:
+
+- hdfs dfs -cat /tmp/marketing_data/output/q1_output/part*
+
+**Open Hive**
+
+Run:
+
+- hive
+
+**Run Hive table creation script**
+
+Inside Hive, paste the SQL from:
+
+- HQL_DataStore.txt
+
+This file is inside the project folder.
+
+That file creates:
+
+- q1_output
+- q2_output
+- q3_output
+
+<img width="718" height="259" alt="image" src="https://github.com/user-attachments/assets/b6daff75-1259-4dfd-8bf3-7d1eb9840f16" />
+
+**Query Hive tables**
+
+Inside Hive:
+
+- SHOW TABLES;
+
+- SELECT * FROM q1_output;
+- SELECT * FROM q2_output;
+- SELECT * FROM q3_output;
 
 
 
