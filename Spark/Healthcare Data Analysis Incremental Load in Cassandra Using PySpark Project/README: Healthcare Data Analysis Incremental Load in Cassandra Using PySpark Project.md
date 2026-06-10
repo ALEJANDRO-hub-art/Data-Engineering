@@ -215,7 +215,7 @@ When finished it changes to: Active
 
 Click: Databases
 
-Open: healthcare_db
+Open: **healthcare_db**
 
 (or whatever database name you created)
 
