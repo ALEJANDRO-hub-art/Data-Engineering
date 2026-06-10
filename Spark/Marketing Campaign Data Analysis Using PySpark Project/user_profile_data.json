@@ -1,0 +1,57 @@
+[
+  {
+    "user_id": "16374321645446321",
+    "country": "USA",
+    "gender": "male",
+    "age_group": "18-25",
+    "category": [
+      "shopper"
+    ]
+  },
+  {
+    "user_id": "16374321645446321",
+    "country": "USA",
+    "gender": "female",
+    "age_group": "35-50",
+    "category": [
+      "student"
+    ]
+  },
+  {
+    "user_id": "574721646445643",
+    "country": "USA",
+    "gender": "male",
+    "age_group": "35-50",
+    "category": [
+      "shopper",
+      "professional"
+    ]
+  },
+  {
+    "user_id": "16374321645446132",
+    "country": "USA",
+    "gender": "male",
+    "age_group": "18-40",
+    "category": [
+      "professional"
+    ]
+  },
+  {
+    "user_id": "16374321645446440",
+    "country": "USA",
+    "gender": "female",
+    "age_group": "18-25",
+    "category": [
+      "student"
+    ]
+  },
+  {
+    "user_id": "2555742164544640",
+    "country": "USA",
+    "gender": "female",
+    "age_group": "18-40",
+    "category": [
+      "professional"
+    ]
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "campaign_id": "AFCDAF",
+    "campaign_name": "Food category target campaign",
+    "campaign_country": "USA",
+    "os_type": "android",
+    "device_type": "apple",
+    "place_id": "ca350-111",
+    "user_id": "049701646445631",
+    "event_type": "browse",
+    "event_time": "2018-10-10T13:10:16.96+00Z"
+  },
+  {
+    "campaign_id": "AFCDAFE",
+    "campaign_name": "Food category target campaign",
+    "campaign_country": "USA",
+    "os_type": "android",
+    "device_type": "mobile",
+    "place_id": "ca350-112",
+    "user_id": "049701646445631",
+    "event_type": "browse",
+    "event_time": "2018-10-10T13:09:04.00+00Z"
+  },
+  {
+    "campaign_id": "AFCDAFF",
+    "campaign_name": "Food category target campaign",
+    "campaign_country": "USA",
+    "os_type": "android",
+    "device_type": "samsung",
+    "place_id": "ca350-112",
+    "user_id": "049701646445643",
+    "event_type": "video ad",
+    "event_time": "2018-10-10T13:10:18.10+00Z"
+  },
+  {
+    "campaign_id": "AFCDAFG",
+    "campaign_name": "Food category target campaign",
+    "campaign_country": "USA",
+    "os_type": "android",
+    "device_type": "samsung",
+    "place_id": "ca350-114",
+    "user_id": "049701646445183",
+    "event_type": "click",
+    "event_time": "2018-10-10T13:10:12.00+00Z"
+  }
+]
