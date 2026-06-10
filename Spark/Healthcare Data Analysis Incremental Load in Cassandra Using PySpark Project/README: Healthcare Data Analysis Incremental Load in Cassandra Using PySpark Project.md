@@ -148,9 +148,9 @@ Upload:
 
 Your uploaded script (stage_healthcare_analysis.py) requires 3 authentication files:
 
-- 1. secure_connect_healthcare_db.zip
-- 2. healthcare_db_token.json
-- 3. noob2_bootcamp_407704_058a42626b1b.json
+- 1 secure_connect_healthcare_db.zip
+- 2 healthcare_db_token.json
+- 3 noob2_bootcamp_407704_058a42626b1b.json
  
 These come from two different systems:
 
