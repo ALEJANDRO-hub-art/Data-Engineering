@@ -102,6 +102,167 @@ volumes:
   hadoop_datanode:
 ```
 
+Open the Windows Command Prompt (cmd).
+
+cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\8 Spark\Module 5 - Spark Class 3\Spark_Assignment_Solution\Spark_Assignment_2_Solution"
+
+**Start containers**
+
+Run:
+
+- docker compose up -d
+
+Check containers:
+
+- docker ps
+
+You should see:
+
+- namenode
+- datanode
+- spark
+
+**Open Hadoop GUI**
+
+Open browser:
+
+- http://localhost:9870
+
+This is the **HDFS NameNode GUI.**
+
+Go to:
+
+- Utilities → Browse the file system
+
+**Copy files into Spark container**
+
+Use your Spark container name. Example:
+
+- docker cp movies.csv spark-master:/tmp/movies.csv
+- docker cp ratings.csv spark-master:/tmp/ratings.csv
+- docker cp tags.csv spark-master:/tmp/tags.csv
+- docker cp Spark_MovieRating.py spark-master:/tmp/Spark_MovieRating.py
+
+**Enter Spark container**
+- docker exec -it spark-master bash
+
+**Create HDFS folders**
+
+Inside the container:
+
+- hdfs dfs -mkdir -p /tmp/spark_movie
+- hdfs dfs -mkdir -p /tmp/output_data/spark_movie
+
+Upload CSV files to HDFS
+
+- hdfs dfs -put -f /tmp/movies.csv /tmp/spark_movie/movies.csv
+- hdfs dfs -put -f /tmp/ratings.csv /tmp/spark_movie/ratings.csv
+- hdfs dfs -put -f /tmp/tags.csv /tmp/spark_movie/tags.csv
+
+**Verify:**
+
+- hdfs dfs -ls /tmp/spark_movie
+
+You should see:
+
+- movies.csv
+- ratings.csv
+- tags.csv
+
+**Run the Spark job**
+
+- spark-submit /tmp/Spark_MovieRating.py
+
+The script creates Spark SQL temp views:
+
+- MOVIES
+- RATINGS
+- TAGS
+
+Then it runs the assignment queries and saves each output into HDFS.
+
+Whats inside **Spark_MovieRating.py** file:
+
+This script is a PySpark marketing analytics project that **reads three JSON datasets, joins them, aggregates marketing events, and saves the results as JSON output files.**
+
+<img width="563" height="526" alt="image" src="https://github.com/user-attachments/assets/b560b43a-1f16-4f83-aecf-b2636c871b15" />
+
+In one sentence: **the script calculates marketing event counts (impressions, clicks, video ads) by operating system, store, and gender using Spark, then saves the aggregated results as JSON files.**
+
+**Expected output folders in HDFS**
+
+Your script writes results here:
+
+- /tmp/output_data/spark_movie/
+
+Important outputs include:
+
+- agg_Ratings.csv
+- avg_monthly_Ratings.csv
+- distribution_ratings.csv
+- tagged_not_rated.csv
+- rated_not_tagged.csv
+- top_10_avgratings&count_ratings.csv
+- tags_per_movieVStags_per_user.csv
+- users_tagged_not_rate.csv
+- ratings_per_userVSratings_per_movie.csv
+- freq_genre_per_rating.csv
+- freq_tag_per_genre.csv
+- popular_movies.csv
+- top_10_morethan30users.csv
+
+The assignment **asks each problem result to be stored as a single CSV** with header in an HDFS output path.
+
+Verify outputs:
+
+- hdfs dfs -ls /tmp/output_data/spark_movie
+
+View one output:
+
+- hdfs dfs -cat /tmp/output_data/spark_movie/agg_Ratings.csv/part-*.csv
+
+**GUI verification in browser**
+
+Open your browser:
+
+- http://localhost:9870
+
+This is the **HDFS NameNode GUI.**
+
+Then go to:
+
+Utilities
+- → Browse the file system
+- → tmp
+- → output_data
+- → spark_movie
+
+You should see the output folders created by Spark.
+
+**Download output files from HDFS**
+
+Inside the container:
+
+- hdfs dfs -get -f /tmp/output_data/spark_movie /tmp/spark_movie_outputs
+
+Then from Windows CMD:
+
+- docker cp spark-master:/tmp/spark_movie_outputs "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\8 Spark\Module 5 - Spark Class 3\Spark_Assignment_Solution\Spark_Assignment_2_Solution\spark_movie_outputs"
+
+Now your output CSV folders are in:
+
+C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\8 Spark\Module 5 - Spark Class 3\Spark_Assignment_Solution\Spark_Assignment_2_Solution\spark_movie_outputs
+
+
+
+
+
+
+
+
+
+
+
 
 
 
