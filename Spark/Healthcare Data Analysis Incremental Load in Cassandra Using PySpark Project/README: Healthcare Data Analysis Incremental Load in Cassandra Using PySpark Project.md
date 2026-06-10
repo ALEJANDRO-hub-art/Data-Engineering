@@ -258,7 +258,7 @@ Organization Settings
 
 Click: Generate Token
 
-Create Token
+Create Token:
 
 Token name: healthcare_db_token
 
