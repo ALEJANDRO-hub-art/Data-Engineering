@@ -57,6 +57,7 @@ Lets build this **docker-compose.yml** file. We can find it in the Project Folde
 
 Lets inspect this **docker-compose.yaml** file:
 
+```yaml
 version: "3.8"
 
 services:
@@ -99,6 +100,7 @@ services:
 volumes:
   hadoop_namenode:
   hadoop_datanode:
+```
 
 
 
