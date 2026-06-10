@@ -443,7 +443,7 @@ The script will:
 - Insert results into Cassandra/Astra tables
 - Move processed CSV files to archive
 
-The uploaded script contains these Cassandra stage tables: stage_disease_ratio, stage_top3, stage_age_distro, and stage_senior_citizen.
+The uploaded script contains these Cassandra stage tables: **stage_disease_ratio**, **stage_top3**, **stage_age_distro**, and **stage_senior_citizen.**
 
 **Cassandra / Astra DB GUI verification**
 
