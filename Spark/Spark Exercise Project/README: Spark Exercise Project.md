@@ -129,8 +129,20 @@ Expected folders:
 - result3
 - result_pq
 
+**GUI steps in Docker Desktop**
 
+Open Docker Desktop, Go to **Containers**
 
+Click container: spark_exercise
+
+Click **Exec**
+
+You can run:
+- ls /app
+- ls /app/datasets
+- ls /tmp/spark_output
+
+<img width="724" height="300" alt="image" src="https://github.com/user-attachments/assets/58d83166-41ba-439a-8a1b-25a5a3b8f3d7" />
 
 
 
