@@ -162,17 +162,76 @@ C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Bas
 
 <img width="660" height="330" alt="image" src="https://github.com/user-attachments/assets/51d1c38f-8df8-44c9-b3fe-7225b42250a6" />
 
-**Open Docker Desktop GUI**
 
-- Open Docker Desktop.
-  - Wait until it says Docker Desktop is running.
-- Go to Containers.
-- Keep Docker Desktop open.
+- Donwload Docker Desktop for Windows
+- Install it
+- Restart your computer
+- Open Docker Desktop
+- Wait until it says Docker Desktop is running
 
+So we were here:
 
+Open your Windows Command Prompt.
 
+Do:
 
+- cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\8 Spark\Module 5 - Spark Class 3\Spark_Assignment_Solution\Spark_Assignment_1_Solution"
 
+Run this command:
+
+- docker compose up -d
+
+If that does not work, try the older command:
+
+- docker-compose up -d
+
+This will download and start:
+
+- namenode
+- datanode
+- hive-server
+- hive-metastore
+- hive-metastore-postgresql
+- spark-master
+- spark-worker
+
+Your compose file includes Hadoop NameNode/DataNode, Hive Server/Metastore, PostgreSQL metastore, Spark Master, and Spark Worker.
+
+**Check if containers are running**
+
+Run:
+
+- docker ps
+
+You should see containers like:
+
+- namenode
+- datanode
+- hive-server
+- spark-master
+- spark-worker
+
+**Open the GUIs in your browser**
+
+Hadoop NameNode:
+
+- http://localhost:9870
+
+Spark Master:
+
+- http://localhost:8080
+
+Spark Worker:
+
+- http://localhost:8081
+
+**Stop the environment later**
+
+When finished, run:
+
+- docker compose down
+
+Your Python script expects the JSON files in HDFS under /tmp/marketing_data/, and it writes output folders like /tmp/marketing_data/output/, /tmp/marketing_data/output2/, and /tmp/marketing_data/output3/
 
 
 
