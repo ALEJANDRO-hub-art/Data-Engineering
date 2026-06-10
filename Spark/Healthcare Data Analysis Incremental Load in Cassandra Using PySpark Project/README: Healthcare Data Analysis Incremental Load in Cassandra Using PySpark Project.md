@@ -286,6 +286,188 @@ so you may rename the downloaded file accordingly.
 
 ## **Generate GCP Service Account JSON**
 
+The script uses:
+
+<img width="511" height="108" alt="image" src="https://github.com/user-attachments/assets/4e01892e-bdf8-4136-85f1-63c7e77df345" />
+
+which means Spark authenticates to Google Cloud Storage using a Service Account JSON key.
+
+**Open Google Cloud Console**
+
+Go to: Google Cloud Console
+
+Select your project.
+
+Open Service Accounts, Menu:
+
+- IAM & Admin
+- → Service Accounts
+
+Create Service Account
+
+Click: Create Service Account
+
+Service Account Name: **healthcare-analysis-sa**
+
+Click: Create and Continue
+
+**Assign Roles**
+
+Add:
+
+- Storage Admin
+- Storage Object Admin
+
+Click: Continue
+
+Click: Done
+
+**Generate JSON Key**
+
+Open the newly created service account.
+
+Go to: Keys
+
+Click: Add Key
+
+- → Create New Key
+
+Choose:
+
+- JSON
+
+Click: Create
+
+Downloads:
+
+- healthcare-analysis-sa-xxxxxxxx.json
+
+This "sa" means Service Account.
+
+This is the file your script uses here:
+
+<img width="497" height="79" alt="image" src="https://github.com/user-attachments/assets/4a236f72-9fa0-47fa-af47-00db8d6c78ea" />
+
+You can either:
+
+- Rename the downloaded file or
+
+- Change the script path
+
+to match the downloaded filename.
+
+## **So we were here:**
+
+Upload support files for Cassandra/Astra
+
+Your script expects these files in Databricks DBFS:
+
+- /dbfs/FileStore/shared_uploads/secure_connect_healthcare_db.zip
+- /dbfs/FileStore/shared_uploads/healthcare_db_token__1_.json
+- /dbfs/FileStore/shared_uploads/auth/noob2_bootcamp_407704_058a42626b1b.json
+
+**In Databricks GUI:**
+
+Open Databricks
+
+Go to Catalog or Data
+
+Open DBFS / FileStore
+
+Upload:
+- Astra secure connect bundle .zip
+- Astra token .json
+- GCP service account .json
+
+Lets continue:
+
+Upload to Databricks
+
+Open: Databricks
+
+- → Catalog
+- → DBFS
+- → FileStore
+
+Upload:
+- secure_connect_healthcare_db.zip
+- healthcare_db_token.json
+- healthcare-analysis-sa.json
+
+Final DBFS structure:
+
+<img width="476" height="139" alt="image" src="https://github.com/user-attachments/assets/e20066db-340f-4bad-9421-29baaeceda78" />
+
+Then update the paths in your notebook if the filenames differ from the ones hardcoded in the script.
+
+--Upload the PySpark file**
+
+Upload this file to Databricks: **stage_healthcare_analysis.py**
+
+In Databricks GUI:
+
+Go to Workspace
+
+Click Create
+
+Select Notebook
+
+Choose Python
+
+Import or paste the code from:
+- stage_healthcare_analysis.py
+
+**Attach notebook to Spark cluster**
+
+In Databricks GUI:
+
+Open the notebook, top-right, click Connect
+
+Select your cluster
+
+Wait until cluster is running
+
+**Run the notebook**
+
+Click: Run all
+
+The script will:
+
+- Connect Spark
+- Read CSV files from gs://healthcare_analysis/input/
+- Validate nulls and data types
+- Calculate gender ratio
+- Calculate top 3 diseases
+- Calculate age distribution
+- Flag senior patients
+- Insert results into Cassandra/Astra tables
+- Move processed CSV files to archive
+
+The uploaded script contains these Cassandra stage tables: stage_disease_ratio, stage_top3, stage_age_distro, and stage_senior_citizen.
+
+**Cassandra / Astra DB GUI verification**
+
+In Astra DB GUI:
+
+- Open Astra DB
+- Open your database: **healthcare_db**
+
+Go to CQL Console
+
+Run:
+
+<img width="392" height="148" alt="image" src="https://github.com/user-attachments/assets/bce8e019-ef27-4f02-b3e6-5ff3592a05cf" />
+
+**Important note**
+
+Your assignment says HDFS + Cassandra, but your uploaded .py script is built for:
+
+- Google Cloud Storage + Databricks + Astra Cassandra
+
+So for your actual uploaded project, use:
+
+- GCS input folder → Databricks PySpark → Astra Cassandra → GCS archive folder
+
 
 
 
