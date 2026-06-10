@@ -338,5 +338,6 @@ Inside Hive:
 - SELECT * FROM q2_output;
 - SELECT * FROM q3_output;
 
+<img width="735" height="372" alt="image" src="https://github.com/user-attachments/assets/bb74c872-2e81-4fdc-ae6c-1ec9bf2b2070" />
 
 
