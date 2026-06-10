@@ -181,9 +181,7 @@ This matches the keyspace used in your uploaded PySpark script:
 
 Cloud Provider, Choose:
 
-- Google Cloud (GCP)
-
-- or
+- Google Cloud (GCP) or
 
 - AWS
 
@@ -191,9 +189,7 @@ Either is fine.
 
 Region, Choose the region closest to you, for example:
 
-- us-east1
-
-- or
+- us-east1 or
 
 - us-east-2
 
