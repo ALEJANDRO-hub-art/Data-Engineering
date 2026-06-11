@@ -68,29 +68,23 @@ A panel called Create topic opens.
 Fill in the fields exactly as follows:
 
 Topic name
-
 - Enter: orders_topic_data_v1
 
 Partitions
-
 - Leave the default value: 6
 
 Cleanup policy
-
 - Leave as: Delete
 
 Retention time
-
 - Leave the default setting.
 
 Advanced settings
-
 - Do not modify anything.
 
 Then click:
 
 - Create with defaults or
-
 - Create topic
 
 (depending on your Confluent Cloud version).
@@ -105,14 +99,12 @@ Click:
 - + Create topic
 
 Fill in:
-
-Topic name: payments_topic_data_v1
+- Topic name: payments_topic_data_v1
 
 Partitions
 - Leave: 6
 
 Cleanup policy
-
 - Leave: Delete
 
 Then click: 
