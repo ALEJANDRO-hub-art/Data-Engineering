@@ -7,7 +7,7 @@ I have the following project Kafka + Spark Stateful Transaction Aggregation Proj
 Stateful GroupBy Aggregation
 - File: **kafka_spark_stateful_groupby.py**
 - Calculates total transaction amount per user.
-- 
+
 Stateful Window GroupBy Aggregation
 - File: **kafka_spark_stateful_window_groupby.py**
 - Calculates total transaction amount per user every 3-minute window.
