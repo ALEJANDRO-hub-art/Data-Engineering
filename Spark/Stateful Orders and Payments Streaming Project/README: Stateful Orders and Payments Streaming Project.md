@@ -184,7 +184,7 @@ MongoDB Atlas
 - → Database Deployments
 - → Cluster0
 - → Browse Collections
-- 
+ 
 **Create the Database**
 
 Inside Collections:
