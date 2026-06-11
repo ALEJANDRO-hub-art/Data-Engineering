@@ -57,7 +57,7 @@ Inside the cluster: Create the First Topic
 On the Topics page:
 
 Click the blue button:
-- + Create topic
+- Create topic
 
 (usually located in the upper-right corner)
 
@@ -96,7 +96,7 @@ Wait a few seconds until the topic status becomes: Provisioned
 While still on the Topics page:
 
 Click:
-- + Create topic
+- Create topic
 
 Fill in:
 - Topic name: payments_topic_data_v1
