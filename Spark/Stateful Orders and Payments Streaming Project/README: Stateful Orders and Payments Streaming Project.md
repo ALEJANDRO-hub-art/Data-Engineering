@@ -253,4 +253,36 @@ This matches the MongoDB output settings used in the Spark script (join_stream.p
 
 <img width="313" height="54" alt="image" src="https://github.com/user-attachments/assets/c5b06c2b-97d6-4366-982d-2078fff88da3" />
 
+**Open Windows Prompt cmd in the project folder**
+
+Do:
+cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\8 Spark\Module 5 - Spark Class 5\1 Class Content PPT, Notes, Exercises DONE\Kafka-To-Mongo-Spark-Streaming DONE"
+
+**Install Python dependency for producers**
+
+Run:
+- pip install kafka-python
+
+**Start the Spark streaming job**
+
+Run this first:
+- spark-submit join_stream.py
+
+This starts Spark and waits for new Kafka messages.
+
+Leave this CMD window open.
+
+Lets inspect this **join_stream.py**
+- Defines schemas for orders and payments
+- Read orders stream
+- Read payments stream
+- Combine streams
+- Apply stateful processing with applyInPandasWithState
+
+
+
+
+
+
+
 
