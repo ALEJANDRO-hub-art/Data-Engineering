@@ -20,19 +20,110 @@ join_stream(1).py
 **Create Kafka topics in Confluent Cloud**
 
 In Confluent Cloud GUI:
+- Open Confluent Cloud
+- Open your web browser.
 
-Open Confluent Cloud
+Go to:
+- https://confluent.cloud
 
-Open your Kafka cluster
+Click Sign In. Enter your Confluent Cloud credentials.
 
-Go to Topics
-- Click Create topic
- - Create: orders_topic_data_v1
- - Create another topic: payments_topic_data_v1
+Click Continue.
 
+**Open your Kafka cluster**
 
+After logging in:
 
+You will land on the Environments page. Locate the environment used for this project (for example, Default).
+- Click the environment name.
 
+You should now see something similar to:
+
+Environment
+└── Cluster Name
+
+Under Kafka clusters, click your cluster.
+
+Example:
+- Basic Cluster or
+- inventory-cluster
+
+Go to **Topics**
+
+Open the Topics Page
+
+Inside the cluster: Create the First Topic
+
+On the Topics page:
+
+Click the blue button:
+- + Create topic
+
+(usually located in the upper-right corner)
+
+**Configure the First Topic**
+
+A panel called Create topic opens.
+
+Fill in the fields exactly as follows:
+
+Topic name
+
+- Enter: orders_topic_data_v1
+
+Partitions
+
+- Leave the default value: 6
+
+Cleanup policy
+
+- Leave as: Delete
+
+Retention time
+
+- Leave the default setting.
+
+Advanced settings
+
+- Do not modify anything.
+
+Then click:
+
+- Create with defaults or
+
+- Create topic
+
+(depending on your Confluent Cloud version).
+
+Wait a few seconds until the topic status becomes: Provisioned
+
+**Create the Second Topic**
+
+While still on the Topics page:
+
+Click:
+- + Create topic
+
+Fill in:
+
+Topic name: payments_topic_data_v1
+
+Partitions
+- Leave: 6
+
+Cleanup policy
+
+- Leave: Delete
+
+Then click: 
+- Create with defaults or
+- Create topic
+
+**Verify Both Topics Exist**
+
+You should now see both topics listed under Topics:
+
+<img width="521" height="117" alt="image" src="https://github.com/user-attachments/assets/9882eddc-1dde-4205-8bf4-315040b24e76" />
 
 
 
