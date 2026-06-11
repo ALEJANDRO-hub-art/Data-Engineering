@@ -68,7 +68,7 @@ A panel called Create topic opens.
 Fill in the fields exactly as follows:
 
 Topic name
-- Enter: orders_topic_data_v1
+- Enter: **orders_topic_data_v1**
 
 Partitions
 - Leave the default value: 6
@@ -99,7 +99,7 @@ Click:
 - Create topic
 
 Fill in:
-- Topic name: payments_topic_data_v1
+- Topic name: **payments_topic_data_v1**
 
 Partitions
 - Leave: 6
@@ -117,15 +117,140 @@ You should now see both topics listed under Topics:
 
 <img width="521" height="117" alt="image" src="https://github.com/user-attachments/assets/9882eddc-1dde-4205-8bf4-315040b24e76" />
 
+Now that we have created Kafka topics lets:
+
+**Create MongoDB Atlas database**
+
+In MongoDB Atlas GUI:
+
+Open MongoDB Atlas, Open your cluster
+
+Click: Browse Collections
+
+Click: Create Database
+
+Database name: **ecomm_mart**
+
+Collection name: **orders_data_process_fact**
+
+This matches the Spark output settings in join_stream.py.
+
+**A more specific step procedure Create MongoDB Atlas Database (Exact GUI Steps)**
+
+*Open MongoDB Atlas*
+
+Open your web browser. Go to:
+
+- https://cloud.mongodb.com
+
+Click Sign In.
+
+Enter your MongoDB Atlas credentials.
+
+Click Sign In.
+
+*Open Your Cluster*
+
+After logging in: You will arrive at the Projects page.
+
+- Click the project used for this assignment. Example: Ecommerce Project
+
+In the left menu, click:
+
+- Database or
+- Database Deployments
+
+(depending on your Atlas version).
+
+Under Database Deployments, locate your cluster.
+
+Example: Cluster0
+ 
+- Click the cluster name.
+
+You should now see your cluster dashboard.
+
+*Open Browse Collections*
+
+Inside the cluster page:
+
+Locate the button:
+- Browse Collections. Click Browse Collections.
+
+The navigation path becomes:
+
+MongoDB Atlas
+- → Project
+- → Database Deployments
+- → Cluster0
+- → Browse Collections
+- 
+**Create the Database**
+
+Inside Collections:
+
+If this is your first database, click:
+- Add My Own Data
+
+If databases already exist:
+
+Click the green button:
+- Create Database
+
+located near the upper-right corner. A window titled Create Database appears.
+
+**Enter the Database Name**
+
+In the popup window: Database Name
+
+Type exactly:
+- ecomm_mart
+- 
+**Enter the Collection Name**
+
+Under Collection Name, type exactly:
+- orders_data_process_fact
+
+Your form should look like this:
+
+<img width="492" height="125" alt="image" src="https://github.com/user-attachments/assets/0368e5fc-ca5d-4a70-bfd0-3d9c24129b6d" />
+
+**Create the Database**
+
+Verify the names are correct.
+
+Click the green button:
+- Create
+
+MongoDB Atlas will create: 
+
+<img width="255" height="67" alt="image" src="https://github.com/user-attachments/assets/04c364d2-4762-4021-81d5-f75ccbd52d6d" />
 
 
+**Verify the Database Was Created**
 
+You should now see the following structure in the left panel:
 
+<img width="261" height="55" alt="image" src="https://github.com/user-attachments/assets/7f758882-ee8a-4365-b45b-f4cd04b1c703" />
 
+Click: **orders_data_process_fact**
 
+The collection will open.
 
+Initially, you will see:
 
+No documents found.
 
+This is normal because Spark has not written any records yet.
 
+**Final MongoDB Atlas Structure**
+
+After completing this step, your Atlas database should look exactly like this:
+
+<img width="293" height="69" alt="image" src="https://github.com/user-attachments/assets/19baff38-bad4-48f4-b4b3-2c6d43236df1" />
+
+This matches the MongoDB output settings used in the Spark script (join_stream.py). When you run the Spark streaming job later, the processed records will automatically be inserted into:
+
+<img width="313" height="54" alt="image" src="https://github.com/user-attachments/assets/c5b06c2b-97d6-4366-982d-2078fff88da3" />
 
 
