@@ -324,6 +324,7 @@ Use it to run:
 - payments_producer.py
 - join_stream.py
 
+<img width="739" height="236" alt="image" src="https://github.com/user-attachments/assets/40f4d98b-d9f2-4aae-8b10-7308ef0d0a05" />
 
 
 
