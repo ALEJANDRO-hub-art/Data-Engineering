@@ -256,7 +256,7 @@ This matches the MongoDB output settings used in the Spark script (join_stream.p
 **Open Windows Prompt cmd in the project folder**
 
 Do:
-cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\8 Spark\Module 5 - Spark Class 5\1 Class Content PPT, Notes, Exercises DONE\Kafka-To-Mongo-Spark-Streaming DONE"
+- cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\8 Spark\Module 5 - Spark Class 5\1 Class Content PPT, Notes, Exercises DONE\Kafka-To-Mongo-Spark-Streaming DONE"
 
 **Install Python dependency for producers**
 
