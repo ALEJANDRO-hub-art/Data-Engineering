@@ -279,9 +279,50 @@ Lets inspect this **join_stream.py**
 - Combine streams
 - Apply stateful processing with applyInPandasWithState
 
+**Open a second CMD for orders**
 
+Open another CMD in the same folder:
 
+- cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\8 Spark\Module 5 - Spark Class 5\1 Class Content PPT, Notes, Exercises DONE\Kafka-To-Mongo-Spark-Streaming DONE"
 
+Run:
+- python orders_producer.py
+
+This sends order events to Kafka.
+
+**Open a third CMD for payments**
+
+Open another CMD in the same folder and run:
+- python payments_producer.py
+
+This sends a payment for: order_2
+
+So Spark should join the payment with the matching order if order_2 already exists.
+
+**GUI execution summary**
+
+Confluent Cloud GUI
+
+Use it to:
+- Create Kafka cluster
+- Create **orders_topic_data_v1**
+- Create **payments_topic_data_v1**
+- Monitor messages
+
+**MongoDB Atlas GUI**
+
+Use it to:
+- Create database: **ecomm_mart**
+- Create collection: **orders_data_process_fact**
+- Check joined output records
+
+Local Windows CMD
+
+Use it to run:
+
+- orders_producer.py
+- payments_producer.py
+- join_stream.py
 
 
 
