@@ -83,6 +83,12 @@ Your .env file should contain:
 
 <img width="359" height="95" alt="image" src="https://github.com/user-attachments/assets/6aa3b4dd-777e-4c3c-b30a-31504b93975b" />
 
+Im missing: 
+- mock_data.csv
+- mock_data_schema.json
+- .env
 
+I generated them and pasted in the project folder:
 
+<img width="703" height="246" alt="image" src="https://github.com/user-attachments/assets/832e6229-99f2-4e48-99aa-695d1f470ffa" />
 
