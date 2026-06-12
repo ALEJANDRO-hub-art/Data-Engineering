@@ -83,10 +83,7 @@ Enter the Topic Name. You will see a field labeled:
 
 It should look similar to this:
 
-Topic name
-┌─────────────────────┐
-│ user_data_topic     │
-└─────────────────────┘
+<img width="477" height="100" alt="image" src="https://github.com/user-attachments/assets/b5579b7f-2b78-4975-aebe-d097420114a4" />
 
 Set the Number of Partitions. Below the topic name field, locate:
 
