@@ -164,7 +164,7 @@ For most tutorials: Select:
 Choose the region closest to you. Since you're in Miami, common choices are:
 - US East (N. Virginia) or
 - US East (Ohio)
-- 
+ 
 *Review the Estimated Cost*
 
 For the Basic cluster page, verify:
@@ -179,11 +179,9 @@ Click the blue Launch cluster button located in the bottom-right corner. Conflue
 
 *Wait for Provisioning*
 
-You will see a status similar to: Provisioning...
-
-Wait approximately: 2–5 minutes
-
-When complete, the status changes to: Ready
+- You will see a status similar to: Provisioning...
+- Wait approximately: 2–5 minutes
+- When complete, the status changes to: Ready
 
 What You Should See. After creation, the screen should look similar to:
 
