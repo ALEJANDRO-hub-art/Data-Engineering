@@ -527,6 +527,109 @@ Paste:
 
 <img width="375" height="515" alt="image" src="https://github.com/user-attachments/assets/d8f356f7-f18d-4a6d-bb53-e4994b4d7581" />
 
+*Validate the Schema*
+
+Click: Validate
+
+Confluent should display something similar to: Schema is valid
+
+*Create the Schema*
+
+Click: Create schema or Register schema
+
+(depending on the Confluent Cloud version).
+
+*Verify Registration*
+
+You should now see:
+
+<img width="317" height="70" alt="image" src="https://github.com/user-attachments/assets/71ef9c84-0fe8-41d4-b912-5e65bc39e746" />
+
+(or ads_data-value if you used the assignment's subject name).
+
+Clicking it should display:
+- Subject name
+- Version 1
+- Schema definition
+- Compatibility settings
+
+There a difference between the schema in your project folder and this schema. The difference is the following:
+
+<img width="564" height="211" alt="image" src="https://github.com/user-attachments/assets/edafdf53-81dd-4db7-b74f-51592545c922" />
+
+You should use the schema in your project folder.
+
+This ensures the producer can publish successfully and the Spark and consumer applications can deserialize the records without schema mismatch errors.
+
+**GUI steps: Cassandra**
+
+You can use DataStax Astra DB.
+
+*Create database*
+
+Open Astra DB. Click Databases. Click Create Database.
+- Database name: ads_streaming_db
+- Keyspace name: ads_keyspace
+
+Select region.
+
+Click Create Database.
+
+*Open CQL Console*
+
+Open the database. Click CQL Console.
+
+Run:
+
+<img width="398" height="149" alt="image" src="https://github.com/user-attachments/assets/2f42dd33-92d4-4288-8d21-1b7c384b27e0" />
+
+Open you Windows Command Prompt (cmd).
+
+Do:
+
+cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\8 Spark\Module 5 - Spark Class 5\2 Assignment & Solution DONE\Spark_Streaming_Solution"
+
+**Install packages**
+
+Run:
+- pip install confluent-kafka pandas python-dotenv pyspark
+
+**Start producer**
+
+Run:
+- python producer.py
+
+This sends mock ad data into Kafka.
+
+**Test consumer**
+
+Open a second CMD in the same folder:
+
+Run:
+- python consumer.py
+
+You should see Kafka messages printed.
+
+**Run Spark Streaming**
+
+Open a third CMD in the same folder:
+
+Run:
+- spark-submit stream_ads.py
+
+This reads Kafka messages and prints them in Spark console.
+
+<img width="427" height="258" alt="image" src="https://github.com/user-attachments/assets/e1cfa48d-0108-4289-9ed1-7f99abb43be9" />
+
+<img width="416" height="460" alt="image" src="https://github.com/user-attachments/assets/1c22d5df-b069-44ce-b63b-9cc4dda6d14d" />
+
+**What the project does**
+
+The project streams advertisement records like:
+
+<img width="345" height="183" alt="image" src="https://github.com/user-attachments/assets/007a434a-04e9-473e-a6e4-c40bc676f9b5" />
+
+Then Spark groups the records by ad_id, calculates total clicks, total views, and average cost per view, and stores the final result in Cassandra.
 
 
 
