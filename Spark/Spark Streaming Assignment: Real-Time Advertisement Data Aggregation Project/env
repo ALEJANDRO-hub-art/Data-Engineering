@@ -1,0 +1,4 @@
+confluent_kafka_id=YOUR_KAFKA_API_KEY
+confluent_kafka_secret_key=YOUR_KAFKA_API_SECRET
+confluence_schema_id=YOUR_SCHEMA_REGISTRY_KEY
+confluence_schema_secret=YOUR_SCHEMA_REGISTRY_SECRET
