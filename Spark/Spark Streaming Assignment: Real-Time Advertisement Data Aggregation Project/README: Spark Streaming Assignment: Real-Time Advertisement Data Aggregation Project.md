@@ -187,7 +187,345 @@ What You Should See. After creation, the screen should look similar to:
 
 <img width="375" height="192" alt="image" src="https://github.com/user-attachments/assets/98403f57-ff19-43be-a9d9-e4e0e9f61424" />
 
+**Create topic**
 
+Open your Kafka cluster. Left menu → Topics. Click Create topic.
+- Topic name: ads_data
+- Partitions: 1
+
+Click Create with defaults.
+
+Lets explain it in detail.
+
+Based on your uploaded files, the Python producer, consumer, and Spark scripts all use the topic name:
+- topic = "ad_topic"
+
+Specifically:
+- Producer: topic = 'ad_topic'
+- Spark Streaming: topic = "ad_topic"
+- Consumer: topic = 'ad_topic'
+
+Therefore, do NOT create ads_data. The correct topic name is:
+- ad_topic
+
+
+*Open Your Kafka Cluster*
+
+Go to https://confluent.cloud. Sign in. Select your environment.
+- Click your cluster (for example, orders-cluster).
+
+You will arrive at the cluster overview page.
+
+*Open Topics*
+
+On the left navigation menu: Click: **Topics**
+
+You should see a screen similar to:
+
+<img width="329" height="139" alt="image" src="https://github.com/user-attachments/assets/c16893d8-e1e8-4092-94eb-ce06f07cb497" />
+
+*Create Topic*
+
+Click the blue button: Create topic
+
+located near the upper-right corner.
+
+*Configure the Topic*
+
+Fill in the following values.
+
+Topic Name. Enter:
+- ad_topic
+- 
+Number of Partitions.
+
+Set:
+- 1
+- 
+Replication Factor. For a Basic cluster, this is automatically managed by Confluent Cloud.
+- Leave the default value.
+
+Storage Retention
+- Leave the default settings.
+
+Cleanup Policy. Leave:
+- Delete (default)
+
+*Review*
+
+Your screen should show something similar to:
+
+<img width="494" height="241" alt="image" src="https://github.com/user-attachments/assets/aff92549-ac2f-4a17-b779-f30d6805cce8" />
+
+Create the Topic
+
+Click: Create with defaults. located at the bottom-right.
+
+*Verify the Topic*
+
+After a few seconds, you should see:
+
+Topics
+- ad_topic
+- Partitions: 1
+- Messages: 0
+- Status: Active
+
+**Create API key**
+
+Open cluster. Left menu → API keys.
+- Click Create key.
+- Select Global access or cluster access.
+
+Copy:
+- API key
+- API secret
+
+Put them in .env.
+
+Lets explain this in detail.
+
+Open Your Kafka Cluster. After logging in:
+- Click Environments from the top navigation. Select the environment containing your project.
+- 
+Under Clusters, click your Kafka cluster. It will usually look similar to:
+
+<img width="259" height="57" alt="image" src="https://github.com/user-attachments/assets/6b3c300f-646a-4c28-8688-ce108c4b1cdd" />
+
+Example:
+
+<img width="219" height="53" alt="image" src="https://github.com/user-attachments/assets/dd51fb75-5d4e-4db3-94e3-73abfe270772" />
+
+*Open API Keys*
+
+Inside the cluster page: Look at the left menu.
+- Click: API keys
+
+The menu path is:
+
+<img width="355" height="125" alt="image" src="https://github.com/user-attachments/assets/7a997d16-4863-4c67-b148-ee0ebf62ef8f" />
+
+*Create the Kafka API Key*
+
+Click the blue button: Create key. A wizard opens.
+
+*Choose Access Type*
+
+You'll see two options:
+
+Option A (Recommended). Select:
+- Global access
+
+Then click: Next
+
+Option B. If instructed by the course:
+
+Select: Cluster access. Choose your cluster.
+- Click: Next
+
+*Choose Permissions*
+
+If using Cluster Access: Select:
+- Developer ReadWrite or
+- CloudClusterAdmin. (depending on course instructions)
+
+Click: Continue
+
+*Generate the Key*
+
+Click: Create API key
+
+Confluent now displays:
+- API Key
+- API Secret
+
+For example:
+- API Key: ABCD123XYZ
+- API Secret: xxxxx-yyyyy-zzzzz
+
+*Copy Them Immediately*
+
+⚠️ Important: The secret is only shown once. Copy both values. Paste them somewhere safe.
+
+*Update Your .env File*
+
+Open your .env file:
+- confluent_kafka_id=**YOUR_KAFKA_API_KEY**
+- confluent_kafka_secret_key=**YOUR_KAFKA_API_SECRET**
+- confluence_schema_id=YOUR_SCHEMA_REGISTRY_KEY
+- confluence_schema_secret=YOUR_SCHEMA_REGISTRY_SECRET
+
+Replace:
+- confluent_kafka_id=**ABCD123XYZ**
+- confluent_kafka_secret_key=**xxxxxxxx**
+
+with the values you copied.
+
+**Create Schema Registry API key**
+
+Left menu → Schema Registry. Enable Schema Registry if needed.
+
+Go to API keys.
+- Click Create key. Copy key and secret.
+
+Put them in .env.
+
+Lets explain this in detail.
+
+*Select the Correct Environment*
+
+From the top navigation bar:Environments
+- Click the environment containing your Kafka cluster. Example:default
+- 
+*Open Schema Registry*
+
+On the left-hand menu, click: Schema Registry
+
+The navigation path looks like:
+
+<img width="328" height="110" alt="image" src="https://github.com/user-attachments/assets/873a11d8-fa04-46e3-8056-838931e8c387" />
+
+*Enable Schema Registry (If Required)*
+
+If this is your first time opening Schema Registry, you'll see a page similar to: Schema Registry is not enabled.
+- Click: Enable Schema Registry
+
+Wait a few moments while Confluent provisions it. Once enabled, you'll see the Schema Registry dashboard.
+
+*Open Schema Registry API Keys*
+
+Inside Schema Registry:
+- Click: API Keys
+
+You should see a page similar to:
+
+<img width="390" height="93" alt="image" src="https://github.com/user-attachments/assets/c54e7775-ba42-486d-a86f-996f4acc9cce" />
+
+*Create the Schema Registry API Key*
+
+Click the blue button: Create key. A wizard will appear.
+
+*Select the Schema Registry Cluster*
+
+If prompted: Select the available Schema Registry cluster. 
+- Click: Next
+
+Usually there is only one option.
+
+Generate the Credentials*
+- Click: Create API key
+
+Confluent will display:
+- API Key
+- API Secret
+
+For example:
+- API Key: SR123ABC456
+- API Secret: xxxxxxxxxxxxxxxx
+
+*Copy Both Values Immediately*
+
+⚠️ The secret is shown only once. Copy:
+- Schema Registry API Key
+- Schema Registry API Secret
+
+Save them somewhere safe.
+
+*Update the .env File*
+
+Open your .env file and replace the placeholders:
+- confluent_kafka_id=YOUR_KAFKA_API_KEY
+- confluent_kafka_secret_key=YOUR_KAFKA_API_SECRET
+- confluence_schema_id=**YOUR_SCHEMA_REGISTRY_KEY**
+- confluence_schema_secret=**YOUR_SCHEMA_REGISTRY_SECRET**
+
+with your actual values.
+
+For example:
+- confluent_kafka_id=ABCD123XYZ
+- confluent_kafka_secret_key=kafka-secret-here
+- confluence_schema_id=**SR123ABC456**
+- confluence_schema_secret=**schema-secret-here**
+
+*How These Credentials Are Used in Your Project*
+- **producer.py** uses the Schema Registry credentials to serialize Avro messages before publishing them to Kafka.
+- **stream_ads.py** uses them to retrieve the latest schema and decode Kafka records inside Spark Structured Streaming.
+- **consumer.py** uses them to deserialize Avro messages consumed from Kafka.
+
+**Create Avro schema**
+
+Use this schema for topic value:
+
+<img width="483" height="248" alt="image" src="https://github.com/user-attachments/assets/b4adeeca-ab6f-4241-8299-3db7bfac6753" />
+
+Subject name should be:
+- ads_data-value
+
+Lets explain this in detail.
+
+*Select Your Environment*
+
+From the top navigation: Click: Environments. Then select the environment containing your Kafka cluster.
+- Example: default
+
+**Open Schema Registry**
+
+From the left menu, click: Schema Registry
+
+The navigation path looks like:
+
+<img width="366" height="111" alt="image" src="https://github.com/user-attachments/assets/d456a023-f52f-4175-83b3-025f97906abb" />
+
+*Open Schemas*
+
+Inside Schema Registry: Click: Schemas
+
+You'll see either:
+- No schemas found or a list of existing schemas.
+
+*Click "Add Schema"*
+
+Click the blue button: + Add schema. A form will open.
+
+*Select the Subject Name*
+
+Under: Subject name
+- enter: ads_data-value
+
+according to your assignment instructions.
+
+However, your uploaded Python files actually expect:
+
+<img width="340" height="92" alt="image" src="https://github.com/user-attachments/assets/17a441d6-3a96-4806-b393-b669d6a72913" />
+
+which means the subject should be:
+- ad_topic-value
+
+because all three scripts retrieve:
+
+<img width="285" height="64" alt="image" src="https://github.com/user-attachments/assets/37c7903a-f768-416b-9714-a4f091e156ba" />
+
+from Schema Registry.
+
+Therefore: Use:
+- ad_topic-value
+
+unless you also change the topic names inside the Python scripts.
+
+*Select Schema Type*
+
+Under: Schema format
+- choose: Avro
+
+from the dropdown.
+
+*Paste the Schema*
+
+Delete any example text.
+
+Paste:
+
+<img width="375" height="515" alt="image" src="https://github.com/user-attachments/assets/d8f356f7-f18d-4a6d-bb53-e4994b4d7581" />
 
 
 
