@@ -43,5 +43,46 @@ Write Aggregated Data to Cassandra:
 **Submission:**
 Submit your Spark Streaming application code, along with a brief report detailing the results and any challenges faced during the assignment.
 
+----------------------------------------------------------------------------------------------------------------
+
+It is one project: **Kafka → Spark Streaming → Cassandra**. The PDF says the goal is to process real-time advertisement data, aggregate by ad_id, and store/update results in Cassandra.
+
+Files you uploaded:
+- Spark Assignment.pdf. Assignment instructions.
+
+**producer.py**
+- Sends advertisement records to Kafka using Avro serialization.
+ 
+**consumer.py**
+- Test consumer that reads Avro messages from Kafka.
+
+**stream_ads.py**
+- Spark Streaming job that reads Kafka Avro data and prints it to console.
+
+Important correction. Your assignment says the topic must be:
+- ads_data
+
+But all Python files use: **topic = "ad_topic"**
+
+Change it to: **topic = "ads_data"**
+
+in:
+- producer.py
+- consumer.py
+- stream_ads.py
+
+Where to upload/save the files. Create one project folder on Windows:
+
+C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\8 Spark\Module 5 - Spark Class 5\2 Assignment & Solution DONE\Spark_Streaming_Solution
+
+Put these files inside:
+
+<img width="600" height="213" alt="image" src="https://github.com/user-attachments/assets/65adf76b-01a8-4060-85b4-7f2a92b300f2" />
+
+Your .env file should contain:
+
+<img width="359" height="95" alt="image" src="https://github.com/user-attachments/assets/6aa3b4dd-777e-4c3c-b30a-31504b93975b" />
+
+
 
 
