@@ -621,7 +621,9 @@ This reads Kafka messages and prints them in Spark console.
 
 <img width="427" height="258" alt="image" src="https://github.com/user-attachments/assets/e1cfa48d-0108-4289-9ed1-7f99abb43be9" />
 
+
 <img width="416" height="460" alt="image" src="https://github.com/user-attachments/assets/1c22d5df-b069-44ce-b63b-9cc4dda6d14d" />
+
 
 **What the project does**
 
