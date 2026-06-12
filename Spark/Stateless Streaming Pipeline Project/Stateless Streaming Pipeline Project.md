@@ -25,11 +25,7 @@ C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Bas
 
 Put all 3 files inside that folder:
 
-Kafka_Spark_Stateless_Streaming/
-│
-├── kafka_spark_stateless_streaming.py
-├── user_data_producer.py
-└── user_data.json
+<img width="481" height="105" alt="image" src="https://github.com/user-attachments/assets/681c8999-bda1-4aa8-86be-2070aa0c4c06" />
 
 In our case the project name is:
 
