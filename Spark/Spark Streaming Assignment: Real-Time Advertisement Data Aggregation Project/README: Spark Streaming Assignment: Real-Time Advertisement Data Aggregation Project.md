@@ -92,3 +92,109 @@ I generated them and pasted in the project folder:
 
 <img width="703" height="246" alt="image" src="https://github.com/user-attachments/assets/832e6229-99f2-4e48-99aa-695d1f470ffa" />
 
+**GUI steps: Confluent Cloud**
+
+Create Kafka cluster
+
+Open Confluent Cloud.
+
+Click Environments. Open your environment or create one.
+
+Click Create cluster.
+- Choose Basic.
+
+Select cloud/region.
+
+Click Launch cluster.
+
+*Lets explain it in detail:*
+
+Open Confluent Cloud. Open your web browser.
+- Go to https://confluent.cloud
+
+Click Sign In. Log in with your Confluent account credentials.
+
+If you do not have an account: Click Sign Up. Complete the registration process. Verify your email address.
+
+Open Environments. After logging in:
+
+Look at the upper-left corner of the screen. You will see the currently selected environment name (for example, Default). Click the environment drop-down.
+
+You have two options:
+- Use an Existing Environment. Select the environment you want to use.
+- Create a New Environment. Click Create environment.
+
+Enter:
+<img width="499" height="75" alt="image" src="https://github.com/user-attachments/assets/e17f7641-42b7-44fd-b184-70e19e0faf5c" />
+
+Click Create. The new environment opens automatically.
+
+*Create the Kafka Cluster*
+
+Inside the selected environment: Locate the Clusters section. You can access it by either:
+
+Clicking Clusters in the left navigation menu, or Clicking the large  Create cluster button in the center of the dashboard.
+- Click Create cluster.
+
+Choose the Cluster Type. You will see several cluster options:
+- Basic
+- Standard
+- Enterprise
+- Dedicated
+
+For course projects:
+- Click the Basic tile. Click Begin configuration.
+
+*Configure the Cluster*
+
+Fill in the following settings:
+- Cluster Name. Example:
+ - orders-cluster or
+ - kafka-lab
+
+Cloud Provider. Choose one:
+- AWS
+- Google Cloud
+- Azure
+
+For most tutorials: Select:
+- AWS
+- Region
+
+Choose the region closest to you. Since you're in Miami, common choices are:
+- US East (N. Virginia) or
+- US East (Ohio)
+- 
+*Review the Estimated Cost*
+
+For the Basic cluster page, verify:
+
+<img width="600" height="249" alt="image" src="https://github.com/user-attachments/assets/c18367af-681b-40d1-8053-34ebc8531b37" />
+
+Review the pricing information shown on the right side.
+
+*Launch the Cluster*
+
+Click the blue Launch cluster button located in the bottom-right corner. Confluent Cloud will now provision the Kafka cluster.
+
+*Wait for Provisioning*
+
+You will see a status similar to: Provisioning...
+
+Wait approximately: 2–5 minutes
+
+When complete, the status changes to: Ready
+
+What You Should See. After creation, the screen should look similar to:
+
+<img width="375" height="192" alt="image" src="https://github.com/user-attachments/assets/98403f57-ff19-43be-a9d9-e4e0e9f61424" />
+
+
+
+
+
+
+
+
+
+
