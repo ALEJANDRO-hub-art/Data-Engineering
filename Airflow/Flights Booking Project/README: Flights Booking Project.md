@@ -189,10 +189,7 @@ Then click:
 Create new key
 
 A window appears.
-
-Select: JSON
-
-Then click: CREATE
+- Select: JSON Then click: CREATE
 
 Download the JSON file
 
