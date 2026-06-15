@@ -41,8 +41,7 @@ Upload flight_booking.csv into:
 - flight-booking-analysis/source-dev/
 
 The final path must be:
-
-gs://airflow-projetcs-gds-dev/flight-booking-analysis/source-dev/flight_booking.csv
+- gs://airflow-projetcs-gds-dev/flight-booking-analysis/source-dev/flight_booking.csv
 
 Lets explain this in detail.
 
