@@ -336,12 +336,105 @@ Lets check the python file.
 
 <img width="680" height="559" alt="image" src="https://github.com/user-attachments/assets/a03f7efc-3694-4895-ab74-b10f2b52a68d" />
 
+If the Connection Does NOT Exist
 
+Click the button near the top right: + Add Connection
 
+Fill in the Connection Information
 
+You will see a form. Complete only these fields:
 
+Connection Id
+- Type: google_cloud_default
 
+Connection Type (Click the dropdown.)
+- Select: Google Cloud
 
+Project Id
+- Enter your GCP project ID: dev-solstice-403604
+
+Keyfile Path
+- Leave blank.
+
+Keyfile JSON
+- Leave blank.
+
+Scope
+- Leave blank.
+
+Number of Retries
+- Leave blank.
+
+Impersonation Chain
+- Leave blank.
+
+The form should look similar to:
+- Connection Id:      google_cloud_default
+- Connection Type:    Google Cloud
+- Project Id:         dev-solstice-403604
+- Keyfile Path:
+- Keyfile JSON:
+- Scope:
+- Retries:
+- Impersonation Chain:
+
+Save the Connection
+
+Scroll to the bottom of the page. Click:
+- Save
+
+Verify the Connection Appears. You are returned to the Connections list.
+
+Search again for: google_cloud_default
+
+You should now see:
+
+<img width="477" height="75" alt="image" src="https://github.com/user-attachments/assets/b63c9c4a-692e-49e8-9c19-0dbd8759831d" />
+
+Important Note for Cloud Composer
+
+If you are using Cloud Composer 2 or Cloud Composer 3, this connection is usually created automatically by Google.
+
+Therefore, in most cases you will find:
+- **google_cloud_default**
+
+already present, and you do not need to create it manually.
+
+<img width="543" height="332" alt="image" src="https://github.com/user-attachments/assets/f463f934-7d51-4269-83ab-0e013701283f" />
+
+**Run the DAG**
+
+In Airflow UI, search: **fetch_json_and_load_to_hive**
+
+Toggle the DAG ON. Click the DAG name. Click the Play / Trigger DAG button. Click Trigger.
+
+Watch the tasks:
+- download_from_gcs
+- submit_hive_job
+
+Both should turn green.
+
+Important code issue to fix
+
+Your DAG currently uses placeholder local paths:
+
+<img width="268" height="59" alt="image" src="https://github.com/user-attachments/assets/ac2b83ac-637a-4d3e-a82c-4563ae089bb7" />
+
+For Composer, change it to something like:
+
+<img width="248" height="64" alt="image" src="https://github.com/user-attachments/assets/7d4c1ba6-5d7c-4cb1-9c30-3cb75cc982fb" />
+
+That is this part over here called **filename=**
+
+<img width="749" height="429" alt="image" src="https://github.com/user-attachments/assets/35ec05ff-f584-42fa-acff-3fbd5c744080" />
+
+Then use /tmp/daily_file.json in both the download task and Hive query.
+
+<img width="922" height="382" alt="image" src="https://github.com/user-attachments/assets/291600a6-7a90-4545-acce-d79887d2aaa9" />
+
+<img width="663" height="370" alt="image" src="https://github.com/user-attachments/assets/e8b779ee-71e2-4078-a31d-8b02e4f3bd52" />
+
+<img width="536" height="398" alt="image" src="https://github.com/user-attachments/assets/059eea0d-bf55-4db8-a26b-0edc3e7b8ef9" />
 
 
 
