@@ -25,8 +25,13 @@ table on GCP Dataproc.
 
 ------------------------------------------------------------------------------------------------------------
 
+Project name
 
+Airflow Assignment 2: Load Daily JSON from GCS to Hive on Dataproc
 
+The assignment is to build an Airflow DAG that downloads a daily JSON file from a GCP bucket and loads it into a Hive table on Dataproc.
+
+<img width="655" height="195" alt="image" src="https://github.com/user-attachments/assets/b62239fb-a41a-4c3c-ab84-8acf1e2fba11" />
 
 
 
