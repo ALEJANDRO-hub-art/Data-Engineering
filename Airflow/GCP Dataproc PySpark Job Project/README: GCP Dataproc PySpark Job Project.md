@@ -129,6 +129,175 @@ Service account: use one with permissions for:
 
 Click Create
 
+Lets explain this in detail.
+
+Search for Composer
+
+At the top search bar: Type: Composer. Then click: **Cloud Composer**
+
+under the results.
+
+Enable the API (if prompted)
+
+If this is your first Composer environment, you may see:
+
+- Enable Cloud Composer API. Click: ENABLE
+
+Wait a few minutes until the API is enabled.
+
+Click Create Environment
+
+Inside Cloud Composer: Top of the page: Click:
+- + CREATE ENVIRONMENT
+
+You may see options such as:
+- Composer 3
+- Composer 2
+
+Select:
+- Composer 3
+
+(Recommended)
+
+If Composer 3 is unavailable in your region, choose Composer 2.
+
+Configure Basic Information
+
+Under Environment configuration, fill in:
+
+- Name. Enter: **airflow-assignment-env**
+- Region. Open the dropdown. Select: us-central1 (Iowa)
+
+Select the Service Account
+
+Scroll down to the section called: Node configuration or Environment configuration
+
+Locate: Service account. Click the dropdown. Select the service account you created earlier.
+
+Example:
+- composer-sa@your-project-id.iam.gserviceaccount.com
+
+Verify Required Permissions. The service account should have these IAM roles:
+- ✓ Cloud Composer Worker
+- ✓ Storage Admin
+- ✓ Dataproc Editor (Optional)
+- ✓ BigQuery User
+
+To verify: Open another tab. Go to:
+
+Navigation Menu
+- → IAM & Admin
+- → IAM
+
+Find your service account. Confirm these roles exist.
+
+If not:
+- Click the pencil icon.
+- Click Add Another Role. Add the missing role.
+- Click Save.
+
+Return to Composer.
+
+Leave Remaining Settings as Default
+
+Unless your assignment specifies otherwise: Leave these unchanged:
+- Image Version: Use the default Composer image. Example:
+ - composer-3-airflow-2.x
+- Networking. Keep: Default network
+- Environment Size. Keep: Small
+- Airflow Database. Keep default.
+- Encryption. Keep: Google-managed encryption key
+
+Create the Environment
+
+Scroll to the bottom.
+- Click: CREATE
+
+Wait for Provisioning
+
+Composer will now create:
+- GKE cluster
+- Airflow instance
+- Cloud Storage bucket
+- Airflow database
+
+This process typically takes: 20–40 minutes
+
+The status changes from: Creating to Running
+
+Open the Airflow GUI
+
+Once the status becomes Running:
+- Click the name: **airflow-assignment-env**
+
+Then click: OPEN AIRFLOW UI
+
+You will be redirected to the Airflow web interface where you can upload DAGs and run your assignment.
+
+<img width="648" height="348" alt="image" src="https://github.com/user-attachments/assets/d2ad6b81-fe13-4bf2-bab5-12a1c2927dfb" />
+
+After this step, you'll be ready to upload your DAG files into the Composer environment and execute the Airflow assignment from the Airflow GUI.
+
+**Upload the DAG file**
+
+Open Cloud Composer. Click your environment:
+- airflow-assignment-env
+
+Find DAGs folder. Click the DAGs bucket link
+
+Open folder: dags/
+- Click Upload files. Upload: **airflow_ass1_job.py**
+
+The DAG should appear in Airflow as: **gcp_dataproc_spark_job**
+
+**Open Airflow UI**
+
+Go back to Cloud Composer. Open your environment
+- Click Airflow UI
+
+Search for DAG: **gcp_dataproc_spark_job**
+
+Toggle it ON
+
+Click the DAG name
+
+Click Trigger DAG
+
+**DAG execution flow**
+
+Your DAG runs in this order:
+
+<img width="302" height="138" alt="image" src="https://github.com/user-attachments/assets/11d88e1c-2ecf-40ef-afe6-0d9ea2dfca99" />
+
+
+Explanation:
+
+file_sensor_task checks if this file exists:
+- gs://airflow_ass1/input_files/employee.csv
+
+create_cluster creates a temporary Dataproc cluster named: airflow-cluster
+
+submit_pyspark_job runs:
+- gs://airflow_ass1/python_file/employee_batch.py
+
+delete_cluster deletes the Dataproc cluster after the Spark job finishes.
+
+<img width="571" height="405" alt="image" src="https://github.com/user-attachments/assets/f21ffa41-e935-400e-b339-5dc3329835c9" />
+
+**Expected output**
+
+The PySpark job keeps only employees with:
+
+- salary >= 60000
+
+So the Hive table should contain employees like Alice, Charlie, and Eve from your sample CSV.
+
+
+
+
+
+
+
 
 
 
