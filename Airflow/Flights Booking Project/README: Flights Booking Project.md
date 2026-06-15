@@ -89,8 +89,7 @@ Open Repository Settings. Near the top of the repository, click:
 - Settings
 
 It is located on the same row as:
-
-Code | Issues | Pull requests | Actions | Projects | Wiki | Security | Insights | Settings
+- Code | Issues | Pull requests | Actions | Projects | Wiki | Security | Insights | Settings
 
 If you do not see Settings, make sure you are the owner of the repository.
 
