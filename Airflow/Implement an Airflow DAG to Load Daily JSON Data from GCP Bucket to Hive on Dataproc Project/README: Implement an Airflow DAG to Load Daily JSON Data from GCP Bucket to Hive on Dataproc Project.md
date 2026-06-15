@@ -334,6 +334,7 @@ Check if the Connection Exists. You may see a row like this:
 
 Lets check the python file.
 
+<img width="680" height="559" alt="image" src="https://github.com/user-attachments/assets/a03f7efc-3694-4895-ab74-b10f2b52a68d" />
 
 
 
