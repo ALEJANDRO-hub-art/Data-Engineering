@@ -71,9 +71,63 @@ Important: your DAG expects:
 
 <img width="298" height="53" alt="image" src="https://github.com/user-attachments/assets/c102b2c9-7bc2-45fa-bf1f-88f0d528a6ff" />
 
+**Exact GUI steps in Google Cloud**
 
+Create the GCS bucket
 
+Open Google Cloud Console. Search Cloud Storage
+Click Buckets. Click Create
 
+- Bucket name:airflow_ass1
+- Region: choose: us-central1
+
+Click Create
+
+Create folders in the bucket
+
+Open bucket: airflow_ass1. Click Create folder
+- Create: input_files
+- Create another folder: python_file
+- Create another folder: hive_data
+
+Upload the CSV file
+
+Open bucket: airflow_ass1
+
+Open folder: input_files
+
+Click Upload files. Select employee(1).csv. Rename it in GCS to: employee.csv
+
+Final path must be:
+- gs://airflow_ass1/input_files/employee.csv
+
+Upload the PySpark file.
+
+Open bucket: airflow_ass1. Open folder: python_file
+
+Click Upload files
+
+Upload: employee_batch.py
+
+Final path must be:
+- gs://airflow_ass1/python_file/employee_batch.py
+
+**Cloud Composer / Airflow GUI steps**
+
+Create Composer environment
+
+In Google Cloud Console, search Composer. Click Cloud Composer. Click Create environment
+- Choose Composer 2 or Composer 3
+- Name: airflow-assignment-env
+- Region: us-central1
+
+Service account: use one with permissions for:
+- Cloud Storage
+- Dataproc
+- Composer
+- BigQuery optional, not required here
+
+Click Create
 
 
 
