@@ -1,0 +1,14 @@
+The names columns are the following:
+
+num_passengers, sales_channel, trip_type, purchase_lead, length_of_stay, flight_hour, flight_day, route, 
+booking_origin, wants_extra_baggage, wants_preferred_seat, wants_in_flight_meals, flight_duration, booking_complete
+
+
+Some of the sample rows we can see here:
+2	Internet	RoundTrip	262	19	7	Sat	AKLDEL	New Zealand	1	0	0	5.52	0
+1	Internet	RoundTrip	112	20	3	Sat	AKLDEL	New Zealand	0	0	0	5.52	0
+2	Internet	RoundTrip	243	22	17	Wed	AKLDEL	India	1	1	0	5.52	0
+1	Internet	RoundTrip	96	31	4	Sat	AKLDEL	New Zealand	0	0	1	5.52	0
+2	Internet	RoundTrip	68	22	15	Wed	AKLDEL	India	1	0	1	5.52	0
+1	Internet	RoundTrip	3	48	20	Thu	AKLDEL	New Zealand	1	0	1	5.52	0
+3	Internet	RoundTrip	201	33	6	Thu	AKLDEL	New Zealand	1	0	1	5.52	0
