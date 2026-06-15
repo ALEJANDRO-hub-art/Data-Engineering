@@ -22,11 +22,40 @@ This is one GCP data engineering project:
 
 <img width="649" height="369" alt="image" src="https://github.com/user-attachments/assets/6a8661f8-f831-489c-9fb5-a8b6c162db7f" />
 
+**GCP GUI setup steps**
 
+Create or open the GCS bucket
 
+Open Google Cloud Console. Go to Cloud Storage. Open bucket:
+- airflow-projetcs-gds-dev
 
+Create folder:
+- flight-booking-analysis/
 
+Inside it, create:
+- source-dev/
+- source-prod/
+- spark-job/
 
+Upload flight_booking.csv into:
+- flight-booking-analysis/source-dev/
+
+The final path must be:
+
+gs://airflow-projetcs-gds-dev/flight-booking-analysis/source-dev/flight_booking.csv
+
+Lets explain this in detail.
+
+Verify the Upload
+
+Inside the source-dev folder, you should now see:
+
+Name
+- flight_booking.csv
+
+Click the file once to verify it exists.
+
+<img width="516" height="189" alt="image" src="https://github.com/user-attachments/assets/8d132cb8-d063-4143-ab5d-1aee56790151" />
 
 
 
