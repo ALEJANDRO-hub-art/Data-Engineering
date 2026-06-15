@@ -138,7 +138,7 @@ Create a Service Account (if one doesn't exist)
 
 Otherwise: Click:
 - + CREATE SERVICE ACCOUNT
-  + 
+ 
 Service account details
 
 Enter: Service account name: github-actions-deployer
