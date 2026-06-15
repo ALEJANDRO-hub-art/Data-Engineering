@@ -59,6 +59,7 @@ Airflow Assignment: GCP Dataproc PySpark Job
 
 The goal is to use Airflow/Cloud Composer to detect a daily CSV in GCS, create a Dataproc Spark cluster, run a PySpark job, write filtered results into a Hive table, then delete the cluster.
 
+<img width="726" height="344" alt="image" src="https://github.com/user-attachments/assets/04ea9236-e61c-444e-8aa9-739a8935a52e" />
 
 
 
