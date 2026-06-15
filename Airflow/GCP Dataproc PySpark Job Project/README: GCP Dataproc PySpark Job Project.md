@@ -61,10 +61,15 @@ The goal is to use Airflow/Cloud Composer to detect a daily CSV in GCS, create a
 
 <img width="726" height="344" alt="image" src="https://github.com/user-attachments/assets/04ea9236-e61c-444e-8aa9-739a8935a52e" />
 
+GCS bucket structure
 
+Create this bucket/folder structure:
 
+<img width="336" height="118" alt="image" src="https://github.com/user-attachments/assets/7e92d355-2f03-491a-a5c3-96bdc5200d37" />
 
+Important: your DAG expects:
 
+<img width="298" height="53" alt="image" src="https://github.com/user-attachments/assets/c102b2c9-7bc2-45fa-bf1f-88f0d528a6ff" />
 
 
 
