@@ -57,7 +57,22 @@ Click the file once to verify it exists.
 
 <img width="516" height="189" alt="image" src="https://github.com/user-attachments/assets/8d132cb8-d063-4143-ab5d-1aee56790151" />
 
+**Upload project files to GitHub**
 
+In GitHub:
+
+Open your repository.
+- Click Add file → Create new file.
+
+Create these files exactly:
+- airflow_job/airflow_job.py
+- spark_job/spark_transformation_job.py
+- variables/dev/variables.json
+- variables/prod/variables.json
+- .github/workflows/ci-cd.yaml
+- README.md
+
+Paste each uploaded file into the correct path. Commit to the dev branch first.
 
 
 
