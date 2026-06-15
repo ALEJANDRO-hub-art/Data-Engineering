@@ -43,7 +43,7 @@ Upload Employee.json to Cloud Storage
 Open Google Cloud Console. Go to Cloud Storage.
 - Click your bucket: **airflow_ass2**
 - Click Create folder.
- - Name it:**input_files**
+ - Name it: **input_files**
 Open the input_files folder. Click Upload files.
 - Select: **Employee.json**
 
