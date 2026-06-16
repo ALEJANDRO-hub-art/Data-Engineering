@@ -33,56 +33,56 @@ Upload SQL files to Databricks SQL Editor or keep them in:
 CSV files
 
 **bookings_2025-09-23.csv** / **bookings_2025-09-24.csv**
-Daily travel booking transactions. Used to build the booking bronze table and later the booking fact table.
+- Daily travel booking transactions. Used to build the booking bronze table and later the booking fact table.
 
 **customers_2025-09-23.csv** / **customers_2025-09-24.csv**
-Daily customer master data. Used to build the customer bronze table and later the SCD2 customer dimension.
+- Daily customer master data. Used to build the customer bronze table and later the SCD2 customer dimension.
 
 **Python notebook files**
 
 **validate_inputs.py**
-Checks parameters, arrival date, file paths, and confirms the required CSV files exist.
+- Checks parameters, arrival date, file paths, and confirms the required CSV files exist.
 
 **10_ingest_bookings_bronze.py**
-Loads booking CSV files into the Bronze layer as raw Delta data.
+- Loads booking CSV files into the Bronze layer as raw Delta data.
 
 **11_ingest_customers_bronze.py**
-Loads customer CSV files into the Bronze layer and prepares customer records for SCD2 logic.
+- Loads customer CSV files into the Bronze layer and prepares customer records for SCD2 logic.
 
 **20_dq_bookings.py**
-Runs booking data quality checks: row count, required columns, non-negative amount, quantity, and discount.
+- Runs booking data quality checks: row count, required columns, non-negative amount, quantity, and discount.
 
 **21_dq_customers.py**
-Runs customer data quality checks: required fields and email validation.
+- Runs customer data quality checks: required fields and email validation.
 
 **30_customer_dim_scd2.py**
-Creates/updates the customer_dim table using SCD Type 2 logic.
+- Creates/updates the customer_dim table using SCD Type 2 logic.
 
 **31_booking_fact_build.py**
-Builds the booking_fact table by joining bookings with the current/historical customer dimension.
+- Builds the booking_fact table by joining bookings with the current/historical customer dimension.
 
 **40_optimize_zorder.py**
-Optimizes Delta tables using Z-ORDER for faster queries.
+- Optimizes Delta tables using Z-ORDER for faster queries.
 
 **41_analyze_stats.py**
-Runs table statistics so Databricks SQL can query the tables more efficiently.
+- Runs table statistics so Databricks SQL can query the tables more efficiently.
 
 **SQL files**
 
 **travel_booking_init.sql**
-Creates schemas/tables needed before running the pipeline.
+- Creates schemas/tables needed before running the pipeline.
 
 **customer360.sql**
-Analytics query for customer-level reporting.
+- Analytics query for customer-level reporting.
 
 **daily_revenue.sql**
-Revenue reporting by day.
+- Revenue reporting by day.
 
 **data_quality_summary.sql**
-Shows data quality pass/fail summary.
+- Shows data quality pass/fail summary.
 
 **log_completion_flow.sql**
-Logs or checks pipeline completion.
+- Logs or checks pipeline completion.
 
 **Exact Databricks GUI steps**
 
@@ -241,8 +241,8 @@ Stay inside the same volume: **/Volumes/travel_bookings/default/data**
 Create/open folder: **customer_data**
 
 Upload:
-- customers_2025-09-23.csv
-- customers_2025-09-24.csv
+- **customers_2025-09-23.csv**
+- **customers_2025-09-24.csv**
 
 **Upload Python notebook files**
 
@@ -461,8 +461,8 @@ Catalog
 - → **Tables**
 
 You should now see:
-- customer_dim
-- booking_fact
+- **customer_dim**
+- **booking_fact**
 
 *Run 40_optimize_zorder*
 
