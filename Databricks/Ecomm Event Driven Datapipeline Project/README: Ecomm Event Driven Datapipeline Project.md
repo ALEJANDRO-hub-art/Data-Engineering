@@ -199,8 +199,6 @@ At the top of the editor:
 - Running
 - Running...
 
-↓
-
 Finished Successfully
 - Succeeded ✓
 
