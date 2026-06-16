@@ -10,7 +10,9 @@ I have this project Travel Booking SCD2 Merge Project.
 
 <img width="653" height="245" alt="image" src="https://github.com/user-attachments/assets/4537eed4-8712-446c-898e-a25901375d0a" />
 
+This is one Databricks data engineering project named Travel Booking SCD2 Merge Project. It builds a Medallion pipeline: 
 
+CSV files → Bronze Delta tables → Data Quality → Silver SCD2 customer dimension + booking fact → SQL analytics.
 
 
 
