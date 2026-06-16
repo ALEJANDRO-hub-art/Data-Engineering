@@ -15,12 +15,11 @@ Upload the Python files to:
 **Workspace → Users → your_email → Ecomm_Event_Driven_Datapipeline → notebook/**
 
 Upload the CSV/JSON data files to Databricks Volumes:
-
-/Volumes/demo-external-catalog/default/incremental_load/orders_data/source/
-/Volumes/demo-external-catalog/default/incremental_load/customers_data/source/
-/Volumes/demo-external-catalog/default/incremental_load/products_data/source/
-/Volumes/demo-external-catalog/default/incremental_load/inventory_data/source/
-/Volumes/demo-external-catalog/default/incremental_load/shipping_data/source/
+- /Volumes/demo-external-catalog/default/incremental_load/orders_data/source/
+- /Volumes/demo-external-catalog/default/incremental_load/customers_data/source/
+- /Volumes/demo-external-catalog/default/incremental_load/products_data/source/
+- /Volumes/demo-external-catalog/default/incremental_load/inventory_data/source/
+- /Volumes/demo-external-catalog/default/incremental_load/shipping_data/source/
 
 Put each file in the matching folder:
 
