@@ -249,7 +249,7 @@ A "Create Job" page opens.
 
 Name the Workflow. Under Job name, enter:
 - Ecommerce Event Driven Pipeline
-- 
+ 
 *Add Task 1 (Orders)*
 
 Click: Add task
