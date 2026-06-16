@@ -403,8 +403,7 @@ Click the active run.
 
 You can watch each task change status:
 - Pending -> Running -> Succeeded ✓
-
-If a task fails, it will show: Failed ✗
+- If a task fails, it will show: Failed ✗
 
 Click the failed task to open the logs and error output.
 
