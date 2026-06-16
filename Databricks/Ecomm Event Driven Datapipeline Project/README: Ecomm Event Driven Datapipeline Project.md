@@ -22,13 +22,12 @@ Upload the CSV/JSON data files to Databricks Volumes:
 - /Volumes/demo-external-catalog/default/incremental_load/shipping_data/source/
 
 Put each file in the matching folder:
-
-orders_*.csv       → orders_data/source/
-customers_*.csv    → customers_data/source/
-products_*.csv     → products_data/source/
-inventory_*.csv    → inventory_data/source/
-shipping_*.csv     → shipping_data/source/
-trigger_*.json     → usually a trigger/source or shared control folder
+- orders_*.csv       → orders_data/source/
+- customers_*.csv    → customers_data/source/
+- products_*.csv     → products_data/source/
+- inventory_*.csv    → inventory_data/source/
+- shipping_*.csv     → shipping_data/source/
+- trigger_*.json     → usually a trigger/source or shared control folder
 
 The * (asterisk) sign denotes whatever comes after "_" in or case is the different **2025_01_15** and **2025_01_16.**
 
