@@ -8,7 +8,7 @@ I have this project Ecomm Event Driven Datapipeline Project.
 
 This is one project: E-commerce Event-Driven Data Pipeline using **Databricks + PySpark + Delta Lake.**
 
-
+ 
 
 
 
