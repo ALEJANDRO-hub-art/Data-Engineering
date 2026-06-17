@@ -84,7 +84,7 @@ Click Create → Notebook
  
 Paste the DLT SQL code from healthcare_dlt_processing.py.
 
-***Run the raw ingestion notebook**
+**Run the raw ingestion notebook**
 
 Open: **feed_raw_tables.py**
 
