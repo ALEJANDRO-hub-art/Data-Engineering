@@ -193,10 +193,13 @@ to:
 
 Run the files in this order:
 - 1 01_enhanced_data_model.py
-- 2 02_realtime_streaming_pipeline(2).py
-- 3 03_enhanced_mock_data_generator(2).py
+- 2 02_realtime_streaming_pipeline.py
+- 3 03_enhanced_mock_data_generator.py
 - 4 test.py (optional)
 
+**End-to-end architecture**
+
+<img width="516" height="309" alt="image" src="https://github.com/user-attachments/assets/5efc7277-d5d6-450f-a20c-df9ffc452a76" />
 
 
 
