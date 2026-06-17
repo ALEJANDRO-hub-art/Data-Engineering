@@ -201,7 +201,12 @@ Run the files in this order:
 
 <img width="516" height="309" alt="image" src="https://github.com/user-attachments/assets/5efc7277-d5d6-450f-a20c-df9ffc452a76" />
 
+What the project produces
 
+The final output is the table:
+- gds_de_bootcamp_new.default.**merchant_aggregations**
+
+This table contains hourly merchant metrics such as total transactions, successful transactions, failed transactions, refunded transactions, transaction amount, processing fees, commission, success rate, and unique customers.
 
 
 
