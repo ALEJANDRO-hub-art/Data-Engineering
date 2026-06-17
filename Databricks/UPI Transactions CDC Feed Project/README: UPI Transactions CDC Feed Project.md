@@ -192,10 +192,10 @@ to:
 **Execution order**
 
 Run the files in this order:
-- 1 01_enhanced_data_model.py
-- 2 02_realtime_streaming_pipeline.py
-- 3 03_enhanced_mock_data_generator.py
-- 4 test.py (optional)
+- 01_enhanced_data_model.py
+- 02_realtime_streaming_pipeline.py
+- 03_enhanced_mock_data_generator.py
+- test.py (optional)
 
 **End-to-end architecture**
 
