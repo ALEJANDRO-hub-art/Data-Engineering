@@ -110,6 +110,167 @@ Then:
 This creates/appends to:
 - **gds_de_bootcamp_new.default.raw_patients_daily**
 
+Lets explain this in detail.
+
+**Run the Raw Ingestion Notebook (feed_raw_tables.py)**
+
+This step loads the CSV files from your Unity Catalog Volume into Delta tables. The notebook reads:
+- diagnosis_mapping.csv → **raw_diagnosis_map**
+- patients_daily_file_1_2025.csv
+- patients_daily_file_2_2025.csv
+- patients_daily_file_3_2025.csv
+
+and appends patient records into **raw_patients_daily**.
+
+Go to:
+- Databricks then
+- Workspace then
+- Locate the notebook (Navigate to the folder where you uploaded: **feed_raw_tables.py**)
+ - Click: **feed_raw_tables.py**. The notebook opens in the editor.
+
+Lets create a CLuster.
+
+I didnt create a cluster. Lets explain how to do it.
+
+*Step 1: Open Compute*
+
+In the Databricks left menu: Compute. Click it.
+
+*Step 2: Create a New Cluster*
+
+In the upper-right corner click: Create Compute
+
+(or Create Cluster, depending on your Databricks version)
+
+*Step 3: Configure the Cluster*
+
+Fill in:
+- Compute Name: healthcare-cluster
+- Compute Policy. Select: Unrestricted (if available)
+- Access Mode. Select: Single User
+
+This is the safest option for the project.
+
+Databricks Runtime Version
+- Select: 14.3 LTS or any recent runtime: 13.3 LTS+
+
+Photon
+- Leave: Enabled
+
+Worker Type
+- Choose a small machine. Example: Standard_DS3_v2 or i3.xlarge
+
+depending on cloud provider.
+
+Workers
+- Set: 1
+
+This project is tiny and only loads CSV files.
+
+*Step 4: Create the Cluster*
+
+Scroll to the bottom. Click:
+- Create Compute
+
+*Step 5: Wait for Startup*
+
+Databricks now starts the cluster.
+
+Status changes: Pending -> Starting -> Running
+
+This usually takes: 2–5 minutes
+
+*Step 6: Open the Notebook*
+
+Go to: Workspace
+- Open: **feed_raw_tables.py**
+
+*Step 7: Attach the Cluster*
+
+At the top-right of the notebook click: Connect or Select Compute
+
+You should now see: healthcare-cluster. Select it.
+
+Wait until the notebook shows: Connected
+
+*Attach a Cluster*
+
+Locate the cluster selector. Top-right corner of the notebook.
+
+You will see: Connect or Select Compute
+
+Select the cluster created before
+
+Example: **healthcare-cluster**
+
+Wait until status becomes: Running
+
+**Create the Delta Live Tables pipeline**
+
+Left menu → Workflows. Click Delta Live Tables. Click Create pipeline.
+- Pipeline name: **healthcare_dlt_pipeline**
+- Product edition: choose Advanced if available.
+- Pipeline mode: choose Triggered.
+- Source code: select the SQL notebook:
+ - /Workspace/.../Healthcare_DLT_Pipeline_Project/healthcare_dlt_processing
+- Target catalog: **gds_de_bootcamp_new**
+- Target schema: default
+
+Click Create.
+
+**Start the pipeline**
+
+Open the pipeline: **healthcare_dlt_pipeline**. Click Start.
+
+Wait for the graph to finish.
+
+Check that these tables are created:
+- Bronze:
+  - diagnostic_mapping
+  - daily_patients
+- Silver:
+  - processed_patient_data
+- Gold:
+ - patient_statistics_by_admission_date
+ - patient_statistics_by_diagnosis
+ - patient_statistics_by_gender
+
+The DLT file creates those bronze, silver, and gold tables with data quality constraints.
+
+
+Lets where this Bronze, Silver and Gold steps are and what do they do: Lets inspect **healthcare_dlt_processing.py** file:
+
+In here we do:
+- BRONZE LAYER: DIAGNOSTIC MAPPING
+- BRONZE LAYER: DAILY PATIENTS (STREAMING)
+- SILVER LAYER: PROCESSED PATIENT DATA
+- GOLD LAYER: PATIENT STATISTICS BY ADMISSION DATE
+- GOLD LAYER: PATIENT STATISTICS BY DIAGNOSIS
+- GOLD LAYER: PATIENT STATISTICS BY GENDER
+
+**View results**
+
+Left menu → Catalog.
+Open: **gds_de_bootcamp_new → default → Tables**
+
+Open the gold tables:
+- patient_statistics_by_admission_date
+- patient_statistics_by_diagnosis
+- patient_statistics_by_gender
+
+Click Sample Data to preview results.
+
+**End-to-end workflow / architecture**
+
+<img width="489" height="478" alt="image" src="https://github.com/user-attachments/assets/1a25f39c-dfea-4750-8e7a-bfbfb2e20053" />
+
+Final result: raw patient CSVs are loaded into Delta tables, cleaned with DLT quality rules, joined with diagnosis descriptions, and aggregated into gold analytics tables for healthcare reporting.
+
+
+
+
+
+
 
 
 
