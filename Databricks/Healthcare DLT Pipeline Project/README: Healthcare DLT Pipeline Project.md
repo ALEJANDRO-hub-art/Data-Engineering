@@ -232,8 +232,8 @@ Check that these tables are created:
   - processed_patient_data
 - Gold:
   - patient_statistics_by_admission_date
-patient_statistics_by_diagnosis
-patient_statistics_by_gender
+  - patient_statistics_by_diagnosis
+  - patient_statistics_by_gender
 
 The DLT file creates those bronze, silver, and gold tables with data quality constraints.
 
