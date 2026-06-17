@@ -222,7 +222,7 @@ Click Create.
 
 Open the pipeline: **healthcare_dlt_pipeline**. Click Start.
 
-Wait for the graph to finish.
+Wait for the graph to finish. 
 
 Check that these tables are created:
 - Bronze:
