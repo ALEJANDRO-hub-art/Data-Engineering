@@ -132,7 +132,7 @@ Look at the upper-right corner.
 - Click: Create catalog
 
 It may appear as either:
-- + Create catalog
+- Create catalog
 - Create
 - Add catalog
 
