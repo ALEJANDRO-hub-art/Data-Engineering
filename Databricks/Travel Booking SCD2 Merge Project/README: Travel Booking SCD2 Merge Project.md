@@ -175,9 +175,7 @@ You will see sections such as:
 Under the catalog page, click: Schemas
 - Click Create schema
 
-In the upper-right corner click: Create schema
-
-(or + Create schema).
+In the upper-right corner click: Create schema (or + Create schema).
 
 *Enter the schema details*
 
