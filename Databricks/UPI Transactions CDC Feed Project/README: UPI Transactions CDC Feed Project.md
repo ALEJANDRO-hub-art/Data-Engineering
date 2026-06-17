@@ -32,7 +32,7 @@ No CSV files are needed because the mock data generator creates the transaction 
 - Click Folder. Name it: **UPI_Transactions_CDC_Project**
 - Click Create
 
-*Upload the Python files*
+**Upload the Python files**
 Open the folder **UPI_Transactions_CDC_Project**
 - Click Create
 - Click File
@@ -44,13 +44,41 @@ Upload these files one by one:
 - test.py
 - README.md
 
+**Create or attach a cluster**
 
+Click Compute. Click Create compute
+- Name it: **upi-cdc-cluster**
 
+Choose a Databricks Runtime that supports Delta Lake and Structured Streaming. Use a single-node cluster if this is for class/testing
+- Click Create compute
 
+Wait until the cluster status says Running
 
+Lets explain this in detail.
 
+Based on your UPI CDC Streaming Project files, the cluster only needs to support **Delta Lake, Structured Streaming, and Change Data Feed (CDF)**. The README specifically recommends Databricks **Runtime 13.3 LTS or later.**
 
+*Create or Attach a Cluster (Exact Databricks GUI Steps)*
 
+*Option A (Recommended): Create a New Cluster*
+
+Open Databricks Workspace
+
+After logging in: Look at the left sidebar. Click Compute
+
+You should see a page similar to: 
+
+<img width="266" height="94" alt="image" src="https://github.com/user-attachments/assets/a585878b-86e2-4d19-b445-f869fdb9f9cf" />
+
+*Click Create Compute*
+
+Top-right corner: + Create Compute. Click it.
+
+*Configure the Cluster*
+
+Fill in the fields exactly:
+
+<img width="530" height="394" alt="image" src="https://github.com/user-attachments/assets/1c883169-e60f-4464-a9bd-469e74d4f7a2" />
 
 
 
