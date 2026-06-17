@@ -267,7 +267,7 @@ Click SQL Editor.
 
 Open each .sql file from your computer. Copy and paste the SQL into the editor.
 
-First run:**travel_booking_init.sql**
+First run: **travel_booking_init.sql**
 
 IMPORTANT: This initializes the required database objects.
 
