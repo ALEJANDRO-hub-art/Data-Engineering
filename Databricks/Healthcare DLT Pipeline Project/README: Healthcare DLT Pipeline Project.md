@@ -24,8 +24,8 @@ Files:
 - patients_daily_file_3_2025.csv
 
 The **feed_raw_tables.py** file reads from that exact Volume path **and writes Delta tables named:**
-- gds_de_bootcamp_new.default.raw_diagnosis_map
-- gds_de_bootcamp_new.default.raw_patients_daily
+- gds_de_bootcamp_new.default.raw_**diagnosis_map**
+- gds_de_bootcamp_new.default.raw_**patients_daily**
 
 **Upload notebook/script files here**
 
