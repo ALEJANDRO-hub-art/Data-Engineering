@@ -254,7 +254,7 @@ Name it: **Travel_Booking_SCD2_Merge_Project**
 
 Open the folder.
 
-Create another folder:**notebooks**
+Create another folder: **notebooks**
 - Click Import.
 
 Upload all .py files.
