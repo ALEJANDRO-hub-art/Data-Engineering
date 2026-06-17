@@ -41,8 +41,8 @@ Upload these files one by one:
 - 01_enhanced_data_model(2).py
 - 02_realtime_streaming_pipeline(2).py
 - 03_enhanced_mock_data_generator(2).py
-- test(2).py
-- README(37).md
+- test.py
+- README.md
 
 
 
