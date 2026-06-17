@@ -18,9 +18,31 @@ Recommended folder:
 
 <img width="426" height="185" alt="image" src="https://github.com/user-attachments/assets/f42c1ac7-4ca9-4106-ad58-45b71464d5b4" />
 
+No CSV files are needed because the mock data generator creates the transaction data.
 
+**Exact Databricks GUI steps**
 
+**Create project folder**
 
+*Open Databricks*
+- Click Workspace
+- Open Users
+- Click your user email
+- Click Create
+- Click Folder. Name it: **UPI_Transactions_CDC_Project**
+- Click Create
+
+*Upload the Python files*
+Open the folder **UPI_Transactions_CDC_Project**
+- Click Create
+- Click File
+
+Upload these files one by one:
+- 01_enhanced_data_model(2).py
+- 02_realtime_streaming_pipeline(2).py
+- 03_enhanced_mock_data_generator(2).py
+- test(2).py
+- README(37).md
 
 
 
