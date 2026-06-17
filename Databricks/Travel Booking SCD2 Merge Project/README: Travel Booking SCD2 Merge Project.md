@@ -94,7 +94,7 @@ Click Catalog on the left menu. Click Create catalog.
 - Name it: **travel_bookings**. Click Create.
 
 Open the catalog. Click Create schema.
-- Name it:**default**. Click Create.
+- Name it: **default**. Click Create.
 
 Lets explain this in detail.
 
