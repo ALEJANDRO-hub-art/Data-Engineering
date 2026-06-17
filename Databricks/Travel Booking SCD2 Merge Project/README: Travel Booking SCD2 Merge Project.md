@@ -276,15 +276,15 @@ IMPORTANT: This initializes the required database objects.
 **Manual execution order**
 
 Run the notebooks in this exact order:
-- 1. validate_inputs.py
-- 2. 10_ingest_bookings_bronze.py
-- 3. 11_ingest_customers_bronze.py
-- 4. 20_dq_bookings.py
-- 5. 21_dq_customers.py
-- 6. 30_customer_dim_scd2.py
-- 7. 31_booking_fact_build.py
-- 8. 40_optimize_zorder.py
-- 9. 41_analyze_stats.py
+- 1 validate_inputs.py
+- 2 10_ingest_bookings_bronze.py
+- 3 11_ingest_customers_bronze.py
+- 4 20_dq_bookings.py
+- 5 21_dq_customers.py
+- 6 30_customer_dim_scd2.py
+- 7 31_booking_fact_build.py
+- 8 40_optimize_zorder.py
+- 9 41_analyze_stats.py
 
 Use these parameters when the notebook asks for widgets:
 - arrival_date = 2025-09-24
