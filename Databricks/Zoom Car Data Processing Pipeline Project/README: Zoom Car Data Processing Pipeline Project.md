@@ -41,11 +41,11 @@ Upload these to Databricks as notebooks:
 
 - **01_process_zoom_car_bookings.py**
 
-Cleans booking data, validates dates/status, calculates duration, and writes to staging_bookings_delta.
+Cleans booking data, validates dates/status, calculates duration, and writes to **staging_bookings_delta.**
 
 - **02_process_zoom_car_customers.py**
 
-Cleans customer data, validates emails/status, normalizes phone numbers, calculates tenure, and writes to staging_customers_delta.
+Cleans customer data, validates emails/status, normalizes phone numbers, calculates tenure, and writes to **staging_customers_delta.**
 
 - **03_merge_zoom_car_data.py**
 
