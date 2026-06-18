@@ -17,7 +17,7 @@ This is one Databricks project: Zoom Car Data Processing Pipeline. The assignmen
 
 What each file/folder does
 
-data/bookings/
+**data/bookings/**
 
 Stores daily booking JSON files like:
 - **zoom_car_bookings_20240720.json**
