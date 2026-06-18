@@ -239,7 +239,7 @@ Wait until you see: 🟢 Running
 
 You will need this for:
 - databricks_job_flow.json
-- 
+ 
 Click your cluster: **zoom-car-cluster**
 
 Look at the browser URL.
