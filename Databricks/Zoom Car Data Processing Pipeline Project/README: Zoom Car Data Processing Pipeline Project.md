@@ -26,7 +26,7 @@ Stores daily booking JSON files like:
 
 These contain booking records with booking ID, customer ID, car ID, date, start/end time, amount, and status.
 
-data/customers/
+**data/customers/**
 
 Stores daily customer JSON files like:
 - **zoom_car_customers_20240720.json**
