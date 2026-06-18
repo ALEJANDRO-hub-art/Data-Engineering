@@ -180,23 +180,23 @@ You will be taken to the cluster creation page.
 
 *3. Configure the Cluster*
 
-Compute Name
+*Compute Name*
 
 In the Compute name field enter: **zoom-car-cluster**
 
-Policy
+*Policy*
 
 Leave:
 - Unrestricted
 
 (if your workspace allows it)
 
-Cluster Mode
+*Cluster Mode*
 - Select: Single Node
 
 This project is small and does not require multiple workers.
 
-Databricks Runtime Version
+*Databricks Runtime Version*
 
 Click the Databricks Runtime Version dropdown. Select a runtime that includes Delta Lake, for example:
 - 15.4 LTS (Spark 3.5.x, Scala 2.12) or any newer LTS runtime available.
