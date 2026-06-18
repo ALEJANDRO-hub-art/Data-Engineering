@@ -12,6 +12,7 @@ I have this project Zoom Car Data Processing Pipeline Project.
 
 <img width="643" height="144" alt="image" src="https://github.com/user-attachments/assets/ebf2ee85-16f4-469d-8526-0c4adc431181" />
 
+
 This is one Databricks project: Zoom Car Data Processing Pipeline. The assignment requires daily booking (**zoom_car_bookings_20240720,1 and 2**) /customer (**zoom_car_customers_20240720,1 and 2**)  JSON files, two processing notebooks (**01_process_zoom_car_bookings.py and 02_process_zoom_car_customers.py**), one merge notebook (**03_merge_zoom_car_data.py**), and a Databricks job workflow (**databricks_job_flow.json**).
 
 What each file/folder does
