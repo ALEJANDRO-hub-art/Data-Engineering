@@ -1,0 +1,15 @@
+erDiagram
+    airports ||--o{ routes : references
+    routes ||--o{ flights : references
+    aircraft ||--o{ flights : references
+    flights ||--o{ flight_instances : references
+    customers ||--o{ passengers : references
+    customers ||--o{ reservations : references
+    reservations ||--o{ tickets : references
+    passengers ||--o{ tickets : references
+    flight_instances ||--o{ tickets : references
+    fare_classes ||--o{ tickets : references
+    reservations ||--o{ payments : references
+    reservations ||--o{ cancellations : references
+    customers ||--o{ loyalty_transactions : references
+    reservations ||--o{ loyalty_transactions : references

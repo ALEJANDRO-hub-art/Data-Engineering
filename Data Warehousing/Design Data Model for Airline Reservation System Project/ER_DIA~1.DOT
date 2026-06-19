@@ -1,0 +1,18 @@
+digraph G {
+rankdir=LR;
+node [shape=box, style="rounded"];
+"airports" -> "routes";
+"routes" -> "flights";
+"aircraft" -> "flights";
+"flights" -> "flight_instances";
+"customers" -> "passengers";
+"customers" -> "reservations";
+"reservations" -> "tickets";
+"passengers" -> "tickets";
+"flight_instances" -> "tickets";
+"fare_classes" -> "tickets";
+"reservations" -> "payments";
+"reservations" -> "cancellations";
+"customers" -> "loyalty_transactions";
+"reservations" -> "loyalty_transactions";
+}

@@ -1,0 +1,13 @@
+CREATE TABLE airports (airport_id BIGINT PRIMARY KEY, airport_code VARCHAR(10) UNIQUE, airport_name VARCHAR(150), city VARCHAR(100), country VARCHAR(100));
+CREATE TABLE aircraft (aircraft_id BIGINT PRIMARY KEY, aircraft_model VARCHAR(100), total_seats INT);
+CREATE TABLE routes (route_id BIGINT PRIMARY KEY, origin_airport_id BIGINT REFERENCES airports(airport_id), destination_airport_id BIGINT REFERENCES airports(airport_id), distance_km DECIMAL(10,2));
+CREATE TABLE flights (flight_id BIGINT PRIMARY KEY, flight_number VARCHAR(20), route_id BIGINT REFERENCES routes(route_id), aircraft_id BIGINT REFERENCES aircraft(aircraft_id));
+CREATE TABLE flight_instances (flight_instance_id BIGINT PRIMARY KEY, flight_id BIGINT REFERENCES flights(flight_id), scheduled_departure_ts TIMESTAMP, scheduled_arrival_ts TIMESTAMP, actual_departure_ts TIMESTAMP, actual_arrival_ts TIMESTAMP, flight_status VARCHAR(30));
+CREATE TABLE customers (customer_id BIGINT PRIMARY KEY, full_name VARCHAR(150), email VARCHAR(200), phone VARCHAR(30), signup_date DATE, loyalty_tier VARCHAR(30));
+CREATE TABLE passengers (passenger_id BIGINT PRIMARY KEY, customer_id BIGINT REFERENCES customers(customer_id), full_name VARCHAR(150), date_of_birth DATE, passport_number VARCHAR(50));
+CREATE TABLE reservations (reservation_id BIGINT PRIMARY KEY, customer_id BIGINT REFERENCES customers(customer_id), booking_ts TIMESTAMP, reservation_status VARCHAR(30), channel VARCHAR(50), total_amount DECIMAL(12,2));
+CREATE TABLE fare_classes (fare_class_id BIGINT PRIMARY KEY, class_name VARCHAR(50), baggage_allowance_kg INT, refund_policy VARCHAR(100));
+CREATE TABLE tickets (ticket_id BIGINT PRIMARY KEY, reservation_id BIGINT REFERENCES reservations(reservation_id), passenger_id BIGINT REFERENCES passengers(passenger_id), flight_instance_id BIGINT REFERENCES flight_instances(flight_instance_id), fare_class_id BIGINT REFERENCES fare_classes(fare_class_id), seat_number VARCHAR(10), ticket_price DECIMAL(12,2), ticket_status VARCHAR(30));
+CREATE TABLE payments (payment_id BIGINT PRIMARY KEY, reservation_id BIGINT REFERENCES reservations(reservation_id), payment_ts TIMESTAMP, payment_method VARCHAR(50), payment_status VARCHAR(30), paid_amount DECIMAL(12,2));
+CREATE TABLE cancellations (cancellation_id BIGINT PRIMARY KEY, reservation_id BIGINT REFERENCES reservations(reservation_id), cancellation_ts TIMESTAMP, reason VARCHAR(200), refund_amount DECIMAL(12,2));
+CREATE TABLE loyalty_transactions (loyalty_txn_id BIGINT PRIMARY KEY, customer_id BIGINT REFERENCES customers(customer_id), reservation_id BIGINT REFERENCES reservations(reservation_id), points_earned INT, points_redeemed INT, txn_ts TIMESTAMP);
