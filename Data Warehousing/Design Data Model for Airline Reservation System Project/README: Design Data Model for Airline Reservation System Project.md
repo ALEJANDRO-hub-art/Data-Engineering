@@ -31,7 +31,7 @@ What each file does:
 
 Use MySQL Workbench.
  
-*Step 1: Open MySQL Workbench*
+**Step 1: Open MySQL Workbench**
 
 Open MySQL Workbench.
 - Click your local connection, usually Local instance MySQL80.
@@ -39,7 +39,7 @@ Open MySQL Workbench.
  
 Click OK.
 
-*Step 2: Create the database*
+**Step 2: Create the database**
 
 Click the SQL + button to open a new query tab.
 
@@ -50,7 +50,7 @@ Run:
 
 Click the yellow lightning icon.
 
-*Step 3: Run schema.sql*
+**Step 3: Run schema.sql**
 
 Go to File → Open SQL Script.
 
@@ -79,7 +79,7 @@ You should see tables like:
 - cancellations
 - loyalty_transactions
 
-*Step 4: Load data*
+**Step 4: Load data**
 
 Your uploaded CSV file is only a dictionary template, not real table data. So for this project, you either need to manually insert sample records or create CSVs for each table.
 
@@ -100,9 +100,34 @@ Correct loading order:
 
 This order matters because child tables depend on parent tables.
 
+**Step 5: Run the insight queries**
 
+Go to File → Open SQL Script.
 
+Select:
 
+C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\11 Data Warehousing\Module 8 - Class 2\2 Class Assignment & Solution\Data_Modelling_Assignment_Solution\3 Design Data Model for Airline Reservation Syste\**insight_queries.sql**
+
+Add this at the top: **USE airline_reservation_db;**
+
+Run one query at a time or click the yellow lightning icon to run all.
+
+**Step 6: View the ER diagram in MySQL Workbench**
+
+Click Database from the top menu. Click Reverse Engineer.
+
+Select your MySQL connection. Click Next.
+Choose database: **airline_reservation_db**
+
+Click Next until Execute.
+
+Click Execute.
+
+Click Next.
+
+Click Finish.
+
+MySQL Workbench will generate the visual ER diagram from your tables.
 
 
 
