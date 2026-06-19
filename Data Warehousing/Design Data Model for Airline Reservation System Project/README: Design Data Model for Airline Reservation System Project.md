@@ -129,6 +129,7 @@ Click Finish.
 
 MySQL Workbench will generate the visual ER diagram from your tables.
 
+<img width="541" height="336" alt="image" src="https://github.com/user-attachments/assets/8464b42c-2541-4519-85ca-65387a58dc27" />
 
 
 
