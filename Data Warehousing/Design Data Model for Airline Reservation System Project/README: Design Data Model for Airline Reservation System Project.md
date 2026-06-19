@@ -84,19 +84,19 @@ You should see tables like:
 Your uploaded CSV file is only a dictionary template, not real table data. So for this project, you either need to manually insert sample records or create CSVs for each table.
 
 Correct loading order:
-- 1. airports
-- 2. aircraft
-- 3. routes
-- 4. flights
-- 5. flight_instances
-- 6. customers
-- 7. passengers
-- 8. fare_classes
-- 9. reservations
-- 10. tickets
-- 11. payments
-- 12. cancellations
-- 13. loyalty_transactions
+- 1 airports
+- 2 aircraft
+- 3 routes
+- 4 flights
+- 5 flight_instances
+- 6 customers
+- 7 passengers
+- 8 fare_classes
+- 9 reservations
+- 10 tickets
+- 11 payments
+- 12 cancellations
+- 13 loyalty_transactions
 
 This order matters because child tables depend on parent tables.
 
