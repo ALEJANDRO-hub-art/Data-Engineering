@@ -30,7 +30,7 @@ What each file does:
 **MySQL GUI execution steps**
 
 Use MySQL Workbench.
-
+ 
 *Step 1: Open MySQL Workbench*
 
 Open MySQL Workbench.
