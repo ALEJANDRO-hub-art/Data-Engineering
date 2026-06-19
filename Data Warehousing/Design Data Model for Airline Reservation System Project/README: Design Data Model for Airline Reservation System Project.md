@@ -21,6 +21,7 @@ Design an optimized **reservation analytics model** for bookings, passengers, fl
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
+<img width="657" height="340" alt="image" src="https://github.com/user-attachments/assets/09653ced-5238-4a45-84c9-a1a560a44409" />
 
 
 
