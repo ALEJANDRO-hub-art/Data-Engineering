@@ -11,6 +11,7 @@ I have this project Car Rental Batch Ingestion Project.
 <img width="747" height="145" alt="image" src="https://github.com/user-attachments/assets/2e8c37e1-e30b-416c-a38c-0288b2e41176" />
 
 
+
 This is a Car Rental Batch Ingestion Project. It uses **GCS → Airflow → Dataproc Spark → Snowflake**. The README says the pipeline processes daily car rental JSON data and customer CSV data, uses SCD Type 2 for customers, transforms rentals in Spark, and loads analytics tables into Snowflake.
 
 
