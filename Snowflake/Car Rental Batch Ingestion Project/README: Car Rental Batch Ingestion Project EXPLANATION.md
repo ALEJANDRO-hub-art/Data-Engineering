@@ -177,7 +177,7 @@ Example:
 
 Click your Composer environment.
 - Example: car-rental-composer
-- 
+ 
 Wait for the environment page to open.
 
 *Open the DAGs Folder*
@@ -283,7 +283,7 @@ Click Save.
 
 Open Airflow UI. lick DAGs.
 - Find: **car_rental_data_pipeline**
-- 
+ 
 Turn the DAG ON.
 
 Click the DAG name.
