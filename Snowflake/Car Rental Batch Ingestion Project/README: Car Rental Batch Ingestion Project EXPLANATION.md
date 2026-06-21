@@ -225,7 +225,7 @@ Airflow opens in a new tab.
 
 *Verify DAG Appears*
 
-In Airflow:; Click: DAGs
+In Airflow: ; Click: DAGs
 
 Search: **car_rental**
 
