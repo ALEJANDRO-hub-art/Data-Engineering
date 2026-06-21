@@ -382,7 +382,7 @@ The last two tasks run after the Snowflake copy task.
 **End-to-end workflow**
 
 - Airflow starts the DAG
-- fetch_news.py calls NewsAPI
+- **fetch_news.py** calls NewsAPI
 - News articles are cleaned
 - Data is saved as a .parquet file
 - Parquet file is uploaded to GCS
