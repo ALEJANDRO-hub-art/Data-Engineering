@@ -35,6 +35,57 @@ Click the lightning bolt icon.
 
 This creates all tables.
 
+Lets inspect this **schema.sql** file:
+
+This code creates a healthcare appointment database schema.
+
+It builds tables to store:
+
+1. Locations
+- Stores city, area, and state information.
+
+2. Patients
+- Stores patient details like name, email, phone, signup date, gender, date of birth, and their location.
+
+3. Specialties
+- Stores medical specialties, such as cardiology, dermatology, dentistry, etc.
+
+4. Doctors
+- Stores doctor details, including specialty, years of experience, and consultation fee.
+
+5. Clinics
+- Stores clinic names and their locations.
+
+6. Doctor-clinic relationship
+- doctor_clinics connects doctors to clinics. This allows one doctor to work in multiple clinics and one clinic to have many doctors.
+
+7. Marketing campaigns
+- Stores campaign details like campaign name, channel, dates, and cost.
+
+8. Appointments
+- Stores appointment bookings between patients, doctors, and clinics. It also tracks campaign source, booking time, appointment time, status, type, fee, and discount.
+
+9. Consultations
+- Stores consultation details after an appointment, including start/end time, diagnosis summary, and whether follow-up is required.
+
+10. Prescriptions
+- Stores prescriptions created from consultations.
+
+11. Prescription items
+- Stores individual medicines inside each prescription, including medicine name, dosage, and duration.
+
+12. Payments
+- Stores payment details for appointments, including method, status, timestamp, and paid amount.
+
+13. Reviews
+- Stores patient reviews for doctors and appointments, including rating, review text, and review time.
+
+14. Cancellations
+- Stores cancelled appointments, who cancelled them, reason, cancellation time, and refund amount.
+
+Overall, this schema models the full workflow of a healthcare app like Practo:
+- **patient signup → doctor/clinic selection → appointment booking → consultation → prescription → payment → review or cancellation.**
+
 *Step 4: Confirm tables were created*
 
 On the left panel: **Schemas → healthcare_practo_db → Tables**
@@ -78,6 +129,62 @@ Important: your insight_queries.sql looks written more for PostgreSQL, not pure 
 For MySQL, replace them with:
 
 <img width="421" height="90" alt="image" src="https://github.com/user-attachments/assets/17a90ae9-e72d-4348-913b-2219fd38a029" />
+
+Lets inspect this **insight_queries.sql**.
+
+This SQL code runs 10 healthcare analytics reports on the database.
+
+1. Most booked specialties by location
+- Shows which doctor specialties get the most appointments in each city and area.
+
+2. Doctor utilization / appointment volume
+- Shows how many completed appointments each doctor handled. Doctors with zero completed appointments still appear because of the LEFT JOIN.
+
+3. Average consultation fee by specialty
+- Calculates the average doctor consultation fee for each specialty.
+
+4. Appointment cancellation rate
+- Calculates the percentage of all appointments that were cancelled.
+
+5. Average patient wait time
+- Calculates each doctor’s average wait time in minutes, from scheduled appointment time to consultation start time.
+
+7. Revenue by doctor and clinic
+- Shows total successful payment revenue for each doctor at each clinic.
+
+9. Monthly new patient acquisition
+- Counts how many new patients signed up each month.
+
+10. Campaign effectiveness
+- Shows each marketing campaign’s engaged patients and successful payment revenue. Campaigns with no revenue still appear.
+
+11. Doctor ratings
+- Shows each doctor’s average rating and number of reviews. Doctors with no reviews still appear.
+
+12. Follow-up requirement rate by specialty
+- Calculates the percentage of consultations that required follow-up for each specialty.
+
+Overall, these queries analyze:
+appointments, doctor performance, fees, cancellations, wait times, revenue, patient growth, marketing campaigns, ratings, and follow-up needs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
