@@ -1,322 +1,311 @@
-I have this project Car Rental Batch Ingestion Project. 
-
-<img width="675" height="276" alt="image" src="https://github.com/user-attachments/assets/99082a0a-3854-46f4-a42c-571a2ce74b45" />
-
-<img width="750" height="152" alt="image" src="https://github.com/user-attachments/assets/ace01b44-9ccb-4279-980f-ae42f24bee31" />
-
-<img width="718" height="208" alt="image" src="https://github.com/user-attachments/assets/941b55cb-eb3a-4bba-aa41-44ce5e02010d" />
-
-<img width="733" height="162" alt="image" src="https://github.com/user-attachments/assets/beaf08b1-0768-4be9-b9ae-39390a66f596" />
-
-<img width="747" height="145" alt="image" src="https://github.com/user-attachments/assets/2e8c37e1-e30b-416c-a38c-0288b2e41176" />
-
-
-
-This is a Car Rental Batch Ingestion Project. It uses **GCS → Airflow → Dataproc Spark → Snowflake**. The README says the pipeline processes daily car rental JSON data and customer CSV data, uses SCD Type 2 for customers, transforms rentals in Spark, and loads analytics tables into Snowflake.
-
-
-**What each folder/file is for**
-
-*airflow_job/*
-- Contains **car_rental_airflow_dag.py**. Upload this to Airflow / Cloud Composer DAGs folder. It controls the full workflow: gets execution date, updates customer SCD2 records in Snowflake, inserts customers, then submits the Spark job to Dataproc.
-
-*spark_job/*
-- Contains **spark_job.py**. Upload this to Google Cloud Storage, because Dataproc will run it from GCS. It reads rental JSON from GCS, validates/transforms it, joins Snowflake dimensions, and writes to rentals_fact.
-
-*data/*
-
-Upload these files to GCS:
-- **car_rental_20250903.json**
-- **car_rental_20250904.json**
-- **customers_20250903.csv**
-- **customers_20250904.csv**
-
-The JSON files are rental transactions with rental_id, customer_id, car details, rental dates, locations, amount, and quantity.
-
-*jar_files/*
-
-Upload both JARs to GCS, not Snowflake:
-- **snowflake-jdbc-3.16.0.jar**
-- **spark-snowflake_2.12-2.15.0-spark_3.4.jar**
-
-These are needed by Dataproc Spark so Spark can connect to Snowflake.
-
-*snowflake_dwh_setup.sql*
-- Run this inside Snowflake worksheet. It creates the database, dimensions, fact table, stage, file format, and sample dimension data.
-
-*README.md*
-- Documentation and architecture explanation.
-
-2. Correct upload locations
-
-Use this structure in your GCS bucket:
-
-<img width="384" height="325" alt="image" src="https://github.com/user-attachments/assets/ccc5edc3-9d6b-4fe7-8f98-a6906ad5b126" />
-
-Upload **car_rental_airflow_dag.py** here:
-- Cloud Composer / Airflow DAGs folder
-
-Run **snowflake_dwh_setup.sql** here:
-- Snowflake → Worksheets
-
-**Snowflake GUI execution**
-
-Open Snowflake. Go to Worksheets. Click + Worksheet.
-
-Open **snowflake_dwh_setup.sql.**
-
-Copy all code. Paste it into the worksheet.
-
-Select warehouse:
-- COMPUTE_WH
- 
-Click Run All.
-
-Confirm tables were created:
-
-<img width="297" height="105" alt="image" src="https://github.com/user-attachments/assets/c8171218-99ef-48bf-aa98-9174e41e45ec" />
-
-You should see tables like:
-- location_dim
-- car_dim
-- date_dim
-- customer_dim
-- rentals_fact
-
-**GCS GUI upload steps**
-
-Open Google Cloud Console. Search Cloud Storage. Click Buckets.
-
-Open your bucket:
-- **snowflake-projects-test-gds**
-
-Create folder: car_rental_data
-
-Inside it, create:
-- **car_rental_daily_data**
-- **customer_daily_data**
-
-Upload JSON files to:
-- **car_rental_data/car_rental_daily_data/**
-
-Upload CSV files to:
-- **car_rental_data/customer_daily_data/**
-
-Go back to bucket root. Create:
-- **car_rental_spark_job**
-
-Upload:
-- **spark_job.py**
-
-Create:
-- **snowflake_jars**
-
-Upload both .jar files there.
-
-**Dataproc GUI setup**
-
-Open Google Cloud Console. Search Dataproc.
-- Click Clusters.
-- Click Create cluster.
-
-Choose Cluster on Compute Engine.
-
-Cluster name: **hadoop-dev-new**
-
-Region:
-- us-central1
-- Use standard/default settings.
-
-Click Create.
-
-Wait until status becomes Running.
-
-The Airflow DAG is hardcoded to use cluster hadoop-dev-new, project dev-sunset-468907-e9, and region us-central1.
-
-**Airflow / Composer GUI setup**
-
-*Upload DAG*
-
-Open Google Cloud Console.
-
-Search Composer.
-
-Open your Composer environment.
-
-Find DAGs folder.
-
-Click the GCS DAGs folder link.
-
-Upload:
-- **car_rental_airflow_dag.py**
-
-Lets explain this in detail.
-
-*Open Google Cloud Console*
-
-Open your browser. Go to:
-- https://console.cloud.google.com
-
-Log in with your Google account.
-
-*Open Cloud Composer*
-
-In the search bar at the top, type: Composer
-
-Click: Cloud Composer
-
-You will see your Composer environments.
-
-Example:
-- Environment
-- composer-dev
-- airflow-prod
-- car-rental-composer
-
-*Open Your Composer Environment*
-
-Click your Composer environment.
-- Example: **car-rental-composer**
- 
-Wait for the environment page to open.
-
-*Open the DAGs Folder*
-
-Inside the Composer environment page: Find the section:
-- Environment Configuration
-
-Locate: DAGs Folder
-
-You will see a GCS path similar to: gs://composer-bucket-xxxxx/dags 
-
-Click the DAGs Folder link.
-
-*Open Cloud Storage Bucket*
-
-Google automatically opens the Composer bucket.
-
-You should now see something similar to:
-
-<img width="252" height="54" alt="image" src="https://github.com/user-attachments/assets/d86a42ea-d776-46c0-ae14-ae3341045b33" />
-
-*Upload the DAG File*
-
-Open the dags folder.
-
-Click: Upload Files (top menu). Browse your computer. Select:
-- **car_rental_airflow_dag.py**
-
-Click: Open
-
-Wait until upload finishes.
-
-<img width="221" height="52" alt="image" src="https://github.com/user-attachments/assets/94039069-600a-4963-97d1-d774a6a76b9d" />
-
-*Verify Upload*
-
-After upload: ; Return to Composer Environment page.
-
-Click: Airflow UI
-
-Airflow opens in a new tab.
-
-*Verify DAG Appears*
-
-In Airflow: ; Click: DAGs
-
-Search: **car_rental**
-
-You should see:
-- **car_rental_data_pipeline**
-
-This DAG was defined in your file.
-
-*If DAG Does Not Appear*
-
-Wait 2–5 minutes.
-
-Airflow scans the dags/ folder periodically.
-
-Then: Refresh Airflow UI.
-
-Search again: **car_rental_data_pipeline**
-
-*What Happens After Upload?*
-
-Once uploaded:
-
-<img width="401" height="502" alt="image" src="https://github.com/user-attachments/assets/2b617d6c-61b4-41aa-9ec7-ae236bc3a085" />
-
-which matches the workflow defined in **car_rental_airflow_dag.py.**
-
-**Expected Result**
-
-After completing this step, you should be able to open Airflow UI and see:
-
-**car_rental_data_pipeline**
-
-listed under DAGs and ready to be triggered manually.
-
-**Create Snowflake connection**
-
-Open Airflow UI.
-
-Go to Admin. Click Connections. Click +.
-
-Fill:
-- Connection Id: snowflake_conn
-- Connection Type: Snowflake
-- Schema: PUBLIC
-- Login: your Snowflake username (this could be Alejandro)
-- Password: your Snowflake password (choose one) 
-
-In Extra, put:
-
-<img width="374" height="153" alt="image" src="https://github.com/user-attachments/assets/169fad04-1f6c-4e5b-88db-540e274d4aed" />
-
-Click Save.
-
-**Run the project in Airflow GUI**
-
-Open Airflow UI. Click DAGs.
-- Find: **car_rental_data_pipeline**
- 
-Turn the DAG ON.
-
-Click the DAG name.
-
-Click Trigger DAG.
-
-Add configuration: For September 3:
-
-<img width="302" height="100" alt="image" src="https://github.com/user-attachments/assets/1b89dec1-28b4-451c-a92f-d5cd23870c3d" />
-
-Click Trigger.
-
-Watch tasks run in this order:
-
-<img width="234" height="149" alt="image" src="https://github.com/user-attachments/assets/b8b1ebd5-183d-4279-ad23-15c728235452" />
-
-The DAG uses this exact sequence.
-
-Then repeat for September 4:
-
-<img width="306" height="116" alt="image" src="https://github.com/user-attachments/assets/66665dad-bf8b-48dc-9bea-b14feac6f259" />
-
-**End-to-end architecture**
-
-<img width="426" height="462" alt="image" src="https://github.com/user-attachments/assets/c7cda562-08db-4316-87e2-179b221e028a" />
-
-**Final result**
-
-After both dates run successfully, check Snowflake:
-
-<img width="321" height="140" alt="image" src="https://github.com/user-attachments/assets/3eba314e-86c2-4606-ba5b-d1d4a6181fff" />
-
-Your final warehouse will have customer history in **customer_dim** and rental transactions in **rentals_fact.**
-
-
- 
+# 🚗 Car Rental Batch Ingestion Project
+
+## 📋 Project Overview
+
+This project demonstrates a comprehensive **batch data processing pipeline** for car rental analytics using **Apache Airflow**, **Google Cloud Dataproc**,
+**Apache Spark**, and **Snowflake**. The pipeline processes daily car rental transaction data and implements **SCD Type 2** (Slowly Changing Dimension) for
+customer data management.
+
+## 🏗️ Architecture
+
+```
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   GCS Storage   │───▶│  Apache Airflow  │───▶│ Google Dataproc │───▶│   Snowflake     │
+│                 │    │                  │    │                 │    │                 │
+│ • JSON Files    │    │ • DAG Orchestr.  │    │ • Spark Jobs    │    │ • Data Warehouse│
+│ • CSV Files     │    │ • SCD2 Logic     │    │ • Data Transform│    │ • Analytics     │
+└─────────────────┘    └──────────────────┘    └─────────────────┘    └─────────────────┘
+```
+
+## 🎯 Key Features
+
+- **🔄 Batch Processing**: Daily data ingestion with parameterized execution dates
+- **📊 SCD Type 2**: Slowly Changing Dimension implementation for customer data
+- **⚡ Spark Processing**: Large-scale data transformation using PySpark
+- **🎛️ Airflow Orchestration**: Workflow management with dependency handling
+- **☁️ Cloud Integration**: Google Cloud Storage and Dataproc integration
+- **❄️ Snowflake Analytics**: Data warehouse with dimensional modeling
+
+## 📁 Project Structure
+
+```
+Car-Rental-Batch-Ingestion-Project/
+├── airflow_job/
+│   └── car_rental_airflow_dag.py          # Airflow DAG for orchestration
+├── spark_job/
+│   └── spark_job.py                       # PySpark data processing job
+├── data/
+│   ├── car_rental_20250903.json          # Sample rental data (Sept 3, 2025)
+│   ├── car_rental_20250904.json          # Sample rental data (Sept 4, 2025)
+│   ├── customers_20250903.csv            # Customer data (Sept 3, 2025)
+│   └── customers_20250904.csv            # Customer data (Sept 4, 2025)
+├── jar_files/
+│   ├── snowflake-jdbc-3.16.0.jar         # Snowflake JDBC connector
+│   └── spark-snowflake_2.12-2.15.0-spark_3.4.jar  # Spark-Snowflake connector
+├── snowflake_dwh_setup.sql               # Data warehouse setup script
+└── README.md                             # This documentation
+```
+
+## 🗄️ Data Model
+
+### **Dimensional Model (Star Schema)**
+
+#### **Dimension Tables:**
+- **`location_dim`**: Airport/city locations (10 locations)
+- **`car_dim`**: Vehicle information (10 car models)
+- **`date_dim`**: Calendar dates (September 2025)
+- **`customer_dim`**: Customer data with SCD Type 2 support
+
+#### **Fact Table:**
+- **`rentals_fact`**: Daily rental transactions with foreign keys to all dimensions
+
+### **SCD Type 2 Implementation:**
+- **`effective_date`**: When the record became active
+- **`end_date`**: When the record was superseded (NULL for current)
+- **`is_current`**: Boolean flag for current records
+
+## 🔧 Technical Components
+
+### **1. Apache Airflow DAG (`car_rental_airflow_dag.py`)**
+
+**Features:**
+- **Parameterized Execution**: Accepts date parameter (yyyymmdd format)
+- **SCD2 Logic**: Handles customer dimension updates
+- **Task Dependencies**: Sequential execution with proper ordering
+- **Error Handling**: Retry logic and failure notifications
+
+**Task Flow:**
+```
+get_execution_date → merge_customer_dim → insert_customer_dim → submit_pyspark_job
+```
+
+**Key Tasks:**
+- **`get_execution_date`**: Resolves execution date from parameters
+- **`merge_customer_dim`**: Closes out changed customer records (SCD2)
+- **`insert_customer_dim`**: Inserts new customer versions
+- **`submit_pyspark_job`**: Triggers Spark job for fact table processing
+
+### **2. PySpark Job (`spark_job.py`)**
+
+**Data Processing Pipeline:**
+1. **Data Ingestion**: Reads JSON files from GCS
+2. **Data Validation**: Filters out incomplete records
+3. **Data Transformation**: Calculates derived fields
+4. **Dimension Joins**: Enriches data with surrogate keys
+5. **Fact Table Load**: Writes processed data to Snowflake
+
+**Key Transformations:**
+- **Rental Duration**: Calculates days between start and end dates
+- **Total Amount**: Multiplies amount by quantity
+- **Daily Average**: Calculates average daily rental cost
+- **Long Rental Flag**: Identifies rentals > 7 days
+
+### **3. Snowflake Data Warehouse (`snowflake_dwh_setup.sql`)**
+
+**Setup Components:**
+- **Database Creation**: `car_rental` database
+- **Table Definitions**: All dimension and fact tables
+- **Sample Data**: Pre-populated dimension data
+- **Storage Integration**: GCS integration for file access
+- **External Stage**: Stage for customer CSV files
+
+## 🚀 Getting Started
+
+### **Prerequisites:**
+- Google Cloud Platform account
+- Snowflake account with appropriate permissions
+- Apache Airflow environment
+- Google Cloud Dataproc cluster
+
+### **Setup Steps:**
+
+#### **1. Snowflake Setup:**
+```sql
+-- Run the data warehouse setup script
+-- File: snowflake_dwh_setup.sql
+```
+
+#### **2. GCS Data Upload:**
+```bash
+# Upload sample data files to GCS bucket
+gsutil cp data/*.json gs://your-bucket/car_rental_data/car_rental_daily_data/
+gsutil cp data/*.csv gs://your-bucket/car_rental_data/customer_daily_data/
+```
+
+#### **3. Airflow Configuration:**
+- Update connection details in `car_rental_airflow_dag.py`
+- Configure Snowflake connection in Airflow
+- Set up GCP service account permissions
+
+#### **4. Dataproc Setup:**
+- Create Dataproc cluster: `hadoop-dev-new`
+- Upload Spark job to GCS
+- Configure JAR files in GCS
+
+### **Execution:**
+
+#### **Manual Trigger:**
+```bash
+# Trigger DAG with specific date
+airflow dags trigger car_rental_data_pipeline --conf '{"execution_date": "20250903"}'
+```
+
+#### **Programmatic Execution:**
+```python
+# Direct Spark job execution
+python spark_job.py --date 20250903
+```
+
+## 📊 Sample Data
+
+### **Rental Data Structure:**
+```json
+{
+    "rental_id": "RNTL001",
+    "customer_id": "CUST001",
+    "car": {
+        "make": "Tesla",
+        "model": "Model S",
+        "year": 2022
+    },
+    "rental_period": {
+        "start_date": "2025-09-02",
+        "end_date": "2025-09-08"
+    },
+    "rental_location": {
+        "pickup_location": "New York - JFK Airport",
+        "dropoff_location": "Denver - DEN Airport"
+    },
+    "amount": 255.21,
+    "quantity": 1
+}
+```
+
+### **Customer Data Structure:**
+```csv
+customer_id,name,email,phone
+CUST001,John Smith,john.smith@email.com,+1-555-0101
+CUST002,Jane Doe,jane.doe@email.com,+1-555-0102
+```
+
+## 🔍 Data Quality & Validation
+
+### **Validation Rules:**
+- **Mandatory Fields**: rental_id, customer_id, car details, dates, locations, amounts
+- **Data Types**: Proper type conversion and validation
+- **Business Rules**: Rental duration calculations, amount validations
+- **Referential Integrity**: Foreign key constraints in Snowflake
+
+### **Error Handling:**
+- **Airflow**: Retry logic with exponential backoff
+- **Spark**: Data validation with filtering of invalid records
+- **Snowflake**: Constraint validation and error logging
+
+## 📈 Analytics & Insights
+
+### **Key Metrics:**
+- **Revenue Analysis**: Total rental amounts by location, car type, time period
+- **Customer Behavior**: Rental patterns, duration analysis
+- **Operational Metrics**: Pickup/dropoff location analysis
+- **Performance KPIs**: Average daily rental amounts, long rental trends
+
+### **Sample Queries:**
+```sql
+-- Revenue by location
+SELECT l.location_name, SUM(rf.total_rental_amount) as total_revenue
+FROM rentals_fact rf
+JOIN location_dim l ON rf.pickup_location_key = l.location_key
+GROUP BY l.location_name
+ORDER BY total_revenue DESC;
+
+-- Customer rental patterns
+SELECT c.name, COUNT(*) as rental_count, AVG(rf.rental_duration_days) as avg_duration
+FROM rentals_fact rf
+JOIN customer_dim c ON rf.customer_key = c.customer_key
+WHERE c.is_current = TRUE
+GROUP BY c.name
+ORDER BY rental_count DESC;
+```
+
+## 🛠️ Configuration
+
+### **Environment Variables:**
+```bash
+# Snowflake Configuration
+SNOWFLAKE_ACCOUNT=your-account
+SNOWFLAKE_USER=your-username
+SNOWFLAKE_PASSWORD=your-password
+SNOWFLAKE_DATABASE=car_rental
+SNOWFLAKE_WAREHOUSE=COMPUTE_WH
+
+# GCP Configuration
+GCP_PROJECT_ID=your-project-id
+GCP_REGION=us-central1
+GCS_BUCKET=your-bucket-name
+```
+
+### **Airflow Connections:**
+- **Snowflake Connection**: `snowflake_conn`
+- **GCP Connection**: `google_cloud_default`
+
+## 🔧 Troubleshooting
+
+### **Common Issues:**
+
+#### **1. Snowflake Connection Errors:**
+- Verify connection parameters
+- Check network access and firewall rules
+- Validate user permissions
+
+#### **2. GCS Access Issues:**
+- Verify service account permissions
+- Check bucket access policies
+- Validate storage integration setup
+
+#### **3. Spark Job Failures:**
+- Check Dataproc cluster status
+- Verify JAR file availability
+- Review Spark job logs
+
+#### **4. Data Quality Issues:**
+- Validate input data format
+- Check dimension table completeness
+- Review foreign key relationships
+
+## 📚 Learning Objectives
+
+This project demonstrates:
+
+1. **Batch Processing Patterns**: Daily data ingestion workflows
+2. **SCD Implementation**: Slowly Changing Dimension Type 2
+3. **Cloud Data Engineering**: GCP, Airflow, and Snowflake integration
+4. **Dimensional Modeling**: Star schema design and implementation
+5. **Data Validation**: Quality checks and error handling
+6. **Orchestration**: Workflow management with Airflow
+7. **Scalable Processing**: Spark-based data transformation
+
+## 🎯 Business Value
+
+- **Operational Efficiency**: Automated daily data processing
+- **Data Quality**: Comprehensive validation and error handling
+- **Scalability**: Cloud-native architecture for growth
+- **Analytics Ready**: Dimensional model for business intelligence
+- **Historical Tracking**: SCD2 for customer data evolution
+- **Cost Optimization**: Efficient resource utilization
+
+## 📞 Support
+
+For questions or issues:
+1. Check the troubleshooting section
+2. Review Airflow and Spark job logs
+3. Validate Snowflake connection and permissions
+4. Verify GCS bucket access and file availability
+
+---
+
+**🔧 Built with:** Apache Airflow, Google Cloud Dataproc, Apache Spark, Snowflake, Python, SQL
+
+**📅 Last Updated:** September 2025
 
 
  
