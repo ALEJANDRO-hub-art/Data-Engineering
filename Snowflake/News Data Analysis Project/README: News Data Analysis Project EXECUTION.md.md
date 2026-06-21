@@ -378,7 +378,7 @@ The task order is:
 <img width="255" height="159" alt="image" src="https://github.com/user-attachments/assets/aa4a60de-1f05-46b4-b5ba-31d1be088c62" />
 
 The last two tasks run after the Snowflake copy task.
-
+ 
 **End-to-end workflow**
 
 - Airflow starts the DAG
