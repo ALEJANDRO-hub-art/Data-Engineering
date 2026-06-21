@@ -217,7 +217,7 @@ You should see:
 
 *Verify Upload*
 
-After upload:; Return to Composer Environment page.
+After upload: ; Return to Composer Environment page.
 
 Click: Airflow UI
 
