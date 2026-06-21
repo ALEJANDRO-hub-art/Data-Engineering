@@ -1,1 +1,30 @@
-1
+I have this project News Data Analysis Project.
+
+<img width="647" height="252" alt="image" src="https://github.com/user-attachments/assets/61f49bdd-6b02-45a5-aad4-354d63951b15" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
