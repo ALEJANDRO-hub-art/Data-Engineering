@@ -28,12 +28,32 @@ Reference screenshot showing how the Snowflake connection should look in Airflow
 **Where to download/place the files**
 
 Create this folder on your computer:
+- C:\airflow-news-project
 
-<img width="650" height="256" alt="image" src="https://github.com/user-attachments/assets/dee99cd8-33ad-42f2-8d42-1cd52227a95e" />
+Inside it, create:
+- C:\airflow-news-project\dags
+- C:\airflow-news-project\logs
+- C:\airflow-news-project\plugins
+- C:\airflow-news-project\config
 
+Place files like this:
+- C:\airflow-news-project\dags\news_api_airflow_job.py
+- C:\airflow-news-project\dags\fetch_news.py
+- C:\airflow-news-project\snowflake_commands.sql
+- C:\airflow-news-project\README.md
+- C:\airflow-news-project\airflow_snowflake_connection.png
+- C:\airflow-news-project\config\gcp-key.json
 
+Do not upload snowflake_commands.sql to Airflow. You run it inside Snowflake Snowsight.
 
+**Exact GUI execution steps**
 
+*Step 1 — NewsAPI*
+
+Go to NewsAPI website. Create an account. Copy your API key.
+
+You will save it later in Airflow as:
+- NEWS_API_KEY
 
 
 
