@@ -83,5 +83,5 @@ You should see tables like:
 - customer_dim
 - rentals_fact
 
-
+ 
 
