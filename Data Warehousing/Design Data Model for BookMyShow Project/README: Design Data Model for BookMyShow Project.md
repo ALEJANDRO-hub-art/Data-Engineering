@@ -27,7 +27,7 @@ busiest booking times, cancellations, campaign performance, pricing impact, thea
 **Brief explanation of each file**
 
 <img width="731" height="347" alt="image" src="https://github.com/user-attachments/assets/9f740906-c0fe-484d-a812-52c8e41b7212" />
-
+ 
 Important note
 - This project contains the data model and insight queries, but it does not appear to include INSERT/sample transaction data. So the schema can be created successfully, but the insight queries will return empty results until you insert or load sample data.
 
