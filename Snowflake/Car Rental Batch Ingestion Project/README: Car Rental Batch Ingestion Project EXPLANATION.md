@@ -83,5 +83,53 @@ You should see tables like:
 - customer_dim
 - rentals_fact
 
+**GCS GUI upload steps**
+
+Open Google Cloud Console. Search Cloud Storage. Click Buckets.
+
+Open your bucket:
+- snowflake-projects-test-gds
+
+Create folder: car_rental_data
+
+Inside it, create:
+- car_rental_daily_data
+- customer_daily_data
+
+Upload JSON files to:
+- car_rental_data/car_rental_daily_data/
+
+Upload CSV files to:
+- car_rental_data/customer_daily_data/
+
+Go back to bucket root. Create:
+- car_rental_spark_job
+
+Upload:
+- spark_job.py
+
+Create:
+- snowflake_jars
+
+Upload both .jar files there.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
 
