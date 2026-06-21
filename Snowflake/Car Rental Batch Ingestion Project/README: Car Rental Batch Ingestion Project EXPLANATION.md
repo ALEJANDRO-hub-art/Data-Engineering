@@ -53,7 +53,11 @@ Use this structure in your GCS bucket:
 
 <img width="384" height="325" alt="image" src="https://github.com/user-attachments/assets/ccc5edc3-9d6b-4fe7-8f98-a6906ad5b126" />
 
+Upload **car_rental_airflow_dag.py** here:
+- Cloud Composer / Airflow DAGs folder
 
+Run **snowflake_dwh_setup.sql** here:
+- Snowflake → Worksheets
 
 
 
