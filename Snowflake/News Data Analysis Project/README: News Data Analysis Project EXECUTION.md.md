@@ -55,8 +55,11 @@ Go to NewsAPI website. Create an account. Copy your API key.
 You will save it later in Airflow as:
 - NEWS_API_KEY
 
+Lets explain this in detail.
 
+You are currently at the Snowflake Connection setup screen in Airflow. Before this connection works, you must first create and save your NewsAPI key in Airflow because fetch_news.py retrieves it using:
 
+<img width="291" height="65" alt="image" src="https://github.com/user-attachments/assets/ceb7c1b0-0546-4caa-af31-1185d2ef0c77" />
 
 
  
