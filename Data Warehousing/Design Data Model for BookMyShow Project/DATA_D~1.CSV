@@ -1,0 +1,70 @@
+table_name,column_name,definition
+locations,location_id,location_id BIGINT PRIMARY KEY
+locations,city,city VARCHAR(100) NOT NULL
+locations,state,state VARCHAR(100)
+locations,country,country VARCHAR(100) DEFAULT 'India'
+users,user_id,user_id BIGINT PRIMARY KEY
+users,full_name,full_name VARCHAR(150)
+users,email,email VARCHAR(200) UNIQUE
+users,phone,phone VARCHAR(30)
+users,signup_date,signup_date DATE NOT NULL
+users,location_id,location_id BIGINT REFERENCES locations(location_id)
+marketing_campaigns,campaign_id,campaign_id BIGINT PRIMARY KEY
+marketing_campaigns,campaign_name,campaign_name VARCHAR(150) NOT NULL
+marketing_campaigns,channel,channel VARCHAR(80)
+marketing_campaigns,start_date,start_date DATE
+marketing_campaigns,end_date,end_date DATE
+marketing_campaigns,campaign_cost,"campaign_cost DECIMAL(12,2)"
+theatres,theatre_id,theatre_id BIGINT PRIMARY KEY
+theatres,theatre_name,theatre_name VARCHAR(150) NOT NULL
+theatres,location_id,location_id BIGINT NOT NULL REFERENCES locations(location_id)
+screens,screen_id,screen_id BIGINT PRIMARY KEY
+screens,theatre_id,theatre_id BIGINT NOT NULL REFERENCES theatres(theatre_id)
+screens,screen_name,screen_name VARCHAR(80)
+screens,seating_capacity,seating_capacity INT
+genres,genre_id,genre_id BIGINT PRIMARY KEY
+genres,genre_name,genre_name VARCHAR(80) NOT NULL UNIQUE
+movies,movie_id,movie_id BIGINT PRIMARY KEY
+movies,movie_title,movie_title VARCHAR(200) NOT NULL
+movies,release_date,release_date DATE
+movies,language,language VARCHAR(60)
+movies,duration_minutes,duration_minutes INT
+movie_genres,movie_id,movie_id BIGINT REFERENCES movies(movie_id)
+movie_genres,genre_id,genre_id BIGINT REFERENCES genres(genre_id)
+cast_members,cast_id,cast_id BIGINT PRIMARY KEY
+cast_members,cast_name,cast_name VARCHAR(150) NOT NULL
+movie_cast,movie_id,movie_id BIGINT REFERENCES movies(movie_id)
+movie_cast,cast_id,cast_id BIGINT REFERENCES cast_members(cast_id)
+movie_cast,role_type,role_type VARCHAR(50)
+events,event_id,event_id BIGINT PRIMARY KEY
+events,event_title,event_title VARCHAR(200) NOT NULL
+events,event_type,"event_type VARCHAR(50) NOT NULL, -- Movie, Play, Concert, Sport"
+events,movie_id,movie_id BIGINT NULL REFERENCES movies(movie_id)
+shows,show_id,show_id BIGINT PRIMARY KEY
+shows,event_id,event_id BIGINT NOT NULL REFERENCES events(event_id)
+shows,screen_id,screen_id BIGINT NOT NULL REFERENCES screens(screen_id)
+shows,show_start_ts,show_start_ts TIMESTAMP NOT NULL
+shows,base_price,"base_price DECIMAL(10,2) NOT NULL"
+bookings,booking_id,booking_id BIGINT PRIMARY KEY
+bookings,user_id,user_id BIGINT NOT NULL REFERENCES users(user_id)
+bookings,booking_ts,booking_ts TIMESTAMP NOT NULL
+bookings,booking_status,"booking_status VARCHAR(30) NOT NULL, -- Confirmed, Cancelled, Failed"
+bookings,campaign_id,campaign_id BIGINT NULL REFERENCES marketing_campaigns(campaign_id)
+bookings,total_amount,"total_amount DECIMAL(12,2) NOT NULL"
+bookings,discount_amount,"discount_amount DECIMAL(12,2) DEFAULT 0"
+booking_items,booking_item_id,booking_item_id BIGINT PRIMARY KEY
+booking_items,booking_id,booking_id BIGINT NOT NULL REFERENCES bookings(booking_id)
+booking_items,show_id,show_id BIGINT NOT NULL REFERENCES shows(show_id)
+booking_items,seat_number,seat_number VARCHAR(20)
+booking_items,ticket_price,"ticket_price DECIMAL(10,2) NOT NULL"
+payments,payment_id,payment_id BIGINT PRIMARY KEY
+payments,booking_id,booking_id BIGINT NOT NULL REFERENCES bookings(booking_id)
+payments,payment_ts,payment_ts TIMESTAMP NOT NULL
+payments,payment_method,payment_method VARCHAR(50)
+payments,payment_status,payment_status VARCHAR(30)
+payments,paid_amount,"paid_amount DECIMAL(12,2)"
+cancellations,cancellation_id,cancellation_id BIGINT PRIMARY KEY
+cancellations,booking_id,booking_id BIGINT NOT NULL REFERENCES bookings(booking_id)
+cancellations,cancellation_ts,cancellation_ts TIMESTAMP NOT NULL
+cancellations,cancellation_reason,cancellation_reason VARCHAR(200)
+cancellations,refund_amount,"refund_amount DECIMAL(12,2)"

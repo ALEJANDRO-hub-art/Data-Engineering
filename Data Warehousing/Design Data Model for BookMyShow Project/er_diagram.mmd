@@ -1,0 +1,17 @@
+erDiagram
+    locations ||--o{ users : references
+    locations ||--o{ theatres : references
+    theatres ||--o{ screens : references
+    movies ||--o{ events : references
+    movies ||--o{ movie_genres : references
+    genres ||--o{ movie_genres : references
+    movies ||--o{ movie_cast : references
+    cast_members ||--o{ movie_cast : references
+    events ||--o{ shows : references
+    screens ||--o{ shows : references
+    users ||--o{ bookings : references
+    marketing_campaigns ||--o{ bookings : references
+    bookings ||--o{ booking_items : references
+    shows ||--o{ booking_items : references
+    bookings ||--o{ payments : references
+    bookings ||--o{ cancellations : references

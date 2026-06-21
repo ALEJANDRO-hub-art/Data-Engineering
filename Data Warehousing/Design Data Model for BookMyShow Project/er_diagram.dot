@@ -1,0 +1,20 @@
+digraph G {
+rankdir=LR;
+node [shape=box, style="rounded"];
+"locations" -> "users";
+"locations" -> "theatres";
+"theatres" -> "screens";
+"movies" -> "events";
+"movies" -> "movie_genres";
+"genres" -> "movie_genres";
+"movies" -> "movie_cast";
+"cast_members" -> "movie_cast";
+"events" -> "shows";
+"screens" -> "shows";
+"users" -> "bookings";
+"marketing_campaigns" -> "bookings";
+"bookings" -> "booking_items";
+"shows" -> "booking_items";
+"bookings" -> "payments";
+"bookings" -> "cancellations";
+}
