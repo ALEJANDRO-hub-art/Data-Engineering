@@ -379,7 +379,19 @@ The task order is:
 
 The last two tasks run after the Snowflake copy task.
 
+**End-to-end workflow**
 
+- Airflow starts the DAG
+- fetch_news.py calls NewsAPI
+- News articles are cleaned
+- Data is saved as a .parquet file
+- Parquet file is uploaded to GCS
+- Snowflake reads the Parquet file from the GCS external stage
+- Data is copied into:
+ - news_api.PUBLIC.news_api_data
+- Snowflake creates analytics tables:
+ - news_api.PUBLIC.summary_news
+ - news_api.PUBLIC.author_activity
 
 
 
