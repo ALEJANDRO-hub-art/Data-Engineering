@@ -25,8 +25,11 @@ Documentation explaining the architecture, files, setup steps, and expected outp
 **airflow_snowflake_connection.png**
 Reference screenshot showing how the Snowflake connection should look in Airflow.
 
+**Where to download/place the files**
 
+Create this folder on your computer:
 
+<img width="650" height="256" alt="image" src="https://github.com/user-attachments/assets/dee99cd8-33ad-42f2-8d42-1cd52227a95e" />
 
 
 
