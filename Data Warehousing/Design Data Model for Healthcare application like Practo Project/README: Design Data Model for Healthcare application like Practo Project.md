@@ -15,7 +15,7 @@ Brief explanation of each file
 *Step 1: Open MySQL Workbench*
 
 Open MySQL Workbench.
-
+ 
 Click your local connection, for example: Local instance MySQL80
 
 *Step 2: Create the database*
