@@ -18,26 +18,26 @@ This is a Car Rental Batch Ingestion Project. It uses **GCS → Airflow → Data
 **What each folder/file is for**
 
 *airflow_job/*
-- Contains car_rental_airflow_dag.py. Upload this to Airflow / Cloud Composer DAGs folder. It controls the full workflow: gets execution date, updates customer SCD2 records in Snowflake, inserts customers, then submits the Spark job to Dataproc.
+- Contains **car_rental_airflow_dag.py**. Upload this to Airflow / Cloud Composer DAGs folder. It controls the full workflow: gets execution date, updates customer SCD2 records in Snowflake, inserts customers, then submits the Spark job to Dataproc.
 
 *spark_job/*
-- Contains spark_job.py. Upload this to Google Cloud Storage, because Dataproc will run it from GCS. It reads rental JSON from GCS, validates/transforms it, joins Snowflake dimensions, and writes to rentals_fact.
+- Contains **spark_job.py**. Upload this to Google Cloud Storage, because Dataproc will run it from GCS. It reads rental JSON from GCS, validates/transforms it, joins Snowflake dimensions, and writes to rentals_fact.
 
 *data/*
 
 Upload these files to GCS:
-- car_rental_20250903.json
-- car_rental_20250904.json
-- customers_20250903.csv
-- customers_20250904.csv
+- **car_rental_20250903.json**
+- **car_rental_20250904.json**
+- **customers_20250903.csv**
+- **customers_20250904.csv**
 
 The JSON files are rental transactions with rental_id, customer_id, car details, rental dates, locations, amount, and quantity.
 
 *jar_files/*
 
 Upload both JARs to GCS, not Snowflake:
-- snowflake-jdbc-3.16.0.jar
-- spark-snowflake_2.12-2.15.0-spark_3.4.jar
+- **snowflake-jdbc-3.16.0.jar**
+- **spark-snowflake_2.12-2.15.0-spark_3.4.jar**
 
 These are needed by Dataproc Spark so Spark can connect to Snowflake.
 
