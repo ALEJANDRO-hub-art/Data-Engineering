@@ -119,13 +119,10 @@ Click Database from the top menu. Click Reverse Engineer.
 Select your MySQL connection. Click Next.
 Choose database: **airline_reservation_db**
 
-Click Next until Execute.
-
-Click Execute.
-
-Click Next.
-
-Click Finish.
+- Click Next until Execute.
+- Click Execute.
+- Click Next.
+- Click Finish.
 
 MySQL Workbench will generate the visual ER diagram from your tables.
 
