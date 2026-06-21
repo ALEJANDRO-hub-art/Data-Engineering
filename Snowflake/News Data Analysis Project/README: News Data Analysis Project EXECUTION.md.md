@@ -226,10 +226,54 @@ This creates:
 
 After running the storage integration command, Snowflake may show a service account. Give that service account access to your GCS bucket.
 
+**Step 4 — Airflow files**
+
+In your Airflow project, put these two files inside the **dags folder**:
+- news_api_airflow_job.py
+- fetch_news.py
+
+The DAG imports this function:
+
+<img width="267" height="72" alt="image" src="https://github.com/user-attachments/assets/d00ba1cb-ae9e-40dd-8686-19a63d59370d" />
+
+ So both files must be in the same DAG/import path.
+
+**Step 5 — Airflow GUI: create NewsAPI variable**
+
+Open Airflow UI: http://localhost:8080. Login.
+
+Go to Admin. Click Variables. Click +.
+
+Enter:
+- Key: NEWS_API_KEY
+- Value: your NewsAPI key
+
+Click Save.
+
+We did this previously just scroll upp and check it out.
+
+**Step 6 — Airflow GUI: create Snowflake connection**
+
+Go to Admin. Click Connections. Click +.
+
+Fill in:
+- Connection Id: snowflake_conn
+- Connection Type: Snowflake
+- Description: Snowflake Connection
+- Schema: PUBLIC
+- Login: your Snowflake username
+- Password: your Snowflake password
+
+In Extra, use:
+
+<img width="281" height="171" alt="image" src="https://github.com/user-attachments/assets/d4d89d12-ce68-4388-8acf-150bc5d9803c" />
+
+Then click Save.
+
+Your screenshot is exactly this step.
 
 
 
- 
 
 
 
