@@ -349,7 +349,12 @@ So the flow becomes:
 
 <img width="236" height="180" alt="image" src="https://github.com/user-attachments/assets/0a69d4c1-2507-4d90-b308-eaaa07790610" />
 
- 
+*If you don't see the "Extra" field*
+
+Scroll all the way to the bottom of the connection form. In some Airflow versions it appears as:
+- Extra or Extra JSON
+
+Paste the JSON there exactly as shown above.
 
 
 
