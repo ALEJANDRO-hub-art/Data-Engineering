@@ -90,6 +90,7 @@ It shows the project relationships:
 
 **End-to-end architecture**
 
+<img width="475" height="247" alt="image" src="https://github.com/user-attachments/assets/2821658b-9fd1-422a-a084-f6efbdc2e6db" />
 
 
 
