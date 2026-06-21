@@ -167,8 +167,16 @@ This SQL code runs 10 healthcare analytics reports on the database.
 Overall, these queries analyze:
 appointments, doctor performance, fees, cancellations, wait times, revenue, patient growth, marketing campaigns, ratings, and follow-up needs.
 
+**Correct execution order**
+- 1 Download all project files.
+- 2 Create database **healthcare_practo_db.**
+- 3 Run **schema.sql**
+- 4 Insert/load sample data.
+- 5 Run **insight_queries.sql.**
+- 6 Review query outputs.
+- 7 Use er_diagram.png in your assignment/report.
 
-
+<img width="613" height="303" alt="image" src="https://github.com/user-attachments/assets/1e62a46f-6292-4e7a-9251-7d7f5d310c97" />
 
 
 
