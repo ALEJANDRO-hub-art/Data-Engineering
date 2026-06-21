@@ -356,10 +356,28 @@ Scroll all the way to the bottom of the connection form. In some Airflow version
 
 Paste the JSON there exactly as shown above.
 
+Lets continue.
 
+**Step 7 — Run the DAG**
 
+Go to DAGs in Airflow.
 
+Find:
+- newsapi_data_processing_dag
 
+Turn it ON.
+
+Click the DAG name.
+
+Click Trigger DAG.
+
+Watch the task boxes.
+
+The task order is:
+
+<img width="255" height="159" alt="image" src="https://github.com/user-attachments/assets/aa4a60de-1f05-46b4-b5ba-31d1be088c62" />
+
+The last two tasks run after the Snowflake copy task.
 
 
 
