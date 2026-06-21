@@ -88,28 +88,28 @@ You should see tables like:
 Open Google Cloud Console. Search Cloud Storage. Click Buckets.
 
 Open your bucket:
-- snowflake-projects-test-gds
+- **snowflake-projects-test-gds**
 
 Create folder: car_rental_data
 
 Inside it, create:
-- car_rental_daily_data
-- customer_daily_data
+- **car_rental_daily_data**
+- **customer_daily_data**
 
 Upload JSON files to:
-- car_rental_data/car_rental_daily_data/
+- **car_rental_data/car_rental_daily_data/**
 
 Upload CSV files to:
-- car_rental_data/customer_daily_data/
+- **car_rental_data/customer_daily_data/**
 
 Go back to bucket root. Create:
-- car_rental_spark_job
+- **car_rental_spark_job**
 
 Upload:
-- spark_job.py
+- **spark_job.py**
 
 Create:
-- snowflake_jars
+- **snowflake_jars**
 
 Upload both .jar files there.
 
@@ -176,7 +176,7 @@ Example:
 *Open Your Composer Environment*
 
 Click your Composer environment.
-- Example: car-rental-composer
+- Example: **car-rental-composer**
  
 Wait for the environment page to open.
 
@@ -205,7 +205,7 @@ composer-bucket-xxxxx
 Open the dags folder.
 
 Click: Upload Files (top menu). Browse your computer. Select:
-- car_rental_airflow_dag.py
+- **car_rental_airflow_dag.py**
 
 Click: Open
 
