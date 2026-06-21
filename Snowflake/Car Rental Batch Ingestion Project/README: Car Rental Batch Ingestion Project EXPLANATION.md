@@ -197,8 +197,7 @@ Google automatically opens the Composer bucket.
 
 You should now see something similar to:
 
-composer-bucket-xxxxx
-└── dags/
+<img width="252" height="54" alt="image" src="https://github.com/user-attachments/assets/d86a42ea-d776-46c0-ae14-ae3341045b33" />
 
 *Upload the DAG File*
 
@@ -210,8 +209,6 @@ Click: Upload Files (top menu). Browse your computer. Select:
 Click: Open
 
 Wait until upload finishes.
-
-You should see:
 
 <img width="221" height="52" alt="image" src="https://github.com/user-attachments/assets/94039069-600a-4963-97d1-d774a6a76b9d" />
 
