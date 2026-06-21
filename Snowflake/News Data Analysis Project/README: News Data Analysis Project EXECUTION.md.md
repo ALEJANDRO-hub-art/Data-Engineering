@@ -393,6 +393,18 @@ The last two tasks run after the Snowflake copy task.
   - news_api.PUBLIC.summary_news
   - news_api.PUBLIC.author_activity
 
+**Final output tables**
+
+Check these in Snowflake:
+
+<img width="328" height="144" alt="image" src="https://github.com/user-attachments/assets/53164472-bd36-444b-8a3a-25644d3c05a1" />
+
+**summary_news** shows article counts by source.
+**author_activity** shows article counts by author.
+
+
+
+
 
 
 
