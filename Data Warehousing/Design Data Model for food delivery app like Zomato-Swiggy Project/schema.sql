@@ -1,0 +1,13 @@
+CREATE TABLE locations (location_id BIGINT PRIMARY KEY, city VARCHAR(100), area VARCHAR(100), state VARCHAR(100));
+CREATE TABLE customers (customer_id BIGINT PRIMARY KEY, full_name VARCHAR(150), email VARCHAR(200), signup_date DATE, location_id BIGINT REFERENCES locations(location_id));
+CREATE TABLE restaurants (restaurant_id BIGINT PRIMARY KEY, restaurant_name VARCHAR(150), location_id BIGINT REFERENCES locations(location_id), opening_time TIME, closing_time TIME);
+CREATE TABLE cuisines (cuisine_id BIGINT PRIMARY KEY, cuisine_name VARCHAR(100));
+CREATE TABLE restaurant_cuisines (restaurant_id BIGINT REFERENCES restaurants(restaurant_id), cuisine_id BIGINT REFERENCES cuisines(cuisine_id), PRIMARY KEY(restaurant_id, cuisine_id));
+CREATE TABLE menu_items (menu_item_id BIGINT PRIMARY KEY, restaurant_id BIGINT REFERENCES restaurants(restaurant_id), item_name VARCHAR(150), cuisine_id BIGINT REFERENCES cuisines(cuisine_id), list_price DECIMAL(10,2), is_active BOOLEAN);
+CREATE TABLE delivery_personnel (delivery_person_id BIGINT PRIMARY KEY, full_name VARCHAR(150), phone VARCHAR(30), home_location_id BIGINT REFERENCES locations(location_id));
+CREATE TABLE marketing_campaigns (campaign_id BIGINT PRIMARY KEY, campaign_name VARCHAR(150), channel VARCHAR(80), start_date DATE, end_date DATE, campaign_cost DECIMAL(12,2));
+CREATE TABLE orders (order_id BIGINT PRIMARY KEY, customer_id BIGINT REFERENCES customers(customer_id), restaurant_id BIGINT REFERENCES restaurants(restaurant_id), order_ts TIMESTAMP, order_status VARCHAR(30), campaign_id BIGINT REFERENCES marketing_campaigns(campaign_id), subtotal DECIMAL(12,2), discount_amount DECIMAL(12,2), delivery_fee DECIMAL(10,2), total_amount DECIMAL(12,2));
+CREATE TABLE order_items (order_item_id BIGINT PRIMARY KEY, order_id BIGINT REFERENCES orders(order_id), menu_item_id BIGINT REFERENCES menu_items(menu_item_id), quantity INT, unit_price DECIMAL(10,2), line_total DECIMAL(12,2));
+CREATE TABLE deliveries (delivery_id BIGINT PRIMARY KEY, order_id BIGINT REFERENCES orders(order_id), delivery_person_id BIGINT REFERENCES delivery_personnel(delivery_person_id), assigned_ts TIMESTAMP, picked_up_ts TIMESTAMP, delivered_ts TIMESTAMP, delivery_status VARCHAR(30));
+CREATE TABLE cancellations (cancellation_id BIGINT PRIMARY KEY, order_id BIGINT REFERENCES orders(order_id), cancellation_ts TIMESTAMP, cancelled_by VARCHAR(30), reason VARCHAR(200), refund_amount DECIMAL(12,2));
+CREATE TABLE payments (payment_id BIGINT PRIMARY KEY, order_id BIGINT REFERENCES orders(order_id), payment_ts TIMESTAMP, payment_method VARCHAR(50), payment_status VARCHAR(30), paid_amount DECIMAL(12,2));

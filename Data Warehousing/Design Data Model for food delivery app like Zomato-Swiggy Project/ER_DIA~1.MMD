@@ -1,0 +1,16 @@
+erDiagram
+    locations ||--o{ customers : references
+    locations ||--o{ restaurants : references
+    restaurants ||--o{ restaurant_cuisines : references
+    cuisines ||--o{ restaurant_cuisines : references
+    restaurants ||--o{ menu_items : references
+    cuisines ||--o{ menu_items : references
+    customers ||--o{ orders : references
+    restaurants ||--o{ orders : references
+    marketing_campaigns ||--o{ orders : references
+    orders ||--o{ order_items : references
+    menu_items ||--o{ order_items : references
+    orders ||--o{ deliveries : references
+    delivery_personnel ||--o{ deliveries : references
+    orders ||--o{ payments : references
+    orders ||--o{ cancellations : references

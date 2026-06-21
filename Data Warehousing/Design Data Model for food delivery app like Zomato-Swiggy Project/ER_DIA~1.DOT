@@ -1,0 +1,19 @@
+digraph G {
+rankdir=LR;
+node [shape=box, style="rounded"];
+"locations" -> "customers";
+"locations" -> "restaurants";
+"restaurants" -> "restaurant_cuisines";
+"cuisines" -> "restaurant_cuisines";
+"restaurants" -> "menu_items";
+"cuisines" -> "menu_items";
+"customers" -> "orders";
+"restaurants" -> "orders";
+"marketing_campaigns" -> "orders";
+"orders" -> "order_items";
+"menu_items" -> "order_items";
+"orders" -> "deliveries";
+"delivery_personnel" -> "deliveries";
+"orders" -> "payments";
+"orders" -> "cancellations";
+}
