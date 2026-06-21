@@ -1,9 +1,6 @@
 I have this project Design Data Model for Healthcare application like Practo Project.
 
-<img width="813" height="282" alt="image" src="https://github.com/user-attachments/assets/927e7116-cf15-4a88-8c45-1937add10880" />
-
-
-
+<img width="835" height="282" alt="image" src="https://github.com/user-attachments/assets/3bb9f7a9-438c-464e-8316-68539f0853b8" />
 
 
 
