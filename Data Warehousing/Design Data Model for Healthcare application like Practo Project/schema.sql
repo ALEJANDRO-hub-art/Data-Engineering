@@ -1,0 +1,14 @@
+CREATE TABLE locations (location_id BIGINT PRIMARY KEY, city VARCHAR(100), area VARCHAR(100), state VARCHAR(100));
+CREATE TABLE patients (patient_id BIGINT PRIMARY KEY, full_name VARCHAR(150), email VARCHAR(200), phone VARCHAR(30), signup_date DATE, gender VARCHAR(20), date_of_birth DATE, location_id BIGINT REFERENCES locations(location_id));
+CREATE TABLE specialties (specialty_id BIGINT PRIMARY KEY, specialty_name VARCHAR(100));
+CREATE TABLE doctors (doctor_id BIGINT PRIMARY KEY, full_name VARCHAR(150), specialty_id BIGINT REFERENCES specialties(specialty_id), years_experience INT, consultation_fee DECIMAL(10,2));
+CREATE TABLE clinics (clinic_id BIGINT PRIMARY KEY, clinic_name VARCHAR(150), location_id BIGINT REFERENCES locations(location_id));
+CREATE TABLE doctor_clinics (doctor_id BIGINT REFERENCES doctors(doctor_id), clinic_id BIGINT REFERENCES clinics(clinic_id), PRIMARY KEY(doctor_id, clinic_id));
+CREATE TABLE marketing_campaigns (campaign_id BIGINT PRIMARY KEY, campaign_name VARCHAR(150), channel VARCHAR(80), start_date DATE, end_date DATE, campaign_cost DECIMAL(12,2));
+CREATE TABLE appointments (appointment_id BIGINT PRIMARY KEY, patient_id BIGINT REFERENCES patients(patient_id), doctor_id BIGINT REFERENCES doctors(doctor_id), clinic_id BIGINT REFERENCES clinics(clinic_id), campaign_id BIGINT REFERENCES marketing_campaigns(campaign_id), booked_ts TIMESTAMP, appointment_ts TIMESTAMP, appointment_status VARCHAR(30), appointment_type VARCHAR(30), fee_amount DECIMAL(10,2), discount_amount DECIMAL(10,2));
+CREATE TABLE consultations (consultation_id BIGINT PRIMARY KEY, appointment_id BIGINT REFERENCES appointments(appointment_id), consultation_start_ts TIMESTAMP, consultation_end_ts TIMESTAMP, diagnosis_summary VARCHAR(300), follow_up_required BOOLEAN);
+CREATE TABLE prescriptions (prescription_id BIGINT PRIMARY KEY, consultation_id BIGINT REFERENCES consultations(consultation_id), prescribed_ts TIMESTAMP, notes VARCHAR(300));
+CREATE TABLE prescription_items (prescription_item_id BIGINT PRIMARY KEY, prescription_id BIGINT REFERENCES prescriptions(prescription_id), medicine_name VARCHAR(150), dosage VARCHAR(100), duration_days INT);
+CREATE TABLE payments (payment_id BIGINT PRIMARY KEY, appointment_id BIGINT REFERENCES appointments(appointment_id), payment_ts TIMESTAMP, payment_method VARCHAR(50), payment_status VARCHAR(30), paid_amount DECIMAL(10,2));
+CREATE TABLE reviews (review_id BIGINT PRIMARY KEY, appointment_id BIGINT REFERENCES appointments(appointment_id), doctor_id BIGINT REFERENCES doctors(doctor_id), patient_id BIGINT REFERENCES patients(patient_id), rating INT, review_text VARCHAR(500), review_ts TIMESTAMP);
+CREATE TABLE cancellations (cancellation_id BIGINT PRIMARY KEY, appointment_id BIGINT REFERENCES appointments(appointment_id), cancellation_ts TIMESTAMP, cancelled_by VARCHAR(30), reason VARCHAR(200), refund_amount DECIMAL(10,2));

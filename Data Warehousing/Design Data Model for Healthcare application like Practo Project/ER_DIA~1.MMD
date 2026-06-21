@@ -1,0 +1,18 @@
+erDiagram
+    locations ||--o{ patients : references
+    specialties ||--o{ doctors : references
+    locations ||--o{ clinics : references
+    doctors ||--o{ doctor_clinics : references
+    clinics ||--o{ doctor_clinics : references
+    patients ||--o{ appointments : references
+    doctors ||--o{ appointments : references
+    clinics ||--o{ appointments : references
+    marketing_campaigns ||--o{ appointments : references
+    appointments ||--o{ consultations : references
+    consultations ||--o{ prescriptions : references
+    prescriptions ||--o{ prescription_items : references
+    appointments ||--o{ payments : references
+    appointments ||--o{ reviews : references
+    doctors ||--o{ reviews : references
+    patients ||--o{ reviews : references
+    appointments ||--o{ cancellations : references

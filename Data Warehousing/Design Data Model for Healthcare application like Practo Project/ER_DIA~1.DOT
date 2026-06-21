@@ -1,0 +1,21 @@
+digraph G {
+rankdir=LR;
+node [shape=box, style="rounded"];
+"locations" -> "patients";
+"specialties" -> "doctors";
+"locations" -> "clinics";
+"doctors" -> "doctor_clinics";
+"clinics" -> "doctor_clinics";
+"patients" -> "appointments";
+"doctors" -> "appointments";
+"clinics" -> "appointments";
+"marketing_campaigns" -> "appointments";
+"appointments" -> "consultations";
+"consultations" -> "prescriptions";
+"prescriptions" -> "prescription_items";
+"appointments" -> "payments";
+"appointments" -> "reviews";
+"doctors" -> "reviews";
+"patients" -> "reviews";
+"appointments" -> "cancellations";
+}
