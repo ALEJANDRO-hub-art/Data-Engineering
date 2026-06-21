@@ -271,7 +271,7 @@ Fill:
 - Connection Type: Snowflake
 - Schema: PUBLIC
 - Login: your Snowflake username (this could be Alejandro)
-- Password: your Snowflake password (choose one)
+- Password: your Snowflake password (choose one) 
 
 In Extra, put:
 
