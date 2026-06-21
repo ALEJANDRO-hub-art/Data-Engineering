@@ -59,7 +59,29 @@ Upload **car_rental_airflow_dag.py** here:
 Run **snowflake_dwh_setup.sql** here:
 - Snowflake → Worksheets
 
+**Snowflake GUI execution**
 
+Open Snowflake. Go to Worksheets. Click + Worksheet.
+
+Open **snowflake_dwh_setup.sql.**
+
+Copy all code. Paste it into the worksheet.
+
+Select warehouse:
+- COMPUTE_WH
+ 
+Click Run All.
+
+Confirm tables were created:
+
+<img width="297" height="105" alt="image" src="https://github.com/user-attachments/assets/c8171218-99ef-48bf-aa98-9174e41e45ec" />
+
+You should see tables like:
+- location_dim
+- car_dim
+- date_dim
+- customer_dim
+- rentals_fact
 
 
 
