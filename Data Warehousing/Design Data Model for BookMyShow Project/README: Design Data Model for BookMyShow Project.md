@@ -31,14 +31,81 @@ busiest booking times, cancellations, campaign performance, pricing impact, thea
 Important note
 - This project contains the data model and insight queries, but it does not appear to include INSERT/sample transaction data. So the schema can be created successfully, but the insight queries will return empty results until you insert or load sample data.
 
+**Step-by-step execution in MySQL Workbench GUI**
 
+*Step 1: Open MySQL Workbench*
 
+Open MySQL Workbench.
 
+Click your local connection, usually: Local instance MySQL80. Enter your password.
 
+*Step 2: Create the database*
 
+Click the SQL editor and run:
+- CREATE DATABASE bookmyshow_db;
+- USE bookmyshow_db;
 
+Click the lightning bolt button to execute.
 
+*Step 3: Open the schema file*
 
+In MySQL Workbench: File → Open SQL Script
+
+Select: **schema.sql**
+
+Then run the full script using the lightning bolt.
+
+This creates tables such as:
+- locations
+- users
+- theatres
+- screens
+- genres
+- movies
+- events
+- shows
+- bookings
+- booking_items
+- payments
+- cancellations
+
+*Step 4: Check that tables were created*
+
+On the left side, go to:
+- Schemas → bookmyshow_db → Tables
+
+Right-click Tables and click: Refresh All
+
+You should see all project tables.
+
+*Step 5: Open the insight queries file*
+
+Go to: File → Open SQL Script
+- Select: **insight_queries.sql**
+
+Run one query at a time.
+
+Examples of insights included:
+- Popular genres by city
+- Busiest booking hour/day
+- Cancellation rate
+- Average tickets per booking
+- Campaign performance
+- Revenue by theatre
+
+**End-to-end workflow / architecture**
+
+<img width="399" height="328" alt="image" src="https://github.com/user-attachments/assets/679d92ff-257e-4e99-b04c-dd64961bb476" />
+
+Simple execution order
+- 1 Create database: **bookmyshow_db**
+- 2 Run **schema.sql**
+- 3 Confirm tables were created
+- 4 Load or insert sample data
+- 5 Run **insight_queries.sql**
+- 6 Use **er_diagram.png** in your final report
+
+This is mainly a database design + analytics SQL project, not a full application GUI project.
 
 
 
