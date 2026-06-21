@@ -261,8 +261,8 @@ Fill in:
 - Connection Type: Snowflake
 - Description: Snowflake Connection
 - Schema: PUBLIC
-- Login: your Snowflake username
-- Password: your Snowflake password
+- Login: your Snowflake username. Example: Alejandro
+- Password: your Snowflake password. Example: *********
 
 In Extra, use:
 
@@ -271,6 +271,85 @@ In Extra, use:
 Then click Save.
 
 Your screenshot is exactly this step.
+
+*What and where is Extra.*
+
+Scroll down to the bottom of the page. You will see a large text box labeled:
+- Extra
+
+The Extra field stores additional Snowflake settings that Airflow needs but that do not fit into the standard fields. Think of it as a place to store Snowflake-specific configuration.
+
+*Paste This Into Extra*
+
+Copy and paste exactly:
+
+<img width="314" height="167" alt="image" src="https://github.com/user-attachments/assets/6cb8b956-febe-4cc1-ac5d-0f1ce6fa72bc" />
+
+*Where Do These Values Come From?*
+
+*account*
+
+From your Snowflake URL. Example:
+- https://guxyhix-bq53873.snowflakecomputing.com
+
+The account is:
+- guxyhix-bq53873
+
+*warehouse*
+
+Snowflake warehouse name. Usually:
+- COMPUTE_WH
+
+You can verify in Snowflake:
+- SHOW WAREHOUSES;
+
+*database*
+
+The database created earlier. Example: *news_api*
+
+You can verify:
+- SHOW DATABASES;
+
+*role*
+
+The role used by Airflow. Usually:
+- ACCOUNTADMIN
+
+You can verify:
+- SHOW ROLES;
+
+*insecure_mode*
+
+Leave: false
+
+This means SSL certificate verification is enabled.
+
+*Save*
+
+After filling everything:
+- Scroll to the bottom.
+- Click Save.
+
+Airflow creates a connection named: **snowflake_conn**
+
+*What Airflow Uses This Connection For*
+
+When your DAG runs:
+
+<img width="251" height="72" alt="image" src="https://github.com/user-attachments/assets/dcebecaf-27e8-4af1-a93c-8b3166c7d433" />
+
+Airflow automatically:
+- Reads the username/password.
+- Reads the Snowflake account.
+- Connects to Snowflake.
+- Executes SQL commands.
+- Loads NewsAPI data into Snowflake tables.
+
+So the flow becomes:
+
+<img width="236" height="180" alt="image" src="https://github.com/user-attachments/assets/0a69d4c1-2507-4d90-b308-eaaa07790610" />
+
+
 
 
 
