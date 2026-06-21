@@ -281,7 +281,7 @@ Click Save.
 
 **Run the project in Airflow GUI**
 
-Open Airflow UI. lick DAGs.
+Open Airflow UI. Click DAGs.
 - Find: **car_rental_data_pipeline**
  
 Turn the DAG ON.
