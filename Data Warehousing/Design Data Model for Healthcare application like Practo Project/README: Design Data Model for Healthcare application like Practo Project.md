@@ -10,7 +10,48 @@ Brief explanation of each file
 
 <img width="623" height="356" alt="image" src="https://github.com/user-attachments/assets/5f090a59-491f-4dfb-b53e-437a24835eec" />
 
+**Step-by-step execution in MySQL Workbench GUI**
 
+*Step 1: Open MySQL Workbench*
+
+Open MySQL Workbench.
+
+Click your local connection, for example: Local instance MySQL80
+
+*Step 2: Create the database*
+
+Click the SQL editor and run:
+- CREATE DATABASE healthcare_practo_db;
+- USE healthcare_practo_db;
+
+Click the lightning bolt icon to execute.
+
+*Step 3: Open and run schema.sql*
+
+In MySQL Workbench: File → Open SQL Script
+- Select: **schema.sql**
+
+Click the lightning bolt icon.
+
+This creates all tables.
+
+*Step 4: Confirm tables were created*
+
+On the left panel: **Schemas → healthcare_practo_db → Tables**
+
+Right-click Tables → Refresh All.
+
+You should see tables like:
+- locations
+- patients
+- doctors
+- clinics
+- appointments
+- consultations
+- prescriptions
+- payments
+- reviews
+- cancellations
 
 
 
