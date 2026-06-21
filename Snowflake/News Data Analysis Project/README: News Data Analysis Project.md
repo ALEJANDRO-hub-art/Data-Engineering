@@ -89,7 +89,7 @@ and **Snowflake**. The system automatically fetches news articles, processes the
 <img width="626" height="60" alt="image" src="https://github.com/user-attachments/assets/04905c77-477e-42d3-b9ed-e02ed0d5fd56" />
 
 
-
+ 
 
 
 
