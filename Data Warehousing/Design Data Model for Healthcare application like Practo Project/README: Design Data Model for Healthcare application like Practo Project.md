@@ -53,9 +53,31 @@ You should see tables like:
 - reviews
 - cancellations
 
+*Step 5: Load data*
 
+This project currently has schema and queries, but I do not see actual insert/sample data rows in the CSV. So you may need to manually insert data or generate sample data.
 
+To insert sample data, open a new SQL tab and use INSERT INTO statements.
 
+Example:
+
+<img width="475" height="198" alt="image" src="https://github.com/user-attachments/assets/7b7a857b-397a-49f6-bb69-aa5848e0db56" />
+
+*Step 6: Run analytics queries*
+
+Open: File → Open SQL Script
+
+Select: **insight_queries.sql**
+
+Run each query one by one.
+
+Important: your insight_queries.sql looks written more for PostgreSQL, not pure MySQL. Some functions may fail in MySQL, such as:
+
+<img width="357" height="105" alt="image" src="https://github.com/user-attachments/assets/3edbb1a4-06ca-4b10-ab56-f8adddd977eb" />
+
+For MySQL, replace them with:
+
+<img width="421" height="90" alt="image" src="https://github.com/user-attachments/assets/17a90ae9-e72d-4348-913b-2219fd38a029" />
 
 
 
