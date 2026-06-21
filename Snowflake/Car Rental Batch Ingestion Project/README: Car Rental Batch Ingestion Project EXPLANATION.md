@@ -319,7 +319,7 @@ After both dates run successfully, check Snowflake:
 Your final warehouse will have customer history in **customer_dim** and rental transactions in **rentals_fact.**
 
 
-
+ 
 
 
  
