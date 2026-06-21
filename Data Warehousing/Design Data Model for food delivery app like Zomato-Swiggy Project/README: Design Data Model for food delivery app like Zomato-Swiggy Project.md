@@ -1,1 +1,31 @@
-1
+I have this project Design Data Model for food delivery app like Zomato-Swiggy Project.
+
+<img width="838" height="276" alt="image" src="https://github.com/user-attachments/assets/2eef0305-9aaa-4208-b339-199b3a6ebd85" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
