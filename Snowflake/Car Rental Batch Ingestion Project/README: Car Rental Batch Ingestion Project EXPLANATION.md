@@ -187,7 +187,7 @@ Inside the Composer environment page: Find the section:
 
 Locate: DAGs Folder
 
-You will see a GCS path similar to: gs://composer-bucket-xxxxx/dags
+You will see a GCS path similar to: gs://composer-bucket-xxxxx/dags 
 
 Click the DAGs Folder link.
 
