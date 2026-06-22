@@ -585,17 +585,23 @@ What You Should See After Success
 Airflow
 - DAGs
 -----------------------------------
-- openweather_api_to_gcs        Success
-- transformed_weather_data_to_bq Success
+- openweather_api_to_gcs        **Success**
+- transformed_weather_data_to_bq **Success**
 
 **GCS**
+
+```text
 weather-data-gds
 └── weather
     └── YYYY-MM-DD
-         └── forecast.csv
+        └── forecast.csv
+```
+
 **BigQuery**
+```text
 forecast
 └── weather_data
+```
 
 with weather forecast rows loaded by the Spark job.
 
