@@ -598,9 +598,10 @@ Airflow
 ```
 
 **BigQuery**
+
 ```text
-forecast
-└── weather_data
+📁 forecast
+└── 📁 weather_data
 ```
 
 with weather forecast rows loaded by the Spark job.
