@@ -104,9 +104,9 @@ Workflow:
 
 <img width="619" height="195" alt="image" src="https://github.com/user-attachments/assets/7632d938-51ed-41b2-8692-c35096549244" />
 
-mock_data_to_pubsub.py publishes mock customer fields like name, age, email, join date, loyalty points, account balance, and timestamps to a Pub/Sub topic.
+**mock_data_to_pubsub.py** publishes mock customer fields like name, age, email, join date, loyalty points, account balance, and timestamps to a Pub/Sub topic.
 
-transform_udf.py formats names, lowercases emails, creates loyalty_status, fixes timestamps, and calculates account_age_days.
+**transform_udf.py** formats names, lowercases emails, creates loyalty_status, fixes timestamps, and calculates account_age_days.
 
 Purpose: This simulates a real-time streaming pipeline.
 
@@ -193,7 +193,7 @@ Lets explain this in detail.
 
 Go to: https://console.cloud.google.com
 
-Make sure you are in the correct project: mythic-aloe-457912-d5
+Make sure you are in the correct project: **mythic-aloe-457912-d5**
 
 You can verify this from the project selector at the top of the page.
 
@@ -204,9 +204,7 @@ In the top search bar type: Pub/Sub
 
 or navigate through:
 
-☰ Navigation Menu
-   → Analytics
-      → Pub/Sub
+☰ Navigation Menu ➜ Analytics ➜ Pub/Sub
 
 *3. Open Topics*
 
@@ -226,7 +224,7 @@ Click the blue button: + CREATE TOPIC. Located near the top of the page.
 
 *5. Fill Topic Information*
 
-In the Topic ID field enter: loyality_data
+In the Topic ID field enter: **loyality_data**
 
 ⚠️ Important:
 
@@ -259,7 +257,7 @@ No changes needed.
 
 Click: CREATE
 
-Google creates: projects/mythic-aloe-457912-d5/topics/loyality_data
+Google creates: **projects/mythic-aloe-457912-d5/topics/loyality_data**
 
 *8. Verify Topic Creation*
 
@@ -270,7 +268,7 @@ You should now see:
 `loyality_data`
 
 Click the topic. You will see: Topic Details. with:
-- Topic ID: loyality_data
+- Topic ID: **loyality_data**
 
 *Optional: Create Subscription (Good for Testing)*
 
@@ -296,9 +294,9 @@ as defined in the file.
 
 Expected Architecture After This Step
 
-**mock_data_to_pubsub.py** ➜ Pub/Sub Topic loyality_data ➜ (next step) Dataflow ➜ BigQuery
+**mock_data_to_pubsub.py** ➜ **Pub/Sub Topic loyality_data ➜ (next step) Dataflow ➜ BigQuery**
 
-The next GUI step after this is creating the Dataflow streaming job that reads from loyality_data and uses transform_udf.py to write clean records into BigQuery.
+The next GUI step after this is creating the Dataflow streaming job that reads from **loyality_data** and uses **transform_udf.py** to write clean records into BigQuery.
 
 **Create Dataflow streaming job**
 
@@ -319,7 +317,7 @@ Lets explain this in detail.
 
 This step creates the streaming pipeline:
 
-Pub/Sub Topic (loyality_data) ➜ Dataflow ➜ transform_udf.py ➜ BigQuery
+**Pub/Sub Topic (loyality_data) ➜ Dataflow ➜ transform_udf.py ➜ BigQuery**
 
 *Step 5.1 — Create BigQuery Destination Table First*
 
@@ -423,7 +421,7 @@ The script publishes 20 records to: **loyality_data** topic.
 *Step 5.15 — Verify Messages*
 
 Go to:
-- Pub/Sub ➜ Subscriptions ➜ loyality_data-sub
+- **Pub/Sub ➜ Subscriptions ➜ loyality_data-sub**
 
 You should see: Unacknowledged messages
 
@@ -668,11 +666,11 @@ You will see something similar to:
 
 You can either:
 
-Option A. Use the automatically created key.
+*Option A*. Use the automatically created key.
 
 OR
 
-Option B. Create your own.
+*Option B*. Create your own.
 - In: Create Key. type: **weather-airflow-key**. Click: Generate
 
 *Step 8 — Copy API Key*
