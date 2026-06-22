@@ -10,12 +10,12 @@
 
 This repository contains multiple projects that progress from:
 
-✅ Basic BigQuery Tables
-✅ External Tables
-✅ Analytics Datasets
-✅ Streaming Pipelines
-✅ Medallion Architecture
-✅ Production-Grade Weather Pipeline with Airflow, Spark, CI/CD, and Cloud Storage
+- ✅ Basic BigQuery Tables
+- ✅ External Tables
+- ✅ Analytics Datasets
+- ✅ Streaming Pipelines
+- ✅ Medallion Architecture
+- ✅ Production-Grade Weather Pipeline with Airflow, Spark, CI/CD, and Cloud Storage
 
 Think of this repository as a **BigQuery & Google Cloud Data Engineering Learning Portfolio**, where each folder teaches a different real-world data engineering concept.
 
@@ -467,17 +467,17 @@ Production Data Engineering
 
 By completing all six projects, you gain hands-on experience with:
 
-✅ BigQuery
-✅ Google Cloud Storage (GCS)
-✅ Pub/Sub
-✅ Dataflow
-✅ Apache Spark
-✅ Apache Airflow
-✅ GitHub Actions
-✅ CI/CD Pipelines
-✅ Medallion Architecture
-✅ Analytics Engineering
-✅ Production-Ready Data Pipelines
+- ✅ BigQuery
+- ✅ Google Cloud Storage (GCS)
+- ✅ Pub/Sub
+- ✅ Dataflow
+- ✅ Apache Spark
+- ✅ Apache Airflow
+- ✅ GitHub Actions
+- ✅ CI/CD Pipelines
+- ✅ Medallion Architecture
+- ✅ Analytics Engineering
+- ✅ Production-Ready Data Pipelines
 
 🚀 Together, these projects form a practical Data Engineering portfolio demonstrating skills ranging from foundational BigQuery concepts to enterprise-grade cloud data pipelines.
 
