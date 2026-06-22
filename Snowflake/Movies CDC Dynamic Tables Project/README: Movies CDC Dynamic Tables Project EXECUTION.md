@@ -102,7 +102,7 @@ Install packages:
 - pip install -r requirements.txt
 
 Copy the secrets file:
-- copy .streamlit\**secrets.toml.example** .streamlit\**secrets.toml**
+- copy .streamlit\secrets.toml.example .streamlit\secrets.toml
 
 This is a Windows Command Prompt (CMD) command that creates a new file called **secrets.toml** by copying the contents of **secrets.toml.example.**
 
