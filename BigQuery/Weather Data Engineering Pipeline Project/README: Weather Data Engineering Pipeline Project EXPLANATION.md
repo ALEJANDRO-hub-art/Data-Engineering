@@ -119,7 +119,7 @@ BigQuery Queries
 
 ## 📄 Files
 
-### `create_bq_external_table.sql`
+### `create_bq_external_table.sql` 
 
 Creates:
 
