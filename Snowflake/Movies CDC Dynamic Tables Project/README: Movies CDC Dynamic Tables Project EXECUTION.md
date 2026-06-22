@@ -1,1 +1,36 @@
-1
+I have this project Movies CDC Dynamic Tables Project EXECUTION.
+
+<img width="697" height="216" alt="image" src="https://github.com/user-attachments/assets/5625fc08-af9b-4fc2-90c2-369df2d9245b" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
