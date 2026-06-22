@@ -58,8 +58,13 @@ I have this project Weather Data Engineering Pipeline Project.
 
 <img width="233" height="78" alt="image" src="https://github.com/user-attachments/assets/6967039e-4244-47c9-b3f3-87b50bcc628f" />
 
+
 BigQuery / GCP data engineering learning portfolio with multiple small pipelines. The uploaded document explains that the folders cover managed BigQuery tables, external tables, Pub/Sub streaming, medallion architecture, and a weather pipeline with Airflow/Dataproc/BigQuery.
 
+
+**End-to-end architecture**
+
+<img width="470" height="283" alt="image" src="https://github.com/user-attachments/assets/37b6e153-e211-4c3f-b179-5917748fd9d1" />
 
 
 
