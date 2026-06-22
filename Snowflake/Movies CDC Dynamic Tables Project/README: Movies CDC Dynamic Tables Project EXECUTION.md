@@ -16,7 +16,8 @@ This is a **Snowflake CDC + Dynamic Tables + Streamlit** dashboard project. It c
 
 **File upload locations**
 
-<img width="692" height="434" alt="image" src="https://github.com/user-attachments/assets/3f6444a2-ed58-4516-96e5-f7cf73ee3d75" />
+<img width="689" height="439" alt="image" src="https://github.com/user-attachments/assets/31870085-1b0e-4683-a125-cf59eebbb64a" />
+
 
 
 
