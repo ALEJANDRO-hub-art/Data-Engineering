@@ -72,7 +72,16 @@ Lets inspect this **test_cdc_changes.sql.** file and whats in it:
 - Refresh dynamic tables manually
 - Check Results
 
+**Monitor the pipeline**
 
+Create another Snowflake worksheet. Open:
+- **monitoring_queries.sql.**
+
+Run each query one by one. Use the results to check:
+- Task history
+- Stream status
+- Dynamic table refresh status
+- Recent CDC events
 
 
 
