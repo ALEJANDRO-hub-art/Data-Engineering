@@ -118,8 +118,83 @@ Add your real Snowflake values:
 - schema
 - role
 
+In our **streamlit_app.py** we have:
+
+<img width="654" height="386" alt="image" src="https://github.com/user-attachments/assets/1784daeb-0a5c-4512-82aa-3baff52ba481" />
+
+When you are executing this we might use:
+
+</> TOML
+
+[snowflake]
+
+- account = "xy12345.us-east-1"
+- user = "ALEJANDRO"
+- password = "MyPassword123"
+- warehouse = "COMPUTE_WH"
+- database = "MOVIES_DB"
+- schema = "PUBLIC"
+- role = "ACCOUNTADMIN"
+
+**Where do I find these values?**
+
+*Account*
+
+In Snowflake: Upper-right corner → Account Menu or SELECT CURRENT_ACCOUNT();
+
+Example: xy12345.us-east-1
+
+*User*
+
+The username you use to log in to Snowflake.
+
+Example: ALEJANDRO
+
+Password: Your Snowflake login password. Example: MyPassword123
+
+*Warehouse*
+
+Run:
+- SHOW WAREHOUSES;
+
+Typical result:
+- COMPUTE_WH
+
+*Database*
+
+Run:
+- SHOW DATABASES;
+
+Example: MOVIES_DB
+
+*Schema*
+
+Run:
+- SHOW SCHEMAS;
+
+Example: PUBLIC
+
+*Role*
+
+Run:
+- SHOW ROLES;
+
+Common examples:
+- ACCOUNTADMIN
+- SYSADMIN
+- PUBLIC
+
+Save the file
+
+In Notepad: File → Save or press: Ctrl + S. Close Notepad.
+
+So we specify this in **secrets.toml**
+
 Then run:
 - streamlit run app/**streamlit_app.py**
+
+In this **streamlit_app.py** we use **secrets.toml** thats why we do that first before running the script **streamlit_app.py**. How did the **streamlit_app.py** references the **secrets.toml** because is in the project folder path that we specified in the Windows Command Prompt (CMD); right here:
+- cd C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\12 Snowflake\Module 9 Snowflake Class-2\Project 3\Movies-CDC-Dynamic-Tables-Project\All files needed for the project
 
 A browser tab opens with the dashboard.
 
