@@ -12,8 +12,11 @@ I have this project Movies CDC Dynamic Tables Project EXECUTION.
 
 <img width="831" height="186" alt="image" src="https://github.com/user-attachments/assets/fe88d31a-f192-41b8-9494-3317ba0897b8" />
 
+This is a **Snowflake CDC + Dynamic Tables + Streamlit** dashboard project. It captures movie booking changes using Snowflake Streams/Tasks, transforms them with Dynamic Tables, then displays KPIs in Streamlit.
 
+**File upload locations**
 
+<img width="692" height="434" alt="image" src="https://github.com/user-attachments/assets/3f6444a2-ed58-4516-96e5-f7cf73ee3d75" />
 
 
 
