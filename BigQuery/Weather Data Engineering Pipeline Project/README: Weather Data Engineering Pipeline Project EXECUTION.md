@@ -294,7 +294,9 @@ as defined in the file.
 
 Expected Architecture After This Step
 
-**mock_data_to_pubsub.py** ➜ **Pub/Sub Topic loyality_data ➜ (next step) Dataflow ➜ BigQuery**
+**mock_data_to_pubsub.py:**  
+
+**Pub/Sub Topic loyality_data ➜ (next step) Dataflow ➜ BigQuery**
 
 The next GUI step after this is creating the Dataflow streaming job that reads from **loyality_data** and uses **transform_udf.py** to write clean records into BigQuery.
 
@@ -454,7 +456,9 @@ which are created by **mock_data_to_pubsub.py** and enriched by **transform_udf.
 
 Expected Final Architecture
 
-**mock_data_to_pubsub.py** ➜ Pub/Sub Topic **loyality_data** ➜ Subscription **loyality_data-sub** ➜ Dataflow ➜ **transform_udf.py** ➜ BigQuery Table **customer_loyalty**
+**mock_data_to_pubsub.py:** 
+
+Pub/Sub Topic **loyality_data** ➜ Subscription **loyality_data-sub** ➜ Dataflow ➜ **transform_udf.py** ➜ BigQuery Table **customer_loyalty**
 
 **Run Telecom Silver and Gold scripts**
 
@@ -576,7 +580,9 @@ Turn it ON if it is paused.
 
 Then click: ▶ Trigger DAG
 
-Airflow will: **Read openweather_api_key ➜ Call OpenWeather API ➜ Create forecast.csv ➜ Upload forecast.csv to GCS ➜ Trigger transformed_weather_data_to_bq**
+Airflow will: 
+
+**Read openweather_api_key ➜ Call OpenWeather API ➜ Create forecast.csv ➜ Upload forecast.csv to GCS ➜ Trigger transformed_weather_data_to_bq**
 
 as defined in the DAG workflow.
 
