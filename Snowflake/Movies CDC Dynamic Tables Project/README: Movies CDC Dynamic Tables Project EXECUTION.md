@@ -83,6 +83,16 @@ Run each query one by one. Use the results to check:
 - Dynamic table refresh status
 - Recent CDC events
 
+Lets inspect this **monitoring_queries.sql** file. It does the following:
+- Check task status
+- Check stream status
+- Task execution history of **CONSUME_STREAM_TASK**
+- Dynamic table refresh history of **MOVIE_BOOKINGS_FILTERED**
+- Recent CDC events from **movie_booking_cdc_events** using change_timestamp
+- Revenue summary SUM(active_revenue) and SUM(lost_revenue) from **movie_bookings_filtered**
+
+
+
 
 
 
