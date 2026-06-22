@@ -96,21 +96,32 @@ Lets inspect this **monitoring_queries.sql** file. It does the following:
 Open Command Prompt or Anaconda Prompt.
 
 Go to your project folder:
-- cd path\to\movies_cdc_dynamic_tables_project
 - cd C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\12 Snowflake\Module 9 Snowflake Class-2\Project 3\Movies-CDC-Dynamic-Tables-Project\All files needed for the project
 
 Install packages:
 - pip install -r requirements.txt
 
 Copy the secrets file:
-- copy .streamlit\secrets.toml.example .streamlit\secrets.toml
+- copy .streamlit\**secrets.toml.example** .streamlit\**secrets.toml**
 
+This is a Windows Command Prompt (CMD) command that creates a new file called **secrets.toml** by copying the contents of **secrets.toml.example.**
 
+Open:
+- .streamlit/**secrets.toml**
 
+Add your real Snowflake values:
+- account
+- user
+- password
+- warehouse
+- database
+- schema
+- role
 
+Then run:
+- streamlit run app/streamlit_app.py
 
-
-
+A browser tab opens with the dashboard.
 
 
 
