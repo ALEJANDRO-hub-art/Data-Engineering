@@ -198,7 +198,22 @@ In this **streamlit_app.py** we use **secrets.toml** thats why we do that first 
 
 A browser tab opens with the dashboard.
 
+**What the dashboard shows**
 
+The Streamlit app reads from: **movie_bookings_filtered** (we can see this in the **streamlit_app.py** script)
+
+It shows:
+- Total bookings
+- Tickets
+- Active revenue
+- Lost revenue
+- Quality score
+- Revenue by status
+- Booking status distribution
+- Movie performance
+- Bookings by hour
+- Filtered raw data
+- Download filtered CSV button
 
 
 
