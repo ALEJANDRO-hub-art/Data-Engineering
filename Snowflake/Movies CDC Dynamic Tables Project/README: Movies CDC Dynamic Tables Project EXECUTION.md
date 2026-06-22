@@ -57,7 +57,7 @@ In this **snowflake_dynamic_tables.sql** file we do the following:
 
 
 
-
+ 
 
 
 
