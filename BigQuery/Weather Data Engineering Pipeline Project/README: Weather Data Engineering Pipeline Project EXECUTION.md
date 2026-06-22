@@ -290,25 +290,13 @@ Click: CREATE
 After the topic exists, run: **python mock_data_to_pubsub.py**
 
 The script will:
-
-Generate 20 fake customer records
-↓
-Publish them to Pub/Sub
-↓
-Print message IDs
+- Generate 20 fake customer records ➜ Publish them to Pub/Sub ➜ Print message IDs
 
 as defined in the file.
 
 Expected Architecture After This Step
-**mock_data_to_pubsub.py**
-         ↓
-     Pub/Sub Topic
-     loyality_data
-         ↓
-   (next step)
-      Dataflow
-         ↓
-     BigQuery
+
+**mock_data_to_pubsub.py** ➜ Pub/Sub Topic loyality_data ➜ (next step) Dataflow ➜ BigQuery
 
 The next GUI step after this is creating the Dataflow streaming job that reads from loyality_data and uses transform_udf.py to write clean records into BigQuery.
 
