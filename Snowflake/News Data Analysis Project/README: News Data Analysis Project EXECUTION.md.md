@@ -37,12 +37,12 @@ Inside it, create:
 - C:\airflow-news-project\config
 
 Place files like this:
-- C:\airflow-news-project\dags\**news_api_airflow_job.py**
-- C:\airflow-news-project\dags\**fetch_news.py**
-- C:\airflow-news-project\**snowflake_commands.sql**
-- C:\airflow-news-project\**README.md**
-- C:\airflow-news-project\**airflow_snowflake_connection.png**
-- C:\airflow-news-project\config\**gcp-key.json**
+- C:\airflow-news-project\dags\news_api_airflow_job.py
+- C:\airflow-news-project\dags\fetch_news.py
+- C:\airflow-news-project\snowflake_commands.sql**
+- C:\airflow-news-project\README.md
+- C:\airflow-news-project\airflow_snowflake_connection.png
+- C:\airflow-news-project\config\gcp-key.json
 
 Do not upload snowflake_commands.sql to Airflow. You run it inside Snowflake Snowsight.
 
