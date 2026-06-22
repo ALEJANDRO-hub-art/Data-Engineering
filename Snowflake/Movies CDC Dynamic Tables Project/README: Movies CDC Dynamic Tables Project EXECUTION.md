@@ -91,10 +91,19 @@ Lets inspect this **monitoring_queries.sql** file. It does the following:
 - Recent CDC events from **movie_booking_cdc_events** using change_timestamp
 - Revenue summary **SUM(active_revenue)** and **SUM(lost_revenue)** from **movie_bookings_filtered**
 
+**Streamlit dashboard GUI/local execution**
 
+Open Command Prompt or Anaconda Prompt.
 
+Go to your project folder:
+- cd path\to\movies_cdc_dynamic_tables_project
+- cd C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\12 Snowflake\Module 9 Snowflake Class-2\Project 3\Movies-CDC-Dynamic-Tables-Project\All files needed for the project
 
+Install packages:
+- pip install -r requirements.txt
 
+Copy the secrets file:
+- copy .streamlit\secrets.toml.example .streamlit\secrets.toml
 
 
 
