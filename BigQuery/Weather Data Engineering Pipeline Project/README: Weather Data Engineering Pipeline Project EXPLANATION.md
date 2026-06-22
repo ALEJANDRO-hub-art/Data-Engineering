@@ -1,4 +1,4 @@
-# 🚀 BigQuery & Google Cloud Data Engineering Portfolio
+# 🚀 BigQuery & Google Cloud Data Engineering Portfolio 
 
 > **This is NOT a single project.**
 >
