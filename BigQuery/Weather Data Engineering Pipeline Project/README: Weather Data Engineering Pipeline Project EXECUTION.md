@@ -265,9 +265,9 @@ Google creates: projects/mythic-aloe-457912-d5/topics/loyality_data
 
 You should now see:
 
-Topic Name
+**Topic Name**
 --------------------------------
-loyality_data
+`loyality_data`
 
 Click the topic. You will see: Topic Details. with:
 - Topic ID: loyality_data
