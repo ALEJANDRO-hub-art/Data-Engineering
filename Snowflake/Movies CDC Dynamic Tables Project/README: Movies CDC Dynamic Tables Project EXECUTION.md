@@ -55,9 +55,22 @@ In this **snowflake_dynamic_tables.sql** file we do the following:
 - CREATE **movie_booking_insights**
 - Helpful verification commands - SHOW TABLES; SHOW STREAMS; SHOW TASKS; SHOW DYNAMIC TABLES;
 
+**Test CDC changes in Snowflake GUI**
 
-
+Create a new Snowflake worksheet. Open:
+- **test_cdc_changes.sql.**
  
+Copy the code. Paste it into the worksheet. Click Run All.
+
+This test script inserts one booking, cancels one booking, deletes one booking, executes the task, refreshes the dynamic tables, and shows final SELECT results.
+
+Lets inspect this **test_cdc_changes.sql.** file and whats in it:
+- Insert values into **raw_movie_bookings**
+- In **raw_movie_bookings** update an existing booking to CANCELLED
+- In **raw_movie_bookings** delete a booking
+- Force the task to consume the stream immediately: 'EXECUTE TASK **consume_stream_task**';
+- Refresh dynamic tables manually
+- Check Results
 
 
 
