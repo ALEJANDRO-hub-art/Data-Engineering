@@ -66,6 +66,107 @@ BigQuery / GCP data engineering learning portfolio with multiple small pipelines
 
 <img width="470" height="283" alt="image" src="https://github.com/user-attachments/assets/37b6e153-e211-4c3f-b179-5917748fd9d1" />
 
+**File explanation and where to upload each file**
+
+*A. Managed Tables in BigQuery*
+
+<img width="618" height="216" alt="image" src="https://github.com/user-attachments/assets/724cc147-3f93-4e0d-97d4-59beb168994b" />
+
+Purpose: This project creates a native BigQuery managed table from a CSV file. The data is physically stored inside BigQuery.
+
+Workflow:
+
+<img width="337" height="157" alt="image" src="https://github.com/user-attachments/assets/cffd3fe8-9ef8-415d-a3a1-e1bb2afc7376" />
+
+*B. External Tables in BigQuery*
+
+<img width="623" height="179" alt="image" src="https://github.com/user-attachments/assets/74646410-a854-46fb-8c5f-fd389a0cd7fa" />
+
+The uploaded JSON files contain ride records such as ride_id, user_id, driver_id, locations, timestamps, distance, and price.
+
+Purpose: This project creates a BigQuery table that does not store the data inside BigQuery. Instead, BigQuery reads the JSON directly from GCS.
+
+Workflow:
+
+<img width="345" height="126" alt="image" src="https://github.com/user-attachments/assets/c4810aaa-4499-45ee-b803-c6d323d7dcc2" />
+
+*C. Starbucks Data Canvas Dataset*
+
+<img width="590" height="153" alt="image" src="https://github.com/user-attachments/assets/8705b1d8-4a8e-4663-9d10-5f1229a610f4" />
+
+Purpose: This is an analytics dataset. You use it to analyze customer behavior, offers, transactions, and segmentation.
+
+Workflow:
+
+<img width="364" height="122" alt="image" src="https://github.com/user-attachments/assets/ce7faf58-a86a-4e76-9631-a77e9516520b" />
+
+*D. Loyalty Program Pub/Sub Streaming Pipeline*
+
+<img width="619" height="195" alt="image" src="https://github.com/user-attachments/assets/7632d938-51ed-41b2-8692-c35096549244" />
+
+mock_data_to_pubsub.py publishes mock customer fields like name, age, email, join date, loyalty points, account balance, and timestamps to a Pub/Sub topic.
+
+transform_udf.py formats names, lowercases emails, creates loyalty_status, fixes timestamps, and calculates account_age_days.
+
+Purpose: This simulates a real-time streaming pipeline.
+
+Workflow:
+
+<img width="319" height="152" alt="image" src="https://github.com/user-attachments/assets/42dc051f-c6f6-46a0-aa89-e7a3887e1694" />
+
+*E. Telecom Medallion Pipeline*
+
+<img width="645" height="157" alt="image" src="https://github.com/user-attachments/assets/91e9c347-f43d-4355-8ce1-d180d0eb8d10" />
+
+The Silver script reads the Bronze table, removes bad rows, casts dates/numbers, and writes a cleaned Silver table partitioned by call_date and clustered by region and plan_type.
+
+The Gold script reads the Silver table and creates KPI metrics like total calls, average duration, total duration, average data usage, and total data usage by date, region, and plan.
+
+Purpose: This project teaches Medallion Architecture:
+
+<img width="279" height="92" alt="image" src="https://github.com/user-attachments/assets/9aca5ee9-019d-4d33-906a-cad01fe562e5" />
+
+*F. Weather Data Processing Pipeline*
+
+<img width="638" height="292" alt="image" src="https://github.com/user-attachments/assets/b2d7a903-5735-45f9-be8e-12fc5bcdeecb" />
+
+extract_data_dag.py calls OpenWeather, normalizes the JSON with pandas, uploads forecast.csv to GCS, and triggers the downstream transform DAG.
+
+transform_data_dag.py submits a Dataproc Serverless PySpark batch job using weather_data_processing.py.
+weather_data_processing.py reads the weather CSV from GCS, casts fields, renames columns, and writes the processed result to BigQuery.
+
+Workflow:
+
+<img width="304" height="194" alt="image" src="https://github.com/user-attachments/assets/3691fc24-6a86-41b6-8046-0ca132ae8980" />
+
+**Step-by-step GUI execution**
+
+*Step 1 — Create GCS buckets*
+
+Go to: **Google Cloud Console → Cloud Storage → Buckets → Create**
+
+Create buckets such as:
+- **bigquery-data-gds**
+- **weather-data-gds**
+- **bq-temp-gds**
+
+**Upload files to GCS**
+
+GUI path: **Cloud Storage → Buckets → your bucket → Upload files**
+
+Upload:
+- **telecom_data.csv** → bigquery-data-gds/telecom/
+- **lyft JSON files** → bigquery-data-gds/raw/date=2024-08-08/
+- **weather_data_processing.py** → weather-data-gds/script/
+
+
+
+
+
+
+
+
+
 
 
 
