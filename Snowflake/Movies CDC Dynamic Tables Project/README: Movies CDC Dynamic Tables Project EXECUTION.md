@@ -119,7 +119,7 @@ Add your real Snowflake values:
 - role
 
 Then run:
-- streamlit run app/streamlit_app.py
+- streamlit run app/**streamlit_app.py**
 
 A browser tab opens with the dashboard.
 
