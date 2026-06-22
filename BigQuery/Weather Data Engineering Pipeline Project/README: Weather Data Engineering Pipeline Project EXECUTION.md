@@ -591,10 +591,10 @@ Airflow
 **GCS**
 
 ```text
-weather-data-gds
-└── weather
-    └── YYYY-MM-DD
-        └── forecast.csv
+📁 weather-data-gds
+└── 📁 weather
+    └── 📁 YYYY-MM-DD
+        └── 📄 forecast.csv
 ```
 
 **BigQuery**
