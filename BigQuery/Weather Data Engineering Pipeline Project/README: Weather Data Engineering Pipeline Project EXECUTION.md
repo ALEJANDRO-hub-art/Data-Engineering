@@ -141,7 +141,7 @@ Workflow:
 
 **Step-by-step GUI execution**
 
-*Step 1 — Create GCS buckets*
+**Step 1 — Create GCS buckets**
 
 Go to: **Google Cloud Console → Cloud Storage → Buckets → Create**
 
@@ -159,9 +159,197 @@ Upload:
 - **lyft JSON files** → bigquery-data-gds/raw/date=2024-08-08/
 - **weather_data_processing.py** → weather-data-gds/script/
 
+**Run BigQuery SQL files**
+
+Go to: **BigQuery → SQL Workspace → New Query**
+
+Run these files one by one:
+- **commands.sql**
+- **scheduled_query.sql**
+- **create_bq_external_table.sql**
+- **bigquery_create_table.sql**
+
+Use them to create:
+- telecom_db
+- lyft_db
+- loyalty destination table
+- forecast dataset/table
+
+**Create Pub/Sub topic**
+
+Go to: **Pub/Sub → Topics → Create Topic**
+
+Create topic: **loyality_data**
+
+Then run: **mock_data_to_pubsub.py**
+
+This sends fake loyalty records into Pub/Sub.
+
+Lets explain this in detail.
+
+*Exact GUI Steps — Step 4: Create Pub/Sub Topic*
+
+*1. Open Google Cloud Console*
+
+Go to: https://console.cloud.google.com
+
+Make sure you are in the correct project: mythic-aloe-457912-d5
+
+You can verify this from the project selector at the top of the page.
+
+*2. Open Pub/Sub*
+
+In the top search bar type: Pub/Sub
+- Click: Pub/Sub
+
+or navigate through:
+
+☰ Navigation Menu
+   → Analytics
+      → Pub/Sub
+
+*3. Open Topics*
+
+In the left menu click: Topics
+
+You should see a screen similar to:
+
+Pub/Sub
+- ├─ Topics
+- ├─ Subscriptions
+- ├─ Schemas
+- └─ Snapshots
+
+*4. Create Topic*
+
+Click the blue button: + CREATE TOPIC. Located near the top of the page.
+
+*5. Fill Topic Information*
+
+In the Topic ID field enter: loyality_data
+
+⚠️ Important:
+
+Your Python file contains:
+- topic_id = "loyality_data"
+
+Notice it is spelled: loyality_data NOT loyalty_data
+
+The topic name must exactly match the Python code.
+
+*6. Leave Defaults*
+
+Leave everything else as default:
+
+Encryption
+- ✓ Google-managed key
+
+Message retention
+- ✓ Default
+
+Schema
+- ✓ None
+
+Storage policy
+- ✓ Default
+
+No changes needed.
+
+*7. Click Create*
+
+Click: CREATE
+
+Google creates: projects/mythic-aloe-457912-d5/topics/loyality_data
+
+*8. Verify Topic Creation*
+
+You should now see:
+
+Topic Name
+--------------------------------
+loyality_data
+
+Click the topic. You will see: Topic Details. with:
+- Topic ID: loyality_data
+
+*Optional: Create Subscription (Good for Testing)*
+
+While not required for Dataflow, you can create a subscription to see messages arriving.
+
+Inside the topic page click: CREATE SUBSCRIPTION
+
+Fill:
+- Subscription ID: loyality_data-sub
+- Delivery Type: Pull
+- Expiration: Never Expire
+
+Click: CREATE
+
+*9. Run the Python Generator*
+
+After the topic exists, run: **python mock_data_to_pubsub.py**
+
+The script will:
+
+Generate 20 fake customer records
+↓
+Publish them to Pub/Sub
+↓
+Print message IDs
+
+as defined in the file.
+
+Expected Architecture After This Step
+**mock_data_to_pubsub.py**
+         ↓
+     Pub/Sub Topic
+     loyality_data
+         ↓
+   (next step)
+      Dataflow
+         ↓
+     BigQuery
+
+The next GUI step after this is creating the Dataflow streaming job that reads from loyality_data and uses transform_udf.py to write clean records into BigQuery.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+**Create Dataflow streaming job**
+
+Go to: **Dataflow → Create Job from Template**
+
+Choose a Pub/Sub-to-BigQuery streaming template if your course uses template-based execution.
+
+Use:
+- Input Pub/Sub topic: **loyality_data**
+- Output BigQuery table: your loyalty table
+- UDF path: **gs://your-bucket/transform_udf.py**
+
+Lets explain this in detail.
 
 
 
