@@ -215,7 +215,9 @@ It shows:
 - Filtered raw data
 - Download filtered CSV button
 
+**End-to-end architecture**
 
+<img width="385" height="258" alt="image" src="https://github.com/user-attachments/assets/365c7449-9cd4-417f-befa-2db74a87307a" />
 
 
  
