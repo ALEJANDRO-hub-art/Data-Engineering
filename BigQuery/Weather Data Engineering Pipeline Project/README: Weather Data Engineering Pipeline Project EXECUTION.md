@@ -130,9 +130,9 @@ Purpose: This project teaches Medallion Architecture:
 
 <img width="638" height="292" alt="image" src="https://github.com/user-attachments/assets/b2d7a903-5735-45f9-be8e-12fc5bcdeecb" />
 
-extract_data_dag.py calls OpenWeather, normalizes the JSON with pandas, uploads forecast.csv to GCS, and triggers the downstream transform DAG.
+**extract_data_dag.py** calls OpenWeather, normalizes the JSON with pandas, uploads forecast.csv to GCS, and triggers the downstream transform DAG.
 
-transform_data_dag.py submits a Dataproc Serverless PySpark batch job using weather_data_processing.py.
+**transform_data_dag.py** submits a Dataproc Serverless PySpark batch job using weather_data_processing.py.
 weather_data_processing.py reads the weather CSV from GCS, casts fields, renames columns, and writes the processed result to BigQuery.
 
 Workflow:
