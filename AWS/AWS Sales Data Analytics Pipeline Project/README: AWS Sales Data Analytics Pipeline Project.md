@@ -30,12 +30,12 @@ Upload files like this:
 ```text
 sales-data-analysis-gds-de/
 ├── raw/
-│   └── sales_data.csv
+│   └── **sales_data.csv**
 ├── results/
 └── scripts/
-    ├── run_athena_query.py
-    ├── check_athena_query_status.py
-    └── connect_rds.py
+    ├── **run_athena_query.py**
+    ├── **check_athena_query_status.py**
+    └── **connect_rds.py**
 ```
 
 
