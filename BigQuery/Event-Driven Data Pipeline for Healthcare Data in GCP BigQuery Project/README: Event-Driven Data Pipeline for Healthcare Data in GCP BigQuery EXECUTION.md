@@ -68,7 +68,7 @@ Upload files like this:
 - mock_data_20230101.json      ➜ bucket root OR input/
 - sample_clinical_data...json  ➜ bucket root OR input/
 
-
+ 
 
 
 
