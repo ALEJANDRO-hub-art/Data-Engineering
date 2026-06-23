@@ -57,7 +57,7 @@ You paste/run the SQL commands inside Amazon Redshift Query Editor v2.
 
 **End-to-End Architecture**
 
-# 📊 Amazon Redshift Sales Analytics Pipeline
+📊 Amazon Redshift Sales Analytics Pipeline
 
 ```text
 Sales CSV Files
