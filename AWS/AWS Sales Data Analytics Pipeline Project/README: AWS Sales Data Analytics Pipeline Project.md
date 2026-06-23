@@ -278,10 +278,12 @@ Scroll down to: Execution Results
 
 If successful you should see:
 
+```json
 {
   "statusCode": 200,
   "body": "{\"query_execution_id\":\"12345678-abcd-1234-abcd-1234567890ab\",\"status\":\"SUCCEEDED\",\"s3_output\":\"s3://sales-data-analysis-gds-de/results/...\"}"
 }
+```
 
 **Alternative Method (Athena GUI)**
 
