@@ -35,10 +35,35 @@ Your screenshots show 3 main folders: 2 S3_Data, 3 Lambda_Code, and 4 AWS_Lambda
 
 <img width="646" height="570" alt="image" src="https://github.com/user-attachments/assets/b4515db6-55b8-4352-8cf5-30105d945f95" />
 
+**GitHub folder structure**
 
+Use this structure:
 
+<img width="247" height="154" alt="image" src="https://github.com/user-attachments/assets/c576621d-d77e-4655-86f0-15a017459bb2" />
 
+**End-to-end architecture**
 
+Developer pushes code to GitHub
+        ⬇️
+GitHub Actions starts **deploy.yml**
+        ⬇️
+Installs Python, zip, jq, boto3
+        ⬇️
+Installs Lambda dependencies from **requirements.txt**
+        ⬇️
+Packages **app.py** + dependencies into **lambda.zip**
+        ⬇️
+Uses AWS credentials from GitHub Secrets
+        ⬇️
+Creates or updates AWS Lambda
+        ⬇️
+Lambda runs **app.py**
+        ⬇️
+Lambda calls external API
+        ⬇️
+Data is loaded into pandas DataFrame
+        ⬇️
+Logs appear in AWS CloudWatch
 
 
 
