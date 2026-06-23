@@ -189,6 +189,8 @@ Files and where to upload them
 
 <img width="667" height="451" alt="image" src="https://github.com/user-attachments/assets/f648e941-1b2c-4757-8fe2-2e0b25c19ce2" />
 
+
+- S3 → Lambda → SNS
 CSV File
 <br>⬇️
 <br>Amazon S3 Bucket
@@ -203,7 +205,7 @@ CSV File
 <br>⬇️
 <br>SNS Notification
 
-
+- Lambda → SQS → Lambda Consumer
 Mock Generator Lambda
 <br>⬇️
 <br>Amazon SQS Queue
@@ -214,7 +216,7 @@ Mock Generator Lambda
 <br>⬇️
 <br>CloudWatch Logs
 
-
+- SQS → EventBridge Pipe → Filter/Transform → Target
 SQS Queue
 <br>⬇️
 <br>EventBridge Pipe
