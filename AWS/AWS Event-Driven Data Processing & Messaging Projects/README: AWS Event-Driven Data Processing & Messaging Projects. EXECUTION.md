@@ -176,4 +176,59 @@ SQS
 <br>⬇️
 <br>Target
 
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Lets get into the EXECUTION of the project.
+
+This is one project with mini modules:
+- S3 → Lambda → SNS
+- Lambda → SQS → Lambda Consumer
+- SQS → EventBridge Pipe → Filter/Transform → Target
+
+Files and where to upload them
+
+<img width="667" height="451" alt="image" src="https://github.com/user-attachments/assets/f648e941-1b2c-4757-8fe2-2e0b25c19ce2" />
+
+CSV File
+<br>⬇️
+<br>Amazon S3 Bucket
+<br>⬇️
+<br>S3 Event Trigger
+<br>⬇️
+<br>AWS Lambda
+<br>⬇️
+<br>Read CSV with pandas
+<br>⬇️
+<br>CloudWatch Logs
+<br>⬇️
+<br>SNS Notification
+
+
+Mock Generator Lambda
+<br>⬇️
+<br>Amazon SQS Queue
+<br>⬇️
+<br>Lambda Consumer
+<br>⬇️
+<br>Process Messages
+<br>⬇️
+<br>CloudWatch Logs
+
+
+SQS Queue
+<br>⬇️
+<br>EventBridge Pipe
+<br>⬇️
+<br>Filter Events
+<br>⬇️
+<br>Transform Payload
+<br>⬇️
+<br>Target Service
+
+
+
+
+
+
+
 
