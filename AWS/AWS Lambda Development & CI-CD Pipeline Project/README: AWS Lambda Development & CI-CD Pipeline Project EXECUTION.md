@@ -83,9 +83,34 @@ Logs appear in AWS CloudWatch
 - 🐼 API data is loaded into a Pandas DataFrame
 - 📜 Execution logs are written to AWS CloudWatch
 
- 
+**Step-by-step execution**
 
+**Part 1 — AWS S3 upload**
 
+Go to AWS Console. Search S3. Click Create bucket.
+- Name it something like: **aws-lambda-cicd-store-data**
+
+Open the bucket. Click Upload.
+- Upload: **store_data.csv**. Click Upload.
+
+**Part 2 — Create Lambda manually**
+
+Go to AWS Console. Search Lambda. Click Create function. Choose Author from scratch.
+- Function name: **lambda_with_no_dependency**
+- Runtime: **Python 3.11**
+
+Click Create function.
+
+Open the code editor. Paste the code from 2 lambda_function.py. 
+- Click Deploy.
+- Click Test.
+
+That **2 lambda_function.py.**
+
+<img width="641" height="174" alt="image" src="https://github.com/user-attachments/assets/a2230330-c7c4-4ef8-9473-257e837f1802" />
+
+Create a test event.
+- Click Test again.
 
 
 
