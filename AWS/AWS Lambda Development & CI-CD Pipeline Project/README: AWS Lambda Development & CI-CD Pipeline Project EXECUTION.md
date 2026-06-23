@@ -414,3 +414,24 @@ and give it only:
 - IAMReadOnlyAccess
 
 This is the production best practice for CI/CD deployments.
+
+Lets continue.
+
+**Part 6 — Run deployment**
+
+Go to your repository. Click Actions. Click Deploy Lambda.
+
+Push code to either: main or test
+
+GitHub Actions will create/update Lambda: **cicd_lambda_main** or **cicd_lambda_test**
+
+**Final result**
+
+At the end, your project automatically deploys an AWS Lambda function every time you push changes to GitHub. The Lambda installs dependencies, calls an API, processes the response with pandas, reads environment variables, and logs the output in CloudWatch.
+
+
+
+
+
+
+
