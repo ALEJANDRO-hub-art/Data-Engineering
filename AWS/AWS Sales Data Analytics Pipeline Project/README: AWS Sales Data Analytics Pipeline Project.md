@@ -320,16 +320,6 @@ This CSV contains the output of the Athena query:
 
 which gives sales totals, order counts, and average sales grouped by year and order status.
 
-
-
-
-
-
-
-
-
-
-
 **Optional RDS MySQL part**
 
 Use **connect_rds.py** only if your project also requires RDS MySQL.
