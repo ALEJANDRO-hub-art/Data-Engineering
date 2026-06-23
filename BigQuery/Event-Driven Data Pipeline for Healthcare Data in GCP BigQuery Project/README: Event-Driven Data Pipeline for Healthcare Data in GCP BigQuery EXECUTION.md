@@ -185,19 +185,19 @@ which means after deployment you do not manually run Dataflow anymore. The **fil
 
 **Exact GUI Location Summary**
 
-Google Cloud Console
-    ⬇️
-Navigation Menu
-    ⬇️
-Dataflow
-    ⬇️
-Create Job From Template
-    ⬇️
-Google Provided Templates
-    ⬇️
-Text Files on Cloud Storage to BigQuery
-    ⬇️
-Run Job
+**Google Cloud Console**  
+⬇️  
+**Navigation Menu**  
+⬇️  
+**Dataflow**  
+⬇️  
+**Create Job From Template**  
+⬇️  
+**Google Provided Templates**  
+⬇️  
+**Text Files on Cloud Storage to BigQuery**  
+⬇️  
+**Run Job**
 
 After this step, the next GUI task is usually deploying the Cloud Function, which connects the bucket upload event to Dataflow.
 
