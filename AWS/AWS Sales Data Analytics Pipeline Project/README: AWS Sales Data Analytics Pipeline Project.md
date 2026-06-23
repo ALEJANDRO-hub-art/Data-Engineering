@@ -168,7 +168,7 @@ Open Lambda **run_athena_query.**
 Click Test.
 
 - Event name: testAthenaRun
-- 
+ 
 Event JSON:
 
 <img width="146" height="53" alt="image" src="https://github.com/user-attachments/assets/47938d35-2ea0-4eb7-bac3-819f56dfe469" />
@@ -181,10 +181,184 @@ You should get a response containing:
 
 Copy that ID.
 
+**8. Create Lambda: check Athena query status**
+
+Go to Lambda. Click Create function.
+- Function name: **check_athena_query_status**
+- Runtime: Python 3.11
+
+Paste the code from: **check_athena_query_status.py**
+
+Click Deploy.
+
+**9. Test check query status Lambda**
+
+Use this test event:
+
+<img width="341" height="90" alt="image" src="https://github.com/user-attachments/assets/01e1b969-2f55-4246-88e7-4250660f8a5a" />
+
+If successful, it returns the S3 results location:
+
+<img width="349" height="105" alt="image" src="https://github.com/user-attachments/assets/32c37461-51ae-4dbe-8c5a-b90dd41243b4" />
+
+**Exact GUI Steps — Test check_athena_query_status Lambda**
+
+*Step 1 — Open Lambda Console*
+
+Login to AWS Console. In the search bar, type: Lambda
+
+Click Lambda.
+
+*Step 2 — Open the Function*
+
+Under Functions click: **check_athena_query_status**
+
+You should now see:
+- Code
+- Test
+- Monitor
+- Configuration
+- Aliases
+- Versions
+
+*Step 3 — Create a Test Event*
+
+At the top-right of the Lambda page: Click: Test ▼
+
+Then click: Configure test event
+
+*Step 4 — Enter Test Event Information*
+
+Event Name: Type: **CheckAthenaQuery**
+
+Event JSON
+
+Delete everything in the editor and paste:
+
+<img width="340" height="93" alt="image" src="https://github.com/user-attachments/assets/e17eb996-24c3-4398-ac01-4b395f6a2e82" />
+
+Example:
+
+<img width="380" height="106" alt="image" src="https://github.com/user-attachments/assets/bdba78a1-83f8-4a16-9649-1fc0ccfaf9b3" />
+
+*Step 5 — Where do I get the Query Execution ID?*
+
+Go to:
+
+Lambda
+- → run_athena_query
+- → Test
+
+After running the Lambda you will see output similar to:
+
+<img width="449" height="116" alt="image" src="https://github.com/user-attachments/assets/ea9cbdec-92c4-49cd-9672-301a2f2a7382" />
+
+Copy: 
+- **12345678-abcd-1234-abcd-1234567890ab**
+
+Paste it into:
+
+<img width="365" height="108" alt="image" src="https://github.com/user-attachments/assets/e1c458ca-fff6-43d9-88be-1722bcbbb637" />
+
+*Step 6 — Save the Test Event*
+
+Click: Save
+
+AWS creates the test event.
+
+*Step 7 — Run the Test*
+
+Click the orange button: Test (near the top-right.)
+
+Lambda executes.
+
+*Step 8 — View Results*
+
+Scroll down to: Execution Results
+
+If successful you should see:
+
+{
+  "statusCode": 200,
+  "body": "{\"query_execution_id\":\"12345678-abcd-1234-abcd-1234567890ab\",\"status\":\"SUCCEEDED\",\"s3_output\":\"s3://sales-data-analysis-gds-de/results/...\"}"
+}
+
+**Alternative Method (Athena GUI)**
+
+If you forgot the Query Execution ID:
+
+Open AWS Console.
+
+- Search: Athena
+- Open: Query Editor
+ 
+Click: Recent Queries or Query History
+- Select your query. Copy: Query Execution ID. Example: 12345678-abcd-1234-abcd-1234567890ab
+
+Use it in the Lambda test event.
+
+*Step 9 — Open the Athena Results File*
+
+If the Lambda returns:
+
+<img width="435" height="112" alt="image" src="https://github.com/user-attachments/assets/d003ee80-097e-41a0-82af-9c39c2cd55fd" />
+
+Go to:
+
+AWS Console
+→ S3
+→ sales-data-analysis-gds-de
+→ results
+
+You will see: 12345678-abcd.csv
+
+Click the file and then: Download
+
+This CSV contains the output of the Athena query:
+
+<img width="265" height="165" alt="image" src="https://github.com/user-attachments/assets/d5771842-1035-427d-a08a-86b8384cce09" />
+
+which gives sales totals, order counts, and average sales grouped by year and order status.
 
 
 
 
+
+
+
+
+
+
+
+**Optional RDS MySQL part**
+
+Use **connect_rds.py** only if your project also requires RDS MySQL.
+
+**GUI steps**
+
+Search RDS. Create a MySQL database. Search Secrets Manager.
+- Create a secret named: **rds_mysql_creds**
+
+Secret values must match the code:
+
+<img width="233" height="131" alt="image" src="https://github.com/user-attachments/assets/cc5a9d13-aca0-49ed-a51d-35852cfdb782" />
+
+Run **connect_rds.py** from your computer, EC2, or Lambda.
+
+It creates this database:
+- GDSdev
+
+Final execution order
+- 1 Upload sales_data.csv to S3 raw/
+- 2 Create Glue database sales_db
+- 3 Run Glue crawler
+- 4 Confirm Athena table sales_data_raw
+- 5 Create run_athena_query Lambda
+- 6 Run Lambda and copy query_execution_id
+- 7 Create check_athena_query_status Lambda
+- 8 Check query status
+- 9 Open S3 results/ and download Athena result CSV
+- 10 Optional: run connect_rds.py to create RDS MySQL database
 
 
 
