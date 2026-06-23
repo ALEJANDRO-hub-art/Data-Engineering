@@ -295,7 +295,9 @@ Open AWS Console.
 - Open: Query Editor
  
 Click: Recent Queries or Query History
-- Select your query. Copy: Query Execution ID. Example: 12345678-abcd-1234-abcd-1234567890ab
+- Select your query.
+- Copy: Query Execution ID.
+- Example: 12345678-abcd-1234-abcd-1234567890ab
 
 Use it in the Lambda test event.
 
