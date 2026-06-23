@@ -54,10 +54,29 @@ UNLOAD Command
        ▼
 Amazon S3 Output Folder
 
+Lets see the EXECUTION of the project.
 
+I’ll map the uploaded Redshift/S3 files into one clear project execution guide: file placement, purpose, AWS GUI steps, and final architecture.
 
+Project Name: **Amazon Redshift Sales Data Analytics Pipeline**
 
+**What this project does**
+- This project loads sales CSV data from Amazon S3 into Amazon Redshift, runs SQL analytics, creates a materialized view, uses Redshift Spectrum for external tables, and exports query results back to S3.
 
+**Where to upload the files**
+
+Upload only the CSV data files to Amazon S3:
+- s3://redshift-data-gds-new/input/sales.csv
+- s3://redshift-data-gds-new/input/sales_2025_01_11.csv
+- s3://redshift-data-gds-new/input/sales_2025_01_12.csv
+
+Keep these files locally or in GitHub:
+- redshift_commands.txt
+- redshift_query_commands.txt
+
+You paste/run the SQL commands inside Amazon Redshift Query Editor v2.
+
+<img width="642" height="276" alt="image" src="https://github.com/user-attachments/assets/50044720-0c2b-4376-ba02-63e9d7400734" />
 
 
 
