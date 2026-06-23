@@ -905,14 +905,7 @@ Fill:
 
 Example:
 
-{
-  "type": "service_account",
-  "project_id": "mythic-aloe-457912-d5",
-  "private_key_id": "xxxxxxxx",
-  "private_key": "-----BEGIN PRIVATE KEY-----\n....",
-  "client_email": "github-actions@mythic-aloe-457912-d5.iam.gserviceaccount.com",
-  "client_id": "123456789"
-}
+<img width="484" height="167" alt="image" src="https://github.com/user-attachments/assets/074891e3-0906-40a2-b4b8-282624deee0f" />
 
 ⚠️ Paste the entire JSON exactly as downloaded.
 
