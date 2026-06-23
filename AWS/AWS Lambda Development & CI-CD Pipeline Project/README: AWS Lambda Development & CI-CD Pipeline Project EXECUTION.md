@@ -43,15 +43,18 @@ Use this structure:
 
 **End-to-end architecture**
 
+# 🚀 AWS Lambda CI/CD Workflow Architecture
+
+```text
 Developer pushes code to GitHub
         ⬇️
 GitHub Actions starts **deploy.yml**
         ⬇️
 Installs Python, zip, jq, boto3
         ⬇️
-Installs Lambda dependencies from **requirements.txt**
+Installs Lambda dependencies from requirements.txt
         ⬇️
-Packages **app.py** + dependencies into **lambda.zip**
+Packages **app.py** + dependencies into lambda.zip
         ⬇️
 Uses AWS credentials from GitHub Secrets
         ⬇️
@@ -64,6 +67,21 @@ Lambda calls external API
 Data is loaded into pandas DataFrame
         ⬇️
 Logs appear in AWS CloudWatch
+```
+
+## 📊 End-to-End Flow
+
+- 👨‍💻 Developer pushes code to GitHub
+- ⚙️ GitHub Actions automatically triggers `deploy.yml`
+- 🐍 Python environment and required tools are installed
+- 📦 Lambda dependencies are installed from `requirements.txt`
+- 🗜️ Application code and dependencies are packaged into `lambda.zip`
+- 🔐 AWS credentials are retrieved from GitHub Secrets
+- ☁️ GitHub Actions creates or updates the AWS Lambda function
+- 🚀 AWS Lambda executes `app.py`
+- 🌐 Lambda connects to an external API
+- 🐼 API data is loaded into a Pandas DataFrame
+- 📜 Execution logs are written to AWS CloudWatch
 
  
 
