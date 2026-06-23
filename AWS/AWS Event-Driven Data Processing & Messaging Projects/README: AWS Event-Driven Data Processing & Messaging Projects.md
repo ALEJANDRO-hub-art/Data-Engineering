@@ -4,8 +4,45 @@ I have this project AWS Event-Driven Data Processing & Messaging Projects.
 
 This is not one single project. **It is a collection of 5 AWS Event-Driven Architecture mini-projects**, each demonstrating a different AWS integration pattern.
 
- 
+ <img width="284" height="159" alt="image" src="https://github.com/user-attachments/assets/91a7ef9f-98a8-4814-8959-242120588a7e" />
 
+**Mini Project 1: EventBridge Pipes**
+
+Folder: 2 Event_Bridge_Pipe
+
+Purpose:
+- Demonstrates:
+
+Producer
+   ⬇️
+SQS Queue
+   ⬇️
+EventBridge Pipe
+   ⬇️
+Filtering
+   ⬇️
+Transformation
+   ⬇️
+Target Service
+
+The sample file contains:
+- Purchase order messages
+- Event filtering
+- Event transformation
+
+Architecture:
+
+Application
+    ⬇️
+SQS
+    ⬇️
+EventBridge Pipe
+    ⬇️
+Filter Events
+    ⬇️
+Transform Payload
+    ⬇️
+Target
 
 
 
