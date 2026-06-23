@@ -201,22 +201,91 @@ which means after deployment you do not manually run Dataflow anymore. The **fil
 
 After this step, the next GUI task is usually deploying the Cloud Function, which connects the bucket upload event to Dataflow.
 
+**Step 8 — Edit Cloud Function file before deploying**
 
+Open **google_cloud_function.py**.
 
+Change this line:
 
+<img width="233" height="65" alt="image" src="https://github.com/user-attachments/assets/ccdaeafb-d9ac-463d-bc6e-26480ff1203a" />
 
+to your real GCP Project ID:
 
+<img width="203" height="63" alt="image" src="https://github.com/user-attachments/assets/b6c88ae5-c70a-4d8d-8659-56ce18d78f27" />
 
+Also confirm this output table is correct:
 
+<img width="304" height="56" alt="image" src="https://github.com/user-attachments/assets/3d8d2741-8d1e-4202-aa7c-b22bc922d3bd" />
 
+The function launches Dataflow in:
+- us-central1
 
+and uses the uploaded schema, transform script, and temp folder.
 
+**Cloud Function GUI steps**
 
+Go to Cloud Functions. Click Create function.
+- Environment: 2nd gen
+- Function name: **start_cf_to_dataflow_to_bq_flow**
+- Region: us-central1
+- Trigger: Cloud Storage
+- Event type: Finalize/Create
+- Bucket: **healthcare-pipeline-bucket**
+- Runtime: Python 3.11
+- Entry point: start_cf_to_dataflow_to_bq_flow
+- Upload/paste the code from: **google_cloud_function.py**
+- Add dependency in requirements.txt: functions-framework, google-api-python-client (create this .txt file and put it in the project folder)
 
+Click Deploy.
 
+**Upload test data**
 
+After the Cloud Function is deployed, upload:
+- **mock_data_20230101.json** or: **sample_clinical_data_2023_12_05.json**
 
+to the bucket root.
 
+Example: **gs://healthcare-pipeline-bucket/mock_data_20230101.json**
+
+That upload triggers the Cloud Function automatically.
+
+**Check Dataflow job**
+
+Go to Dataflow. Click Jobs.
+
+Look for a job like: **health-batch-dataflow-2023-...**
+
+Click the job.
+
+Check that the status becomes: Succeeded
+
+If it fails, check:
+- schema path
+- transform path
+- BigQuery table name
+- Cloud Function project ID
+- Dataflow permissions
+
+**Check BigQuery output**
+
+Go to BigQuery and run:
+
+<img width="295" height="72" alt="image" src="https://github.com/user-attachments/assets/cb1d7ee3-ebc5-4c5d-aa03-311d4dd30c6f" />
+
+Check cancer-only records:
+
+<img width="279" height="110" alt="image" src="https://github.com/user-attachments/assets/b2546a7c-2009-4ee8-bea3-f71519000ca4" />
+
+Expected diseases include:
+- Breast Cancer
+- Colon Cancer
+- Liver Cancer
+- Prostate Cancer
+- Stomach Cancer
+- Esophageal Cancer
+- Colorectal Cancer
+
+Non-cancer diseases should be excluded because the transform function returns null for them.
 
 
 
