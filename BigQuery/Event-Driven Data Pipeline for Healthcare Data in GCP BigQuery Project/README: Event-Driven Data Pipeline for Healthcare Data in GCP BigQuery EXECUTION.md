@@ -42,12 +42,19 @@ Design and implement an event-driven data pipeline in Google Cloud Platform (GCP
 - ○ Code, Data files, Configurations, Metadata files
 - ○ Documentation explaining the setup and complete execution of the application.
 
+----------------------------------------------------------------------------------------------------------------------------------------
 
+I’ll treat this as a GCP healthcare event-driven pipeline: **GCS receives JSON files, Cloud Function triggers Dataflow, Dataflow filters/transforms, and BigQuery stores cancer-patient records.**
 
+I checked the key files. The main important detail is that the Cloud Function has a hardcoded project ID, so you must replace it with your own GCP Project ID before deployment.
 
+**Project summary**
 
+This is an event-driven healthcare data pipeline in GCP. A JSON clinical file lands in Cloud Storage, a Cloud Function automatically starts a Dataflow template, Dataflow applies a JavaScript filter, and only cancer patient records are loaded into BigQuery. The assignment specifically requires JSON files in GCS, automatic ingestion, cancer-only filtering, validation, and BigQuery storage.
 
+**What each file does**
 
+<img width="654" height="449" alt="image" src="https://github.com/user-attachments/assets/4b9f18b9-9e30-4ad1-a452-843849ee53ef" />
 
 
 
