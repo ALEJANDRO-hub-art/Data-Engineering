@@ -56,10 +56,17 @@ This is an event-driven healthcare data pipeline in GCP. A JSON clinical file la
 
 <img width="654" height="449" alt="image" src="https://github.com/user-attachments/assets/4b9f18b9-9e30-4ad1-a452-843849ee53ef" />
 
+**GCS bucket folder structure**
 
+Create one GCS bucket, for example:
 
+<img width="293" height="158" alt="image" src="https://github.com/user-attachments/assets/88152088-31de-4e3a-bd0c-8ed09063af34" />
 
-
+Upload files like this:
+- bq_health_schema.json        ➜ schema/bq_health_schema.json
+- transform.js                 ➜ transform_script/transform.js
+- mock_data_20230101.json      ➜ bucket root OR input/
+- sample_clinical_data...json  ➜ bucket root OR input/
 
 
 
