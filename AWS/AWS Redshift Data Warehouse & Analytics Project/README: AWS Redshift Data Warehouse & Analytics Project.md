@@ -25,34 +25,9 @@ Files and Their Purpose
 
 <img width="630" height="227" alt="image" src="https://github.com/user-attachments/assets/40892336-eac0-43e2-92d7-80f308a7152f" />
 
-**End-to-End Architecture**
 
-```text
-Sales CSV Files
-       │
-       ▼
-Amazon S3 Bucket
-       │
-       ▼
-Amazon Redshift
-       │
-       ├── COPY Command
-       │
-       ▼
-sales_raw Table
-       │
-       ├── SQL Analytics
-       ├── Materialized Views
-       ├── Spectrum External Tables
-       │
-       ▼
-Query Results
-       │
-       ▼
-UNLOAD Command
-       │
-       ▼
-Amazon S3 Output Folder
+
+
 
 Lets see the EXECUTION of the project.
 
@@ -66,17 +41,51 @@ Project Name: **Amazon Redshift Sales Data Analytics Pipeline**
 **Where to upload the files**
 
 Upload only the CSV data files to Amazon S3:
-- s3://redshift-data-gds-new/input/sales.csv
-- s3://redshift-data-gds-new/input/sales_2025_01_11.csv
-- s3://redshift-data-gds-new/input/sales_2025_01_12.csv
+- s3://redshift-data-gds-new/input/**sales.csv**
+- s3://redshift-data-gds-new/input/**sales_2025_01_11.csv**
+- s3://redshift-data-gds-new/input/**sales_2025_01_12.csv**
 
 Keep these files locally or in GitHub:
-- redshift_commands.txt
-- redshift_query_commands.txt
+- **redshift_commands.txt**
+- **redshift_query_commands.txt**
 
 You paste/run the SQL commands inside Amazon Redshift Query Editor v2.
 
 <img width="642" height="276" alt="image" src="https://github.com/user-attachments/assets/50044720-0c2b-4376-ba02-63e9d7400734" />
+
+
+
+**End-to-End Architecture**
+
+# 📊 Amazon Redshift Sales Analytics Pipeline
+
+```text
+Sales CSV Files
+    │
+    ▼
+Amazon S3 Bucket
+    │
+    ▼
+Amazon Redshift
+    │
+    ├── COPY Command
+    │
+    ▼
+sales_raw Table
+    │
+    ├── SQL Analytics
+    ├── Materialized Views
+    ├── Spectrum External Tables
+    │
+    ▼
+Query Results
+    │
+    ▼
+UNLOAD Command
+    │
+    ▼
+Amazon S3 Output Folder
+```
 
 
 
