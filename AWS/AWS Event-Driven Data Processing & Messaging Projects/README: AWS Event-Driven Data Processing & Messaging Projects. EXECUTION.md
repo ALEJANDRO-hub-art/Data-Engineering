@@ -360,17 +360,17 @@ Use the filter from **event_bridge_pipe_mockdata.txt.**
 Then click Create pipe.
 
 Final execution order
-- 1. Create S3 bucket
-- 2. Upload store_data.csv
-- 3. Create SNS topic and subscription
-- 4. Create S3 Lambda
-- 5. Add S3 trigger
-- 6. Create SQS queue
-- 7. Create mock generator Lambda
-- 8. Run mock generator Lambda
-- 9. Create automatic/manual SQS consumer Lambda
-- 10. Create EventBridge Pipe
-- 11. Check output in CloudWatch Logs
+- 1 Create S3 bucket
+- 2 Upload store_data.csv
+- 3 Create SNS topic and subscription
+- 4 Create S3 Lambda
+- 5 Add S3 trigger
+- 6 Create SQS queue
+- 7 Create mock generator Lambda
+- 8 Run mock generator Lambda
+- 9 Create automatic/manual SQS consumer Lambda
+- 10 Create EventBridge Pipe
+- 11 Check output in CloudWatch Logs
 
 Final result: this project demonstrates AWS event-driven serverless processing using S3, Lambda, SNS, SQS, and EventBridge Pipes.
 
