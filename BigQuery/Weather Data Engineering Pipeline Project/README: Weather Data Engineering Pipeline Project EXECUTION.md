@@ -903,7 +903,7 @@ Fill:
 - Name: **GCP_SA_KEY**
 - Secret: Paste the entire Google Service Account JSON.
 
-Example:
+Example: 
 
 <img width="484" height="167" alt="image" src="https://github.com/user-attachments/assets/074891e3-0906-40a2-b4b8-282624deee0f" />
 
