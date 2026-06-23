@@ -83,7 +83,7 @@ Amazon S3 Output Folder
 
 **Step-by-step execution in AWS GUI**
 
-**1. Create S3 bucket**
+**1. Create S3 bucket** 
 
 Go to: **AWS Console ➜ S3 ➜ Create bucket**
 
