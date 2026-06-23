@@ -13,17 +13,17 @@ Folder: 2 Event_Bridge_Pipe
 Purpose:
 - Demonstrates:
 
-**Producer**
-⬇️
-**SQS Queue**
-⬇️
-**EventBridge Pipe**
-⬇️
-**Filtering**
-⬇️
-**Transformation**
-⬇️
-**Target Service**
+Producer
+   ⬇️
+SQS Queue
+   ⬇️
+EventBridge Pipe
+   ⬇️
+Filtering
+   ⬇️
+Transformation
+   ⬇️
+Target Service
 
 The sample file contains:
 - Purchase order messages
