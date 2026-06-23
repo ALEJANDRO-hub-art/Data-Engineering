@@ -804,6 +804,344 @@ BigQuery Silver and Gold tables
 
 Analytics-ready datasets and dashboards
 
+## Now lets do the deployment.
+
+<img width="642" height="252" alt="image" src="https://github.com/user-attachments/assets/030d8abd-0a6f-4762-bb1d-d83b86b20f8b" />
+
+Do you only need GitHub or do you need both .git and .github 
+
+You only need .github in GitHub.
+
+Do not upload/use .git manually. The .git folder is only for your local Git history. GitHub creates/manages that automatically when you push to the repository.
+
+Your GitHub Actions workflow is here: **.github/workflows/ci-cd.yaml**
+
+It deploys:
+- spark_job/**weather_data_processing.py** ➜ gs://weather-data-gds/script/
+- weather_airflow_dags/ ➜ Composer DAGs folder
+
+Your workflow does this with gsutil cp and gcloud composer environments storage dags import.
+
+**Correct GitHub folder structure**
+
+In GitHub, your repo should look like:
+
+<img width="340" height="247" alt="image" src="https://github.com/user-attachments/assets/c93efeb4-1432-4ce5-af59-bcb49db21530" />
+
+**GitHub GUI Steps**
+
+**1. Open your GitHub repository**
+
+Go to your repository: GitHub ➜ your **weather-data-processing** repo
+
+**2. Verify .github folder exists**
+
+Click: .github. Then: workflows. Verify this file exists: **ci-cd.yaml**
+
+**3. Do not upload .git**
+
+Do not upload this folder: .git. You can ignore it completely.
+
+**4. Add GitHub Secrets**
+
+Go to: Settings
+- → Secrets and variables
+- → Actions
+- → New repository secret
+
+Create this secret:
+- Name: **GCP_SA_KEY**
+- Value: paste your full Google service account JSON key
+
+Create another secret:
+- Name: **GCP_PROJECT_ID**
+- Value: **mythic-aloe-457912-d5**
+
+Lets explain this in detail.
+
+**Exact GUI Steps — Add GitHub Secrets**
+
+These secrets allow GitHub Actions to authenticate to Google Cloud and deploy your DAGs and Spark files automatically.
+
+*Step 1 — Open Your GitHub Repository*
+
+Go to: https://github.com
+
+Open your repository: **weather-data-processing** (or whatever repository name you used)
+
+*Step 2 — Open Repository Settings*
+
+At the top of the repository page click: Settings
+
+It is located on the top menu:
+
+- Code | Issues | Pull Requests | Actions | Projects | Wiki | Security | Insights | Settings
+
+Click: Settings
+
+*Step 3 — Open Secrets and Variables*
+
+On the left sidebar scroll down until you find: **Security**
+
+Under Security click: **Secrets and variables**. A submenu expands.
+
+Click: Actions
+
+Path:
+
+<img width="214" height="62" alt="image" src="https://github.com/user-attachments/assets/3ce11784-baf5-4437-b460-f0398e4b220c" />
+
+*Step 4 — Create First Secret*
+
+Click: New repository secret
+
+Located near the upper-right corner.
+
+*Step 5 — Create GCP_SA_KEY*
+
+Fill:
+- Name: **GCP_SA_KEY**
+- Secret: Paste the entire Google Service Account JSON.
+
+Example:
+
+{
+  "type": "service_account",
+  "project_id": "mythic-aloe-457912-d5",
+  "private_key_id": "xxxxxxxx",
+  "private_key": "-----BEGIN PRIVATE KEY-----\n....",
+  "client_email": "github-actions@mythic-aloe-457912-d5.iam.gserviceaccount.com",
+  "client_id": "123456789"
+}
+
+⚠️ Paste the entire JSON exactly as downloaded.
+
+Then click: **Add secret**
+
+Where exactly do we find this Google Service Account JSON.
+
+*Exact GUI Steps — Find the Google Service Account JSON Key (GCP_SA_KEY)*
+
+This JSON file is not already in GitHub. You must download it from Google Cloud and then copy its contents into the GitHub Secret.
+
+*Step 1 — Open Google Cloud Console*
+
+Go to: Google Cloud Console. Make sure you are in project: **mythic-aloe-457912-d5**
+
+Look at the project selector at the top of the page.
+
+*Step 2 — Open Service Accounts*
+
+In the top search bar type: Service Accounts. Click:
+- IAM & Admin ➜ Service Accounts
+
+Or navigate: ☰ Navigation Menu ➜ IAM & Admin ➜ Service Accounts
+        
+*Step 3 — Find the Service Account*
+
+You should see a table like:
+
+Service Accounts
+------------------------------------------------
+Name
+Email
+Description
+------------------------------------------------
+
+Compute Engine default service account
+
+**715970340101-compute@developer.gserviceaccount.com**
+
+Composer Service Account
+...
+
+Custom Service Account
+...
+
+For your project, the DAG references: **715970340101-compute@developer.gserviceaccount.com** in **transform_data_dag.py.**
+
+You can use that account or create a dedicated GitHub Actions service account.
+
+*Step 4 — Open the Service Account*
+
+Click the email address of the service account you want to use.
+
+Example: **715970340101-compute@developer.gserviceaccount.com**
+
+*Step 5 — Open the Keys Tab*
+
+At the top click: KEYS
+
+You should see:
+- Details
+- Permissions
+- Keys
+- Metrics
+
+Click: Keys
+
+*Step 6 — Create a New Key*
+
+Click: ADD KEY. A menu appears. Click: Create new key
+
+*Step 7 — Select JSON*
+
+A dialog appears.
+
+Choose: JSON. NOT: P12
+
+Click: CREATE
+
+*Step 8 — Download the JSON File*
+
+Google automatically downloads a file like: **mythic-aloe-457912-d5-8f7c3e4d1234.json**
+
+Usually it goes to: C:\Users\Usuario\Downloads
+
+*Step 9 — Open the JSON File*
+
+Right-click the downloaded file.
+
+Choose: Open With ➜ Notepad
+
+You will see something like:
+
+<img width="441" height="184" alt="image" src="https://github.com/user-attachments/assets/ea6dc22d-61ce-421b-98b7-a2efb5fa291a" />
+
+*Step 10 — Copy Everything*
+
+Press: Ctrl + A
+
+Then: Ctrl + C
+
+This copies the entire JSON file.
+
+*Step 11 — Create GitHub Secret*
+
+Go to: GitHub Repository
+- → Settings
+- → Secrets and variables
+- → Actions
+- → New repository secret
+
+Fill:
+- Name: **GCP_SA_KEY**
+- Secret: **Paste the entire JSON**: Ctrl + V. 
+
+Click: Add secret
+
+Lets continue.
+
+*Step 6 — Create Second Secret*
+
+Click again: New repository secret
+
+*Step 7 — Create GCP_PROJECT_ID*
+
+Fill:
+- Name: **GCP_PROJECT_ID**
+- Secret: **mythic-aloe-457912-d5**
+
+Click: Add secret
+
+Lets explain this in detail.
+
+*Exact GUI Steps — Create the GCP_PROJECT_ID GitHub Secret*
+
+This secret stores your Google Cloud Project ID so GitHub Actions knows which GCP project to deploy to.
+
+*Step 1 — Open Your GitHub Repository*
+
+Go to: https://github.com
+
+Open your repository: **weather-data-processing**
+
+*Step 2 — Open Settings*
+
+At the top of the repository click: Settings
+
+Top menu: Code | Issues | Pull Requests | Actions | Security | Insights | Settings
+
+Click: Settings
+
+*Step 3 — Open Secrets*
+
+On the left menu click: Secrets and variables
+
+Then click: Actions
+
+Path:
+
+<img width="223" height="68" alt="image" src="https://github.com/user-attachments/assets/e4726441-ef70-4229-9957-42352b0bc406" />
+
+*Step 4 — Create New Secret*
+
+Click the button: New repository secret. located near the upper-right corner.
+
+*Step 5 — Fill Secret Information*
+
+You will see two fields.
+
+Secret Name
+- Enter exactly: **GCP_PROJECT_ID**
+
+Secret Value
+- Enter exactly: **mythic-aloe-457912-d5**
+ 
+*Step 6 — Save*
+
+Click: Add secret
+
+*Step 7 — Verify*
+
+You should now see:
+
+<img width="241" height="96" alt="image" src="https://github.com/user-attachments/assets/b36448a5-ae4e-4c40-84e3-ead9867fd02f" />
+
+GitHub hides the values, so you'll only see the names.
+
+*Step 8 — Verify the Project ID (Optional)*
+
+If you're not sure your Project ID is correct: Open: https://console.cloud.google.com
+
+At the top of the page look at the project selector.
+
+You should see:
+- Project Name: **mythic-aloe-457912-d5**
+- Project ID: **mythic-aloe-457912-d5**
+
+Copy the Project ID value and use it in the GitHub secret.
+
+Final Result
+
+Your GitHub repository should now contain these two secrets:
+- **GCP_SA_KEY**
+- **GCP_PROJECT_ID**
+
+Once both exist, your GitHub Actions workflow can authenticate to Google Cloud and deploy:
+
+**weather_data_processing.py**
+**extract_data_dag.py**
+**transform_data_dag.py**
+
+automatically when the workflow runs.
+
+Lets continue.
+
+**5. Verify workflow file values**
+
+Open: **.github/workflows/ci-cd.yaml**
+
+Check these names match your real GCP setup:
+- Composer environment: **airflow-dev**
+- Location: us-central1
+- Bucket: **weather-data-gds**
+
+If your Composer environment is not called airflow-dev, edit it to your real environment name.
+
+Lets check out the **ci-cd.yaml** file.
+
+<img width="388" height="337" alt="image" src="https://github.com/user-attachments/assets/317ff0b3-5963-432a-9d94-1d4b48d08637" />
 
 
 
