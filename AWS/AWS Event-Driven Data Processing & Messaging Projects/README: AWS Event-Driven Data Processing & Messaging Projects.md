@@ -35,13 +35,13 @@ Architecture:
 ```text
 Application
 <br>⬇️
-SQS
+<br>⬇️SQS
 <br>⬇️
-EventBridge Pipe
+<br>⬇️EventBridge Pipe
 <br>⬇️
-Filter Events
+<br>⬇️Filter Events
 <br>⬇️
-Transform Payload
+<br>⬇️Transform Payload
 <br>⬇️
 <br>Target
 ```
