@@ -143,7 +143,7 @@ Click: Amazon Redshift
 
 In the left menu click: Clusters
 
-You should see something similar to: sales-redshift-cluster or redshift-cluster-1
+You should see something similar to: **sales-redshift-cluster** or **redshift-cluster-1**
 
 Status must be: Available
 
@@ -152,12 +152,15 @@ Status must be: Available
 In the left navigation menu click: Query Editor v2
 
 Location:
-- Amazon Redshift
+
+```text
+Amazon Redshift
 ├── Dashboard
 ├── Clusters
 ├── Serverless
-├── Query monitoring
+├── Query Monitoring
 └── Query Editor v2
+```
 
 Click: Query Editor v2
 
@@ -190,7 +193,7 @@ Under: Cluster or workgroup
 *Step 9 — Select Database*
 
 Under: Database
-- Enter: dev
+- Enter: **dev**
 
 Most Redshift clusters use:
 - dev
@@ -203,7 +206,7 @@ Enter: **awsuser**
 
 or the admin username you created when creating the cluster.
 
-Example: awsuser
+Example: **awsuser**
 
 *Step 11 — Connect*
 
