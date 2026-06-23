@@ -183,7 +183,23 @@ The Cloud Function launches the template using:
 
 which means after deployment you do not manually run Dataflow anymore. The **file upload triggers everything automatically (the above step in the architecture Cloud Storage).**
 
+**Exact GUI Location Summary**
 
+Google Cloud Console
+    ↓
+Navigation Menu
+    ↓
+Dataflow
+    ↓
+Create Job From Template
+    ↓
+Google Provided Templates
+    ↓
+Text Files on Cloud Storage to BigQuery
+    ↓
+Run Job
+
+After this step, the next GUI task is usually deploying the Cloud Function, which connects the bucket upload event to Dataflow.
 
 
 
