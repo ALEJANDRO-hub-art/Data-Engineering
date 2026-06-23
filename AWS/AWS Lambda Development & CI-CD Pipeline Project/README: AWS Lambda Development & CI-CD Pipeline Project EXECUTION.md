@@ -18,6 +18,51 @@ I have this project AWS Lambda Development & CI-CD Pipeline Project.
 
 <img width="631" height="170" alt="image" src="https://github.com/user-attachments/assets/34482dd1-4541-4e3b-9c50-8f302b81bf3b" />
 
+**Project name**
+
+AWS Lambda Development & CI/CD Pipeline Project
+
+Better GitHub title: AWS Lambda CI/CD Deployment Pipeline with GitHub Actions
+
+What this project does
+
+This project teaches AWS Lambda development in 3 stages:
+- Basic Lambda function with no dependency.
+- Lambda function with local Python module/layer logic using math_ops.py.
+- Production-style Lambda CI/CD pipeline where GitHub Actions packages app.py, installs dependencies, and deploys to AWS Lambda.
+
+Your screenshots show 3 main folders: 2 S3_Data, 3 Lambda_Code, and 4 AWS_Lambda_CICD_Code. The CI/CD folder contains lambda_function/app.py, requirements.txt, and deploy.yml.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
