@@ -12,8 +12,9 @@ I’ll treat this as one AWS sales analytics project using **S3, Glue/Athena, La
 
 This project uploads sales CSV data to Amazon S3, catalogs it with AWS Glue / Athena, runs an Athena SQL aggregation from Lambda, checks query status with another Lambda, and optionally connects to RDS MySQL using credentials stored in Secrets Manager.
 
+**What each file does**
 
-
+<img width="655" height="314" alt="image" src="https://github.com/user-attachments/assets/0365e126-2e68-41d8-98bf-44feaec7d0ef" />
 
 
 
