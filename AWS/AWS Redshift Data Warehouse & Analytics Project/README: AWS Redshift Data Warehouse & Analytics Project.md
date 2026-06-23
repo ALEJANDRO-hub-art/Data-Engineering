@@ -214,12 +214,14 @@ Click: Connect
 
 You should now see:
 
+```text
 Editor
 ┌─────────────────────────────┐
 │                             │
 │     SQL Editor Window       │
 │                             │
 └─────────────────────────────┘
+```
 
 **5. Create schema**
 
