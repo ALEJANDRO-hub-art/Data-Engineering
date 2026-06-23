@@ -347,7 +347,7 @@ You will see:
 
 Fill in:
 - Name: **AWS_ACCESS_KEY_ID**
-- Secret: Paste: AKIAxxxxxxxxxxxx
+- Secret: Paste: **AKIAxxxxxxxxxxxx**
 
 (the Access Key ID from AWS)
 
@@ -359,7 +359,7 @@ Click: New repository secret
 
 Fill in:
 - Name: **AWS_SECRET_ACCESS_KEY**
-- Secret: Paste: aBcDeFgHiJkLmNoPqRsTuVwXyZ
+- Secret: Paste: **aBcDeFgHiJkLmNoPqRsTuVwXyZ**
 
 (the Secret Access Key from AWS)
 
