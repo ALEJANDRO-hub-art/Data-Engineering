@@ -1,4 +1,4 @@
-I have this project AWS Lambda Development & CI-CD Pipeline Project
+I have this project AWS Lambda Development & CI-CD Pipeline Project.
 
 <img width="505" height="57" alt="image" src="https://github.com/user-attachments/assets/3686e3d2-85f1-4ad9-9088-71a40c311485" />
 
