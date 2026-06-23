@@ -16,7 +16,27 @@ This project uploads sales CSV data to Amazon S3, catalogs it with AWS Glue / At
 
 <img width="655" height="314" alt="image" src="https://github.com/user-attachments/assets/0365e126-2e68-41d8-98bf-44feaec7d0ef" />
 
+Recommended S3 structure
 
+Create one S3 bucket: **sales-data-analysis-gds-de**
+
+Inside the bucket, create folders:
+- raw/
+- results/
+- scripts/
+
+Upload files like this:
+
+```text
+sales-data-analysis-gds-de/
+├── raw/
+│   └── sales_data.csv
+├── results/
+└── scripts/
+    ├── run_athena_query.py
+    ├── check_athena_query_status.py
+    └── connect_rds.py
+```
 
 
 
