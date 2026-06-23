@@ -169,7 +169,25 @@ Go to: Dataflow
 
 You should see: **healthcare-test**. Status: Succeeded
 
+**Important**
 
+Your Cloud Function automatically launches the same template later.
+
+When a JSON file arrives:
+
+Cloud Storage
+      ↓
+Cloud Function
+      ↓
+Google Dataflow Template
+      ↓
+BigQuery
+
+The Cloud Function launches the template using:
+
+<img width="326" height="67" alt="image" src="https://github.com/user-attachments/assets/a8846856-156a-46a1-bbf7-8a85e4138f67" />
+
+which means after deployment you do not manually run Dataflow anymore. The **file upload triggers everything automatically (the above step in the architecture Cloud Storage).**
 
 
 
