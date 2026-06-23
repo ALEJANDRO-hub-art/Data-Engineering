@@ -73,7 +73,7 @@ Secrets Manager
 
 **Step-by-step GUI execution**
 
-*1. Create the S3 bucket*
+**1. Create the S3 bucket**
 
 Go to AWS Console. Search S3. Click Create bucket.
 - Bucket name: **sales-data-analysis-gds-de**
