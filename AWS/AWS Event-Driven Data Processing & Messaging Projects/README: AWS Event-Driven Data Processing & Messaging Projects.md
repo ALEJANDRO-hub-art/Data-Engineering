@@ -4,7 +4,7 @@ I have this project AWS Event-Driven Data Processing & Messaging Projects.
 
 This is not one single project. **It is a collection of 5 AWS Event-Driven Architecture mini-projects**, each demonstrating a different AWS integration pattern.
 
-
+ 
 
 
 
