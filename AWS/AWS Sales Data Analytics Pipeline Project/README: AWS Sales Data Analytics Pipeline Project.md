@@ -38,7 +38,36 @@ sales-data-analysis-gds-de/
     └── connect_rds.py
 ```
 
+**End-to-end architecture**
 
+sales_data.csv
+<br>⬇️
+<br>Amazon S3 raw/
+<br>⬇️
+<br>AWS Glue Crawler
+<br>⬇️
+<br>Glue Data Catalog Database: **sales_db**
+<br>⬇️
+<br>Athena Table: **sales_data_raw**
+<br>⬇️
+<br>Lambda: run_athena_query
+<br>⬇️
+<br>Athena SQL Aggregation
+<br>⬇️
+<br>S3 results/
+<br>⬇️
+<br>Lambda: check_athena_query_status
+<br>⬇️
+<br>Query result file available in S3
+
+Optional:
+Secrets Manager
+<br>⬇️
+<br>**connect_rds.py**
+<br>⬇️
+<br>Amazon RDS MySQL
+<br>⬇️
+<br>Creates database GDSdev
 
 
 
