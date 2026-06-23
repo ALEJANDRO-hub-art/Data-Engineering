@@ -287,11 +287,25 @@ Expected diseases include:
 
 Non-cancer diseases should be excluded because the transform function returns null for them.
 
+**End-to-end architecture**
 
-
-
-
-
+**Clinical JSON File**
+        ⬇️
+**Google Cloud Storage Bucket**
+        ⬇️
+**Cloud Storage Finalize Event**
+        ⬇️
+**Cloud Function**
+        ⬇️
+**Dataflow Template: GCS Text to BigQuery**
+        ⬇️
+**JavaScript Transform UDF**
+        ⬇️
+**Cancer records only**
+        ⬇️
+**BigQuery Table**
+        ⬇️
+**Healthcare analytics queries**
 
 
 
