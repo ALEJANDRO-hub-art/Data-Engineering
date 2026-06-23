@@ -223,7 +223,7 @@ Create: **lambda_function/requirements.txt**.
  - pandas
   
 Create: **.github/workflows/deploy.yml**
-- Paste your deploy.yml.
+- Paste your **deploy.yml.**
 
 **Part 5 — Add GitHub Secrets**
 
