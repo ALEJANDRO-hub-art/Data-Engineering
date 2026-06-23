@@ -34,16 +34,16 @@ Architecture:
 
 ```text
 Application
-      ⬇️
+<br>⬇️
 SQS
-      ⬇️
+<br>⬇️
 EventBridge Pipe
-      ⬇️
+<br>⬇️
 Filter Events
-      ⬇️
+<br>⬇️
 Transform Payload
-      ⬇️
-Target
+<br>⬇️
+<br>Target
 ```
 
 
