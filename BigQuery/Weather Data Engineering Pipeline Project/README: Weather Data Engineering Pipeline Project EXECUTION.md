@@ -1137,11 +1137,68 @@ Check these names match your real GCP setup:
 - Location: us-central1
 - Bucket: **weather-data-gds**
 
-If your Composer environment is not called airflow-dev, edit it to your real environment name.
+If your Composer environment is not called **airflow-dev**, edit it to your real environment name.
 
 Lets check out the **ci-cd.yaml** file.
 
 <img width="388" height="337" alt="image" src="https://github.com/user-attachments/assets/317ff0b3-5963-432a-9d94-1d4b48d08637" />
+
+**6. Trigger deployment**
+
+Because your workflow runs on push to main, do this:
+
+GitHub repo
+- ➜ Add file / Edit file
+- ➜ Commit changes
+- ➜ Commit directly to main
+
+This automatically starts GitHub Actions.
+
+**7. Watch GitHub Actions**
+
+Go to: Actions
+- ➜ **Weather Data CICD**
+- ➜ latest workflow run
+
+You should see steps:
+- Checkout Code
+- Authenticate to GCP
+- Setup Google Cloud SDK
+- Upload Spark Job to GCS
+- Upload Airflow DAG
+
+All should turn green.
+
+**8. Verify in GCP**
+
+Check Spark job upload
+
+Go to: Cloud Storage
+- ➜ **weather-data-gds**
+- ➜ script
+
+You should see:
+- **weather_data_processing.py**
+
+**Check Airflow DAG upload**
+
+Go to: Composer
+- ➜ your environment
+- ➜ DAGs folder
+
+You should see:
+- **extract_data_dag.py**. This DAG is named **openweather_api_to_gcs.**
+- **transform_data_dag.py**. This DAG is named **transformed_weather_data_to_bq.**
+
+Then open: **Composer ➜ Open Airflow UI**
+
+Verify DAGs appear:
+
+**openweather_api_to_gcs**
+**transformed_weather_data_to_bq**
+
+
+
 
 
 
