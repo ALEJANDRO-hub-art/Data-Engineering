@@ -305,8 +305,8 @@ Go to AWS Console ➜ SQS ➜ Create queue.
 Click Create queue.
 
 **Copy the Queue URL.** Update this Queue URL inside:
-- mock_generator_lambda.py
-- manual_consumer_from_sqs_lambda.py
+- **mock_generator_lambda.py**
+- **manual_consumer_from_sqs_lambda.py**
 
 *7. Create mock generator Lambda*
 
@@ -350,8 +350,8 @@ Source: SQS queue ➜ devSQS
 
 Filter condition:
 
-Use the filter from event_bridge_pipe_mockdata.txt.
-- Transformation: Use the transformation template from event_bridge_pipe_mockdata.txt.
+Use the filter from **event_bridge_pipe_mockdata.txt.**
+- Transformation: Use the transformation template from **event_bridge_pipe_mockdata.txt.**
 - Target: Choose your target, for example:
   - CloudWatch Logs
   - Lambda
