@@ -161,7 +161,25 @@ Attach these policies for practice/lab use:
 - AWSGlueConsoleFullAccess
 - CloudWatchLogsFullAccess
 
+**7. Test run_athena_query Lambda**
 
+Open Lambda **run_athena_query.**
+
+Click Test.
+
+- Event name: testAthenaRun
+- 
+Event JSON:
+
+<img width="146" height="53" alt="image" src="https://github.com/user-attachments/assets/47938d35-2ea0-4eb7-bac3-819f56dfe469" />
+
+Click Test.
+
+You should get a response containing:
+
+<img width="217" height="91" alt="image" src="https://github.com/user-attachments/assets/5dd77258-7da3-4dff-bde0-78a8b4b066b8" />
+
+Copy that ID.
 
 
 
