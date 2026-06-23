@@ -70,7 +70,7 @@ Upload files like this:
 
 **Step-by-step execution**
 
-*Step 1 — Create BigQuery dataset*
+**Step 1 — Create BigQuery dataset**
 
 Go to Google Cloud Console. Search BigQuery.
 
@@ -82,15 +82,15 @@ Click Create dataset.
 
 Click Create dataset.
 
-*Step 2 — Create BigQuery table*
+**Step 2 — Create BigQuery table**
 
-In BigQuery, click SQL workspace. Paste the content of **create_table.sql**:
+In BigQuery, click **SQL workspace**. Paste the content of **create_table.sql**:
 
 <img width="292" height="182" alt="image" src="https://github.com/user-attachments/assets/d02fa4cd-fe3e-478e-a7f9-3fac73c40f79" />
 
 Click Run.
 
-*Step 3 — Create Cloud Storage bucket*
+**Step 3 — Create Cloud Storage bucket**
 
 Go to Cloud Storage. Click Create bucket.
 - Name it, for example: **healthcare-pipeline-bucket**
@@ -98,7 +98,7 @@ Go to Cloud Storage. Click Create bucket.
 
 Click Create.
 
-*Step 4 — Create folders in bucket*
+**Step 4 — Create folders in bucket**
 
 Inside the bucket, click Create folder and create:
 - schema
@@ -106,20 +106,20 @@ Inside the bucket, click Create folder and create:
 - templates
 - temp
 
-*Step 5 — Upload schema file*
+**Step 5 — Upload schema file**
 
 Upload: **bq_health_schema.json** ➜ to: **schema/bq_health_schema.json**
 
-*Step 6 — Upload transform file*
+**Step 6 — Upload transform file**
 
 Upload: **transform.js** ➜ to: **transform_script/transform.js**
 
 This file keeps cancer records only. Non-cancer records like HIV, Asthma, or Pneumonia are ignored.
 
-*Step 7 — Create Dataflow template*
+**Step 7 — Create Dataflow template**
 
 Use Google’s built-in template:
-- Text Files on Cloud Storage to BigQuery
+- **Text Files on Cloud Storage to BigQuery**
 
 In the bucket, the Cloud Function expects the template here:
 - gs://YOUR_BUCKET/**templates/GCS_Text_to_BigQuery**
@@ -130,47 +130,34 @@ In the bucket, the Cloud Function expects the template here:
 
 In Google Cloud Console:
 
-☰ Navigation Menu
-    → Dataflow
-*2. Click*
-CREATE JOB FROM TEMPLATE
+☰ Navigation Menu → Dataflow
 
-(top of the page)
+*2. Click*
+
+CREATE JOB FROM TEMPLATE (top of the page)
 
 *3. Select Template Category*
 
-Choose:
+Choose: Google Provided Templates
 
-Google Provided Templates
 *4. Search Template*
 
-In the search box type:
+In the search box type: Text Files on Cloud Storage to BigQuery
+- Select: **Text Files on Cloud Storage to BigQuery**
 
-Text Files on Cloud Storage to BigQuery
-
-Select:
-
-Text Files on Cloud Storage to BigQuery
 *5. Fill Temporary Values*
 
 You are only testing the template exists.
 
 Example:
+- Job Name: **healthcare-test**
+- Input File Pattern: **gs://your-bucket/sample_clinical_data_2023_12_05.json**
+- Output Table: your-project:healthcare_app.patients
+- BigQuery Loading Temporary Directory:**gs://your-bucket/temp**
+- JSONPath: **gs://your-bucket/schema/bq_health_schema.json**
+- Javascript UDF Path: **gs://your-bucket/transform_script/transform.js**
+- Javascript Function Name: **transform**
 
-Job Name:
-healthcare-test
-Input File Pattern:
-gs://your-bucket/sample_clinical_data_2023_12_05.json
-Output Table:
-your-project:healthcare_app.patients
-BigQuery Loading Temporary Directory:
-gs://your-bucket/temp
-JSONPath:
-gs://your-bucket/schema/bq_health_schema.json
-Javascript UDF Path:
-gs://your-bucket/transform_script/transform.js
-Javascript Function Name:
-transform
 *6. Click*
 RUN JOB
 
@@ -178,17 +165,9 @@ Wait until the job completes.
 
 *7. Verify*
 
-Go to:
+Go to: Dataflow
 
-Dataflow
-
-You should see:
-
-healthcare-test
-
-Status:
-
-Succeeded
+You should see: **healthcare-test**. Status: Succeeded
 
 
 
