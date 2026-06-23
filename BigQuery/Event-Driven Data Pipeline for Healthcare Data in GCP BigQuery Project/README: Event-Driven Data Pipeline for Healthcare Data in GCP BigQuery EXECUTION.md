@@ -307,6 +307,19 @@ Non-cancer diseases should be excluded because the transform function returns nu
 ⬇️  
 **Healthcare Analytics Queries**
 
+**Final workflow**
+- 1 Create BigQuery dataset healthcare_app
+- 2 Create BigQuery table patients
+- 3 Create GCS bucket
+- 4 Upload schema JSON to schema/
+- 5 Upload transform JS to transform_script/
+- 6 Deploy Cloud Function
+- 7 Upload clinical JSON file
+- 8 Cloud Function triggers automatically
+- 9 Dataflow runs
+- 10 Cancer records load into BigQuery
+- 11 Query results in BigQuery
 
+Important: replace the hardcoded project ID in the Cloud Function before deploying.
 
 
