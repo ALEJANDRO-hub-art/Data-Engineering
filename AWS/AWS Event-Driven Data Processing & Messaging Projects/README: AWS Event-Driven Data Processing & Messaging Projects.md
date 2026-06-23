@@ -65,9 +65,7 @@ CSV File
 
 Folder: 4 S3_To_Lambda
 
-Purpose:
-
-Shows how a Lambda is automatically triggered when a file is uploaded to S3.
+Purpose: Shows how a Lambda is automatically triggered when a file is uploaded to S3.
 
 The Lambda:
 - Receives S3 event
@@ -88,15 +86,94 @@ CSV File
 <br>⬇️
 <br>Pandas Processing
 
+**Mini Project 4: SNS Notifications**
 
+Folder: 5 SNS
 
+Purpose:
+- Extends the S3 → Lambda pattern.
 
+The Lambda:
+- Reads S3 file
+- Processes CSV
+- Sends SUCCESS notification to SNS
+- Sends FAILURE notification if processing fails
 
+Architecture:
 
+CSV File
+<br>⬇️
+<br>S3 Bucket
+<br>⬇️
+<br>Lambda
+<br>⬇️
+<br>SNS Topic
+<br>⬇️
+<br>Email / Subscribers
 
+**Mini Project 5: SQS Messaging**
 
+Folder: 6 SQS
 
+Contains three Lambda functions: **mock generator lamba.py, auto consumer from sqs lamba.py, manual consumer from sqs lambda.py**
 
+*Producer Lambda*
 
+**mock generator lamba.py**
+- Generates sales orders and pushes them into SQS.
+
+Lambda Producer
+<br>⬇️
+<br>SQS Queue
+
+*Automatic Consumer*
+
+**auto consumer from sqs lamba.py**
+- Lambda triggered automatically by SQS. Processes batches of messages.
+
+SQS
+<br>⬇️
+<br>Lambda Trigger
+<br>⬇️
+<br>Process Messages
+
+*Manual Consumer*
+
+**manual consumer from sqs lambda.py**
+- Lambda polls SQS manually. Reads messages and deletes them after processing.
+
+Lambda
+<br>⬇️
+<br>Poll SQS
+<br>⬇️
+<br>Process Messages
+<br>⬇️
+<br>Delete Messages
+
+**Big Picture**
+
+All folders together form an: AWS Event-Driven Serverless Architecture Learning Portfolio
+
+End-to-End Services Covered:
+
+S3
+<br>⬇️
+<br>Lambda
+<br>⬇️
+<br>SNS
+
+SQS
+<br>⬇️
+<br>Lambda
+
+SQS
+<br>⬇️
+<br>EventBridge Pipes
+<br>⬇️
+<br>Filtering
+<br>⬇️
+<br>Transformation
+<br>⬇️
+<br>Target
 
 
