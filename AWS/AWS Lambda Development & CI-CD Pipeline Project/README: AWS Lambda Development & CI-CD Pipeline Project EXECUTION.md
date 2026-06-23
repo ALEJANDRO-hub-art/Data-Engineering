@@ -18,7 +18,7 @@ I have this project AWS Lambda Development & CI-CD Pipeline Project.
 
 <img width="631" height="170" alt="image" src="https://github.com/user-attachments/assets/34482dd1-4541-4e3b-9c50-8f302b81bf3b" />
 
-**Project name**
+**Project name** 
 
 AWS Lambda Development & CI/CD Pipeline Project
 
