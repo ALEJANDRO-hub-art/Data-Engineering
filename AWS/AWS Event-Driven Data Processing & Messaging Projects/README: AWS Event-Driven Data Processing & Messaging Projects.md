@@ -33,7 +33,7 @@ The sample file contains:
 Architecture:
 
 ```text
-Application
+Application 
 <br>⬇️
 <br>⬇️SQS
 <br>⬇️
