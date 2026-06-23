@@ -44,7 +44,52 @@ Application
 <br>⬇️
 <br>Target Service
 
+**Mini Project 2: S3 Data**
 
+Folder: 3 S3_Data
+
+Purpose:
+- Contains sample CSV data: **store_data.csv**
+
+Used as source data for S3 processing demonstrations.
+
+Workflow:
+
+CSV File
+<br>⬇️
+<br>S3 Bucket
+<br>⬇️
+<br>Consumed by Lambda
+
+**Mini Project 3: S3 → Lambda**
+
+Folder:
+
+4 S3_To_Lambda
+
+Purpose:
+
+Shows how a Lambda is automatically triggered when a file is uploaded to S3.
+
+The Lambda:
+
+Receives S3 event
+Reads bucket name
+Reads uploaded file
+Loads CSV into pandas
+Processes data
+
+Architecture:
+
+CSV File
+    ↓
+S3 Bucket
+    ↓
+S3 Event Notification
+    ↓
+Lambda
+    ↓
+Pandas Processing
 
 
 
