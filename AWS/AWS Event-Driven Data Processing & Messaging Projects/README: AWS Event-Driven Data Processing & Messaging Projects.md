@@ -63,33 +63,30 @@ CSV File
 
 **Mini Project 3: S3 → Lambda**
 
-Folder:
-
-4 S3_To_Lambda
+Folder: 4 S3_To_Lambda
 
 Purpose:
 
 Shows how a Lambda is automatically triggered when a file is uploaded to S3.
 
 The Lambda:
-
-Receives S3 event
-Reads bucket name
-Reads uploaded file
-Loads CSV into pandas
-Processes data
+- Receives S3 event
+- Reads bucket name
+- Reads uploaded file
+- Loads CSV into pandas
+- Processes data
 
 Architecture:
 
 CSV File
-    ↓
-S3 Bucket
-    ↓
-S3 Event Notification
-    ↓
-Lambda
-    ↓
-Pandas Processing
+<br>⬇️
+<br>S3 Bucket
+<br>⬇️
+<br>S3 Event Notification
+<br>⬇️
+<br>Lambda
+<br>⬇️
+<br>Pandas Processing
 
 
 
