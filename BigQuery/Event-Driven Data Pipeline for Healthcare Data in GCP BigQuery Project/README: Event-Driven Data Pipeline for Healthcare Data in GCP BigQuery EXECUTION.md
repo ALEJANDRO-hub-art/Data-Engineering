@@ -289,23 +289,23 @@ Non-cancer diseases should be excluded because the transform function returns nu
 
 **End-to-end architecture**
 
-**Clinical JSON File**
-        ⬇️
-**Google Cloud Storage Bucket**
-        ⬇️
-**Cloud Storage Finalize Event**
-        ⬇️
-**Cloud Function**
-        ⬇️
-**Dataflow Template: GCS Text to BigQuery**
-        ⬇️
-**JavaScript Transform UDF**
-        ⬇️
-**Cancer records only**
-        ⬇️
-**BigQuery Table**
-        ⬇️
-**Healthcare analytics queries**
+**Clinical JSON File**  
+⬇️  
+**Google Cloud Storage Bucket**  
+⬇️  
+**Cloud Storage Finalize Event**  
+⬇️  
+**Cloud Function**  
+⬇️  
+**Dataflow Template: GCS Text to BigQuery**  
+⬇️  
+**JavaScript Transform UDF**  
+⬇️  
+**Cancer Records Only**  
+⬇️  
+**BigQuery Table**  
+⬇️  
+**Healthcare Analytics Queries**
 
 
 
