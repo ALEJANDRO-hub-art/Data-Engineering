@@ -219,8 +219,8 @@ Create: **lambda_function/app.py**. Paste the **app.py** code.
 
 Create: **lambda_function/requirements.txt**. 
 - Paste:
- - requests
- - pandas
+  - requests
+  - pandas
   
 Create: **.github/workflows/deploy.yml**
 - Paste your **deploy.yml.**
