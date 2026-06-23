@@ -60,6 +60,8 @@ sales_data.csv
 <br>⬇️
 <br>Query result file available in S3
 
+
+
 Optional:
 Secrets Manager
 <br>⬇️
@@ -69,18 +71,95 @@ Secrets Manager
 <br>⬇️
 <br>Creates database GDSdev
 
+**Step-by-step GUI execution**
 
+*1. Create the S3 bucket*
 
+Go to AWS Console. Search S3. Click Create bucket.
+- Bucket name: **sales-data-analysis-gds-de**
+- Region: us-east-1
 
+Click Create bucket.
 
+Open the bucket.
 
+Click Create folder. Create:
+- raw
+- results
+- scripts
+ 
+Open raw/. Click Upload.
+- Upload: **sales_data.csv**
 
+**2. Create Glue database**
 
+Search AWS Glue. Go to Data Catalog.
 
+Click Databases. Click Add database.
+- Database name: **sales_db**
 
+Click Create database.
 
+**3. Create Glue crawler**
 
+In AWS Glue, go to Crawlers. Click Create crawler.
+- Name: **sales-data-crawler**
 
+Data source: **S3.**
+
+S3 path: **s3://sales-data-analysis-gds-de/raw/**
+
+Choose or create an IAM role for Glue.
+
+Target database: **sales_db**
+
+Table name should become something like: **sales_data_raw**
+
+Click Create crawler.
+
+Click Run crawler.
+
+**4. Verify Athena table**
+
+Search Athena. Go to Query editor.
+
+Select database: **sales_db**
+
+Confirm table exists: **sales_data_raw**
+
+Run:
+
+<img width="241" height="87" alt="image" src="https://github.com/user-attachments/assets/be601a4f-6acf-4323-a540-2ff62e99f704" />
+
+**5. Create Lambda: run Athena query**
+
+Search Lambda. Click Create function.
+
+Choose Author from scratch.
+- Function name: **run_athena_query**
+- Runtime: **Python 3.11**
+
+Click Create function.
+
+Open the code editor.
+
+Paste the code from: **run_athena_query.py**
+
+Click Deploy.
+
+**6. Add Lambda permissions**
+
+Your Lambda role needs access to:
+- Athena
+- S3
+- Glue Data Catalog
+- CloudWatch Logs
+
+Attach these policies for practice/lab use:
+- AmazonAthenaFullAccess
+- AmazonS3FullAccess
+- AWSGlueConsoleFullAccess
+- CloudWatchLogsFullAccess
 
 
 
