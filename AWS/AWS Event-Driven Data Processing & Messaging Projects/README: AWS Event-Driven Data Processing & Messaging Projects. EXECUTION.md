@@ -30,7 +30,7 @@ The sample file contains:
 - Event filtering
 - Event transformation
 
-Architecture:
+Architecture: 
 
 Application 
 <br>⬇️
