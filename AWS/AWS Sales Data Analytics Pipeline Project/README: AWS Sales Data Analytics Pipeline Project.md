@@ -26,7 +26,7 @@ Inside the bucket, create folders:
 - scripts/
 
 Upload files like this:
-
+ 
 ```text
 sales-data-analysis-gds-de/
 ├── raw/
