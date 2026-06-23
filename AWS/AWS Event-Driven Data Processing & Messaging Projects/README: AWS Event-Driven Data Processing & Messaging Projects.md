@@ -14,16 +14,16 @@ Purpose:
 - Demonstrates:
 
 Producer
-   ⬇️
-SQS Queue
-   ⬇️
-EventBridge Pipe
-   ⬇️
-Filtering
-   ⬇️
-Transformation
-   ⬇️
-Target Service
+<br>⬇️
+<br>SQS Queue
+<br>⬇️
+<br>EventBridge Pipe
+<br>⬇️
+<br>Filtering
+<br>⬇️
+<br>Transformation
+<br>⬇️
+<br>Target Service
 
 The sample file contains:
 - Purchase order messages
