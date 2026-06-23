@@ -215,10 +215,9 @@ Click: Connect
 You should now see:
 
 ```text
-Editor
 ┌─────────────────────────────┐
 │                             │
-│     SQL Editor Window       │
+│      SQL Editor Window      │
 │                             │
 └─────────────────────────────┘
 ```
