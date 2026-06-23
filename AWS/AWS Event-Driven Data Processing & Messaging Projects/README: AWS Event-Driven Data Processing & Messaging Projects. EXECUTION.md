@@ -18,7 +18,7 @@ Producer
 <br>SQS Queue
 <br>⬇️
 <br>EventBridge Pipe
-<br>⬇️
+<br>⬇️ 
 <br>Filtering
 <br>⬇️
 <br>Transformation
