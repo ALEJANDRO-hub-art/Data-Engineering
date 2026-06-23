@@ -32,21 +32,17 @@ The sample file contains:
 
 Architecture:
 
-```text
 Application 
 <br>⬇️
-<br>⬇️SQS
+<br>SQS
 <br>⬇️
-<br>⬇️EventBridge Pipe
+<br>EventBridge Pipe
 <br>⬇️
-<br>⬇️Filter Events
+<br>Filter Events
 <br>⬇️
-<br>⬇️Transform Payload
+<br>Transform Payload
 <br>⬇️
-<br>Target
-```
-
-
+<br>Target Service
 
 
 
