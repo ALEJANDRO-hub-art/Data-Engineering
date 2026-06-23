@@ -175,13 +175,7 @@ Your Cloud Function automatically launches the same template later.
 
 When a JSON file arrives:
 
-Cloud Storage
-      ↓
-Cloud Function
-      ↓
-Google Dataflow Template
-      ↓
-BigQuery
+Cloud Storage ➜ Cloud Function ➜ Google Dataflow Template ➜ BigQuery
 
 The Cloud Function launches the template using:
 
