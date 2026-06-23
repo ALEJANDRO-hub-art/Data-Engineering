@@ -369,7 +369,7 @@ Final execution order
 - 7 Create mock generator Lambda
 - 8 Run mock generator Lambda
 - 9 Create automatic/manual SQS consumer Lambda
-- 10 Create EventBridge Pipe
+- 10 Create EventBridge Pipe 
 - 11 Check output in CloudWatch Logs
 
 Final result: this project demonstrates AWS event-driven serverless processing using S3, Lambda, SNS, SQS, and EventBridge Pipes.
