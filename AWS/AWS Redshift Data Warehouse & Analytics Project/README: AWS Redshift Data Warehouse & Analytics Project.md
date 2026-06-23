@@ -25,10 +25,6 @@ Files and Their Purpose
 
 <img width="630" height="227" alt="image" src="https://github.com/user-attachments/assets/40892336-eac0-43e2-92d7-80f308a7152f" />
 
-
-
-
-
 Lets see the EXECUTION of the project.
 
 I’ll map the uploaded Redshift/S3 files into one clear project execution guide: file placement, purpose, AWS GUI steps, and final architecture.
@@ -52,8 +48,6 @@ Keep these files locally or in GitHub:
 You paste/run the SQL commands inside Amazon Redshift Query Editor v2.
 
 <img width="642" height="276" alt="image" src="https://github.com/user-attachments/assets/50044720-0c2b-4376-ba02-63e9d7400734" />
-
-
 
 **End-to-End Architecture**
 
