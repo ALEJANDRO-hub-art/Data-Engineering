@@ -10,7 +10,7 @@ This project ingests flight bookings, cancellations, and search queries in real 
 
 **End-to-End Architecture**
 
-<img width="562" height="287" alt="image" src="https://github.com/user-attachments/assets/99541474-0e7d-471c-8797-2977d1daf85f" />
+<img width="544" height="279" alt="image" src="https://github.com/user-attachments/assets/8fda3c85-95bc-42fc-9f36-87508d3e5e31" />
 
 The uploaded solution describes API Gateway, Lambda, Kinesis Data Streams, Kinesis Data Analytics, DynamoDB, S3, Redshift, CloudWatch, SNS, and QuickSight as the main AWS components.
 
