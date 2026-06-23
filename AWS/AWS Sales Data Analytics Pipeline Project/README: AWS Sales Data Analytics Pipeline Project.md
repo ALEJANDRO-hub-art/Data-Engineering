@@ -246,8 +246,8 @@ Example:
 Go to:
 
 Lambda
-- → run_athena_query
-- → Test
+- ➜ run_athena_query
+- ➜ Test
 
 After running the Lambda you will see output similar to:
 
@@ -308,9 +308,9 @@ If the Lambda returns:
 Go to:
 
 AWS Console
-→ S3
-→ sales-data-analysis-gds-de
-→ results
+➜ S3
+➜ sales-data-analysis-gds-de
+➜ results
 
 You will see: 12345678-abcd.csv
 
