@@ -158,5 +158,87 @@ You should see:
 
 Status: Active
 
+**Step 2 — Create Kinesis Data Stream**
+
+Search Kinesis. Click Data streams. Click Create data stream
+- Data stream name: **realtimeInventoryProcessing**
+- Capacity mode: On-demand
+
+Click Create data stream
+
+**Step 3 — Create Lambda function**
+
+Search Lambda. Click Create function
+- Choose Author from scratch
+- Function name: **inventory-dynamodb-processor**
+- Runtime: Python 3.11 or Python 3.12
+
+Click Create function
+
+Open **6 lambda_function.py**. Copy the code. Paste it into the Lambda code editor
+
+Click: Deploy
+
+**Step 4 — Give Lambda DynamoDB permission**
+
+In Lambda, go to Configuration
+- Click Permissions
+- Click the Role name
+
+IAM opens
+- Click Add permissions
+- Click Attach policies
+
+Search: **AmazonDynamoDBFullAccess**. Select it. Click Add permissions
+
+For a class project, **AmazonDynamoDBFullAccess** is okay. In a real company project, you would create a smaller custom policy only for this table.
+
+**Step 5 — Create EventBridge Pipe**
+
+Search EventBridge.
+- Click Pipes
+- Click Create pipe
+
+- Pipe name: **kinesis-to-lambda-inventory-pipe**
+- Source: Kinesis stream
+- Select stream: **realtimeInventoryProcessing**
+- Starting position: Latest
+- Target: Lambda function
+- Select Lambda: **inventory-dynamodb-processor**
+
+Click: Create pipe
+
+**Step 6 — Run the Python generator script locally**
+
+Open Windows Command Prompt (cmd) or Anaconda Prompt in the folder where the file exists.
+
+Run: Change Directory to the folde rpath where the file exists
+
+cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\14 AWS\Module 10 - AWS Class 4\2 Class Assignments & Solutions\3 Assignment 2\1 Mock Script Generate"
+
+Run:
+
+<img width="284" height="91" alt="image" src="https://github.com/user-attachments/assets/39c2e8f5-ce26-493c-b0d6-09569215d051" />
+
+Enter your AWS credentials when aws configure asks for them.
+
+The script sends records into Kinesis using:
+
+<img width="279" height="57" alt="image" src="https://github.com/user-attachments/assets/93ec99a0-bb12-4996-b1a7-87b003bc1c5d" />
+
+So the Kinesis stream name must match exactly. **realtimeInventoryProcessing** this is the name of the Kinesis Stream.
+
+In our script it looks like:
+
+<img width="508" height="421" alt="image" src="https://github.com/user-attachments/assets/6c8dcd3f-eb4d-4b1f-9ec8-7c506426fd82" />
+
+
+
+
+
+
+
+
+
 
 
