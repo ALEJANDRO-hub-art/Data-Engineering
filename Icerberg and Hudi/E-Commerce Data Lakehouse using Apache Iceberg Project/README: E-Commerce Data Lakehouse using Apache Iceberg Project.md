@@ -26,6 +26,22 @@ Glue PySpark Job: **glue_iceberg_read.py**
    ⬇️
 Read Latest Data + Snapshots + Time Travel
 
+👨‍💻 Developer
+      ⬇️
+🛠️ AWS Glue Studio
+      ⬇️
+📜 Glue PySpark Job: **glue_iceberg_write.py**
+      ⬇️
+🧊 Apache Iceberg Table
+      ⬇️
+📚 AWS Glue Data Catalog: **ecommerce.orders**
+      ⬇️
+🪣 Amazon S3 Warehouse: **s3://iceberg-warehouse-gds/warehouse/**
+      ⬇️
+📖 Glue PySpark Job: **glue_iceberg_read.py**
+      ⬇️
+🕒 Read Latest Data + Snapshots + Time Travel
+
 
 
 
