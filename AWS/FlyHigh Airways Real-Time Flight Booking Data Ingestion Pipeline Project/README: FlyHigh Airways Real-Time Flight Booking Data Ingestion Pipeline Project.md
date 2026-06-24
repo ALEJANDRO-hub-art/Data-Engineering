@@ -596,7 +596,7 @@ and these Lambda functions:
 - **high_demand_alert**
 - **update_capacity**
 
-*Part 1 — Connect Kinesis to kinesis_to_s3*
+*Part 1 — Connect Kinesis to **kinesis_to_s3***
 
 *Step 1*
 
@@ -605,7 +605,7 @@ Go to:
   - → Lambda
   - → Functions
 
-Click: kinesis_to_s3
+Click: **kinesis_to_s3**
 
 *Step 2*
 
@@ -624,7 +624,7 @@ Select: Kinesis
 Configure Trigger
 
 Kinesis Stream. Choose:
-- flight-booking-stream
+- **flight-booking-stream**
 
 Batch Size
 - Enter: 100
@@ -659,12 +659,12 @@ flight-booking-stream
 ▼
 kinesis_to_s3
 
-*Part 2 — Connect Kinesis to high_demand_alert*
+*Part 2 — Connect Kinesis to **high_demand_alert***
 
 *Step 1*
 
 Return to: Lambda. → Functions
-- Click: high_demand_alert
+- Click: **high_demand_alert**
 
 *Step 2*
 
@@ -677,7 +677,7 @@ Choose: Kinesis
 *Step 4*
 
 Configure. Stream
-- flight-booking-stream
+- **flight-booking-stream**
 
 - Batch Size: 100
 - Starting Position: Latest
@@ -695,7 +695,7 @@ flight-booking-stream
         ▼
 high_demand_alert
 
-*Part 3 — Connect Kinesis to update_capacity*
+*Part 3 — Connect Kinesis to **update_capacity***
 
 *Step 1*
 
@@ -716,10 +716,10 @@ Select: Kinesis
 *Step 4*
 
 Configure. Stream
-- flight-booking-stream
+- **flight-booking-stream**
 
--Batch Size: 100
--Starting Position: Latest
+- Batch Size: 100
+- Starting Position: Latest
 - Enable Trigger: Checked
 
 *Step 5*
@@ -733,12 +733,12 @@ Go to:
   - → Functions
 
 Open each Lambda:
-- kinesis_to_s3
-- high_demand_alert
-- update_capacity
+- **kinesis_to_s3**
+- **high_demand_alert**
+- **update_capacity**
 
 Under Configuration → Triggers you should see:
-- flight-booking-stream
+- **flight-booking-stream**
 
 attached to all three.
 
@@ -749,7 +749,7 @@ Lets continue.
 Go to SNS → Topics → Create topic.
 
 Use:
-- Topic name: high-demand-route-alerts
+- Topic name: **high-demand-route-alerts**
 - Type: Standard
 
 Create subscription:
