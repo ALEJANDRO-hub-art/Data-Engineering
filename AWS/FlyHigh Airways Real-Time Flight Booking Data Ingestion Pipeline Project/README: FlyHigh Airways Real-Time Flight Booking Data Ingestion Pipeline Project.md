@@ -224,10 +224,10 @@ Go to:
   - → Functions
 
 You should see:
-- api_booking_handler
-- high_demand_alert
-- kinesis_to_s3
-- update_capacity
+- **api_booking_handler**
+- **high_demand_alert**
+- **kinesis_to_s3**
+- **update_capacity**
 
 Lets continue.
 
@@ -427,8 +427,8 @@ Lets explain this in detail.
 **Exact GUI Steps — Connect Lambda to Kinesis**
 
 At this point you should already have:
-- ✅ Lambda Function: api_booking_handler
-- ✅ Kinesis Data Stream: flight-booking-stream
+- ✅ Lambda Function: **api_booking_handler**
+- ✅ Kinesis Data Stream: **flight-booking-stream**
 
 If you have not created the Kinesis stream yet:
 - AWS Console
