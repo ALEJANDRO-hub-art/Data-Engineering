@@ -1,4 +1,4 @@
-I have this project E-Commerce Data Lakehouse using Apache Iceberg Project.
+I have this project E-Commerce Data Lakehouse using Apache Iceberg Project. 
 
 <img width="835" height="169" alt="image" src="https://github.com/user-attachments/assets/bf6e953d-af33-4762-9024-881daa95b6ae" />
 
