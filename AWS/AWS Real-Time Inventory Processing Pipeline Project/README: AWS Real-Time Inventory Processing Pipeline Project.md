@@ -13,8 +13,9 @@ I have this project AWS Real-Time Inventory Processing Pipeline Project.
 
 The assignment objective is to build a real-time pipeline that captures simulated e-commerce inventory events, processes them, and updates DynamoDB with the latest inventory state.
 
+<img width="673" height="306" alt="image" src="https://github.com/user-attachments/assets/c96c9b4c-a983-48f8-b885-5c69f6aed6ac" />
 
-
+The generator sends events like product_added, product_removed, and product_quantity_changed into Kinesis every second. The Lambda currently handles product_added with put_item() and product_removed with delete_item() against the DynamoDB table product_inventory.
 
 
 
