@@ -8,7 +8,23 @@ This project uses AWS Glue PySpark with Apache Iceberg to create an e-commerce o
 
 <img width="624" height="219" alt="image" src="https://github.com/user-attachments/assets/25a4fe92-5fe6-49f1-b8a0-76de3380cc26" />
 
+**End-to-end architecture**
 
+Developer
+   ⬇️
+AWS Glue Studio
+   ⬇️
+Glue PySpark Job: **glue_iceberg_write.py**
+   ⬇️
+Apache Iceberg Table
+   ⬇️
+AWS Glue Data Catalog: **ecommerce.orders**
+   ⬇️
+Amazon S3 Warehouse: **s3://iceberg-warehouse-gds/warehouse/**
+   ⬇️
+Glue PySpark Job: **glue_iceberg_read.py**
+   ⬇️
+Read Latest Data + Snapshots + Time Travel
 
 
 
