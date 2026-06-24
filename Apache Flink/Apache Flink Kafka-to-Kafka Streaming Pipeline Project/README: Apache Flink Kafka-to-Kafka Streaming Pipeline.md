@@ -368,4 +368,16 @@ Kafka Sink Topic: orders_tgt_flink
 Filtered High-Value Orders
 ```
 
+**What the project does**
+
+This project demonstrates a real-time streaming data pipeline using Apache Flink + Kafka. Kafka stores the incoming order events, Flink processes the events continuously, applies validation and filtering logic, and writes the filtered output back to another Kafka topic.
+
+
+
+
+
+
+
+
+
 
