@@ -220,7 +220,7 @@ Click Run.
 Open the Glue job. Go to Runs.
 - Click the latest run.
 - Click CloudWatch logs.
-
+ 
 Check the output from: 
 
 <img width="251" height="83" alt="image" src="https://github.com/user-attachments/assets/02e711d0-a89e-4a28-9482-de77f3d62793" />
