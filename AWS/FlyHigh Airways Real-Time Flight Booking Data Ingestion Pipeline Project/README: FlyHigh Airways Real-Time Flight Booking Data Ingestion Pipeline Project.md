@@ -592,9 +592,9 @@ Lets explain this in detail.
 At this stage you should already have: **flight-booking-stream**
 
 and these Lambda functions:
-- kinesis_to_s3
-- high_demand_alert
-- update_capacity
+- **kinesis_to_s3**
+- **high_demand_alert**
+- **update_capacity**
 
 *Part 1 — Connect Kinesis to kinesis_to_s3*
 
