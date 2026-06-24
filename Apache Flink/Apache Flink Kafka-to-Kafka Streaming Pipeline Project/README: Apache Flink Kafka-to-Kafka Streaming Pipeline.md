@@ -72,29 +72,191 @@ It reads order events from one Kafka topic, filters orders where total_price > 1
 **flink_local_setup.txt**
 - Instructions to install Apache Flink locally, install PyFlink, configure Python, add Kafka connector JAR, start the Flink cluster, and run the job. 
 
+**Where to upload/place the files**
+
+Place the files like this on your computer:
  
+<img width="333" height="166" alt="image" src="https://github.com/user-attachments/assets/01f25a86-527a-4170-bd55-82b258defc25" />
+
+The Kafka connector JAR must go inside:
+- flink-1.20.0/lib/
+
+Your Python job can stay in your project folder, for example:
+- C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\16 Apache Flink\2 Flink_Code_and_Setup
+
+ Do:
+ - cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\16 Apache Flink\2 Flink_Code_and_Setup"
  
+Verify:
+- dir
+
+You should see:
+- flink-1.20.3
+- kafka_to_kafka_flink.py
+- flink_local_setup.txt
  
+*Enter Flink Folder*
+
+Run:
+- cd flink-1.20.3
+
+Verify:
+- dir
+
+You should see:
+- bin
+- conf
+- lib
+- log
+- plugins
  
+*Install PyFlink*
+
+From CMD:
+
+Run:
+- pip install apache-flink==1.20.0 or
+- pip3 install apache-flink==1.20.0
  
+*Find Python Path*
+
+Run:
+- where python
+
+Example output: C:\Users\Usuario\AppData\Local\Programs\Python\Python311\python.exe
+
+In our case is:
+
+<img width="690" height="330" alt="image" src="https://github.com/user-attachments/assets/e11fdd30-3eee-44bd-aeac-44d3c761f303" />
+
+ *Edit Flink Configuration*
+
+Open:
+- flink-1.20.3\conf\config.yaml
+
+<img width="638" height="352" alt="image" src="https://github.com/user-attachments/assets/cc91198c-f61b-4856-ba00-760ca300b088" />
+
+Add:
+- python.client.executable: C:\Users\Usuario\anaconda3\python.exe
+- python.executable: C:\Users\Usuario\anaconda3\python.exe
+
+Here we have it:
+
+<img width="694" height="431" alt="image" src="https://github.com/user-attachments/assets/34c9d984-0836-4272-b7df-ade5881b116b" />
+
+*Kafka Connector*
+
+Download: **flink-sql-connector-kafka-1.17.2.jar**
+
+Copy it into: flink-1.20.3\lib
  
+Lets explain this in detail.
  
+Yes. The JAR file needs to be downloaded manually and copied into your Flink lib folder. The file is available from Maven Central.
+
+*Step 1: Download the Kafka Connector*
+
+Open this page in your browser:
+
+Link: flink-sql-connector-kafka-1.17.2 Download
+- Then click: flink-sql-connector-kafka-1.17.2.jar
+
+The file size should be approximately 5.5 MB.
+
+*Step 2: Save the File*
+
+Save it anywhere convenient, for example:
+- C:\Users\Usuario\Downloads\
+
+*Step 3: Copy the JAR to Flink*
+- Copy: flink-sql-connector-kafka-1.17.2.jar
+
+into:
+- C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\16 Apache Flink\2 Flink_Code_and_Setup\flink-1.20.3\lib 
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+After copying, your lib folder should contain something like:
+
+<img width="335" height="118" alt="image" src="https://github.com/user-attachments/assets/0d534aeb-6de8-41a6-916a-0f4d2b567c65" />
+
+*Step 4: Verify*
+
+- Open: C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\16 Apache Flink\2 Flink_Code_and_Setup\flink-1.20.3\lib
+
+You should see:
+- flink-sql-connector-kafka-1.17.2.jar
+
+listed together with the other Flink JARs.
+
+*Step 5: Restart Flink*
+
+If Flink is already running:
+
+Command Prompt
+- cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\16 Apache Flink\2 Flink_Code_and_Setup\flink-1.20.3"
+
+bin\stop-cluster.bat
+bin\start-cluster.bat
+
+In our folder are these:
+
+<img width="694" height="429" alt="image" src="https://github.com/user-attachments/assets/d3561382-1721-4db7-9aab-b3f9d4e1b0e1" />
+
+This reloads the new Kafka connector. After that, your PyFlink Kafka job (kafka_to_kafka_flink.py) will be able to access Kafka through the connector.
+
+*Start Flink Cluster (Windows)*
+
+You do NOT use:
+- ./bin/start-cluster.sh
+
+Instead use:
+- cd bin
+- start-cluster.bat or .\start-cluster.bat
+
+*Open Flink GUI* 
+
+Open browser: http://localhost:8081
+
+You should see the Flink Dashboard.
+
+*Run Your Flink Job*
+
+Return to the Flink root folder:
+- cd ..
+
+You should now be inside:
+- ...\2 Flink_Code_and_Setup\flink-1.20.3
+
+Run:
+
+<img width="300" height="50" alt="image" src="https://github.com/user-attachments/assets/e8df9e22-d2df-4c41-846d-65cd504c3253" />
+
+Because your Python file is one folder above the Flink installation.
+
+Alternative full path:
+- bin\flink.bat run -py "%USERPROFILE%\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\16 Apache Flink\2 Flink_Code_and_Setup\kafka_to_kafka_flink.py"
+
+The job will read from Kafka topic: **orders_src_flink**
+
+Filter records where:
+
+<img width="173" height="52" alt="image" src="https://github.com/user-attachments/assets/dea6cf13-8748-466f-ae72-c52996d84ef8" />
+
+and write them to:
+- **orders_tgt_flink**
+
+as defined in your Python file.
+
+**Commands You Will Actually Run on Windows**
+
+</>
+- cd "%USERPROFILE%\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\16 Apache Flink\2 Flink_Code_and_Setup"
+- cd flink-1.20.3
+- pip install apache-flink==1.20.0
+- where python
+- cd bin
+- start-cluster.bat
+- cd .. (This returns to the Flink root folder)
+- bin\flink.bat run -py ..\kafka_to_kafka_flink.py
+
+These are the exact CMD commands for your Windows setup based on the folder structure shown in your screenshots.
 
