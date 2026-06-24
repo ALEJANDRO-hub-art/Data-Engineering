@@ -159,7 +159,7 @@ Yes. The JAR file needs to be downloaded manually and copied into your Flink lib
 Open this page in your browser:
 
 Link: flink-sql-connector-kafka-1.17.2 Download
-- Then click: flink-sql-connector-kafka-1.17.2.jar
+- Then click: **flink-sql-connector-kafka-1.17.2.jar**
 
 The file size should be approximately 5.5 MB.
 
@@ -169,7 +169,7 @@ Save it anywhere convenient, for example:
 - C:\Users\Usuario\Downloads\
 
 *Step 3: Copy the JAR to Flink*
-- Copy: flink-sql-connector-kafka-1.17.2.jar
+- Copy: **flink-sql-connector-kafka-1.17.2.jar**
 
 into:
 - C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\16 Apache Flink\2 Flink_Code_and_Setup\flink-1.20.3\lib 
@@ -183,7 +183,7 @@ After copying, your lib folder should contain something like:
 - Open: C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\16 Apache Flink\2 Flink_Code_and_Setup\flink-1.20.3\lib
 
 You should see:
-- flink-sql-connector-kafka-1.17.2.jar
+- **flink-sql-connector-kafka-1.17.2.jar**
 
 listed together with the other Flink JARs.
 
@@ -201,7 +201,7 @@ In our folder are these:
 
 <img width="694" height="429" alt="image" src="https://github.com/user-attachments/assets/d3561382-1721-4db7-9aab-b3f9d4e1b0e1" />
 
-This reloads the new Kafka connector. After that, your PyFlink Kafka job (kafka_to_kafka_flink.py) will be able to access Kafka through the connector.
+This reloads the new Kafka connector. After that, your PyFlink Kafka job (**kafka_to_kafka_flink.py**) will be able to access Kafka through the connector.
 
 *Start Flink Cluster (Windows)*
 
