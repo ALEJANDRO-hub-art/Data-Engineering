@@ -59,6 +59,7 @@ I have this project Apache Flink Kafka-to-Kafka Streaming Pipeline Project.
 <img width="589" height="89" alt="image" src="https://github.com/user-attachments/assets/0e96453f-0d94-40ef-b93b-49903827f3eb" />
 
 
+
 Project name: **Apache Flink Kafka-to-Kafka Streaming Pipeline**
 
 It reads order events from one Kafka topic, filters orders where total_price > 100, and writes the valid filtered records into another Kafka topic using Apache Flink. The code uses source topic orders_src_flink and target topic orders_tgt_flink.
