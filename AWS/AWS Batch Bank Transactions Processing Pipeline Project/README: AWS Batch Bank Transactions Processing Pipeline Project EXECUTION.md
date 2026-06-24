@@ -12,10 +12,15 @@ I have this project AWS Batch Bank Transactions Processing Pipeline Project.
 
 <img width="751" height="146" alt="image" src="https://github.com/user-attachments/assets/189a6e72-a3db-4d3a-a296-6ce05e014dba" />
 
+This is one complete AWS data engineering project, not mini projects.
 
+What the project does
 
+A daily bank transactions JSON file is uploaded to Amazon S3. That upload automatically triggers AWS Lambda, which starts an AWS Glue ETL job. Glue cleans the data, removes bad/null records, removes duplicate transaction_id records, converts the data to Parquet, saves it back to S3, and makes it queryable in Amazon Athena. The project also uses CloudWatch + SNS for monitoring and alerts.
 
+Files and where to upload them
 
+<img width="658" height="489" alt="image" src="https://github.com/user-attachments/assets/7f23f7ef-fa0e-4f53-a2f8-6aaecc810925" />
 
 
 
