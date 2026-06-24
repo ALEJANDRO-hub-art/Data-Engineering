@@ -213,8 +213,7 @@ Click: Create pipe
 Open Windows Command Prompt (cmd) or Anaconda Prompt in the folder where the file exists.
 
 Run: Change Directory to the folde rpath where the file exists
-
-cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\14 AWS\Module 10 - AWS Class 4\2 Class Assignments & Solutions\3 Assignment 2\1 Mock Script Generate"
+- cd "C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\14 AWS\Module 10 - AWS Class 4\2 Class Assignments & Solutions\3 Assignment 2\1 Mock Script Generate"
 
 Run:
 
@@ -232,9 +231,23 @@ In our script it looks like:
 
 <img width="508" height="421" alt="image" src="https://github.com/user-attachments/assets/6c8dcd3f-eb4d-4b1f-9ec8-7c506426fd82" />
 
+**Step 7 — Verify DynamoDB**
 
+Go to DynamoDB. Click Tables
+- Open **product_inventory**
 
+Click Explore table items. **You should see products being inserted or removed in real time**
 
+The provided status file shows DynamoDB changing after events, for example product P3 was updated/inserted after a *product_added event*, and later removed after a *product_removed event*.
+
+**What the project does**
+
+This project simulates a real e-commerce inventory system.
+
+- The Python script creates fake inventory events.
+- Kinesis captures the real-time data stream.
+- EventBridge Pipe connects Kinesis to Lambda.
+- Lambda reads each event and updates DynamoDB. DynamoDB stores the latest state of each product.
 
 
 
