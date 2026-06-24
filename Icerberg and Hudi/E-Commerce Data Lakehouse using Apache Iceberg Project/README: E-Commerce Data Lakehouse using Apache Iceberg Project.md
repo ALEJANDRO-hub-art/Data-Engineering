@@ -8,6 +8,7 @@ This project uses AWS Glue PySpark with Apache Iceberg to create an e-commerce o
 
 <img width="624" height="219" alt="image" src="https://github.com/user-attachments/assets/25a4fe92-5fe6-49f1-b8a0-76de3380cc26" />
 
+<img width="626" height="223" alt="image" src="https://github.com/user-attachments/assets/adc6525f-321a-405c-80e7-9d06e091a223" />
 
 
 
