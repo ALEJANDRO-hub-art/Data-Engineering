@@ -260,3 +260,112 @@ as defined in your Python file.
 
 These are the exact CMD commands for your Windows setup based on the folder structure shown in your screenshots.
 
+Lets continue.
+
+**Step-by-step execution**
+
+**1. Download Flink**
+- wget https://dlcdn.apache.org/flink/flink-1.20.0/flink-1.20.0-bin-scala_2.12.tgz
+
+**2. Extract Flink**
+- tar -xvzf flink-1.20.0-bin-scala_2.12.tgz
+- cd flink-1.20.0
+
+**3. Install PyFlink**
+- pip3 install apache-flink==1.20.0
+
+**4. Find Python path**
+- which python3
+
+Example: /opt/homebrew/bin/python3.11
+
+**5. Edit Flink config**
+
+Open: flink-1.20.0/conf/config.yaml
+
+Add:
+- python.client.executable: C:\Users\Usuario\anaconda3\python.exe
+- python.executable: C:\Users\Usuario\anaconda3\python.exe
+
+We already did this.
+
+**6. Add Kafka connector**
+
+Download: flink-sql-connector-kafka-1.17.2.jar
+
+Place it here:
+- flink-1.20.0/lib/
+
+**7. Start Flink cluster**
+- ./bin/start-cluster.sh
+
+**8. Open Flink GUI**
+
+Open browser: http://localhost:8081
+
+**9. Run the Flink job**
+
+From inside the Flink folder:
+- ./bin/flink run -python /path/to/kafka_to_kafka_flink.py
+
+In our case:
+- ./bin/flink run -python C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\16 Apache Flink\2 Flink_Code_and_Setup\kafka_to_kafka_flink.py
+
+**GUI steps**
+
+**Flink Dashboard GUI**
+
+Open browser.
+- Go to: http://localhost:8081
+
+Click Task Managers to confirm the Flink worker is running. Click Jobs.
+
+After running the Python command, you should see:
+- Flink Kafka Streaming Job
+
+Click the job name.
+
+Check:
+- Overview
+- Exceptions
+- Checkpoints
+- Task Managers
+- Logs
+
+**Confluent Cloud / Kafka GUI**
+
+Open Confluent Cloud. Go to your Kafka cluster. Open Topics.
+- Create source topic: **orders_src_flink**
+- Create target topic: **orders_tgt_flink**
+
+Go to **orders_src_flink.**
+
+Produce sample JSON message:
+
+<img width="249" height="115" alt="image" src="https://github.com/user-attachments/assets/a8b0c187-bfe8-4f17-a7e7-114031331df8" />
+
+Go to **orders_tgt_flink.**
+
+Open Messages. Confirm the filtered message appears.
+
+**End-to-end architecture**
+
+```text
+Order JSON Events
+        ⬇️
+Kafka Source Topic: orders_src_flink
+        ⬇️
+Apache Flink PyFlink Job
+        ⬇️
+Read JSON Messages
+        ⬇️
+Validate Required Fields
+        ⬇️
+Filter total_price > 100
+        ⬇️
+Kafka Sink Topic: orders_tgt_flink
+        ⬇️
+Filtered High-Value Orders
+```
+
+
