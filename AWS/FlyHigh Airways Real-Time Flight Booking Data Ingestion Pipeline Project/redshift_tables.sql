@@ -1,0 +1,1 @@
+-- bookings, searches, cancellations tables
