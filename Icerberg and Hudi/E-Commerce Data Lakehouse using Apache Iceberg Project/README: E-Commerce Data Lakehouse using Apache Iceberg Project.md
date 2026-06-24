@@ -156,8 +156,8 @@ After creation:
 Click the role and confirm the permissions are attached.
 
 You will select this role later when creating:
-- glue_iceberg_write
-- glue_iceberg_read
+- **glue_iceberg_write**
+- **glue_iceberg_read**
 
 Glue jobs.
 
