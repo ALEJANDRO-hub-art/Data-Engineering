@@ -1,0 +1,218 @@
+[
+  {
+    "transaction_id": "T442760",
+    "account_id": "A94371",
+    "transaction_date": "2026-04-16",
+    "amount": 1092.96,
+    "transaction_type": "credit",
+    "branch_id": "B2",
+    "description": "Cash Deposit"
+  },
+  {
+    "transaction_id": "T991474",
+    "account_id": "A87349",
+    "transaction_date": "2026-04-16",
+    "amount": 4399.43,
+    "transaction_type": "credit",
+    "branch_id": "B2",
+    "description": "Salary Deposit"
+  },
+  {
+    "transaction_id": "T172641",
+    "account_id": "A94479",
+    "transaction_date": "2026-04-16",
+    "amount": 2577.3,
+    "transaction_type": "credit",
+    "branch_id": "B4",
+    "description": "Online Transfer"
+  },
+  {
+    "transaction_id": "T306739",
+    "account_id": "A54960",
+    "transaction_date": "2026-04-16",
+    "amount": 2454.83,
+    "transaction_type": "credit",
+    "branch_id": "B1",
+    "description": "Salary Deposit"
+  },
+  {
+    "transaction_id": "T236481",
+    "account_id": "A70516",
+    "transaction_date": "2026-04-16",
+    "amount": 1960.63,
+    "transaction_type": "debit",
+    "branch_id": "B1",
+    "description": "Bill Payment"
+  },
+  {
+    "transaction_id": "T928875",
+    "account_id": "A61418",
+    "transaction_date": "2026-04-16",
+    "amount": 1285.57,
+    "transaction_type": "debit",
+    "branch_id": "B3",
+    "description": "POS Payment"
+  },
+  {
+    "transaction_id": "T626788",
+    "account_id": "A12635",
+    "transaction_date": "2026-04-16",
+    "amount": 1195.65,
+    "transaction_type": "credit",
+    "branch_id": "B1",
+    "description": "ATM Withdrawal"
+  },
+  {
+    "transaction_id": "T326505",
+    "account_id": "A92023",
+    "transaction_date": "2026-04-16",
+    "amount": 63.19,
+    "transaction_type": "debit",
+    "branch_id": "B3",
+    "description": "Bill Payment"
+  },
+  {
+    "transaction_id": "T406767",
+    "account_id": "A48400",
+    "transaction_date": "2026-04-16",
+    "amount": 2291.21,
+    "transaction_type": "debit",
+    "branch_id": "B1",
+    "description": "Salary Deposit"
+  },
+  {
+    "transaction_id": "T491105",
+    "account_id": "A12610",
+    "transaction_date": "2026-04-16",
+    "amount": 1304.42,
+    "transaction_type": "debit",
+    "branch_id": "B4",
+    "description": "Bill Payment"
+  },
+  {
+    "transaction_id": "T179406",
+    "account_id": "A97283",
+    "transaction_date": "2026-04-16",
+    "amount": 3182.25,
+    "transaction_type": "debit",
+    "branch_id": "B2",
+    "description": "ATM Withdrawal"
+  },
+  {
+    "transaction_id": "T861671",
+    "account_id": "A76084",
+    "transaction_date": "2026-04-16",
+    "amount": 1753.57,
+    "transaction_type": "debit",
+    "branch_id": "B2",
+    "description": "Salary Deposit"
+  },
+  {
+    "transaction_id": "T129493",
+    "account_id": "A67631",
+    "transaction_date": "2026-04-16",
+    "amount": 1183.19,
+    "transaction_type": "credit",
+    "branch_id": "B4",
+    "description": "POS Payment"
+  },
+  {
+    "transaction_id": "T973100",
+    "account_id": "A45538",
+    "transaction_date": "2026-04-16",
+    "amount": 4589.2,
+    "transaction_type": "credit",
+    "branch_id": "B3",
+    "description": "ATM Withdrawal"
+  },
+  {
+    "transaction_id": "T832725",
+    "account_id": "A48732",
+    "transaction_date": "2026-04-16",
+    "amount": 2255.91,
+    "transaction_type": "debit",
+    "branch_id": "B2",
+    "description": "Bill Payment"
+  },
+  {
+    "transaction_id": "T744773",
+    "account_id": "A33779",
+    "transaction_date": "2026-04-16",
+    "amount": 384.08,
+    "transaction_type": "credit",
+    "branch_id": "B1",
+    "description": "ATM Withdrawal"
+  },
+  {
+    "transaction_id": "T441926",
+    "account_id": "A22056",
+    "transaction_date": "2026-04-16",
+    "amount": 4673.46,
+    "transaction_type": "credit",
+    "branch_id": "B4",
+    "description": "Bill Payment"
+  },
+  {
+    "transaction_id": "T719462",
+    "account_id": "A52393",
+    "transaction_date": "2026-04-16",
+    "amount": 590.88,
+    "transaction_type": "credit",
+    "branch_id": "B2",
+    "description": "Online Transfer"
+  },
+  {
+    "transaction_id": "T142875",
+    "account_id": "A88027",
+    "transaction_date": "2026-04-16",
+    "amount": 3827.72,
+    "transaction_type": "debit",
+    "branch_id": "B2",
+    "description": "ATM Withdrawal"
+  },
+  {
+    "transaction_id": "T688730",
+    "account_id": "A13629",
+    "transaction_date": "2026-04-16",
+    "amount": 1566.26,
+    "transaction_type": "debit",
+    "branch_id": "B2",
+    "description": "Cash Deposit"
+  },
+  {
+    "transaction_id": "T172641",
+    "account_id": "A94479",
+    "transaction_date": "2026-04-16",
+    "amount": 2577.3,
+    "transaction_type": "credit",
+    "branch_id": "B4",
+    "description": "Online Transfer"
+  },
+  {
+    "transaction_id": null,
+    "account_id": "A99999",
+    "transaction_date": "2026-04-16",
+    "amount": 100.0,
+    "transaction_type": "credit",
+    "branch_id": "B1",
+    "description": "Bad Row Null ID"
+  },
+  {
+    "transaction_id": "T848137",
+    "account_id": "A88888",
+    "transaction_date": null,
+    "amount": 150.0,
+    "transaction_type": "debit",
+    "branch_id": "B2",
+    "description": "Bad Row Null Date"
+  },
+  {
+    "transaction_id": "T650581",
+    "account_id": "A77777",
+    "transaction_date": "2026-04-16",
+    "amount": null,
+    "transaction_type": "debit",
+    "branch_id": "B3",
+    "description": "Bad Row Null Amount"
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "transaction_id": "T100001",
+    "account_id": "A12345",
+    "transaction_date": "2026-04-16",
+    "amount": 500.0,
+    "transaction_type": "debit",
+    "branch_id": "B1",
+    "description": "ATM Withdrawal"
+  },
+  {
+    "transaction_id": "T100002",
+    "account_id": "A12346",
+    "transaction_date": "2026-04-16",
+    "amount": 1200.5,
+    "transaction_type": "credit",
+    "branch_id": "B2",
+    "description": "Salary Deposit"
+  },
+  {
+    "transaction_id": "T100003",
+    "account_id": "A12347",
+    "transaction_date": "2026-04-16",
+    "amount": 75.25,
+    "transaction_type": "debit",
+    "branch_id": "B3",
+    "description": "POS Payment"
+  },
+  {
+    "transaction_id": "T100003",
+    "account_id": "A12347",
+    "transaction_date": "2026-04-16",
+    "amount": 75.25,
+    "transaction_type": "debit",
+    "branch_id": "B3",
+    "description": "POS Payment"
+  },
+  {
+    "transaction_id": null,
+    "account_id": "A12348",
+    "transaction_date": "2026-04-16",
+    "amount": 300.0,
+    "transaction_type": "credit",
+    "branch_id": "B4",
+    "description": "Cash Deposit"
+  },
+  {
+    "transaction_id": "T100005",
+    "account_id": "A12349",
+    "transaction_date": null,
+    "amount": 250.0,
+    "transaction_type": "debit",
+    "branch_id": "B1",
+    "description": "Online Purchase"
+  },
+  {
+    "transaction_id": "T100006",
+    "account_id": "A12350",
+    "transaction_date": "2026-04-16",
+    "amount": null,
+    "transaction_type": "debit",
+    "branch_id": "B5",
+    "description": "Bill Payment"
+  }
+]
