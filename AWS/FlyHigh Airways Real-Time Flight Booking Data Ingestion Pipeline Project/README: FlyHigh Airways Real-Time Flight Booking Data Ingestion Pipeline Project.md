@@ -582,8 +582,8 @@ Choose:
 - Batch size: 100
 
 Repeat for:
-- high_demand_alert
-- update_capacity
+- **high_demand_alert**
+- **update_capacity**
 
 Lets explain this in detail.
 
