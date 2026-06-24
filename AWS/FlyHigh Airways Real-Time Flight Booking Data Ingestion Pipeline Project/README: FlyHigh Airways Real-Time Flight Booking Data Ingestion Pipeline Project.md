@@ -427,7 +427,7 @@ Lets explain this in detail.
 **Exact GUI Steps — Connect Lambda to Kinesis**
 
 At this point you should already have:
-- ✅ Lambda Function: **api_booking_handler**
+- ✅ Lambda Function: **api_booking_handler** 
 - ✅ Kinesis Data Stream: **flight-booking-stream**
 
 If you have not created the Kinesis stream yet:
