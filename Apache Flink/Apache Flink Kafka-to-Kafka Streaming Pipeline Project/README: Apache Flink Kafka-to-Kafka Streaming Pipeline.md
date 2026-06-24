@@ -92,7 +92,7 @@ Verify:
 
 You should see:
 - flink-1.20.3
-- kafka_to_kafka_flink.py
+- **kafka_to_kafka_flink.py**
 - flink_local_setup.txt
  
 *Enter Flink Folder*
@@ -233,7 +233,7 @@ Run:
 Because your Python file is one folder above the Flink installation.
 
 Alternative full path:
-- bin\flink.bat run -py "%USERPROFILE%\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\16 Apache Flink\2 Flink_Code_and_Setup\kafka_to_kafka_flink.py"
+- bin\flink.bat run -py "%USERPROFILE%\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\16 Apache Flink\2 Flink_Code_and_Setup\***kafka_to_kafka_flink.py***"
 
 The job will read from Kafka topic: **orders_src_flink**
 
@@ -256,7 +256,7 @@ as defined in your Python file.
 - cd bin
 - start-cluster.bat
 - cd .. (This returns to the Flink root folder)
-- bin\flink.bat run -py ..\kafka_to_kafka_flink.py
+- bin\flink.bat run -py ..\***kafka_to_kafka_flink.py***
 
 These are the exact CMD commands for your Windows setup based on the folder structure shown in your screenshots.
 
@@ -306,10 +306,10 @@ Open browser: http://localhost:8081
 **9. Run the Flink job**
 
 From inside the Flink folder:
-- ./bin/flink run -python /path/to/kafka_to_kafka_flink.py
+- ./bin/flink run -python /path/to/***kafka_to_kafka_flink.py***
 
 In our case:
-- ./bin/flink run -python C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\16 Apache Flink\2 Flink_Code_and_Setup\kafka_to_kafka_flink.py
+- ./bin/flink run -python C:\Users\Usuario\Desktop\GrowDataSkills\Complete Data Engineering With AWS - Basic To Advance\16 Apache Flink\2 Flink_Code_and_Setup\***kafka_to_kafka_flink.py***
 
 **GUI steps**
 
