@@ -132,7 +132,7 @@ In our case is:
  *Edit Flink Configuration*
 
 Open:
-- flink-1.20.3\conf\config.yaml
+- flink-1.20.3\conf\***config.yaml***
 
 <img width="638" height="352" alt="image" src="https://github.com/user-attachments/assets/cc91198c-f61b-4856-ba00-760ca300b088" />
 
@@ -281,7 +281,7 @@ Example: /opt/homebrew/bin/python3.11
 
 **5. Edit Flink config**
 
-Open: flink-1.20.0/conf/config.yaml
+Open: flink-1.20.0/conf/***config.yaml***
 
 Add:
 - python.client.executable: C:\Users\Usuario\anaconda3\python.exe
