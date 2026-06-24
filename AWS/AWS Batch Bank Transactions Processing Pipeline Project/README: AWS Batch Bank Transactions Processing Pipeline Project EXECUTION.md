@@ -22,11 +22,15 @@ Files and where to upload them
 
 <img width="658" height="489" alt="image" src="https://github.com/user-attachments/assets/7f23f7ef-fa0e-4f53-a2f8-6aaecc810925" />
 
+**S3 folder structure**
 
+Create one S3 bucket, for example:
 
+<img width="257" height="137" alt="image" src="https://github.com/user-attachments/assets/0866c309-1ad9-4adf-8d4a-94322a8af934" />
 
+**End-to-end architecture**
 
-
+<img width="437" height="459" alt="image" src="https://github.com/user-attachments/assets/55cf48d4-b31c-4776-bb85-7ea03b38c8e3" />
 
 
 
